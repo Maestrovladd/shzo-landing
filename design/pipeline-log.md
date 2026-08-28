@@ -6,7 +6,8 @@
 - creative-explore: skipped — clone constructor.
 - impeccable: Figtree, not Inter.
 - color-expert: brick #7A3D42, OKLCH-ish warm red, not cultural-pink.
-- copywriting + stop-slop + Natasha slog
+- copywriting + corey-offers + stop-slop + Natasha slog
+- 2026-08-28: оффер переписан на схему «как [хотелка] за [срок], если [боль]» (Полина / Арина / Кейко / Томас). Не процесс-стрелки.
 - locked-concept.md
 - design-production
 - review-animations: same as Alifer craft (reveal, counter, accordion, slider, reduced-motion)
