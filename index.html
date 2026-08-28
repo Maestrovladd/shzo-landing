@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=offer2" />
+  <link rel="stylesheet" href="styles.css?v=olga1" />
 </head>
 <body>
 <a class="skip" href="#hero">К содержанию</a>
@@ -37,38 +37,46 @@
   </div>
 </nav>
 
-<div class="fold">
 <section class="hero" id="hero">
-  <div class="hero-left">
-    <div class="hero-badge">12-недельная программа самопомощи</div>
-    <h1>Школа здоровых отношений</h1>
-    <p class="hero-sub">Как за 12 недель научиться видеть, что происходит дома, говорить без крика и самой решить, оставаться или уходить. Даже если психолог уже был и кухня та же.</p>
-    <p class="hero-lead">Вот что вы получаете за 12 недель</p>
-    <div class="hero-adv">
-      <div class="adv"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span><b>60</b> видеоуроков по 10–15 минут</span></div>
-      <div class="adv"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span><b>12</b> обязательных заданий про ваших людей</span></div>
-      <div class="adv"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span><b>60+</b> разборов с прошлых потоков</span></div>
-      <div class="adv"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Живого чата в этом наборе нет<sup>*</sup></span></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>Школа здоровых отношений</h1>
+      <p class="hero-sub">Как за 12 недель научиться видеть, что происходит дома, говорить без крика и самой решить, оставаться или уходить. Даже если психолог уже был и кухня та же.</p>
+      <p class="hero-lead">Вот что вы получаете за 12 недель</p>
+      <ul class="hero-adv">
+        <li class="adv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>60 видеоуроков</b> по 10–15 минут</span></li>
+        <li class="adv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>12 заданий</b> про ваших людей</span></li>
+        <li class="adv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>60+ разборов</b> с прошлых потоков</span></li>
+        <li class="adv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Чата нет</b> в этом наборе<sup class="fn">*</sup></span></li>
+        <li class="adv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Оплатили</b> — завтра урок в 10:00</span></li>
+        <li class="adv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Доступ</b> до 31 января 2027</span></li>
+      </ul>
+      <p class="hero-fn"><sup class="fn">*</sup> Проверка 12 заданий — тариф 26&nbsp;900&nbsp;₽.</p>
+      <div class="pricecard">
+        <div>
+          <div class="pricecard-label">12 недель самопомощи</div>
+          <div class="pricecard-price"><b>от 16&nbsp;900&nbsp;₽</b><span>или 26&nbsp;900 с проверкой</span></div>
+          <div class="pricecard-instl">Рассрочка через банк. Поток уже идёт.</div>
+        </div>
+        <div class="pricecard-cta">
+          <a href="#pricing" class="btn-primary">Смотреть тарифы</a>
+          <small>16&nbsp;900 самостоятельно · 26&nbsp;900 с проверкой</small>
+        </div>
+      </div>
     </div>
-    <p class="hero-fn"><sup>*</sup> Чата нет. Проверка 12 заданий — тариф 26&nbsp;900&nbsp;₽. Оплатили — завтра урок в 10:00. Доступ до 31&nbsp;января 2027.</p>
-    <div class="hero-actions">
-      <a href="#pricing" class="btn-primary">Записаться в Школу</a>
-      <a href="#program" class="btn-ghost">Смотреть программу</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img src="assets/hero.png" alt="Наталья Зайцева, врач-психотерапевт" class="hero-img" width="851" height="1280" />
-    <div class="hero-stamp" aria-hidden="true">
-      <strong>10–15</strong>
-      <span>минут на урок</span>
+    <div class="hero-photo">
+      <img src="assets/hero.png" alt="Наталья Зайцева, врач-психотерапевт" width="851" height="1280" />
+      <div class="hero-photobadge" aria-hidden="true">
+        <b>10–15</b>
+        <span>минут на урок, потом задание про вашего человека</span>
+      </div>
     </div>
   </div>
 </section>
-</div>
 
 <section class="pains section" id="pains">
   <div class="container">
-    <div class="reveal">
+    <div class="s-head reveal">
       <div class="s-label">Знакомо</div>
       <h2 class="s-title">Вы уже сто раз серьёзно поговорили. Кухня та же</h2>
     </div>
@@ -113,11 +121,9 @@
 
 <section class="paths section" id="paths">
   <div class="container">
-    <div class="paths-head reveal">
-      <div>
-        <div class="s-label">Не только про мужа</div>
-        <h2 class="s-title">Кухня та же. Разговор другой</h2>
-      </div>
+    <div class="s-head reveal">
+      <div class="s-label">Не только про мужа</div>
+      <h2 class="s-title">Кухня та же. Разговор другой</h2>
       <p class="s-sub">Выберите сферу: слева как люди приходили, справа что писали выпускницы. Это не обещание, что станет комфортно обоим.</p>
     </div>
     <div class="seg-tabs reveal" role="tablist" aria-label="Сфера отношений">
@@ -283,9 +289,10 @@
 
 <section class="results section" id="results">
   <div class="container">
-    <div class="results-head reveal">
-      <div><div class="s-label">После</div><h2 class="s-title">Тепло само не приходит. Приходит навык говорить</h2></div>
-      <p class="s-sub" style="max-width:420px">Видеть, что происходит, говорить без крика и решать, оставаться или уходить.</p>
+    <div class="s-head reveal">
+      <div class="s-label">После</div>
+      <h2 class="s-title">Тепло само не приходит. Приходит навык говорить</h2>
+      <p class="s-sub">Видеть, что происходит, говорить без крика и решать, оставаться или уходить.</p>
     </div>
     <div class="results-grid">
       <div class="res-card reveal">
@@ -315,7 +322,7 @@
 
 <section class="section format-wash" id="format">
   <div class="container">
-    <div class="reveal">
+    <div class="s-head reveal">
       <div class="s-label">Как это устроено</div>
       <h2 class="s-title">Урок на 10–15 минут, потом задание про вашего человека</h2>
     </div>
@@ -378,7 +385,7 @@
 
 <section class="program section" id="program">
   <div class="container">
-    <div class="reveal" style="margin-bottom:36px">
+    <div class="s-head reveal">
       <div class="s-label">Что внутри</div>
       <h2 class="s-title">От картины дома до плана, если снова сорвётесь</h2>
     </div>
@@ -476,7 +483,7 @@
 
 <section class="reviews section" id="reviews">
   <div class="container">
-    <div class="reviews-intro reveal">
+    <div class="s-head reveal">
       <div class="s-label">С потоков</div>
       <h2 class="s-title">Что писали, когда вышли</h2>
       <p class="s-sub">Три видеоотзыва выпускниц, ниже короткие истории текстом.</p>
@@ -548,7 +555,7 @@
 
 <section class="section" id="forWhom">
   <div class="container">
-    <div class="reveal"><div class="s-label">Кому заходить</div><h2 class="s-title">Если хоть одна сцена с кухни про вас</h2></div>
+    <div class="s-head reveal"><div class="s-label">Кому заходить</div><h2 class="s-title">Если хоть одна сцена с кухни про вас</h2></div>
     <div class="fw-grid">
       <div class="fw-card yes reveal">
         <div class="fw-title">Это для вас, если</div>
@@ -575,7 +582,7 @@
 
 <section class="pricing section" id="pricing">
   <div class="container">
-    <div class="reveal offer-head">
+    <div class="s-head reveal offer-head">
       <h2 class="s-title">Сколько стоит Школа</h2>
       <p class="offer-lead">12 недель самопомощи. 60 уроков по 10–15 минут, 12 обязательных заданий про ваших людей, 60+ разборов с прошлых потоков. Оплатили — на следующий день урок в 10:00. Живого чата в этом наборе нет. Рассрочка через банк.</p>
     </div>
@@ -729,7 +736,7 @@ function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open');}
 
 (function(){
   const bar=document.getElementById('stickyCta');
-  const fold=document.querySelector('.fold');
+  const fold=document.getElementById('hero');
   const pricing=document.getElementById('pricing');
   if(!bar||!fold)return;
   const tick=()=>{
