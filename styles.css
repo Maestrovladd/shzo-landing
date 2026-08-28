@@ -168,10 +168,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media(max-width:800px){.na-grid{grid-template-columns:1fr}.na-col{padding:24px 20px}.paths-foot{padding:20px}}
 
 /* CLAIMS under WHY */
-.claim-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
+.claim-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .claim-card{background:var(--off-white);border-radius:var(--r);padding:24px 22px;border:1.5px solid var(--gray-light)}
-.claim-n{font-size:18px;font-weight:800;letter-spacing:-.03em;color:var(--g);margin-bottom:10px;line-height:1.2}
-.claim-card p{font-size:13px;color:var(--gray);line-height:1.65}
+.claim-n{font-size:17px;font-weight:800;letter-spacing:-.03em;color:var(--g);margin-bottom:10px;line-height:1.25}
+.claim-card p{font-size:14px;color:var(--gray);line-height:1.65}
 @media(max-width:960px){.claim-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.claim-grid{grid-template-columns:1fr}}
 
@@ -450,7 +450,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 }
 
 /* SPECTRUM */
-.spec{margin-top:48px}
+.spec{margin-top:56px}
+.spec-h{font-size:clamp(22px,2.2vw,28px);font-weight:800;letter-spacing:-.03em;line-height:1.2;margin:8px 0 12px;color:var(--black);max-width:22em}
+.spec-lead{font-size:16px;color:var(--gray);line-height:1.65;max-width:40em;margin-bottom:20px}
 .spec-track{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:6px;height:72px}
 .spec-zone{border-radius:14px;display:flex;align-items:flex-end;padding:12px 16px;position:relative;overflow:hidden}
 .spec-zone i{position:absolute;inset:0;opacity:.9}
@@ -461,7 +463,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .spec-zone.z2 span{color:#fff}
 .spec-zone.z3{background:var(--g-dark)}
 .spec-zone.z3 span{color:#fff}
-.spec-cap{margin-top:12px;font-size:13px;color:var(--gray);line-height:1.5}
+.spec-cap{margin-top:14px;font-size:15px;color:var(--gray);line-height:1.6;max-width:40em}
+.claim-block{margin-top:48px}
+.claim-block .s-label{margin-bottom:16px}
 @media(max-width:600px){.spec-track{grid-template-columns:1fr;height:auto;gap:8px}.spec-zone{min-height:52px}}
 
 /* WORKSHEET */
