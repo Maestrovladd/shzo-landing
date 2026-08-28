@@ -1,13 +1,16 @@
 # Locked concept
 
-Direction: craft-clone of Alifer one-pager. User locked this system on the mindfulness land.
+Direction: craft-clone of Alifer one-pager. User locked this system on the mindfulness land. Visual stays: Figtree, brick `#7A3D42`, split-hero.
 
-Hook: схема Кейко в герое. Тело ленда — грамматика Алифер «кишечник» (один смысл на блок, полные предложения) + слог Наташи из канала: вы, цитата внутренней речи, три коротких отрицания только после связной мысли. Без жаргона хаба в заголовках. Mechanism: шкала отношений, восемь форм, своё насилие, навык говорить, честный выход. Эталон голоса: design/copy-voice.md.
+## Две страницы, две задачи
 
-Product name stays: Школа здоровых отношений.
-Hero sub: грамматика Кейко + Арина. H1 = имя продукта. Под ним HOW одним дыханием: срок программы (12 недель, как «за 2 месяца» у Кейко) + навык с кем + решение оставаться или уходить + даже если. «С кем» вешается на «говорить», не на «уходить». Минуты урока только на штампе.
+- `index.html` — сайт продукта. Живой запуск Школы здоровых отношений. Без нарцисса. Продаёт 16 900 / 26 900 → `psyfactum.com/school_hr`.
+- `efir.html` — ленд регистрации закрытого эфира. Каркас как у [осознанности](https://psyfactum.com/webmindfulness): слоты, HOW тремя ударами, подарок после регистрации, «приходите если хотите», что узнаете, 5–10 минут руками, бот, согласия. Хук нарцисса. Не касса 16 900.
+
+Hook продукта: схема Кейко в герое без ярлыка. HOW: «Как за 12 недель научиться видеть, что происходит дома, говорить без крика и самой решить, оставаться или уходить. Даже если психолог уже был и кухня та же.» Под HOW — стопка «вот что за 12 недель» (грамматика Ольги). Тело — слог Наташи + боли хаба (соседи, без ремня, ребёнок, кабинет, родные, после тяжёлых).
 
 Dials: VARIANCE 5 / MOTION 4 / DENSITY 5.
 Font: Figtree 400–800.
-Accent: #7A3D42 brick (not teal, not olive).
-Photo: same studio portrait, object-position center top (desktop) / 28% (mobile). First fold = nav + hero in 100dvh; photo column 40%.
+Accent: #7A3D42 brick.
+Photo: studio portrait, object-position center top (desktop) / 28% (mobile). Nav sticky вне fold; fold = hero на `calc(100dvh - 76px)`; photo column 40%.
+Craft Ольги в brick: окрашенные тени, frosted nav, чипы выгод, градиентная обводка featured-тарифа, window-chrome у задания, masonry-отзывы, тише reveal.

@@ -1,9 +1,13 @@
 # Context · Школа здоровых отношений
 
-Page kind: sales landing, GetCourse-style one-pager.
-Audience: взрослые женщины 21–44+, отношения идут в минус годами. Вход часто через ярлык «нарцисс / абьюзер» (муж, мать, ребёнок, коллега).
-Vibe: врач, не wellness. Прямой слог Наташи. Не курс про любовь.
-Reference craft: Alifer GetCourse one-pager (layout/motion), тексты — корпус ШЗО.
-Product: 12 недель, 60 уроков 10–15 мин, 12 обязательных + 48 вспомогательных, 60+ примеров. Два тарифа: 16 900 самостоятельно / 26 900 с проверкой 12 заданий. Чата нет. Поток августа 2026 уже идёт, доступ до 31.01.2027.
+Две страницы.
+
+1. `index.html` — sales landing продукта. Живой запуск. ШЗО не привязан к нарциссу. ЦА: взрослые женщины 21–44+, отношения идут в минус годами. Пять тем хаба: соседи; он не бьёт; ребёнок; после тяжёлых; родные. Плюс «психолог уже был».
+2. `efir.html` — регистрация на закрытый эфир для анкеты предзаписи. Хук: нарцисс / «он не бьёт». Не касса 16 900 / 26 900.
+
+Vibe: врач, не wellness. Прямой слог Наташи, грамматика чтения как у Ольги Василенко.
+Reference craft: Alifer one-pager + `design/CRAFT_VASILENKO.md` в brick.
+Product: 12 недель, 60 уроков 10–15 мин, 12 обязательных + 48 вспомогательных, 60+ примеров. Два тарифа: 16 900 самостоятельно / 26 900 с проверкой 12 заданий. Чата нет. Поток августа 2026 уже идёт (старт 17.08), доступ до 31.01.2027.
 CTA pay: https://psyfactum.com/school_hr
-Do not: diagnose NPD, promise to remake the other person, dating service, «комфортно обоим», VIP, chat, fake student count, old prices, Inter/olive/teal of mindfulness land.
+Do not on product: narcissist hook, diagnose NPD, remake the other person, dating, «комфортно обоим», VIP, chat, fake student count, old prices.
+Missing for efir: дата и слоты эфира, URL анкеты / GetCourse / бота — не выдумывать.

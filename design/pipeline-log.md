@@ -11,5 +11,7 @@
 - 2026-08-28: весь ленд переписан со связных предложений. Телеграм-руб и жаргон хаба («листы», «спектр» без перевода) убраны. Замок голоса: design/copy-voice.md.
 - locked-concept.md
 - design-production
+- 2026-08-28: craft-съём двух лендов Василенко (верстка/motion/токены, не смыслы). Файл: design/CRAFT_VASILENKO.md. Skills: taste Design Read; impeccable brand (не брать Proxima/Caveat как primary); color-expert (окрашенные тени, градиент как материал кнопки); emil-design-eng + review-animations (их MOTION 3, наши reveal 550ms длинные); ui-ux-pro-max (токены, hit-area 60px, focus). Concept A–C не открывали: визуал ШЗО locked.
 - 2026-08-28: first fold = nav+hero в 100dvh. Фото 40% ширины, object-position top. CSS cache-bust ?v=fold3.
-- 2026-08-28: консилиум по рельсам Алифер/Арина. Рабочий промпт: design/PROMPT_LAND.md. Сверка: design/STRUCT_COMPARE.md. На странице: снятие вины после болей, «это НЕ» в why, «для вас» = 6 болей.
+- 2026-08-28: две страницы. Продукт без нарцисса (боли хаба + HOW «видеть / говорить / решать» + даже если психолог). `efir.html` — закрытый эфир для анкеты. Craft Ольги в brick: sticky frosted nav, чипы, featured-бордер, masonry, форма. Skills: copywriting, stop-slop, Natasha slog, CRAFT_VASILENKO, design-production. Concept A–C не открывали: визуал locked.
+- 2026-08-28: копирайт-проход. Офер продукта: самопомощь 12 недель, оплатили→урок 10:00, стопка у кассы, «для вас» = 6 болей. `efir.html` пересобран как webmindfulness, не клон курса. Skills: copywriting, corey-offers, copy-editing, stop-slop.
