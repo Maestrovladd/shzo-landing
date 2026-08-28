@@ -12,3 +12,4 @@
 - locked-concept.md
 - design-production
 - 2026-08-28: first fold = nav+hero в 100dvh. Фото 40% ширины, object-position top. CSS cache-bust ?v=fold3.
+- 2026-08-28: блок «не для вас» — пост Наташи 13.09.2025 + хаб (не ленд Алифер про БАДы). На старом ленде этого блока не было.
