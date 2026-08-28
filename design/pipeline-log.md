@@ -11,4 +11,4 @@
 - 2026-08-28: весь ленд переписан со связных предложений. Телеграм-руб и жаргон хаба («листы», «спектр» без перевода) убраны. Замок голоса: design/copy-voice.md.
 - locked-concept.md
 - design-production
-- review-animations: same as Alifer craft (reveal, counter, accordion, slider, reduced-motion)
+- 2026-08-28: first fold = nav+hero в 100dvh. Фото 40% ширины, object-position top. CSS cache-bust ?v=fold3.
