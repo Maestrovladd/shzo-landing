@@ -7,7 +7,7 @@
 - impeccable: Figtree, not Inter.
 - color-expert: brick #7A3D42, OKLCH-ish warm red, not cultural-pink.
 - copywriting + corey-offers + stop-slop + Natasha slog
-- 2026-08-28: оффер сжат до двух строк Полины: навык + время / для кого. Нарцисс ушёл из H1 в боли.
+- 2026-08-28: оффер — схема Кейко. Название Школы в H1, HOW с ярлыка «нарцисс» в подзаголовке.
 - locked-concept.md
 - design-production
 - review-animations: same as Alifer craft (reveal, counter, accordion, slider, reduced-motion)
