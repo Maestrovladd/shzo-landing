@@ -5,7 +5,7 @@ Direction: craft-clone of Alifer one-pager. User locked this system on the mindf
 Hook: схема Кейко в герое. Тело ленда — грамматика Алифер «кишечник» (один смысл на блок, полные предложения) + слог Наташи из канала: вы, цитата внутренней речи, три коротких отрицания только после связной мысли. Без жаргона хаба в заголовках. Mechanism: шкала отношений, восемь форм, своё насилие, навык говорить, честный выход. Эталон голоса: design/copy-voice.md.
 
 Product name stays: Школа здоровых отношений.
-Hero sub: one Arina-breath sentence (desire + who + even-if). Time lives on the stamp as «10–15 минут на урок», not in the offer. Homework is longer; «по 10–15 минут в день» is not the product.
+Hero sub: one desire + even-if. Not a catalogue (skill + stay/leave + three people + minutes). Who and «ближе / дальше / хватит» live in the body. Time on the stamp as «10–15 минут на урок».
 
 Dials: VARIANCE 5 / MOTION 4 / DENSITY 5.
 Font: Figtree 400–800.
