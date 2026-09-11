@@ -111,12 +111,23 @@
     .res-d{font-size:14px;color:var(--gray);line-height:1.7}
     .res-card:last-child .res-d{color:rgba(255,255,255,.72)}
 
-    .learn{background:var(--off-white)}
-    .learn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
-    .learn-card{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:24px 22px;min-width:0}
-    .learn-n{font-size:13px;font-weight:600;color:var(--gray);letter-spacing:.04em;margin-bottom:10px}
-    .learn-t{margin:0 0 8px;padding:0;font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
-    .learn-d{margin:0;font-size:14px;line-height:1.6;color:var(--gray)}
+    .learn{position:relative;background:var(--off-white);overflow:hidden}
+    .learn::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--g-light) 0%,transparent 70%);right:-120px;top:-80px;pointer-events:none}
+    .learn-head{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:8px}
+    .learn-head .s-title{margin-bottom:0;max-width:10em}
+    .learn-aside{max-width:16em;margin:0 0 6px;font-size:15px;line-height:1.5;color:var(--gray);text-align:right}
+    .learn-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+    .learn-card{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:24px;padding:28px 26px 30px;min-width:0;box-shadow:0 10px 30px color-mix(in srgb, var(--g) 8%, transparent);transition:transform .2s,box-shadow .2s}
+    .learn-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px color-mix(in srgb, var(--g) 14%, transparent)}
+    .learn-ico{width:48px;height:48px;border-radius:16px;background:var(--g-light);color:var(--g-dark);display:grid;place-items:center;margin-bottom:20px}
+    .learn-ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .learn-t{margin:0 0 10px;padding:0;font-size:20px;font-weight:800;letter-spacing:-.03em;line-height:1.25}
+    .learn-d{margin:0;font-size:15px;line-height:1.65;color:var(--gray)}
+    .learn-chips{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .learn-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;background:#fff;border-radius:999px;font-size:14px;font-weight:600;color:var(--black);box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .learn-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--g) 26%, transparent);pointer-events:none}
+    .learn-ring.a{width:160px;height:160px;left:-50px;bottom:-40px}
+    .learn-ring.b{width:90px;height:90px;right:18%;top:28px}
 
     .how{background:#fff;overflow:hidden}
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -223,6 +234,8 @@
       .hero-leaf-b{display:none}
       .info-grid{grid-template-columns:1fr 1fr}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
+      .learn-head{flex-direction:column;align-items:flex-start;gap:12px}
+      .learn-aside{text-align:left;max-width:36em}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
@@ -346,50 +359,43 @@
     </section>
 
     <section class="learn section" id="learn">
+      <span class="learn-ring a" aria-hidden="true"></span>
+      <span class="learn-ring b" aria-hidden="true"></span>
       <div class="container">
-        <div class="s-label">Школа</div>
-        <h2 class="s-title">Вот чему ты научишься в Школе</h2>
+        <div class="s-label">После Школы</div>
+        <div class="learn-head">
+          <h2 class="s-title">Вот чему ты научишься в Школе</h2>
+          <p class="learn-aside">Не ещё один серьёзный разговор. Слова, которые можно сказать завтра вечером.</p>
+        </div>
         <div class="learn-grid">
           <article class="learn-card">
-            <div class="learn-n">01//</div>
+            <div class="learn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
             <p class="learn-t">Видеть, что дома происходит на самом деле</p>
             <p class="learn-d">Не по чужим словам, а по вечеру, который у вас уже есть.</p>
           </article>
           <article class="learn-card">
-            <div class="learn-n">02//</div>
-            <p class="learn-t">Понять, что не так, даже если он не бьёт</p>
-            <p class="learn-d">Холод, молчание и давление тоже считаются. «Он же не бьёт» ещё не ответ.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-n">03//</div>
-            <p class="learn-t">Назвать это своими словами</p>
-            <p class="learn-d">Чтобы завтра вечером было что сказать, а не снова «нам надо поговорить».</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-n">04//</div>
-            <p class="learn-t">Увидеть своё, не только его</p>
-            <p class="learn-d">Где орёшь, где молчишь, где сама давишь. Не чтобы стыдиться, чтобы видеть сцену целиком.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-n">05//</div>
+            <div class="learn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 1 1 18 0Z"/></svg>
+            </div>
             <p class="learn-t">Просить, не срываясь на крик</p>
             <p class="learn-d">К шести есть что сказать, а не снова срыв при ребёнке.</p>
           </article>
           <article class="learn-card">
-            <div class="learn-n">06//</div>
-            <p class="learn-t">Отказать и не винить себя до утра</p>
-            <p class="learn-d">Можно сказать нет и не крутить это в голове всю ночь.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-n">07//</div>
-            <p class="learn-t">Говорить с ребёнком, не ненавидя потом свой голос</p>
-            <p class="learn-d">Чтобы после разговора не было стыда за то, как ты звучала.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-n">08//</div>
+            <div class="learn-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            </div>
             <p class="learn-t">Самой решить: остаться, уйти или отодвинуть</p>
             <p class="learn-d">Тёплым станет не каждый дом. Этого Школа не обещает.</p>
           </article>
+        </div>
+        <div class="learn-chips">
+          <span class="learn-chip">Холод и молчание тоже считаются</span>
+          <span class="learn-chip">Назвать это своими словами</span>
+          <span class="learn-chip">Увидеть своё, не только его</span>
+          <span class="learn-chip">Сказать нет и не крутить до утра</span>
+          <span class="learn-chip">Говорить с ребёнком без стыда за голос</span>
         </div>
       </div>
     </section>
