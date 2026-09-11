@@ -108,14 +108,42 @@
     .how-d{margin:0;font-size:14px;line-height:1.65;color:var(--gray)}
 
     .live{background:var(--off-white);overflow:hidden}
-    .live-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:40px;align-items:start}
-    .live-photo-wrap{position:relative;max-width:180px}
-    .live-photo{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 18%;border-radius:16px;position:relative;z-index:1}
-    .live-photo-shadow{display:none}
-    .live-points{margin-top:28px;display:flex;flex-direction:column;gap:14px}
-    .live-points p{padding-left:16px;border-left:3px solid var(--g);font-size:16px;line-height:1.65;color:var(--gray)}
-    .quote{margin-top:32px;font-size:clamp(18px,2vw,26px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:18px;border-left:3px solid var(--g)}
+    .live-head{max-width:46em}
+    .info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+    .info-card{position:relative;overflow:hidden;background:#fff;border-radius:var(--r);padding:28px 24px 24px;min-width:0}
+    .info-card.feat{background:var(--g);color:#fff}
+    .info-viz{height:56px;margin-bottom:18px;position:relative}
+    .info-n{font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-.05em;line-height:1}
+    .info-card.feat .info-n{color:#fff}
+    .info-l{margin-top:8px;font-size:14px;line-height:1.45;color:var(--gray)}
+    .info-card.feat .info-l{color:rgba(255,255,255,.78)}
+    .sheets{position:relative;width:54px;height:56px}
+    .sheet{position:absolute;width:34px;height:44px;border-radius:6px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.55);animation:sheet-float 3.2s ease-in-out infinite}
+    .sheet:nth-child(1){left:0;top:8px;animation-delay:0s}
+    .sheet:nth-child(2){left:10px;top:4px;animation-delay:.2s}
+    .sheet:nth-child(3){left:20px;top:0;background:rgba(255,255,255,.28);animation-delay:.4s}
+    .dots{display:grid;grid-template-columns:repeat(5,10px);gap:7px;padding-top:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--g-light);animation:dot-pulse 2.4s ease-in-out infinite}
+    .dot.on{background:var(--g)}
+    .dot:nth-child(1){animation-delay:0s}.dot:nth-child(2){animation-delay:.08s}.dot:nth-child(3){animation-delay:.16s}.dot:nth-child(4){animation-delay:.24s}.dot:nth-child(5){animation-delay:.32s}
+    .dot:nth-child(6){animation-delay:.4s}.dot:nth-child(7){animation-delay:.48s}.dot:nth-child(8){animation-delay:.56s}.dot:nth-child(9){animation-delay:.64s}.dot:nth-child(10){animation-delay:.72s}
+    .flow{display:flex;align-items:center;gap:10px;height:56px}
+    .flow-node{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--g);background:var(--g-pale);flex-shrink:0}
+    .flow-node:last-child{background:var(--g);border-color:var(--g)}
+    .flow-line{flex:1;height:2px;background:var(--g-light);position:relative;overflow:hidden;border-radius:2px;max-width:72px}
+    .flow-line::after{content:"";position:absolute;inset:0;background:var(--g);transform:scaleX(0);transform-origin:left;animation:line-run 2.8s ease-out infinite}
+    .live-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+    .live-points p{margin:0;background:#fff;border-radius:16px;padding:20px 22px;font-size:15px;line-height:1.65;color:var(--gray)}
+    .quote-panel{position:relative;overflow:hidden;margin-top:24px;background:#fff;border-radius:24px;padding:36px 40px}
+    .quote-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--g) 28%, transparent);pointer-events:none;animation:ring-drift 18s linear infinite}
+    .quote-ring.a{width:180px;height:180px;top:-70px;right:-50px}
+    .quote-ring.b{width:120px;height:120px;bottom:-40px;left:-30px;animation-direction:reverse;animation-duration:22s}
+    .quote{position:relative;z-index:1;margin:0;font-size:clamp(18px,2.1vw,26px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:18px;border-left:3px solid var(--g)}
     .live-close{margin-top:28px;font-size:16px;line-height:1.65}
+    @keyframes sheet-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    @keyframes dot-pulse{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.18);opacity:1}}
+    @keyframes line-run{0%{transform:scaleX(0)}40%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:.2}}
+    @keyframes ring-drift{to{transform:rotate(360deg)}}
 
     .final-cta{padding:96px 0;background:var(--g)}
     .fct-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
@@ -157,8 +185,8 @@
       .hero-right{height:42vw;min-height:220px;order:-1}
       .hero-left{padding:40px 20px 48px}
       .hero-img{position:absolute}
-      .live-grid,.fct-inner{grid-template-columns:1fr;gap:36px}
-      .live-photo-wrap{max-width:180px}
+      .fct-inner{grid-template-columns:1fr;gap:36px}
+      .info-grid,.live-points{grid-template-columns:1fr 1fr}
       .stats,.res-grid,.scene-grid{grid-template-columns:1fr 1fr}
       .learn-grid,.ephir-grid,.how-grid{grid-template-columns:1fr 1fr}
     }
@@ -170,12 +198,13 @@
       .stats,.res-grid,.scene-grid,.learn-grid,.ephir-grid,.how-grid{grid-template-columns:1fr}
       .hero-right{height:48vw}
       .btn-fw{width:100%}
-      .live-photo-shadow{transform:translate(8px,8px);border-radius:16px}
-      .live-photo{border-radius:16px}
+      .info-grid,.live-points{grid-template-columns:1fr}
+      .quote-panel{padding:24px 20px}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.btn-fw:hover{transform:none}
+      .sheet,.dot,.flow-line::after,.quote-ring{animation:none}
     }
   </style>
 </head>
@@ -377,27 +406,51 @@
 
     <section class="live section" id="live">
       <div class="container">
-        <div class="live-grid">
-          <div class="live-photo-wrap">
-            <div class="live-photo-shadow"></div>
-            <img class="live-photo" src="assets/expert-studio.jpg?v=3" alt="Наталья Зайцева" width="800" height="1066">
-          </div>
-          <div>
-            <div class="s-label">Живые примеры</div>
-            <h2 class="s-title">Следующий поток — это Школа с живыми примерами на каждую ситуацию, которая бывает у тебя вечером.</h2>
-            <p class="s-sub">Чтобы было на что опереться, а не сидеть одной в чате и угадывать.</p>
-            <div class="live-points">
-              <p>Вопрос «а как это делают живые люди?» закрыт. На каждую ситуацию рядом видно, что человек говорил дома, что пробовал, и что у него получалось.</p>
-              <p>На одну ситуацию ты видишь не один пример, а больше десяти.</p>
-              <p>Не надо сидеть в чате. К каждой ситуации сразу лежит живой пример. Ждать ответ в ленте не нужно.</p>
-              <p>Это уже прожили люди на прошлых потоках. Мы собирали эти примеры несколько лет.</p>
+        <div class="live-head">
+          <div class="s-label">Живые примеры</div>
+          <h2 class="s-title">Следующий поток — это Школа с живыми примерами на каждую ситуацию, которая бывает у тебя вечером.</h2>
+          <p class="s-sub">Чтобы было на что опереться, а не сидеть одной в чате и угадывать.</p>
+        </div>
+        <div class="info-grid">
+          <article class="info-card feat">
+            <div class="info-viz" aria-hidden="true">
+              <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
             </div>
-            <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
-            <p class="live-close">Если хочешь пройти это с живыми примерами рядом, занимай место. Жду тебя.</p>
-            <div class="section-cta">
-              <button class="btn" type="button" data-open="anketa">Занять место</button>
+            <div class="info-n">232</div>
+            <p class="info-l">живых примера с прошлых потоков</p>
+          </article>
+          <article class="info-card">
+            <div class="info-viz" aria-hidden="true">
+              <div class="dots">
+                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
+                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
+              </div>
             </div>
-          </div>
+            <div class="info-n">10+</div>
+            <p class="info-l">примеров на одну ситуацию, не один</p>
+          </article>
+          <article class="info-card">
+            <div class="info-viz" aria-hidden="true">
+              <div class="flow"><span class="flow-node"></span><span class="flow-line"></span><span class="flow-node"></span></div>
+            </div>
+            <div class="info-n" style="font-size:clamp(28px,3vw,40px)">сразу</div>
+            <p class="info-l">шаг и живой пример рядом, без чата</p>
+          </article>
+        </div>
+        <div class="live-points">
+          <p>Вопрос «а как это делают живые люди?» закрыт. На каждую ситуацию рядом видно, что человек говорил дома, что пробовал, и что у него получалось.</p>
+          <p>На одну ситуацию ты видишь не один пример, а больше десяти.</p>
+          <p>Не надо сидеть в чате. К каждой ситуации сразу лежит живой пример. Ждать ответ в ленте не нужно.</p>
+          <p>Это уже прожили люди на прошлых потоках. Мы собирали эти примеры несколько лет.</p>
+        </div>
+        <div class="quote-panel">
+          <span class="quote-ring a" aria-hidden="true"></span>
+          <span class="quote-ring b" aria-hidden="true"></span>
+          <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
+        </div>
+        <p class="live-close">Если хочешь пройти это с живыми примерами рядом, занимай место. Жду тебя.</p>
+        <div class="section-cta">
+          <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
       </div>
     </section>
