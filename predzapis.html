@@ -105,6 +105,8 @@
     .res-viz{position:relative;flex:1;display:grid;place-items:center;min-height:0}
     .res-viz b{position:relative;z-index:1;font-size:clamp(34px,3.2vw,46px);font-weight:800;letter-spacing:-.06em;line-height:.9;color:var(--g-dark);text-align:center}
     .res-viz small{display:block;margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--g)}
+    .res-sum{display:flex;align-items:center;justify-content:center;gap:8px;font-size:clamp(30px,2.6vw,40px)}
+    .res-rub{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--g);color:#fff;font-size:17px;font-weight:800;font-style:normal;letter-spacing:0;line-height:1;flex-shrink:0;box-shadow:0 6px 14px rgba(122,140,82,.28)}
     .res-card.is-feat .res-viz b{color:#fff}
     .res-card.is-feat .res-viz small{color:rgba(255,255,255,.78)}
     .res-viz::before{content:"";position:absolute;width:118px;height:118px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--g) 18%,transparent);top:50%;left:50%;transform:translate(-50%,-54%)}
@@ -336,9 +338,9 @@
             <p class="res-d">Самая низкая цена следующего потока.</p>
           </article>
           <article class="res-card">
-            <div class="res-viz" aria-hidden="true"><b>6–12<small>тыс. ₽</small></b></div>
+            <div class="res-viz" aria-hidden="true"><b class="res-sum">6–12<span class="res-rub">₽</span></b></div>
             <h3 class="res-t">Экономия</h3>
-            <p class="res-d">Это те же 30% в рублях, на следующем потоке.</p>
+            <p class="res-d">На следующем потоке вы заплатите на шесть-двенадцать тысяч меньше.</p>
           </article>
           <article class="res-card is-feat">
             <span class="res-ring a" aria-hidden="true"></span>
