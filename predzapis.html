@@ -98,32 +98,33 @@
     .ephir-n{width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
     .ephir-t{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
 
-    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-    .res-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 14px;align-items:center;background:#fff;border-radius:18px;padding:16px 16px 16px 18px;min-width:0;transition:transform .2s,box-shadow .2s}
+    .res-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+    .res-card{position:relative;display:flex;flex-direction:column;aspect-ratio:1;background:#fff;border-radius:24px;padding:22px 20px 20px;overflow:hidden;min-width:0;transition:transform .2s,box-shadow .2s}
     .res-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
     .res-card.is-feat{background:var(--g);color:#fff}
-    .res-copy{min-width:0}
-    .res-t{font-size:16px;font-weight:800;letter-spacing:-.03em;margin:0 0 4px;line-height:1.25}
-    .res-card.is-feat .res-t{font-size:16px;margin-bottom:4px}
-    .res-d{margin:0;font-size:13px;color:var(--gray);line-height:1.45}
+    .res-viz{position:relative;flex:1;display:grid;place-items:center;min-height:0}
+    .res-viz b{position:relative;z-index:1;font-size:clamp(34px,3.2vw,46px);font-weight:800;letter-spacing:-.06em;line-height:.9;color:var(--g-dark);text-align:center}
+    .res-viz small{display:block;margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--g)}
+    .res-card.is-feat .res-viz b{color:#fff}
+    .res-card.is-feat .res-viz small{color:rgba(255,255,255,.78)}
+    .res-viz::before{content:"";position:absolute;width:118px;height:118px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--g) 18%,transparent);top:50%;left:50%;transform:translate(-50%,-54%)}
+    .res-card.is-feat .res-viz::before{border-color:rgba(255,255,255,.22)}
+    .res-t{margin:0 0 6px;font-size:16px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
+    .res-d{margin:0;font-size:13px;line-height:1.45;color:var(--gray)}
     .res-card.is-feat .res-d{color:rgba(255,255,255,.82)}
     .res-hl{background:var(--g-light);color:var(--g-dark);font-style:normal;font-weight:800;padding:.08em .28em;border-radius:6px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-    .res-viz{position:relative;width:74px;height:74px;border-radius:22px;background:var(--g-light);display:grid;place-items:center;overflow:hidden;flex-shrink:0}
-    .res-viz b{position:relative;z-index:1;font-size:20px;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--g-dark);text-align:center;margin-top:-6px}
-    .res-viz small{display:block;margin-top:3px;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--g)}
-    .res-card.is-feat .res-viz{background:rgba(255,255,255,.14);width:86px;height:86px;border-radius:24px}
-    .res-card.is-feat .res-viz b{color:#fff;font-size:22px}
-    .res-card.is-feat .res-viz small{color:rgba(255,255,255,.75)}
-    .res-viz::before{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px solid color-mix(in srgb,var(--g) 22%,transparent)}
-    .res-card.is-feat .res-viz::before{border-color:rgba(255,255,255,.22)}
-    .sheets{position:absolute;right:8px;bottom:8px;width:28px;height:28px}
-    .sheet{position:absolute;width:16px;height:21px;border-radius:3px;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.65);animation:sheet-float 3.2s ease-in-out infinite}
-    .sheet:nth-child(1){left:0;top:5px}
-    .sheet:nth-child(2){left:5px;top:2px;animation-delay:.18s}
-    .sheet:nth-child(3){left:10px;top:0;background:rgba(255,255,255,.34);animation-delay:.36s}
-    .seats{position:absolute;left:10px;right:10px;bottom:9px;display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
-    .seats i{height:6px;border-radius:2px;background:color-mix(in srgb,var(--g) 28%,transparent)}
+    .sheets{position:absolute;right:16%;bottom:16%;width:42px;height:42px;z-index:0}
+    .sheet{position:absolute;width:22px;height:30px;border-radius:4px;background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.6);animation:sheet-float 3.2s ease-in-out infinite}
+    .sheet:nth-child(1){left:0;top:8px}
+    .sheet:nth-child(2){left:8px;top:4px;animation-delay:.18s}
+    .sheet:nth-child(3){left:16px;top:0;background:rgba(255,255,255,.32);animation-delay:.36s}
+    .seats{position:absolute;left:50%;bottom:14%;display:flex;gap:4px;transform:translateX(-50%);z-index:1}
+    .seats i{width:10px;height:8px;border-radius:2px;background:color-mix(in srgb,var(--g) 22%,transparent)}
     .seats i:nth-child(-n+3){background:var(--g)}
+    .res-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb,var(--g) 16%,transparent);pointer-events:none}
+    .res-ring.a{width:90px;height:90px;top:-28px;right:-24px}
+    .res-ring.b{width:70px;height:70px;bottom:-22px;left:-18px}
+    .res-card.is-feat .res-ring{border-color:rgba(255,255,255,.18)}
 
     .how{background:#fff;overflow:hidden}
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -220,7 +221,8 @@
       .upd-photo{aspect-ratio:4/3;max-height:420px}
       .upd-facts{grid-template-columns:1fr 1fr}
       .upd-facts div:last-child{grid-column:1/-1}
-      .stats,.res-grid{grid-template-columns:1fr 1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .ephir-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
@@ -229,7 +231,8 @@
       .live-block{padding:28px 20px 24px}
     }
     @media(max-width:560px){
-      .stats,.res-grid,.ephir-grid{grid-template-columns:1fr}
+      .stats,.ephir-grid{grid-template-columns:1fr}
+      .res-grid{grid-template-columns:1fr 1fr;width:auto;max-width:none;gap:10px;margin-left:0;margin-right:0}
       .how-slide{flex-basis:min(280px,82vw)}
       .hero-right{height:48vw}
       .photo-cap{left:16px;bottom:16px;width:min(300px,calc(100% - 32px));padding:18px 16px 16px 18px;border-radius:20px}
@@ -327,38 +330,33 @@
 
         <div class="res-grid">
           <article class="res-card">
-            <div class="res-copy">
-              <h3 class="res-t">Скидка</h3>
-              <p class="res-d">Самая низкая цена следующего потока.</p>
-            </div>
+            <span class="res-ring a" aria-hidden="true"></span>
             <div class="res-viz" aria-hidden="true"><b>30%</b></div>
+            <h3 class="res-t">Скидка</h3>
+            <p class="res-d">Самая низкая цена следующего потока.</p>
           </article>
           <article class="res-card">
-            <div class="res-copy">
-              <h3 class="res-t">Экономия</h3>
-              <p class="res-d">Это те же 30% в рублях, на следующем потоке.</p>
-            </div>
             <div class="res-viz" aria-hidden="true"><b>6–12<small>тыс. ₽</small></b></div>
+            <h3 class="res-t">Экономия</h3>
+            <p class="res-d">Это те же 30% в рублях, на следующем потоке.</p>
           </article>
           <article class="res-card is-feat">
-            <div class="res-copy">
-              <h3 class="res-t">Бонус</h3>
-              <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых отношений. С 2022 по 2026 год.</p>
-            </div>
+            <span class="res-ring a" aria-hidden="true"></span>
+            <span class="res-ring b" aria-hidden="true"></span>
             <div class="res-viz" aria-hidden="true">
               <b>232<small>разбора</small></b>
               <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
             </div>
+            <h3 class="res-t">Бонус</h3>
+            <p class="res-d">Сборник разборов Школы с 2022 по 2026 год.</p>
           </article>
           <article class="res-card">
-            <div class="res-copy">
-              <h3 class="res-t">Места</h3>
-              <p class="res-d">На тариф с проверкой домашних заданий <em class="res-hl">врачом-психотерапевтом и психологом</em>.</p>
-            </div>
             <div class="res-viz" aria-hidden="true">
               <b>30</b>
-              <span class="seats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="seats"><i></i><i></i><i></i><i></i><i></i></span>
             </div>
+            <h3 class="res-t">Места</h3>
+            <p class="res-d">Проверку домашнего задания делает <em class="res-hl">врач-психотерапевт и психолог</em>.</p>
           </article>
         </div>
         <div class="section-cta">
