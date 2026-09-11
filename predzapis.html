@@ -37,12 +37,22 @@
     .nav-cta:hover{background:var(--g-dark);transform:translateY(-1px)}
     @media(max-width:768px){.nav{padding:18px 20px}}
 
-    .hero{height:calc(100svh - 81px);min-height:560px;display:grid;grid-template-columns:1fr 1fr}
-    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:32px 48px;min-width:0}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--g);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
-    .hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--g)}
-    .hero h1{font-size:clamp(28px,3.2vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.04em;margin-bottom:12px}
+    .hero{position:relative;height:calc(100svh - 81px);min-height:560px;display:grid;grid-template-columns:1fr 1fr}
+    .hero-left{position:relative;display:flex;flex-direction:column;justify-content:center;padding:32px 48px;min-width:0}
+    .hero-left::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,var(--g-light) 0%,transparent 70%);left:-90px;top:12%;pointer-events:none}
+    .hero-left > *{position:relative;z-index:1}
+    .hero-banner{display:inline-flex;align-items:center;gap:8px;width:max-content;height:34px;padding:0 14px;margin-bottom:18px;background:var(--g);color:#fff;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .hero-banner i{width:6px;height:6px;border-radius:50%;background:#fff;flex-shrink:0}
+    .hero h1{font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.04;letter-spacing:-.04em;margin-bottom:16px;text-wrap:balance}
+    .hero h1 .line{display:block}
+    .hero-h-row{display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap}
+    .hero-chip{display:inline-flex;align-items:center;height:26px;padding:0 10px;margin-top:12px;background:var(--g-light);color:var(--g-dark);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+    .hero h1 em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .hero-lead{font-size:17px;color:#2C2C2C;line-height:1.55;margin-bottom:28px;max-width:480px;font-weight:500}
+    .hero-lead mark{background:var(--g-light);color:var(--g-dark);font-weight:700;padding:.05em .18em;border-radius:6px}
+    .hero-leaf{position:absolute;z-index:4;pointer-events:none;height:auto;object-fit:contain}
+    .hero-leaf-a{width:148px;left:calc(50% - 74px);top:18px;transform:rotate(-8deg)}
+    .hero-leaf-b{width:108px;left:calc(50% + 10px);bottom:140px;transform:rotate(18deg)}
     .hero-actions{display:flex;align-items:center;gap:6px;margin-bottom:0}
     .btn,.btn-primary{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:-.01em;transition:background .2s,transform .15s;flex-shrink:0}
     .btn:hover,.btn-primary:hover{background:var(--g-dark);transform:translateY(-2px)}
@@ -55,6 +65,7 @@
     .hero-gift span{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:var(--g-dark);font-weight:600}
     .hero-right{position:relative;background:#D9D3C9;overflow:hidden;min-width:0}
     .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%}
+    .hero-right::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(255,255,255,.45);right:-40px;top:36px;pointer-events:none}
     .photo-cap{position:absolute;left:24px;bottom:24px;z-index:2;width:min(240px,calc(100% - 48px));padding:12px 14px;background:#fff;border-radius:16px;box-shadow:var(--shadow)}
     .photo-cap strong{display:block;font-size:15px;font-weight:800}
     .photo-cap span{font-size:13px;color:var(--gray)}
@@ -206,6 +217,8 @@
       .hero-nudge{width:28px;height:36px;transform:rotate(90deg);margin:2px 0 2px 18px}
       .hero-gift{flex:1 1 100%;max-width:none}
       .hero-img{position:absolute}
+      .hero-leaf-a{left:auto;right:12px;top:8px;width:88px}
+      .hero-leaf-b{display:none}
       .info-grid,.live-points{grid-template-columns:1fr 1fr}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
@@ -237,10 +250,18 @@
 
   <div class="page">
     <section class="hero">
+      <img class="hero-leaf hero-leaf-a" src="assets/hero-leaf-pair.png" alt="" width="220" height="220">
+      <img class="hero-leaf hero-leaf-b" src="assets/hero-leaf-sage.png" alt="" width="160" height="160">
       <div class="hero-left">
-        <p class="hero-eyebrow">Анкета предзаписи</p>
-        <h1>Школа здоровых отношений</h1>
-        <p class="hero-lead">Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.</p>
+        <p class="hero-banner"><i></i> Анкета предзаписи</p>
+        <h1>
+          <span class="hero-h-row">
+            <span class="line">Школа</span>
+            <span class="hero-chip">5 потоков</span>
+          </span>
+          <span class="line"><em>здоровых отношений</em></span>
+        </h1>
+        <p class="hero-lead">Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить <mark>без крика, давления и чувства вины</mark>.</p>
         <div class="hero-actions">
           <button class="btn" type="button" data-open="anketa">Занять место</button>
           <span class="hero-nudge" aria-hidden="true">
@@ -510,7 +531,7 @@
 
   <section class="thanks" id="thanks" aria-live="polite">
     <div class="thanks-card">
-      <p class="hero-eyebrow">Предзапись</p>
+      <p class="hero-banner" style="margin:0 auto 16px"><i></i> Предзапись</p>
       <h1>Место в предзаписи занято</h1>
       <p class="s-sub" style="margin:16px auto 0">Когда подключим бот, туда придёт короткий лист. Оплаты на этой странице нет.</p>
     </div>
