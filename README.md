@@ -1,6 +1,14 @@
 # Школа здоровых отношений
 
-Две страницы. Две задачи.
+Три страницы. Три задачи.
+
+## Анкета предзаписи
+
+[maestrovladd.github.io/shzo-landing/predzapis.html](https://maestrovladd.github.io/shzo-landing/predzapis.html)
+
+Три экрана. Форма только в попапе. Не касса Школы.
+
+Локально: `predzapis.html`
 
 ## Сайт продукта
 
