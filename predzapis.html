@@ -88,30 +88,27 @@
     .scenes{background:#fff}
     .scene-lead{margin-top:4px;max-width:42em;font-size:16px;line-height:1.65;color:var(--gray)}
     .scene-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
-    .scene-card{display:flex;flex-direction:column;background:var(--off-white);border-radius:var(--r);padding:28px 24px 18px;min-width:0;min-height:0}
-    .scene-body{padding:0 0 16px}
+    .scene-card{display:flex;flex-direction:column;background:var(--off-white);border-radius:var(--r);padding:28px 24px;min-width:0}
+    .scene-body{padding:0}
     .scene-q{font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
     .scene-d{font-size:14px;line-height:1.65;color:var(--gray)}
-    .scene-card img{width:100%;height:108px;object-fit:cover;object-position:center 40%;border-radius:14px;margin-top:auto}
     .honest{margin-top:32px;padding:24px 28px;background:var(--g-pale);border-radius:var(--r);font-size:16px;line-height:1.65;max-width:none}
 
     .learn{background:var(--off-white)}
     .learn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
-    .learn-card{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:24px 22px 16px;min-width:0}
+    .learn-card{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:24px 22px;min-width:0}
     .learn-n{font-size:13px;font-weight:600;color:var(--gray);letter-spacing:.04em;margin-bottom:10px}
-    .learn-t{margin:0 0 16px;padding:0;font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
-    .learn-card img{width:100%;height:92px;object-fit:cover;object-position:center 45%;border-radius:12px;margin-top:auto}
+    .learn-t{margin:0;padding:0;font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
 
     .how{background:#fff}
     .how-stage{margin-top:40px;min-width:0}
     .how-viewport{overflow:hidden;border-radius:var(--r);background:var(--off-white)}
     .how-track{display:flex;width:100%;transition:transform .45s cubic-bezier(.4,0,.2,1)}
-    .how-slide{flex:0 0 100%;width:100%;min-width:0;display:flex;flex-direction:column;padding:32px 40px 24px}
-    .how-copy{padding:0 0 16px}
+    .how-slide{flex:0 0 100%;width:100%;min-width:0;display:flex;flex-direction:column;padding:32px 40px}
+    .how-copy{padding:0}
     .how-num{display:block;font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--g);margin-bottom:10px}
     .how-copy h3{font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
     .how-copy p{max-width:40em;font-size:16px;line-height:1.65;color:var(--gray)}
-    .how-slide img{width:min(420px,100%);height:112px;object-fit:cover;object-position:center 40%;border-radius:14px}
     .how-nav{display:flex;align-items:center;gap:10px;margin-top:18px}
     .how-btn{width:40px;height:40px;border:1.5px solid var(--gray-light);border-radius:50%;background:#fff;color:var(--black);font-size:20px;display:flex;align-items:center;justify-content:center}
     .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
@@ -173,9 +170,8 @@
       .live-photo-wrap{max-width:180px}
       .stats,.res-grid,.scene-grid{grid-template-columns:1fr 1fr}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
-      .how-copy{padding:0 0 14px}
-      .how-slide{padding:24px 22px 20px}
-      .how-slide img{height:96px}
+      .how-copy{padding:0}
+      .how-slide{padding:24px 22px}
     }
     @media(max-width:768px){
       .section,.final-cta{padding:64px 0}
@@ -185,7 +181,6 @@
       .stats,.res-grid,.scene-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
       .hero-right{height:48vw}
       .btn-fw{width:100%}
-      .how-slide img{height:88px}
       .live-photo-shadow{transform:translate(8px,8px);border-radius:16px}
       .live-photo{border-radius:16px}
     }
@@ -278,7 +273,7 @@
     <section class="scenes section" id="self">
       <div class="container">
         <div class="s-label">Узнаёшь себя</div>
-        <h2 class="s-title">Ты уже сто раз серьёзно поговорила. Кухня та же.</h2>
+        <h2 class="s-title">Ты уже сто раз серьёзно поговорила, а после разговора дома снова тихо или снова ор.</h2>
         <p class="scene-lead">Школу я собрала, чтобы ты узнала себя в этих вечерах и могла жить с людьми без постоянной войны и без вечной вины.</p>
         <div class="scene-grid">
           <article class="scene-card">
@@ -286,21 +281,18 @@
               <h3 class="scene-q">«Жили соседями.»</h3>
               <p class="scene-d">На людях всё выглядит нормально. Дома он молчит, ты говоришь, и вас как будто нет в одной квартире. Он у телевизора, ты в телефоне. Когда гости уходят, снова тишина или снова ор.</p>
             </div>
-            <img src="assets/predzapis/scene-01-neighbors.jpg?v=3" alt="Дома он молчит, ты говоришь, вас как будто нет в одной квартире" width="1200" height="900">
           </article>
           <article class="scene-card">
             <div class="scene-body">
               <h3 class="scene-q">«Ненавижу свой голос.»</h3>
               <p class="scene-d">К шести снова срыв, часто при ребёнке. Потом спор, кто первый начал. Весь вечер ты уже не узнаёшь себя и обещаешь, что завтра так не будет.</p>
             </div>
-            <img src="assets/predzapis/scene-02-voice.jpg?v=3" alt="К шести снова срыв, часто при ребёнке" width="1200" height="900">
           </article>
           <article class="scene-card">
             <div class="scene-body">
               <h3 class="scene-q">Он не пьёт, не курит, руку не поднимал.</h3>
               <p class="scene-d">Психолог уже был, деньги уже были. На завтрашний вечер снова нечего сказать. Со стороны хорошая семья, а дома плохо уже не две недели, а годы.</p>
             </div>
-            <img src="assets/predzapis/scene-03-years.jpg?v=3" alt="Со стороны хорошая семья, а дома плохо уже годы" width="1200" height="900">
           </article>
         </div>
         <p class="honest">Школа не для того, чтобы спасти брак любой ценой. Сохранить можно. Уйти можно. Отодвинуть человека можно. Тёплым станет не каждый дом, и этого я не обещаю.</p>
@@ -318,42 +310,34 @@
           <article class="learn-card">
             <div class="learn-n">01//</div>
             <p class="learn-t">Увидеть, что происходит дома</p>
-            <img src="assets/predzapis/learn-01-home.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">02//</div>
             <p class="learn-t">Понять, что не так, если ремня нет</p>
-            <img src="assets/predzapis/learn-02-quiet.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">03//</div>
             <p class="learn-t">Назвать это своими словами</p>
-            <img src="assets/predzapis/learn-03-table.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">04//</div>
             <p class="learn-t">Увидеть своё, не только его</p>
-            <img src="assets/predzapis/learn-04-own.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">05//</div>
             <p class="learn-t">Просить, не срываясь на крик</p>
-            <img src="assets/predzapis/learn-05-ask.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">06//</div>
             <p class="learn-t">Отказать без вечной вины</p>
-            <img src="assets/predzapis/learn-06-refuse.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">07//</div>
             <p class="learn-t">Говорить с ребёнком, не ненавидя свой голос</p>
-            <img src="assets/predzapis/learn-07-child.jpg?v=3" alt="" width="1200" height="900">
           </article>
           <article class="learn-card">
             <div class="learn-n">08//</div>
             <p class="learn-t">Решить: остаться, уйти или отодвинуть</p>
-            <img src="assets/predzapis/learn-08-step.jpg?v=3" alt="" width="1200" height="900">
           </article>
         </div>
       </div>
@@ -372,7 +356,6 @@
                   <h3>Короткие уроки на каждый день</h3>
                   <p>Один урок занимает 10–15 минут. Смотришь с телефона, когда получится. Не трёхчасовой эфир.</p>
                 </div>
-                <img src="assets/predzapis/how-01-phone.jpg?v=3" alt="Телефон с коротким уроком на 10–15 минут" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -380,7 +363,6 @@
                   <h3>Живые примеры на каждую ситуацию</h3>
                   <p>К каждой ситуации сразу лежит, как это уже делали люди с прошлых потоков. На одну ситуацию не один пример, а больше десяти. Таких примеров 232.</p>
                 </div>
-                <img src="assets/predzapis/how-02-example.jpg?v=3" alt="Страница живого примера без имени" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -388,7 +370,6 @@
                   <h3>Задание на твоих людей</h3>
                   <p>Ты отрабатываешь не отношения вообще, а вечер с мужем, ребёнком, мамой или коллегой. Тем человеком, с кем сейчас тяжелее всего.</p>
                 </div>
-                <img src="assets/predzapis/how-03-people.jpg?v=3" alt="Список людей дома" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -396,7 +377,6 @@
                   <h3>Как просить, говорить своё и отказывать</h3>
                   <p>Три цели разговора. Чтобы завтра вечером было что сказать, а не снова ор, молчание и вина.</p>
                 </div>
-                <img src="assets/predzapis/how-04-three-sheets.jpg?v=3" alt="Три листа: попросить, сказать своё, отказать" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -404,7 +384,6 @@
                   <h3>Понять дом, если ремня нет</h3>
                   <p>Ты учишься видеть, где ещё можно жить, где уже нездорово, а где это жестокость. Чтобы не гадать по чужому ярлыку.</p>
                 </div>
-                <img src="assets/predzapis/how-05-three-evenings.jpg?v=3" alt="Три вечера одного дома" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -412,7 +391,6 @@
                   <h3>Без чата. Всё уже собрано</h3>
                   <p>Сидеть в ленте и ждать ответа не нужно. Сам шаг и сразу живой пример рядом.</p>
                 </div>
-                <img src="assets/predzapis/how-06-files.jpg?v=3" alt="Тетрадь и файлы уроков, не переписка" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -420,7 +398,6 @@
                   <h3>Задания читают живые люди</h3>
                   <p>Мест в потоке столько, сколько мы успеваем провести. Это не бесконечная группа, где тебя не видят.</p>
                 </div>
-                <img src="assets/predzapis/how-07-mark.jpg?v=3" alt="Пометка на задании без имени" width="1600" height="900">
               </article>
             </div>
           </div>
