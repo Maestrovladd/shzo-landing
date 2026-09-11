@@ -61,12 +61,18 @@
 
     .stats-wrap{padding:48px 0 24px;background:#fff}
     .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-    .stat{background:var(--off-white);border-radius:var(--r);padding:28px 24px;min-width:0}
+    .stat{background:var(--off-white);border-radius:var(--r);padding:28px 24px;min-width:0;transition:background .4s ease,color .4s ease}
+    .stat-n{font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--black);transition:color .4s ease}
+    .stat-d{margin-top:8px;font-size:13px;line-height:1.4;color:var(--gray);transition:color .4s ease}
     .stat:last-child{background:var(--g);color:#fff}
-    .stat-n{font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--black)}
     .stat:last-child .stat-n{color:#fff}
-    .stat-d{margin-top:8px;font-size:13px;line-height:1.4;color:var(--gray)}
     .stat:last-child .stat-d{color:rgba(255,255,255,.78)}
+    .stats:has(.stat:hover) .stat:not(:hover){background:var(--off-white);color:inherit}
+    .stats:has(.stat:hover) .stat:not(:hover) .stat-n{color:var(--black)}
+    .stats:has(.stat:hover) .stat:not(:hover) .stat-d{color:var(--gray)}
+    .stat:hover{background:var(--g);color:#fff}
+    .stat:hover .stat-n{color:#fff}
+    .stat:hover .stat-d{color:rgba(255,255,255,.78)}
 
     .section{padding:96px 0}
     .s-label{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px}
@@ -218,6 +224,7 @@
       html{scroll-behavior:auto}
       .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.hero-nudge-in{transform:none;animation:none}
       .sheet,.dot,.flow-line::after,.quote-ring,.res-card:last-child .res-viz{animation:none}
+      .stat,.stat-n,.stat-d{transition:none}
     }
   </style>
 </head>
