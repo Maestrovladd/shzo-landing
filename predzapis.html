@@ -154,11 +154,12 @@
     .flow-line::after{content:"";position:absolute;inset:0;background:var(--g);transform:scaleX(0);transform-origin:left;animation:line-run 2.8s ease-out infinite}
     .live-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
     .live-points p{margin:0;background:#fff;border-radius:16px;padding:20px 22px;font-size:15px;line-height:1.65;color:var(--gray)}
-    .quote-panel{position:relative;overflow:hidden;margin-top:20px;background:#fff;border-radius:24px;padding:28px 32px}
+    .quote-panel{position:relative;overflow:hidden;margin-top:20px;background:#fff;border-radius:24px;padding:22px 24px;display:flex;align-items:center;gap:20px}
     .quote-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--g) 28%, transparent);pointer-events:none;animation:ring-drift 18s linear infinite}
     .quote-ring.a{width:180px;height:180px;top:-70px;right:-50px}
     .quote-ring.b{width:120px;height:120px;bottom:-40px;left:-30px;animation-direction:reverse;animation-duration:22s}
-    .quote{position:relative;z-index:1;margin:0;font-size:clamp(16px,1.8vw,22px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:16px;border-left:3px solid var(--g)}
+    .quote-ava{position:relative;z-index:1;flex-shrink:0;width:72px;height:72px;border-radius:50%;object-fit:cover;order:2}
+    .quote{position:relative;z-index:1;margin:0;flex:1;min-width:0;font-size:clamp(15px,1.6vw,18px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:16px;border-left:3px solid var(--g)}
     .live-close{margin-top:28px;font-size:16px;line-height:1.65}
     @keyframes sheet-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
     @keyframes dot-pulse{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.18);opacity:1}}
@@ -461,6 +462,7 @@
         <div class="quote-panel">
           <span class="quote-ring a" aria-hidden="true"></span>
           <span class="quote-ring b" aria-hidden="true"></span>
+          <img class="quote-ava" src="assets/quote-nata.png" alt="Наталья Зайцева" width="72" height="72">
           <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
         </div>
       </div>
