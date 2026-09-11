@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="version" content="2026-09-11-v17">
+  <meta name="version" content="2026-09-11-v18">
   <title>Школа здоровых отношений — анкета предзаписи</title>
   <meta name="description" content="Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@
     .hero-lead{font-size:17px;color:#2C2C2C;line-height:1.55;margin-bottom:28px;max-width:480px;font-weight:500}
     .hero-actions{display:flex;align-items:center;gap:6px;margin-bottom:0}
     .btn,.btn-primary{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:-.01em;transition:background .2s,transform .15s;flex-shrink:0}
-    .btn:hover,.btn-primary:hover,.btn-fw:hover{background:var(--g-dark);transform:translateY(-2px)}
+    .btn:hover,.btn-primary:hover{background:var(--g-dark);transform:translateY(-2px)}
     .btn-wide{width:100%}
     .hero-nudge{flex-shrink:0;width:44px;height:28px;color:var(--g);margin:0 2px;display:grid;place-items:center}
     .hero-nudge-in{display:block;width:44px;height:28px;animation:nudge-float 2.2s ease-in-out infinite}
@@ -160,11 +160,6 @@
     @keyframes gift-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
     @keyframes nudge-float{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 
-    .final-cta{padding:96px 0;background:var(--g)}
-    .fct-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
-    .fct-inner h2{font-size:clamp(26px,3.2vw,46px);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.15}
-    .btn-fw{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;background:#fff;color:var(--g);border-radius:50px;font-size:15px;font-weight:700;white-space:nowrap}
-
     .footer{padding:36px 0;background:var(--black)}
     .f-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:8px}
     .f-ip{font-size:11px;color:rgba(255,255,255,.2);line-height:1.6}
@@ -203,26 +198,24 @@
       .hero-nudge{width:28px;height:36px;transform:rotate(90deg);margin:2px 0 2px 18px}
       .hero-gift{flex:1 1 100%;max-width:none}
       .hero-img{position:absolute}
-      .fct-inner{grid-template-columns:1fr;gap:36px}
       .info-grid,.live-points{grid-template-columns:1fr 1fr}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
-      .section,.final-cta{padding:64px 0}
+      .section{padding:64px 0}
       .stats-wrap{padding:32px 0 8px}
     }
     @media(max-width:560px){
       .stats,.res-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
       .how-slide{flex-basis:min(280px,82vw)}
       .hero-right{height:48vw}
-      .btn-fw{width:100%}
       .info-grid,.live-points{grid-template-columns:1fr}
       .quote-panel{padding:24px 20px}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
-      .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.btn-fw:hover,.hero-nudge-in{transform:none;animation:none}
+      .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.hero-nudge-in{transform:none;animation:none}
       .sheet,.dot,.flow-line::after,.quote-ring,.res-card:last-child .res-viz{animation:none}
     }
   </style>
@@ -455,13 +448,6 @@
           <span class="quote-ring b" aria-hidden="true"></span>
           <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
         </div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="container fct-inner">
-        <h2>Если хочешь пройти это с живыми примерами рядом, занимай место.</h2>
-        <button class="btn-fw" type="button" data-open="anketa">Занять место</button>
       </div>
     </section>
 
