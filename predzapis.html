@@ -98,20 +98,30 @@
     .ephir-n{width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
     .ephir-t{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
 
-    .res-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:40px}
-    .res-card{grid-column:span 2}
-    .res-card:nth-last-child(-n+2){grid-column:span 3}
+    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
     .res-card{background:#fff;border-radius:var(--r);padding:28px 28px 32px;min-width:0;transition:transform .2s,box-shadow .2s}
     .res-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-    .res-card:last-child{background:var(--g);color:#fff}
-    .res-viz{width:84px;height:84px;border-radius:22px;overflow:hidden;background:#F4EFE6;margin-bottom:18px}
-    .res-viz img{width:100%;height:100%;object-fit:cover;display:block}
-    .res-card:last-child .res-viz{width:96px;height:96px;background:#F7F2EA;animation:gift-bob 2.6s ease-in-out infinite}
+    .res-card.is-feat{background:var(--g);color:#fff;grid-column:1/-1;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:32px 36px}
+    .res-card.is-feat .res-info{min-height:168px;margin:0;height:100%}
+    .res-card.is-wide{grid-column:1/-1}
+    .res-num{font-size:clamp(40px,4.4vw,56px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--g-dark);margin-bottom:16px}
+    .res-num small{display:block;margin-top:6px;font-size:15px;font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--gray)}
+    .res-info{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;min-height:118px;margin-bottom:18px;padding:18px 18px 16px;border-radius:18px;background:rgba(255,255,255,.14);overflow:hidden}
+    .res-info-n{font-size:clamp(44px,5vw,58px);font-weight:800;letter-spacing:-.06em;line-height:.9}
+    .res-info-l{margin:6px 0 0;font-size:13px;line-height:1.35;color:rgba(255,255,255,.82);font-weight:600;max-width:12em}
+    .res-years{position:absolute;top:14px;right:16px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.06em}
+    .res-years i{width:22px;height:2px;background:rgba(255,255,255,.5);border-radius:2px}
+    .sheets{position:relative;width:58px;height:58px;flex-shrink:0}
+    .sheet{position:absolute;width:36px;height:46px;border-radius:6px;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.6);animation:sheet-float 3.2s ease-in-out infinite}
+    .sheet:nth-child(1){left:0;top:8px}
+    .sheet:nth-child(2){left:10px;top:4px;animation-delay:.18s}
+    .sheet:nth-child(3){left:20px;top:0;background:rgba(255,255,255,.32);animation-delay:.36s}
     .res-k{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
-    .res-card:last-child .res-k{color:rgba(255,255,255,.7)}
+    .res-card.is-feat .res-k{color:rgba(255,255,255,.7)}
     .res-t{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;line-height:1.3}
     .res-d{font-size:14px;color:var(--gray);line-height:1.7}
-    .res-card:last-child .res-d{color:rgba(255,255,255,.72)}
+    .res-card.is-feat .res-d{color:rgba(255,255,255,.78)}
+    .res-hl{background:var(--g-light);color:var(--g-dark);font-style:normal;font-weight:800;padding:.12em .3em;border-radius:6px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
     .learn{position:relative;background:var(--off-white);overflow:hidden}
     .learn::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--g-light) 0%,transparent 70%);right:-120px;top:-80px;pointer-events:none}
@@ -178,6 +188,7 @@
     .quote{position:relative;z-index:1;margin:0;flex:1;min-width:0;font-size:clamp(15px,1.6vw,18px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:16px;border-left:3px solid var(--g)}
     @keyframes ring-drift{to{transform:rotate(360deg)}}
     @keyframes gift-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+    @keyframes sheet-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
     @keyframes nudge-float{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 
     .footer{padding:36px 0;background:var(--black)}
@@ -224,7 +235,8 @@
       .upd-facts{grid-template-columns:1fr 1fr}
       .upd-facts div:last-child{grid-column:1/-1}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
-      .res-card,.res-card:nth-last-child(-n+2){grid-column:auto}
+      .res-card.is-feat,.res-card.is-wide{grid-column:1/-1;display:block;padding:28px 28px 32px}
+      .res-card.is-feat .res-info{min-height:118px;margin-bottom:18px}
       .learn-head{flex-direction:column;align-items:flex-start;gap:12px}
       .learn-aside{text-align:left;max-width:36em}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
@@ -236,7 +248,6 @@
     }
     @media(max-width:560px){
       .stats,.res-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
-      .res-card,.res-card:nth-last-child(-n+2){grid-column:auto}
       .how-slide{flex-basis:min(280px,82vw)}
       .hero-right{height:48vw}
       .photo-cap{left:16px;bottom:16px;width:min(300px,calc(100% - 32px));padding:18px 16px 16px 18px;border-radius:20px}
@@ -250,7 +261,7 @@
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.hero-nudge-in{transform:none;animation:none}
-      .quote-ring,.res-card:last-child .res-viz{animation:none}
+      .quote-ring,.sheet{animation:none}
       .stat,.stat-n,.stat-d{transition:none}
     }
   </style>
@@ -334,34 +345,37 @@
 
         <div class="res-grid">
           <article class="res-card">
-            <div class="res-viz"><img src="assets/predzapis-place.png" alt="Билет на место" width="84" height="84"></div>
-            <div class="res-k">Место</div>
-            <h3 class="res-t">Занять место на следующий поток</h3>
-            <p class="res-d">«Школы здоровых отношений» на самых лучших условиях.</p>
+            <div class="res-num">30%</div>
+            <div class="res-k">Скидка</div>
+            <h3 class="res-t">Скидка 30%</h3>
+            <p class="res-d">Самая низкая цена следующего потока. Точные цифры я скажу после анкеты.</p>
           </article>
           <article class="res-card">
-            <div class="res-viz"><img src="assets/predzapis-terms.png" alt="Бирки с условиями" width="84" height="84"></div>
-            <div class="res-k">Условия</div>
-            <h3 class="res-t">Гарантированно получить бонусы и самую низкую стоимость</h3>
-            <p class="res-d">Только тем, кто заполнил анкету. Какие именно цифры, я скажу после анкеты.</p>
+            <div class="res-num">≈ 6–12 тыс. ₽<small>от 6 000 до 12 000 рублей</small></div>
+            <div class="res-k">Экономия</div>
+            <h3 class="res-t">Экономия примерно 6 000–12 000 ₽</h3>
+            <p class="res-d">По цене кружки кофе, в этом диапазоне.</p>
           </article>
-          <article class="res-card">
-            <div class="res-viz"><img src="assets/predzapis-book.png" alt="Тетрадь с примерами" width="84" height="84"></div>
-            <div class="res-k">Примеры</div>
-            <h3 class="res-t">На каждый шаг 10+ примеров, как люди уже делали это дома</h3>
-            <p class="res-d">Не надо сидеть в чате и ждать ответа. Сразу видно, как выстраивать отношения и как это уже воплощали на прошлых потоках. Тетрадь собирали несколько лет.</p>
+          <article class="res-card is-feat">
+            <div>
+              <div class="res-k">Бонус</div>
+              <h3 class="res-t">Сборник всех предыдущих разборов потоков Школы здоровых отношений</h3>
+              <p class="res-d">С 2022 по 2026 год. 232 примера выполнений заданий.</p>
+            </div>
+            <div class="res-info" aria-hidden="true">
+              <div>
+                <div class="res-info-n">232</div>
+                <p class="res-info-l">примера выполнений заданий</p>
+              </div>
+              <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
+              <p class="res-years">2022 <i></i> 2026</p>
+            </div>
           </article>
-          <article class="res-card">
-            <div class="res-viz"><img src="assets/predzapis-check.png" alt="Задание с проверкой" width="84" height="84"></div>
-            <div class="res-k">Проверка</div>
-            <h3 class="res-t">Успеете в группу, где задание проверяет практикующий психотерапевт</h3>
-            <p class="res-d">Домашнюю работу смотрит практикующий психолог-психотерапевт, не бот. Поэтому мест столько, сколько человек реально успевают провести.</p>
-          </article>
-          <article class="res-card">
-            <div class="res-viz"><img src="assets/predzapis-gift.png" alt="Подарок: бонус-урок" width="96" height="96"></div>
-            <div class="res-k">Бонус</div>
-            <h3 class="res-t">Бонус-урок «Как просить»</h3>
-            <p class="res-d">Это платная лекция из Школы здоровых отношений. Чтобы завтра вечером было что сказать, а не снова ор или молчание.</p>
+          <article class="res-card is-wide">
+            <div class="res-num">30</div>
+            <div class="res-k">Места</div>
+            <h3 class="res-t">Возможность занять одно из 30 мест</h3>
+            <p class="res-d">На тариф с проверкой домашних заданий <em class="res-hl">врачом-психотерапевтом и психологом</em>.</p>
           </article>
         </div>
         <div class="section-cta">
