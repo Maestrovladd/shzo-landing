@@ -142,20 +142,22 @@
     .how{background:#fff;overflow:hidden}
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .how-top .s-title{margin-bottom:0}
+    .how-lead{margin:10px 0 0;font-size:16px;line-height:1.55;color:var(--gray);max-width:38em}
+    .how-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+    .how-chip{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:var(--g-pale);color:var(--g-dark);font-size:13px;font-weight:700;letter-spacing:-.01em}
+    .how-chip.is-hot{background:var(--g);color:#fff}
     .how-nav{display:flex;gap:8px}
     .how-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gray-light);background:#fff;display:grid;place-items:center;color:var(--black)}
     .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
     .how-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
-    .how-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-top:36px;padding-bottom:8px}
+    .how-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-top:28px;padding-bottom:8px}
     .how-rail::-webkit-scrollbar{display:none}
     .how-slide{flex:0 0 320px;scroll-snap-align:start;background:var(--off-white);border-radius:var(--r);overflow:hidden;min-width:0}
-    .how-pic{aspect-ratio:4/3;background:#EFEBE3;overflow:hidden}
+    .how-pic{position:relative;aspect-ratio:4/3;background:#EFEBE3;overflow:hidden}
     .how-pic img{width:100%;height:100%;object-fit:cover;display:block}
-    .how-pic.is-obj{display:grid;place-items:center;padding:18px}
-    .how-pic.is-obj img{width:72%;height:72%;object-fit:contain}
+    .how-badge{position:absolute;left:12px;bottom:12px;z-index:1;padding:8px 12px;background:var(--g);color:#fff;border-radius:12px;font-size:15px;font-weight:800;letter-spacing:-.03em;box-shadow:0 8px 20px rgba(0,0,0,.18)}
     .how-slide h3{margin:16px 20px 8px;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.25}
-    .how-slide p{margin:0 20px 20px;font-size:14px;line-height:1.6;color:var(--gray)}
-    .how-d{margin:0;font-size:14px;line-height:1.65;color:var(--gray)}
+    .how-slide p{margin:0 20px 20px;font-size:14px;line-height:1.65;color:var(--gray)}
 
     .live{background:var(--g-pale);overflow:hidden}
     .live.section{padding:72px 0}
@@ -388,54 +390,68 @@
       <div class="container">
         <div class="how-top">
           <div>
-            <div class="s-label">Формат</div>
-            <h2 class="s-title">Вот как проходит Школа</h2>
+            <div class="s-label">Что внутри</div>
+            <h2 class="s-title">Что вы получаете в Школе</h2>
+            <p class="how-lead">Уроки на платформе. Чата в этом потоке нет. Звонков тоже нет. Смотрите, что лежит внутри, если заходите.</p>
           </div>
           <div class="how-nav">
             <button class="how-btn" type="button" data-how="-1" aria-label="Листать влево"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
             <button class="how-btn" type="button" data-how="1" aria-label="Листать вправо"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
           </div>
         </div>
+        <div class="how-chips">
+          <span class="how-chip">60 видео</span>
+          <span class="how-chip is-hot">10–15 минут</span>
+          <span class="how-chip">самостоятельно</span>
+          <span class="how-chip">тетрадь и бланки</span>
+          <span class="how-chip">аудиоинструкции</span>
+          <span class="how-chip">видеоинструкции</span>
+          <span class="how-chip">232 разбора</span>
+          <span class="how-chip">проверка врачом</span>
+        </div>
         <div class="how-rail" id="how-rail">
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-lessons.jpg" alt="Урок Школы на ноутбуке" width="764" height="616"></div>
-            <h3>60 уроков по 10–15 минут</h3>
-            <p>Открываете с телефона, когда есть окно. Это не трёхчасовой эфир.</p>
+            <div class="how-pic"><img src="assets/how-lessons.jpg" alt="Урок Школы на платформе" width="764" height="616"></div>
+            <h3>60 видеоуроков на платформе</h3>
+            <p>Открываются по одному в день. Смотрите с телефона, когда есть окно.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-sheets.jpg" alt="Бланк задания Школы" width="792" height="640"></div>
-            <h3>Задание про мужа, ребёнка, маму или коллегу</h3>
-            <p>Двенадцать обязательных за курс, рядом ещё сорок восемь. Пишете про того, с кем сейчас тяжелее всего, не про отношения вообще.</p>
+            <div class="how-pic">
+              <img src="assets/how-start.jpg" alt="Короткий урок Школы" width="1376" height="768">
+              <span class="how-badge">10–15 минут</span>
+            </div>
+            <h3>Каждый урок 10–15 минут</h3>
+            <p>Это не трёхчасовой эфир. Раз в неделю одно обязательное задание, примерно на час.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-examples.jpg" alt="Примеры выполнения заданий" width="784" height="634"></div>
-            <h3>232 разбора, как люди уже делали это дома</h3>
-            <p>К шагу сразу видно, что человек говорил вечером, что пробовал и что у него получалось. На одну ситуацию больше десяти таких листов.</p>
+            <div class="how-pic"><img src="assets/how-ready.jpg" alt="Самостоятельное прохождение Школы" width="1376" height="768"></div>
+            <h3>Проходите сами, в своём темпе</h3>
+            <p>Чата в этом потоке нет. Не сидите в ленте и не ждёте, пока вам ответят.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-ask.jpg" alt="Три листа: попросить, сказать своё, отказать" width="1024" height="768"></div>
-            <h3>Три готовые фразы на завтрашний вечер</h3>
-            <p>Попросить, сказать своё и отказать. Реплика собирается в задании, её не надо выдумывать посреди ссоры.</p>
+            <div class="how-pic"><img src="assets/how-sheets.jpg" alt="Рабочая тетрадь и раздаточные материалы" width="792" height="640"></div>
+            <h3>Рабочая тетрадь, бланки и шаблоны</h3>
+            <p>Раздаточные материалы к шагам. Пишете про своего человека, не про отношения вообще.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-home.jpg" alt="Лист: что происходит дома" width="1376" height="768"></div>
-            <h3>Где ещё можно жить, а где это уже жестокость</h3>
-            <p>Даже когда снаружи всё прилично и руки никто не поднимает, станет видно, что у вас за дом.</p>
+            <div class="how-pic"><img src="assets/how-home.jpg" alt="Аудиоинструкция к шагу Школы" width="1376" height="768"></div>
+            <h3>Аудиоинструкции к шагам</h3>
+            <p>Можно слушать голосом, если лист читать сейчас неудобно.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-ready.jpg" alt="Урок и лист, что делать вечером" width="1376" height="768"></div>
-            <h3>Открыли урок и сразу видно, что делать вечером</h3>
-            <p>Рядом лежит живой пример, как это уже делали. Не надо сидеть в чате и ждать ответа.</p>
+            <div class="how-pic"><img src="assets/how-ask.jpg" alt="Видеоинструкция, как делать задание" width="1024" height="768"></div>
+            <h3>Видеоинструкции, как делать задание</h3>
+            <p>Сразу видно, что заполнять и как выглядит готовый лист.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-review.jpg" alt="Задание с пометками живого человека" width="1024" height="768"></div>
-            <h3>Задания читает живой человек, не бот</h3>
-            <p>Поэтому берут столько человек, сколько реально успевают провести.</p>
+            <div class="how-pic"><img src="assets/how-examples.jpg" alt="Разборы с прошлых потоков" width="784" height="634"></div>
+            <h3>232 разбора с прошлых потоков</h3>
+            <p>К шагу лежит, как люди уже делали это дома. С 2022 по 2026 год.</p>
           </article>
           <article class="how-slide">
-            <div class="how-pic"><img src="assets/how-start.jpg" alt="Первый урок открыт сразу" width="1376" height="768"></div>
-            <h3>Первый урок открывается в тот же день</h3>
-            <p>Не ждёте, пока наберётся группа. Остальные уроки открываются по ходу, чтобы не проглотить всё за один вечер.</p>
+            <div class="how-pic"><img src="assets/how-review.jpg" alt="Проверка задания врачом-психотерапевтом" width="1024" height="768"></div>
+            <h3>Проверка домашней работы врачом-психотерапевтом и психологом</h3>
+            <p>На тарифе с проверкой. Живых звонков нет. Читает человек, не бот.</p>
           </article>
         </div>
       </div>
