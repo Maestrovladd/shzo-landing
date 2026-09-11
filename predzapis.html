@@ -98,31 +98,32 @@
     .ephir-n{width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
     .ephir-t{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
 
-    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
-    .res-card{background:#fff;border-radius:var(--r);padding:20px 22px 22px;min-width:0;transition:transform .2s,box-shadow .2s}
-    .res-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+    .res-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 14px;align-items:center;background:#fff;border-radius:18px;padding:16px 16px 16px 18px;min-width:0;transition:transform .2s,box-shadow .2s}
+    .res-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
     .res-card.is-feat{background:var(--g);color:#fff}
-    .res-card.is-feat .res-num{color:#fff}
-    .res-card.is-feat .res-info{margin:12px 0 0}
-    .res-num{font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--g-dark);margin-bottom:10px}
-    .res-num small{display:block;margin-top:4px;font-size:13px;font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--gray)}
-    .res-info{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;min-height:72px;padding:12px 14px 10px;border-radius:14px;background:rgba(255,255,255,.14);overflow:hidden}
-    .res-info-n{font-size:28px;font-weight:800;letter-spacing:-.06em;line-height:.9}
-    .res-info-l{margin:4px 0 0;font-size:12px;line-height:1.3;color:rgba(255,255,255,.82);font-weight:600;max-width:12em}
-    .res-years{position:absolute;top:10px;right:12px;display:flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.06em}
-    .res-years i{width:16px;height:2px;background:rgba(255,255,255,.5);border-radius:2px}
-    .sheets{position:relative;width:40px;height:40px;flex-shrink:0}
-    .sheet{position:absolute;width:24px;height:32px;border-radius:5px;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.6);animation:sheet-float 3.2s ease-in-out infinite}
-    .sheet:nth-child(1){left:0;top:6px}
-    .sheet:nth-child(2){left:7px;top:3px;animation-delay:.18s}
-    .sheet:nth-child(3){left:14px;top:0;background:rgba(255,255,255,.32);animation-delay:.36s}
-    .res-k{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
-    .res-card.is-feat .res-k{color:rgba(255,255,255,.7)}
-    .res-t{font-size:16px;font-weight:700;letter-spacing:-.02em;margin-bottom:6px;line-height:1.3}
-    .res-card.is-feat .res-t{font-size:22px;font-weight:800;letter-spacing:-.03em;margin-bottom:8px}
-    .res-d{font-size:14px;color:var(--gray);line-height:1.5}
-    .res-card.is-feat .res-d{color:rgba(255,255,255,.78)}
-    .res-hl{background:var(--g-light);color:var(--g-dark);font-style:normal;font-weight:800;padding:.12em .3em;border-radius:6px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .res-copy{min-width:0}
+    .res-t{font-size:16px;font-weight:800;letter-spacing:-.03em;margin:0 0 4px;line-height:1.25}
+    .res-card.is-feat .res-t{font-size:16px;margin-bottom:4px}
+    .res-d{margin:0;font-size:13px;color:var(--gray);line-height:1.45}
+    .res-card.is-feat .res-d{color:rgba(255,255,255,.82)}
+    .res-hl{background:var(--g-light);color:var(--g-dark);font-style:normal;font-weight:800;padding:.08em .28em;border-radius:6px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .res-viz{position:relative;width:74px;height:74px;border-radius:22px;background:var(--g-light);display:grid;place-items:center;overflow:hidden;flex-shrink:0}
+    .res-viz b{position:relative;z-index:1;font-size:20px;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--g-dark);text-align:center;margin-top:-6px}
+    .res-viz small{display:block;margin-top:3px;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--g)}
+    .res-card.is-feat .res-viz{background:rgba(255,255,255,.14);width:86px;height:86px;border-radius:24px}
+    .res-card.is-feat .res-viz b{color:#fff;font-size:22px}
+    .res-card.is-feat .res-viz small{color:rgba(255,255,255,.75)}
+    .res-viz::before{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px solid color-mix(in srgb,var(--g) 22%,transparent)}
+    .res-card.is-feat .res-viz::before{border-color:rgba(255,255,255,.22)}
+    .sheets{position:absolute;right:8px;bottom:8px;width:28px;height:28px}
+    .sheet{position:absolute;width:16px;height:21px;border-radius:3px;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.65);animation:sheet-float 3.2s ease-in-out infinite}
+    .sheet:nth-child(1){left:0;top:5px}
+    .sheet:nth-child(2){left:5px;top:2px;animation-delay:.18s}
+    .sheet:nth-child(3){left:10px;top:0;background:rgba(255,255,255,.34);animation-delay:.36s}
+    .seats{position:absolute;left:10px;right:10px;bottom:9px;display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+    .seats i{height:6px;border-radius:2px;background:color-mix(in srgb,var(--g) 28%,transparent)}
+    .seats i:nth-child(-n+3){background:var(--g)}
 
     .how{background:#fff;overflow:hidden}
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -328,32 +329,38 @@
 
         <div class="res-grid">
           <article class="res-card">
-            <div class="res-num">30%</div>
-            <h3 class="res-t">Скидка</h3>
-            <p class="res-d">Самая низкая цена следующего потока.</p>
+            <div class="res-copy">
+              <h3 class="res-t">Скидка</h3>
+              <p class="res-d">Самая низкая цена следующего потока.</p>
+            </div>
+            <div class="res-viz" aria-hidden="true"><b>30%</b></div>
           </article>
           <article class="res-card">
-            <div class="res-num">≈ 6–12 тыс. ₽</div>
-            <h3 class="res-t">Экономия</h3>
-            <p class="res-d">Это те же 30% в рублях, на следующем потоке.</p>
+            <div class="res-copy">
+              <h3 class="res-t">Экономия</h3>
+              <p class="res-d">Это те же 30% в рублях, на следующем потоке.</p>
+            </div>
+            <div class="res-viz" aria-hidden="true"><b>6–12<small>тыс. ₽</small></b></div>
           </article>
           <article class="res-card is-feat">
-            <h3 class="res-t">Бонус</h3>
-            <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых отношений. С 2022 по 2026 год. 232 примера выполнений заданий.</p>
-            <div class="res-info" aria-hidden="true">
-              <div>
-                <div class="res-info-n">232</div>
-                <p class="res-info-l">примера выполнений заданий</p>
-              </div>
+            <div class="res-copy">
+              <h3 class="res-t">Бонус</h3>
+              <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых отношений. С 2022 по 2026 год.</p>
+            </div>
+            <div class="res-viz" aria-hidden="true">
+              <b>232<small>разбора</small></b>
               <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
-              <p class="res-years">2022 <i></i> 2026</p>
             </div>
           </article>
           <article class="res-card">
-            <div class="res-num">30</div>
-            <div class="res-k">Места</div>
-            <h3 class="res-t">Возможность занять одно из 30 мест</h3>
-            <p class="res-d">На тариф с проверкой домашних заданий <em class="res-hl">врачом-психотерапевтом и психологом</em>.</p>
+            <div class="res-copy">
+              <h3 class="res-t">Места</h3>
+              <p class="res-d">На тариф с проверкой домашних заданий <em class="res-hl">врачом-психотерапевтом и психологом</em>.</p>
+            </div>
+            <div class="res-viz" aria-hidden="true">
+              <b>30</b>
+              <span class="seats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
           </article>
         </div>
         <div class="section-cta">
