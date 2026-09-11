@@ -13,183 +13,184 @@
   <style>
     :root{
       --g:#7A8C52;--g-dark:#5C6B3E;--g-light:#EFF2E8;--g-pale:#F5F7F1;
-      --ink:#1A1420;--muted:#5A5A5A;--line:#E5E7EB;
-      --off:#F9F8F5;--mint:#EAF4EC;--paper:#FFFCF7;
-      --r:22px;--r-lg:26px;
-      --sh-btn:0 4px 14px color-mix(in srgb, var(--g) 28%, transparent);
-      --sh-card:0 10px 30px color-mix(in srgb, var(--g) 10%, transparent);
-      --sh-card-h:0 16px 40px color-mix(in srgb, var(--g) 16%, transparent);
-      --sh-photo:0 24px 60px color-mix(in srgb, var(--g) 22%, transparent);
-      --ease:cubic-bezier(.23,1,.32,1);
-      --max:1120px;
+      --black:#1A1A1A;--gray:#6B7180;--gray-light:#E5E7EB;--off-white:#F9F8F5;
+      --r:20px;
+      --shadow:0 2px 16px rgba(0,0,0,.06);--shadow-md:0 4px 32px rgba(0,0,0,.1);
     }
-    *,*::before,*::after{box-sizing:border-box}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+    body{font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--black);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
     img{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none;margin:0;padding:0}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
     button,input{font-family:inherit}
-    .container{width:min(var(--max), calc(100% - 80px));margin:0 auto}
-    @media(max-width:768px){.container{width:calc(100% - 40px)}}
+    button{cursor:pointer;border:none;background:none}
 
-    .nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px;padding:0 40px;background:rgba(255,255,255,.88);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid color-mix(in srgb, var(--g) 12%, transparent)}
-    .logo{font-size:15px;font-weight:600}
-    .nav-cta,.btn{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:700;box-shadow:var(--sh-btn);transition:transform .2s var(--ease), background .2s}
-    .btn{height:58px;padding:0 28px;font-size:16px}
-    .nav-cta:hover,.btn:hover{background:var(--g-dark);transform:translateY(-2px)}
+    .container{max-width:1280px;margin:0 auto;padding:0 48px}
+    @media(max-width:768px){.container{padding:0 20px}}
+
+    .nav{position:relative;z-index:2;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--gray-light)}
+    .logo{font-size:15px;font-weight:600;letter-spacing:-.01em}
+    .nav-cta{display:inline-flex;align-items:center;height:40px;padding:0 20px;background:var(--g);color:#fff;border-radius:50px;font-size:14px;font-weight:600;transition:background .2s,transform .15s}
+    .nav-cta:hover{background:var(--g-dark);transform:translateY(-1px)}
+    @media(max-width:768px){.nav{padding:18px 20px}}
+
+    .hero{height:calc(100svh - 81px);min-height:560px;display:grid;grid-template-columns:1fr 1fr}
+    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:32px 48px;min-width:0}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--g);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+    .hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--g)}
+    .hero h1{font-size:clamp(28px,3.2vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.04em;margin-bottom:12px}
+    .hero-lead{font-size:15px;color:var(--gray);line-height:1.65;margin-bottom:28px;max-width:460px}
+    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+    .btn,.btn-primary{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:-.01em;transition:background .2s,transform .15s}
+    .btn:hover,.btn-primary:hover,.btn-fw:hover{background:var(--g-dark);transform:translateY(-2px)}
     .btn-wide{width:100%}
-    .btn-white{background:#fff;color:var(--g)}
-    .btn-white:hover{background:var(--g-pale);color:var(--g-dark)}
-
-    .hero{padding:48px 0 28px;background:radial-gradient(1200px 480px at 12% -10%, color-mix(in srgb, var(--g) 16%, #fff), transparent 60%), linear-gradient(180deg, var(--mint) 0%, var(--paper) 100%)}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-    .hero-eyebrow{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin:0 0 18px}
-    .hero h1{margin:0 0 16px;font-size:clamp(32px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
-    .hero-lead{margin:0 0 28px;max-width:34em;font-size:18px;font-weight:600;line-height:1.55;color:var(--muted)}
-    .hero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .hero-gift{margin:0;width:min(280px,100%);padding:14px 16px;background:rgba(255,255,255,.78);border:1px solid color-mix(in srgb, var(--g) 16%, transparent);border-radius:16px;font-size:13px;line-height:1.45;box-shadow:var(--sh-card)}
-    .hero-photo-wrap{position:relative}
-    .hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:var(--r-lg);box-shadow:var(--sh-photo)}
-    .photo-cap{position:absolute;left:-14px;bottom:28px;z-index:2;width:min(230px,70%);padding:14px 16px;background:var(--paper);border-radius:18px;box-shadow:var(--sh-card)}
+    .hero-gift{margin:0;max-width:420px;font-size:13px;line-height:1.5;color:var(--gray)}
+    .hero-right{position:relative;background:#D9D3C9;overflow:hidden;min-width:0}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%}
+    .photo-cap{position:absolute;left:24px;bottom:24px;z-index:2;width:min(240px,calc(100% - 48px));padding:12px 14px;background:#fff;border-radius:16px;box-shadow:var(--shadow)}
     .photo-cap strong{display:block;font-size:15px;font-weight:800}
-    .photo-cap span{font-size:13px;color:var(--muted)}
+    .photo-cap span{font-size:13px;color:var(--gray)}
 
-    .stats-wrap{padding:0 0 64px;background:var(--paper)}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .stat{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r);padding:28px 22px;box-shadow:var(--sh-card);min-height:148px}
-    .stat:last-child{background:var(--g);border-color:transparent;color:#fff}
-    .stat-n{font-size:clamp(36px,4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--g)}
+    .stats-wrap{padding:48px 0 24px;background:#fff}
+    .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .stat{background:var(--off-white);border-radius:var(--r);padding:28px 24px;min-width:0}
+    .stat:last-child{background:var(--g);color:#fff}
+    .stat-n{font-size:36px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--black)}
     .stat:last-child .stat-n{color:#fff}
-    .stat-d{margin:10px 0 0;font-size:14px;line-height:1.4;color:var(--muted)}
+    .stat-d{margin-top:8px;font-size:13px;line-height:1.4;color:var(--gray)}
     .stat:last-child .stat-d{color:rgba(255,255,255,.78)}
 
-    .section{padding:88px 0}
-    .s-label{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:18px}
-    .s-title{font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.12;margin:0 0 12px}
-    .s-sub{margin:0;max-width:42em;font-size:17px;line-height:1.6;color:var(--muted)}
-    .section-cta{margin-top:36px}
+    .section{padding:96px 0}
+    .s-label{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px}
+    .s-title{font-size:clamp(28px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.12;margin-bottom:12px}
+    .s-sub{font-size:16px;color:var(--gray);line-height:1.65;max-width:42em}
+    .section-cta{margin-top:40px}
 
-    .pains{background:var(--off)}
-    .ephir-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--line);border-radius:var(--r);overflow:hidden;margin-top:40px}
-    .ephir-card{grid-column:span 2;background:#fff;padding:28px 24px}
-    .ephir-card:nth-child(4),.ephir-card:nth-child(5){grid-column:span 3}
+    .pains{background:var(--off-white)}
+    .ephir-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--gray-light);border-radius:var(--r);overflow:hidden;margin-top:48px}
+    .ephir-card{background:#fff;padding:32px 28px;min-width:0}
     .ephir-card:hover{background:var(--g-pale)}
-    .ephir-n{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;margin-bottom:14px}
-    .ephir-t{margin:0;font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
+    .ephir-n{width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+    .ephir-t{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
 
-    .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-    .res-card{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r);padding:32px 26px;box-shadow:var(--sh-card);transition:transform .2s var(--ease), box-shadow .2s}
-    .res-card:hover{transform:translateY(-3px);box-shadow:var(--sh-card-h)}
-    .res-card:last-child{background:var(--g);border-color:transparent;color:#fff}
-    .res-k{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+    .res-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+    .res-card{background:#fff;border-radius:var(--r);padding:36px 28px;min-width:0;transition:transform .2s,box-shadow .2s}
+    .res-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+    .res-card:last-child{background:var(--g);color:#fff}
+    .res-k{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
     .res-card:last-child .res-k{color:rgba(255,255,255,.7)}
-    .res-t{margin:0 0 10px;font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
-    .res-d{margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
+    .res-t{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px;line-height:1.3}
+    .res-d{font-size:14px;color:var(--gray);line-height:1.7}
     .res-card:last-child .res-d{color:rgba(255,255,255,.72)}
-    .pains-note{margin:20px 0 0;font-size:15px;color:var(--muted);max-width:44em}
+    .pains-note{margin-top:20px;font-size:15px;color:var(--gray);max-width:44em}
 
-    .scenes{background:var(--paper)}
-    .scene-lead{margin:16px 0 0;max-width:42em;font-size:17px;line-height:1.65;color:var(--muted)}
-    .scene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-    .scene-card{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-card)}
+    .scenes{background:#fff}
+    .scene-lead{margin-top:4px;max-width:42em;font-size:16px;line-height:1.65;color:var(--gray)}
+    .scene-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
+    .scene-card{background:#fff;border:1.5px solid var(--gray-light);border-radius:var(--r);overflow:hidden;min-width:0}
     .scene-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
     .scene-body{padding:22px 22px 26px}
-    .scene-q{margin:0 0 10px;font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
-    .scene-d{margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
-    .honest{margin:32px 0 0;padding:24px 28px;background:var(--g-pale);border-radius:var(--r);font-size:16px;line-height:1.65;max-width:52em}
+    .scene-q{font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
+    .scene-d{font-size:14px;line-height:1.65;color:var(--gray)}
+    .honest{margin-top:32px;padding:24px 28px;background:var(--g-pale);border-radius:var(--r);font-size:16px;line-height:1.65;max-width:none}
 
-    .learn{background:var(--off)}
-    .learn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
-    .learn-card{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-card);transition:transform .2s var(--ease), box-shadow .2s}
-    .learn-card:hover{transform:translateY(-3px);box-shadow:var(--sh-card-h)}
+    .learn{background:var(--off-white)}
+    .learn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
+    .learn-card{background:#fff;border-radius:var(--r);overflow:hidden;min-width:0;transition:transform .2s,box-shadow .2s}
+    .learn-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
     .learn-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
-    .learn-t{margin:0;padding:16px 16px 18px;font-size:15px;font-weight:700;letter-spacing:-.015em;line-height:1.35}
+    .learn-t{padding:16px 16px 18px;font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
 
-    .how{background:var(--paper)}
-    .how-stage{position:relative;margin-top:36px}
-    .how-viewport{overflow:hidden;border-radius:var(--r-lg);box-shadow:var(--sh-card);border:1px solid color-mix(in srgb, var(--g) 12%, transparent);background:#fff}
-    .how-track{display:flex;width:100%;transition:transform .45s var(--ease)}
-    .how-slide{flex:0 0 100%;width:100%;display:grid}
+    .how{background:#fff}
+    .how-stage{margin-top:40px;min-width:0}
+    .how-viewport{overflow:hidden;border-radius:var(--r);border:1.5px solid var(--gray-light);background:#fff}
+    .how-track{display:flex;width:100%;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+    .how-slide{flex:0 0 100%;width:100%;min-width:0;display:grid}
     .how-copy{padding:36px 40px 20px}
     .how-num{display:block;font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--g);margin-bottom:10px}
-    .how-copy h3{margin:0 0 10px;font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15}
-    .how-copy p{margin:0;max-width:40em;font-size:16px;line-height:1.65;color:var(--muted)}
-    .how-slide img{width:100%;aspect-ratio:16/9;object-fit:cover}
+    .how-copy h3{font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
+    .how-copy p{max-width:40em;font-size:16px;line-height:1.65;color:var(--gray)}
+    .how-slide img{width:100%;height:340px;object-fit:cover}
     .how-nav{display:flex;align-items:center;gap:10px;margin-top:18px}
-    .how-btn{width:48px;height:48px;border:1.5px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);cursor:pointer;font-size:20px;display:grid;place-items:center}
-    .how-btn:hover{border-color:var(--g);color:var(--g)}
-    .how-dots{display:flex;gap:6px;margin-left:8px}
-    .how-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer}
-    .how-dot.is-on{background:var(--g);width:22px;border-radius:8px}
+    .how-btn{width:40px;height:40px;border:1.5px solid var(--gray-light);border-radius:50%;background:#fff;color:var(--black);font-size:20px;display:flex;align-items:center;justify-content:center}
+    .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
+    .how-dots{display:flex;gap:5px;margin-left:8px}
+    .how-dot{width:6px;height:6px;border-radius:50%;background:var(--gray-light);border:0;padding:0;cursor:pointer}
+    .how-dot.is-on{background:var(--g);transform:scale(1.4)}
 
-    .live{background:var(--off)}
-    .live-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start}
+    .live{background:var(--off-white);overflow:hidden}
+    .live-grid{display:grid;grid-template-columns:400px minmax(0,1fr);gap:80px;align-items:start}
+    .live-photo-wrap{position:relative;max-width:400px}
     .live-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 18%;border-radius:24px;position:relative;z-index:1}
-    .live-photo-wrap{position:relative}
-    .live-photo-shadow{position:absolute;inset:0;background:var(--g);border-radius:24px;transform:translate(12px,12px)}
-    .live-points{margin:28px 0 0;display:flex;flex-direction:column;gap:14px}
-    .live-points p{margin:0;padding-left:16px;border-left:3px solid var(--g);font-size:16px;line-height:1.65;color:var(--muted)}
-    .quote{margin:32px 0 0;font-size:clamp(20px,2.2vw,28px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4}
-    .live-close{margin:28px 0 0;font-size:17px;line-height:1.6}
+    .live-photo-shadow{position:absolute;inset:0;background:var(--g);border-radius:24px;transform:translate(12px,12px);z-index:0}
+    .live-points{margin-top:28px;display:flex;flex-direction:column;gap:14px}
+    .live-points p{padding-left:16px;border-left:3px solid var(--g);font-size:16px;line-height:1.65;color:var(--gray)}
+    .quote{margin-top:32px;font-size:clamp(18px,2vw,26px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:18px;border-left:3px solid var(--g)}
+    .live-close{margin-top:28px;font-size:16px;line-height:1.65}
 
-    .final-cta{padding:88px 0;background:var(--g)}
-    .fct-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-    .fct-inner h2{margin:0;font-size:clamp(26px,3vw,42px);font-weight:800;color:#fff;letter-spacing:-.035em;line-height:1.15}
-    .btn-fw{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:58px;padding:0 28px;background:#fff;color:var(--g);border-radius:50px;font-size:16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.12)}
-    .btn-fw:hover{transform:translateY(-2px)}
+    .final-cta{padding:96px 0;background:var(--g)}
+    .fct-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center}
+    .fct-inner h2{font-size:clamp(26px,3.2vw,46px);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.15}
+    .btn-fw{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;background:#fff;color:var(--g);border-radius:50px;font-size:15px;font-weight:700;white-space:nowrap}
 
-    .footer{padding:36px 0;background:var(--ink)}
+    .footer{padding:36px 0;background:var(--black)}
     .f-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:8px}
-    .f-ip{font-size:12px;color:rgba(255,255,255,.28);line-height:1.65;margin:0}
+    .f-ip{font-size:11px;color:rgba(255,255,255,.2);line-height:1.6}
     .f-ip a{text-decoration:underline;text-underline-offset:3px}
-    .f-copy{margin:20px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(255,255,255,.22);line-height:1.55}
+    .f-copy{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);font-size:11px;color:rgba(255,255,255,.18);line-height:1.55}
 
     .modal[hidden]{display:none}
     .modal{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:24px}
-    .modal-backdrop{position:absolute;inset:0;background:rgba(26,20,32,.6)}
-    .modal-card{position:relative;z-index:1;width:min(520px,100%);max-height:min(92svh,840px);overflow:auto;padding:32px 28px;background:#fff;border-radius:20px;box-shadow:0 24px 80px rgba(26,20,32,.28)}
-    .modal-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--g-light);color:var(--g-dark);font-size:22px;cursor:pointer}
-    .form h3{margin:0 0 8px;font-size:24px}
-    .hint{margin:0 0 18px;color:var(--muted);font-size:15px}
+    .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+    .modal-card{position:relative;z-index:1;width:min(520px,100%);max-height:min(92svh,840px);overflow:auto;padding:28px;background:#fff;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+    .modal-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:var(--g-light);color:var(--g-dark);font-size:22px}
+    .form h3{margin:0 0 8px;font-size:22px}
+    .hint{margin:0 0 18px;color:var(--gray);font-size:15px}
     .field{margin:0 0 12px}
     .field label,.pains-label{display:block;margin-bottom:6px;font-size:14px;font-weight:600}
-    .field input{width:100%;height:48px;padding:0 12px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:16px}
+    .field input{width:100%;height:48px;padding:0 12px;border:1.5px solid var(--gray-light);border-radius:14px;background:#fff;font-size:16px}
     .field input:focus{outline:0;border-color:var(--g);box-shadow:0 0 0 3px var(--g-light)}
     .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
     .pill{cursor:pointer}
     .pill input{position:absolute;opacity:0;pointer-events:none}
-    .pill span{display:inline-flex;align-items:center;height:38px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:600}
+    .pill span{display:inline-flex;align-items:center;height:38px;padding:0 12px;border-radius:999px;border:1.5px solid var(--gray-light);background:#fff;font-size:14px;font-weight:600}
     .pill:has(input:checked) span{background:var(--g-light);border-color:var(--g);color:var(--g-dark)}
-    .consent{display:flex;gap:10px;align-items:flex-start;margin:0 0 16px;font-size:14px;color:var(--muted)}
-    .legal{margin:10px 0 0;font-size:13px;color:var(--muted)}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:0 0 16px;font-size:14px;color:var(--gray)}
+    .legal{margin:10px 0 0;font-size:13px;color:var(--gray)}
     body.modal-open{overflow:hidden}
     .thanks{display:none}
     body.sent .page,body.sent .modal,body.sent .nav{display:none}
-    body.sent .thanks{display:grid;place-items:center;min-height:100svh;padding:48px 24px;background:var(--mint)}
+    body.sent .thanks{display:grid;place-items:center;min-height:100svh;padding:48px 24px;background:var(--g-pale)}
     .thanks-card{width:min(520px,100%);text-align:center}
 
     @media(max-width:960px){
-      .hero-grid,.live-grid,.fct-inner{grid-template-columns:1fr;gap:32px}
-      .photo-cap{left:16px}
+      .hero{grid-template-columns:1fr;height:auto;min-height:0}
+      .hero-right{height:60vw;min-height:300px;order:-1}
+      .hero-left{padding:40px 20px 48px}
+      .hero-img{position:absolute}
+      .live-grid,.fct-inner{grid-template-columns:1fr;gap:36px}
+      .live-photo-wrap{max-width:380px}
       .stats,.res-grid,.scene-grid{grid-template-columns:1fr 1fr}
-      .learn-grid{grid-template-columns:1fr 1fr}
-      .ephir-grid{grid-template-columns:1fr 1fr}
-      .ephir-card,.ephir-card:nth-child(4),.ephir-card:nth-child(5){grid-column:span 1}
+      .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
       .how-copy{padding:28px 22px 16px}
+      .how-slide img{height:220px}
     }
-    @media(max-width:640px){
-      .nav{padding:0 20px;height:64px}
-      .hero{padding:28px 0 12px}
-      .section,.final-cta{padding:56px 0}
-      .stats,.res-grid,.scene-grid,.learn-grid{grid-template-columns:1fr}
-      .ephir-grid{grid-template-columns:1fr}
-      .hero-gift,.btn-fw{width:100%}
-      .fct-inner{gap:24px}
+    @media(max-width:768px){
+      .section,.final-cta{padding:64px 0}
+      .stats-wrap{padding:32px 0 8px}
+    }
+    @media(max-width:560px){
+      .stats,.res-grid,.scene-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
+      .hero-right{height:72vw}
+      .btn-fw{width:100%}
+      .how-slide img{height:180px}
+      .live-photo-shadow{transform:translate(8px,8px);border-radius:16px}
+      .live-photo{border-radius:16px}
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
-      .btn:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.btn-fw:hover{transform:none}
+      .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.btn-fw:hover{transform:none}
       .how-track{transition:none}
     }
   </style>
@@ -202,22 +203,20 @@
 
   <div class="page">
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="hero-eyebrow">Анкета предзаписи</p>
-          <h1>Школа здоровых отношений</h1>
-          <p class="hero-lead">Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.</p>
-          <div class="hero-cta">
-            <button class="btn" type="button" data-open="anketa">Занять место</button>
-            <p class="hero-gift">Займи место в предзаписи и получи гарантированный шанс получить место на следующий поток, бонусы и самую низкую стоимость.</p>
-          </div>
+      <div class="hero-left">
+        <p class="hero-eyebrow">Анкета предзаписи</p>
+        <h1>Школа здоровых отношений</h1>
+        <p class="hero-lead">Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.</p>
+        <div class="hero-actions">
+          <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
-        <div class="hero-photo-wrap">
-          <img class="hero-photo" src="assets/predzapis-hero.jpg?v=2" alt="Наталья Зайцева, врач-психотерапевт" width="900" height="1125">
-          <div class="photo-cap">
-            <strong>Наталья Зайцева</strong>
-            <span>врач-психотерапевт</span>
-          </div>
+        <p class="hero-gift">Займи место в предзаписи и получи гарантированный шанс получить место на следующий поток, бонусы и самую низкую стоимость.</p>
+      </div>
+      <div class="hero-right">
+        <img class="hero-img" src="assets/predzapis-hero.jpg?v=3" alt="Наталья Зайцева, врач-психотерапевт" width="900" height="1125">
+        <div class="photo-cap">
+          <strong>Наталья Зайцева</strong>
+          <span>врач-психотерапевт</span>
         </div>
       </div>
     </section>
@@ -306,21 +305,21 @@
         <p class="scene-lead">Школу я собрала, чтобы ты узнала себя в этих вечерах и могла жить с людьми без постоянной войны и без вечной вины.</p>
         <div class="scene-grid">
           <article class="scene-card">
-            <img src="assets/predzapis/scene-01-neighbors.jpg?v=2" alt="Дома он молчит, ты говоришь, вас как будто нет в одной квартире" width="1200" height="900">
+            <img src="assets/predzapis/scene-01-neighbors.jpg?v=3" alt="Дома он молчит, ты говоришь, вас как будто нет в одной квартире" width="1200" height="900">
             <div class="scene-body">
               <h3 class="scene-q">«Жили соседями.»</h3>
               <p class="scene-d">На людях всё выглядит нормально. Дома он молчит, ты говоришь, и вас как будто нет в одной квартире. Он у телевизора, ты в телефоне. Когда гости уходят, снова тишина или снова ор.</p>
             </div>
           </article>
           <article class="scene-card">
-            <img src="assets/predzapis/scene-02-voice.jpg?v=2" alt="К шести снова срыв, часто при ребёнке" width="1200" height="900">
+            <img src="assets/predzapis/scene-02-voice.jpg?v=3" alt="К шести снова срыв, часто при ребёнке" width="1200" height="900">
             <div class="scene-body">
               <h3 class="scene-q">«Ненавижу свой голос.»</h3>
               <p class="scene-d">К шести снова срыв, часто при ребёнке. Потом спор, кто первый начал. Весь вечер ты уже не узнаёшь себя и обещаешь, что завтра так не будет.</p>
             </div>
           </article>
           <article class="scene-card">
-            <img src="assets/predzapis/scene-03-years.jpg?v=2" alt="Со стороны хорошая семья, а дома плохо уже годы" width="1200" height="900">
+            <img src="assets/predzapis/scene-03-years.jpg?v=3" alt="Со стороны хорошая семья, а дома плохо уже годы" width="1200" height="900">
             <div class="scene-body">
               <h3 class="scene-q">Он не пьёт, не курит, руку не поднимал.</h3>
               <p class="scene-d">Психолог уже был, деньги уже были. На завтрашний вечер снова нечего сказать. Со стороны хорошая семья, а дома плохо уже не две недели, а годы.</p>
@@ -340,35 +339,35 @@
         <h2 class="s-title">По итогу Школы ты научишься</h2>
         <div class="learn-grid">
           <article class="learn-card">
-            <img src="assets/predzapis/learn-01-home.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-01-home.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Увидеть, что происходит дома</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-02-quiet.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-02-quiet.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Понять, что не так, если ремня нет</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-03-table.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-03-table.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Назвать это своими словами</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-04-own.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-04-own.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Увидеть своё, не только его</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-05-ask.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-05-ask.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Просить, не срываясь на крик</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-06-refuse.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-06-refuse.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Отказать без вечной вины</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-07-child.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-07-child.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Говорить с ребёнком, не ненавидя свой голос</p>
           </article>
           <article class="learn-card">
-            <img src="assets/predzapis/learn-08-step.jpg?v=2" alt="" width="1200" height="900">
+            <img src="assets/predzapis/learn-08-step.jpg?v=3" alt="" width="1200" height="900">
             <p class="learn-t">Решить: остаться, уйти или отодвинуть</p>
           </article>
         </div>
@@ -388,7 +387,7 @@
                   <h3>Короткие уроки на каждый день</h3>
                   <p>Один урок занимает 10–15 минут. Смотришь с телефона, когда получится. Не трёхчасовой эфир.</p>
                 </div>
-                <img src="assets/predzapis/how-01-phone.jpg?v=2" alt="Телефон с коротким уроком на 10–15 минут" width="1600" height="900">
+                <img src="assets/predzapis/how-01-phone.jpg?v=3" alt="Телефон с коротким уроком на 10–15 минут" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -396,7 +395,7 @@
                   <h3>Живые примеры на каждую ситуацию</h3>
                   <p>К каждой ситуации сразу лежит, как это уже делали люди с прошлых потоков. На одну ситуацию не один пример, а больше десяти. Таких примеров 232.</p>
                 </div>
-                <img src="assets/predzapis/how-02-example.jpg?v=2" alt="Страница живого примера без имени" width="1600" height="900">
+                <img src="assets/predzapis/how-02-example.jpg?v=3" alt="Страница живого примера без имени" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -404,7 +403,7 @@
                   <h3>Задание на твоих людей</h3>
                   <p>Ты отрабатываешь не отношения вообще, а вечер с мужем, ребёнком, мамой или коллегой. Тем человеком, с кем сейчас тяжелее всего.</p>
                 </div>
-                <img src="assets/predzapis/how-03-people.jpg?v=2" alt="Список людей дома" width="1600" height="900">
+                <img src="assets/predzapis/how-03-people.jpg?v=3" alt="Список людей дома" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -412,7 +411,7 @@
                   <h3>Как просить, говорить своё и отказывать</h3>
                   <p>Три цели разговора. Чтобы завтра вечером было что сказать, а не снова ор, молчание и вина.</p>
                 </div>
-                <img src="assets/predzapis/how-04-three-sheets.jpg?v=2" alt="Три листа: попросить, сказать своё, отказать" width="1600" height="900">
+                <img src="assets/predzapis/how-04-three-sheets.jpg?v=3" alt="Три листа: попросить, сказать своё, отказать" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -420,7 +419,7 @@
                   <h3>Понять дом, если ремня нет</h3>
                   <p>Ты учишься видеть, где ещё можно жить, где уже нездорово, а где это жестокость. Чтобы не гадать по чужому ярлыку.</p>
                 </div>
-                <img src="assets/predzapis/how-05-three-evenings.jpg?v=2" alt="Три вечера одного дома" width="1600" height="900">
+                <img src="assets/predzapis/how-05-three-evenings.jpg?v=3" alt="Три вечера одного дома" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -428,7 +427,7 @@
                   <h3>Без чата. Всё уже собрано</h3>
                   <p>Сидеть в ленте и ждать ответа не нужно. Сам шаг и сразу живой пример рядом.</p>
                 </div>
-                <img src="assets/predzapis/how-06-files.jpg?v=2" alt="Тетрадь и файлы уроков, не переписка" width="1600" height="900">
+                <img src="assets/predzapis/how-06-files.jpg?v=3" alt="Тетрадь и файлы уроков, не переписка" width="1600" height="900">
               </article>
               <article class="how-slide">
                 <div class="how-copy">
@@ -436,7 +435,7 @@
                   <h3>Задания читают живые люди</h3>
                   <p>Мест в потоке столько, сколько мы успеваем провести. Это не бесконечная группа, где тебя не видят.</p>
                 </div>
-                <img src="assets/predzapis/how-07-mark.jpg?v=2" alt="Пометка на задании без имени" width="1600" height="900">
+                <img src="assets/predzapis/how-07-mark.jpg?v=3" alt="Пометка на задании без имени" width="1600" height="900">
               </article>
             </div>
           </div>
@@ -454,7 +453,7 @@
         <div class="live-grid">
           <div class="live-photo-wrap">
             <div class="live-photo-shadow"></div>
-            <img class="live-photo" src="assets/expert-studio.jpg?v=2" alt="Наталья Зайцева" width="800" height="1066">
+            <img class="live-photo" src="assets/expert-studio.jpg?v=3" alt="Наталья Зайцева" width="800" height="1066">
           </div>
           <div>
             <div class="s-label">Живые примеры</div>
