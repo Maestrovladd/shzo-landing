@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="version" content="2026-09-11-v16">
+  <meta name="version" content="2026-09-11-v17">
   <title>Школа здоровых отношений — анкета предзаписи</title>
   <meta name="description" content="Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,12 +119,14 @@
     .how-d{margin:0;font-size:14px;line-height:1.65;color:var(--gray)}
 
     .live{background:var(--off-white);overflow:hidden}
-    .live-head{max-width:46em}
-    .info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
-    .info-card{position:relative;overflow:hidden;background:#fff;border-radius:var(--r);padding:28px 24px 24px;min-width:0}
+    .live.section{padding:72px 0}
+    .live-head{max-width:34em}
+    .live-head .s-title{margin-bottom:0}
+    .info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+    .info-card{position:relative;overflow:hidden;background:#fff;border-radius:var(--r);padding:22px 22px 20px;min-width:0}
     .info-card.feat{background:var(--g);color:#fff}
-    .info-viz{height:56px;margin-bottom:18px;position:relative}
-    .info-n{font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-.05em;line-height:1}
+    .info-viz{height:40px;margin-bottom:12px;position:relative}
+    .info-n{font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.05em;line-height:1}
     .info-card.feat .info-n{color:#fff}
     .info-l{margin-top:8px;font-size:14px;line-height:1.45;color:var(--gray)}
     .info-card.feat .info-l{color:rgba(255,255,255,.78)}
@@ -145,11 +147,11 @@
     .flow-line::after{content:"";position:absolute;inset:0;background:var(--g);transform:scaleX(0);transform-origin:left;animation:line-run 2.8s ease-out infinite}
     .live-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
     .live-points p{margin:0;background:#fff;border-radius:16px;padding:20px 22px;font-size:15px;line-height:1.65;color:var(--gray)}
-    .quote-panel{position:relative;overflow:hidden;margin-top:24px;background:#fff;border-radius:24px;padding:36px 40px}
+    .quote-panel{position:relative;overflow:hidden;margin-top:20px;background:#fff;border-radius:24px;padding:28px 32px}
     .quote-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--g) 28%, transparent);pointer-events:none;animation:ring-drift 18s linear infinite}
     .quote-ring.a{width:180px;height:180px;top:-70px;right:-50px}
     .quote-ring.b{width:120px;height:120px;bottom:-40px;left:-30px;animation-direction:reverse;animation-duration:22s}
-    .quote{position:relative;z-index:1;margin:0;font-size:clamp(18px,2.1vw,26px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:18px;border-left:3px solid var(--g)}
+    .quote{position:relative;z-index:1;margin:0;font-size:clamp(16px,1.8vw,22px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:16px;border-left:3px solid var(--g)}
     .live-close{margin-top:28px;font-size:16px;line-height:1.65}
     @keyframes sheet-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
     @keyframes dot-pulse{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.18);opacity:1}}
@@ -420,8 +422,7 @@
       <div class="container">
         <div class="live-head">
           <div class="s-label">Живые примеры</div>
-          <h2 class="s-title">Следующий поток — это Школа с живыми примерами на каждую ситуацию, которая бывает у тебя вечером.</h2>
-          <p class="s-sub">Чтобы было на что опереться, а не сидеть одной в чате и угадывать.</p>
+          <h2 class="s-title">Живые примеры на ситуации, которые бывают у тебя вечером.</h2>
         </div>
         <div class="info-grid">
           <article class="info-card feat">
@@ -439,30 +440,20 @@
               </div>
             </div>
             <div class="info-n">10+</div>
-            <p class="info-l">примеров на одну ситуацию, не один</p>
+            <p class="info-l">примеров на одну ситуацию</p>
           </article>
           <article class="info-card">
             <div class="info-viz" aria-hidden="true">
               <div class="flow"><span class="flow-node"></span><span class="flow-line"></span><span class="flow-node"></span></div>
             </div>
-            <div class="info-n" style="font-size:clamp(28px,3vw,40px)">сразу</div>
-            <p class="info-l">шаг и живой пример рядом, без чата</p>
+            <div class="info-n" style="font-size:clamp(24px,2.6vw,34px)">сразу</div>
+            <p class="info-l">шаг и пример рядом, без чата</p>
           </article>
-        </div>
-        <div class="live-points">
-          <p>Вопрос «а как это делают живые люди?» закрыт. На каждую ситуацию рядом видно, что человек говорил дома, что пробовал, и что у него получалось.</p>
-          <p>На одну ситуацию ты видишь не один пример, а больше десяти.</p>
-          <p>Не надо сидеть в чате. К каждой ситуации сразу лежит живой пример. Ждать ответ в ленте не нужно.</p>
-          <p>Это уже прожили люди на прошлых потоках. Мы собирали эти примеры несколько лет.</p>
         </div>
         <div class="quote-panel">
           <span class="quote-ring a" aria-hidden="true"></span>
           <span class="quote-ring b" aria-hidden="true"></span>
           <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
-        </div>
-        <p class="live-close">Если хочешь пройти это с живыми примерами рядом, занимай место. Жду тебя.</p>
-        <div class="section-cta">
-          <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
       </div>
     </section>
