@@ -5,426 +5,480 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Школа здоровых отношений — анкета предзаписи</title>
-  <meta name="description" content="Как перестать жить в конфликтах и напряжении, вернуть близость и уважение, и научиться говорить без крика, давления и чувства вины.">
+  <meta name="description" content="Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <style>
     :root{
       --g:#7A8C52;--g-dark:#5C6B3E;--g-light:#EFF2E8;--g-pale:#F5F7F1;
-      --black:#1A1A1A;--gray:#6B7180;--gray-light:#E5E7EB;--off-white:#F9F8F5;
-      --mint:#EAF4EC;--paper:#fffcf7;
-      --r:20px;
-      --shadow:0 2px 16px rgba(0,0,0,.06);--shadow-md:0 4px 32px rgba(0,0,0,.1);
+      --ink:#1A1420;--muted:#5A5A5A;--line:#E5E7EB;
+      --off:#F9F8F5;--mint:#EAF4EC;--paper:#FFFCF7;
+      --r:22px;--r-lg:26px;
+      --sh-btn:0 4px 14px color-mix(in srgb, var(--g) 28%, transparent);
+      --sh-card:0 10px 30px color-mix(in srgb, var(--g) 10%, transparent);
+      --sh-card-h:0 16px 40px color-mix(in srgb, var(--g) 16%, transparent);
+      --sh-photo:0 24px 60px color-mix(in srgb, var(--g) 22%, transparent);
       --ease:cubic-bezier(.23,1,.32,1);
+      --max:1120px;
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--black);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body{margin:0;font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
     img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
+    a{color:inherit;text-decoration:none}
     ul{list-style:none;margin:0;padding:0}
     button,input{font-family:inherit}
-    .container{max-width:1280px;margin:0 auto;padding:0 48px}
-    @media(max-width:768px){.container{padding:0 20px}}
+    .container{width:min(var(--max), calc(100% - 80px));margin:0 auto}
+    @media(max-width:768px){.container{width:calc(100% - 40px)}}
 
-    .fold{height:100svh;display:flex;flex-direction:column;background:linear-gradient(180deg,var(--mint) 0%,var(--paper) 100%)}
-    .nav{flex:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 48px;background:color-mix(in oklab,#fff 70%,var(--mint));border-bottom:1px solid var(--gray-light)}
+    .nav{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px;padding:0 40px;background:rgba(255,255,255,.88);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid color-mix(in srgb, var(--g) 12%, transparent)}
     .logo{font-size:15px;font-weight:600}
-    .nav-cta{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;height:40px;padding:0 20px;background:var(--g);color:#fff;border-radius:50px;font-size:14px;font-weight:600}
-    .nav-cta:hover{background:var(--g-dark)}
-    .hero{flex:1;min-height:0;display:grid;grid-template-columns:1.25fr .85fr}
-    .hero-left{display:flex;flex-direction:column;justify-content:center;padding:32px 48px 40px}
-    .hero-inner{width:min(560px,100%)}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--g);letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
-    .hero-eyebrow::before{content:"";width:24px;height:1px;background:var(--g)}
-    .hero h1{margin:0 0 12px;font-size:clamp(28px,3.2vw,48px);font-weight:800;line-height:1.08;letter-spacing:-.04em}
-    .hero-pain{margin:0 0 10px;max-width:38ch;font-size:15px;line-height:1.65;color:var(--gray)}
-    .hero-how{margin:0 0 22px;max-width:40ch;font-size:15px;line-height:1.65;color:var(--gray)}
+    .nav-cta,.btn{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:700;box-shadow:var(--sh-btn);transition:transform .2s var(--ease), background .2s}
+    .btn{height:58px;padding:0 28px;font-size:16px}
+    .nav-cta:hover,.btn:hover{background:var(--g-dark);transform:translateY(-2px)}
+    .btn-wide{width:100%}
+    .btn-white{background:#fff;color:var(--g)}
+    .btn-white:hover{background:var(--g-pale);color:var(--g-dark)}
+
+    .hero{padding:48px 0 28px;background:radial-gradient(1200px 480px at 12% -10%, color-mix(in srgb, var(--g) 16%, #fff), transparent 60%), linear-gradient(180deg, var(--mint) 0%, var(--paper) 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .hero-eyebrow{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin:0 0 18px}
+    .hero h1{margin:0 0 16px;font-size:clamp(32px,4.2vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.08}
+    .hero-lead{margin:0 0 28px;max-width:34em;font-size:18px;font-weight:600;line-height:1.55;color:var(--muted)}
     .hero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .hero-gift{margin:0;width:min(240px,100%);padding:12px 16px;background:#fff;border:1px solid var(--gray-light);border-radius:16px;font-size:13px;line-height:1.4;box-shadow:var(--shadow)}
-    .hero-right{position:relative;overflow:hidden;min-height:0;background:#D9D3C9}
-    .hero-right img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 12%}
-    .photo-cap{position:absolute;left:24px;bottom:24px;z-index:2;width:min(240px,calc(100% - 48px));padding:12px 14px;background:var(--paper);border-radius:16px;box-shadow:var(--shadow)}
+    .hero-gift{margin:0;width:min(280px,100%);padding:14px 16px;background:rgba(255,255,255,.78);border:1px solid color-mix(in srgb, var(--g) 16%, transparent);border-radius:16px;font-size:13px;line-height:1.45;box-shadow:var(--sh-card)}
+    .hero-photo-wrap{position:relative}
+    .hero-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 12%;border-radius:var(--r-lg);box-shadow:var(--sh-photo)}
+    .photo-cap{position:absolute;left:-14px;bottom:28px;z-index:2;width:min(230px,70%);padding:14px 16px;background:var(--paper);border-radius:18px;box-shadow:var(--sh-card)}
     .photo-cap strong{display:block;font-size:15px;font-weight:800}
-    .photo-cap span{font-size:13px;color:var(--gray)}
-    .btn,.btn-primary{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:600}
-    .btn:hover,.btn-primary:hover{background:var(--g-dark);transform:translateY(-2px)}
-    .btn-wide{width:100%;height:52px}
+    .photo-cap span{font-size:13px;color:var(--muted)}
 
-    .section{padding:96px 0}
-    .s-label{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px}
-    .s-title{font-size:clamp(28px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.12;margin:0 0 12px}
-    .s-sub{font-size:16px;color:var(--gray);line-height:1.65;margin:0}
+    .stats-wrap{padding:0 0 64px;background:var(--paper)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .stat{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r);padding:28px 22px;box-shadow:var(--sh-card);min-height:148px}
+    .stat:last-child{background:var(--g);border-color:transparent;color:#fff}
+    .stat-n{font-size:clamp(36px,4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--g)}
+    .stat:last-child .stat-n{color:#fff}
+    .stat-d{margin:10px 0 0;font-size:14px;line-height:1.4;color:var(--muted)}
+    .stat:last-child .stat-d{color:rgba(255,255,255,.78)}
 
-    .pains{background:var(--off-white)}
-    .pains-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gray-light);border-radius:var(--r);overflow:hidden;margin-top:48px}
-    .pain-card{background:#fff;padding:32px 28px}
-    .pain-card:hover{background:var(--g-pale)}
-    .pain-ico{width:44px;height:44px;border-radius:10px;background:var(--g-light);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-    .pain-ico svg{width:21px;height:21px;stroke:var(--g);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .pain-t{font-size:15px;font-weight:700;margin-bottom:8px;letter-spacing:-.01em;line-height:1.3}
-    .pain-d{margin:0;font-size:13px;color:var(--gray);line-height:1.6}
-    .pains-cta{margin-top:40px;background:var(--g);border-radius:var(--r);padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-    .pains-cta-text{margin:0;font-size:20px;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.35}
-    .pains-cta-text span{display:block;margin-top:6px;opacity:.6;font-weight:500;font-size:15px}
-    .btn-white-sm{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;height:48px;padding:0 24px;background:#fff;color:var(--g);border-radius:50px;font-size:14px;font-weight:700;white-space:nowrap}
+    .section{padding:88px 0}
+    .s-label{display:inline-flex;align-items:center;height:28px;padding:0 14px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:18px}
+    .s-title{font-size:clamp(28px,3.2vw,42px);font-weight:800;letter-spacing:-.035em;line-height:1.12;margin:0 0 12px}
+    .s-sub{margin:0;max-width:42em;font-size:17px;line-height:1.6;color:var(--muted)}
+    .section-cta{margin-top:36px}
 
-    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .why-text p{font-size:16px;color:var(--gray);line-height:1.75;margin:0 0 16px}
-    .why-nums{display:flex;gap:36px;margin-top:36px;padding-top:36px;border-top:1px solid var(--gray-light)}
-    .why-n{font-size:44px;font-weight:800;color:var(--g);letter-spacing:-.04em;line-height:1}
-    .why-l{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;max-width:140px}
-    .why-card{background:var(--black);border-radius:24px;padding:48px;position:relative;overflow:hidden}
-    .why-card::before{content:"";position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;border:1px solid rgba(122,140,82,.25)}
-    .why-card::after{content:"";position:absolute;bottom:-30px;left:-30px;width:120px;height:120px;border-radius:50%;border:1px solid rgba(122,140,82,.15)}
-    .why-big-n{font-size:88px;font-weight:800;color:var(--g);line-height:.9;letter-spacing:-.05em;margin-bottom:12px}
-    .why-big-label{font-size:22px;font-weight:700;color:#fff;line-height:1.35;margin-bottom:20px;letter-spacing:-.02em}
-    .why-big-sub{font-size:14px;color:rgba(255,255,255,.45);line-height:1.65}
+    .pains{background:var(--off)}
+    .ephir-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:2px;background:var(--line);border-radius:var(--r);overflow:hidden;margin-top:40px}
+    .ephir-card{grid-column:span 2;background:#fff;padding:28px 24px}
+    .ephir-card:nth-child(4),.ephir-card:nth-child(5){grid-column:span 3}
+    .ephir-card:hover{background:var(--g-pale)}
+    .ephir-n{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;margin-bottom:14px}
+    .ephir-t{margin:0;font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.4}
 
-    .results{background:var(--off-white)}
-    .results-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:40px;flex-wrap:wrap}
-    .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:12px}
-    .res-card{background:#fff;border-radius:var(--r);padding:36px 28px}
-    .res-ico{width:48px;height:48px;border-radius:12px;background:var(--g-light);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-    .res-ico svg{width:24px;height:24px;stroke:var(--g);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .res-t{font-size:19px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
-    .res-d{margin:0;font-size:14px;color:var(--gray);line-height:1.7}
-    .results-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-    .res-tag{height:36px;padding:0 18px;border:1.5px solid var(--gray-light);border-radius:50px;font-size:13px;font-weight:500;display:inline-flex;align-items:center;background:#fff}
-    .results .get-cta{display:flex;justify-content:flex-start;margin-top:36px}
+    .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+    .res-card{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r);padding:32px 26px;box-shadow:var(--sh-card);transition:transform .2s var(--ease), box-shadow .2s}
+    .res-card:hover{transform:translateY(-3px);box-shadow:var(--sh-card-h)}
+    .res-card:last-child{background:var(--g);border-color:transparent;color:#fff}
+    .res-k{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+    .res-card:last-child .res-k{color:rgba(255,255,255,.7)}
+    .res-t{margin:0 0 10px;font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+    .res-d{margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
+    .res-card:last-child .res-d{color:rgba(255,255,255,.72)}
+    .pains-note{margin:20px 0 0;font-size:15px;color:var(--muted);max-width:44em}
 
-    .bento{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
-    .b-card{background:var(--g);border-radius:var(--r);padding:28px;color:#fff;display:flex;flex-direction:column;gap:14px}
-    .b-card.light{background:#fff;border:1.5px solid var(--gray-light);color:var(--black)}
-    .b-card.col2{grid-column:span 2}
-    .b-ico{width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
-    .b-card.light .b-ico{background:var(--g-light)}
-    .b-ico svg{width:20px;height:20px;stroke:#fff;stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .b-card.light .b-ico svg{stroke:var(--g)}
-    .b-t{font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
-    .b-d{font-size:13px;opacity:.65;line-height:1.5}
-    .b-card.light .b-d{color:var(--gray);opacity:1}
+    .scenes{background:var(--paper)}
+    .scene-lead{margin:16px 0 0;max-width:42em;font-size:17px;line-height:1.65;color:var(--muted)}
+    .scene-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+    .scene-card{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-card)}
+    .scene-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .scene-body{padding:22px 22px 26px}
+    .scene-q{margin:0 0 10px;font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+    .scene-d{margin:0;font-size:14px;line-height:1.65;color:var(--muted)}
+    .honest{margin:32px 0 0;padding:24px 28px;background:var(--g-pale);border-radius:var(--r);font-size:16px;line-height:1.65;max-width:52em}
 
-    .expert-grid{display:grid;grid-template-columns:400px 1fr;gap:80px;align-items:start}
-    .expert-photo-wrap{position:relative}
-    .expert-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 18%;border-radius:24px;position:relative;z-index:1}
-    .expert-photo-shadow{position:absolute;inset:0;background:var(--g);border-radius:24px;transform:translate(12px,12px);z-index:0}
-    .expert-content h2{font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.03em;margin:0 0 24px;line-height:1.15}
-    .expert-quote{font-size:16px;color:var(--gray);line-height:1.75;margin:0 0 28px;padding-left:18px;border-left:3px solid var(--g)}
-    .expert-creds{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
-    .expert-cred{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5}
-    .cred-dot{width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:6px}
-    .expert-nums{display:flex;gap:36px;padding:24px 0;border-top:1px solid var(--gray-light);border-bottom:1px solid var(--gray-light)}
-    .en-n{font-size:38px;font-weight:800;letter-spacing:-.04em;line-height:1}
-    .en-l{font-size:12px;color:var(--gray);margin-top:4px}
+    .learn{background:var(--off)}
+    .learn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+    .learn-card{background:#fff;border:1px solid color-mix(in srgb, var(--g) 12%, transparent);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-card);transition:transform .2s var(--ease), box-shadow .2s}
+    .learn-card:hover{transform:translateY(-3px);box-shadow:var(--sh-card-h)}
+    .learn-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .learn-t{margin:0;padding:16px 16px 18px;font-size:15px;font-weight:700;letter-spacing:-.015em;line-height:1.35}
 
-    .fw-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
-    .fw-card{border-radius:var(--r);padding:40px}
-    .fw-card.yes{background:var(--g)}
-    .fw-card.no{background:var(--off-white)}
-    .fw-title{font-size:17px;font-weight:800;letter-spacing:-.02em;margin:0 0 24px}
-    .fw-card.yes .fw-title{color:#fff}
-    .fw-card.no .fw-title{color:var(--gray)}
-    .fw-list{display:flex;flex-direction:column;gap:12px}
-    .fw-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5}
-    .fw-card.yes .fw-item{color:rgba(255,255,255,.88)}
-    .fw-card.no .fw-item{color:var(--gray)}
-    .fw-chk{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-    .fw-card.yes .fw-chk{background:rgba(255,255,255,.2)}
-    .fw-card.no .fw-chk{background:var(--gray-light)}
-    .fw-chk svg{width:9px;height:9px;stroke:#fff;stroke-width:3;fill:none}
-    .fw-card.no .fw-chk svg{stroke:var(--gray)}
+    .how{background:var(--paper)}
+    .how-stage{position:relative;margin-top:36px}
+    .how-viewport{overflow:hidden;border-radius:var(--r-lg);box-shadow:var(--sh-card);border:1px solid color-mix(in srgb, var(--g) 12%, transparent);background:#fff}
+    .how-track{display:flex;width:100%;transition:transform .45s var(--ease)}
+    .how-slide{flex:0 0 100%;width:100%;display:grid}
+    .how-copy{padding:36px 40px 20px}
+    .how-num{display:block;font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--g);margin-bottom:10px}
+    .how-copy h3{margin:0 0 10px;font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15}
+    .how-copy p{margin:0;max-width:40em;font-size:16px;line-height:1.65;color:var(--muted)}
+    .how-slide img{width:100%;aspect-ratio:16/9;object-fit:cover}
+    .how-nav{display:flex;align-items:center;gap:10px;margin-top:18px}
+    .how-btn{width:48px;height:48px;border:1.5px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);cursor:pointer;font-size:20px;display:grid;place-items:center}
+    .how-btn:hover{border-color:var(--g);color:var(--g)}
+    .how-dots{display:flex;gap:6px;margin-left:8px}
+    .how-dot{width:8px;height:8px;border-radius:50%;background:var(--line);border:0;padding:0;cursor:pointer}
+    .how-dot.is-on{background:var(--g);width:22px;border-radius:8px}
 
-    .final-cta{padding:96px 0;background:var(--g)}
+    .live{background:var(--off)}
+    .live-grid{display:grid;grid-template-columns:380px 1fr;gap:64px;align-items:start}
+    .live-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 18%;border-radius:24px;position:relative;z-index:1}
+    .live-photo-wrap{position:relative}
+    .live-photo-shadow{position:absolute;inset:0;background:var(--g);border-radius:24px;transform:translate(12px,12px)}
+    .live-points{margin:28px 0 0;display:flex;flex-direction:column;gap:14px}
+    .live-points p{margin:0;padding-left:16px;border-left:3px solid var(--g);font-size:16px;line-height:1.65;color:var(--muted)}
+    .quote{margin:32px 0 0;font-size:clamp(20px,2.2vw,28px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4}
+    .live-close{margin:28px 0 0;font-size:17px;line-height:1.6}
+
+    .final-cta{padding:88px 0;background:var(--g)}
     .fct-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-    .fct-inner h2{font-size:clamp(26px,3.2vw,46px);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.15;margin:0 0 10px}
-    .fct-sub{margin:0;font-size:16px;color:rgba(255,255,255,.65)}
-    .btn-fw{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;background:#fff;color:var(--g);border-radius:50px;font-size:15px;font-weight:700}
+    .fct-inner h2{margin:0;font-size:clamp(26px,3vw,42px);font-weight:800;color:#fff;letter-spacing:-.035em;line-height:1.15}
+    .btn-fw{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;height:58px;padding:0 28px;background:#fff;color:var(--g);border-radius:50px;font-size:16px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+    .btn-fw:hover{transform:translateY(-2px)}
 
-    .footer{padding:36px 0;background:var(--black)}
+    .footer{padding:36px 0;background:var(--ink)}
     .f-logo{font-size:14px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:8px}
-    .f-ip{font-size:11px;color:rgba(255,255,255,.2);line-height:1.6;margin:0 0 8px}
+    .f-ip{font-size:12px;color:rgba(255,255,255,.28);line-height:1.65;margin:0}
     .f-ip a{text-decoration:underline;text-underline-offset:3px}
-    .f-copy{margin:20px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.05);font-size:11px;color:rgba(255,255,255,.18)}
+    .f-copy{margin:20px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:rgba(255,255,255,.22);line-height:1.55}
 
     .modal[hidden]{display:none}
     .modal{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:24px}
-    .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
-    .modal-card{position:relative;z-index:1;width:min(520px,100%);max-height:min(92svh,840px);overflow:auto;padding:28px;background:#fff;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+    .modal-backdrop{position:absolute;inset:0;background:rgba(26,20,32,.6)}
+    .modal-card{position:relative;z-index:1;width:min(520px,100%);max-height:min(92svh,840px);overflow:auto;padding:32px 28px;background:#fff;border-radius:20px;box-shadow:0 24px 80px rgba(26,20,32,.28)}
     .modal-x{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:var(--g-light);color:var(--g-dark);font-size:22px;cursor:pointer}
-    .form h3{margin:0 0 8px;font-size:22px}
-    .hint{margin:0 0 18px;color:var(--gray);font-size:15px}
+    .form h3{margin:0 0 8px;font-size:24px}
+    .hint{margin:0 0 18px;color:var(--muted);font-size:15px}
     .field{margin:0 0 12px}
     .field label,.pains-label{display:block;margin-bottom:6px;font-size:14px;font-weight:600}
-    .field input{width:100%;height:48px;padding:0 12px;border:1.5px solid var(--gray-light);border-radius:14px;background:#fff;font-size:16px}
+    .field input{width:100%;height:48px;padding:0 12px;border:1.5px solid var(--line);border-radius:14px;background:#fff;font-size:16px}
     .field input:focus{outline:0;border-color:var(--g);box-shadow:0 0 0 3px var(--g-light)}
     .pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
     .pill{cursor:pointer}
     .pill input{position:absolute;opacity:0;pointer-events:none}
-    .pill span{display:inline-flex;align-items:center;height:38px;padding:0 12px;border-radius:999px;border:1.5px solid var(--gray-light);background:#fff;font-size:14px;font-weight:600}
+    .pill span{display:inline-flex;align-items:center;height:38px;padding:0 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:14px;font-weight:600}
     .pill:has(input:checked) span{background:var(--g-light);border-color:var(--g);color:var(--g-dark)}
-    .consent{display:flex;gap:10px;align-items:flex-start;margin:0 0 16px;font-size:14px;color:var(--gray)}
-    .legal{margin:10px 0 0;font-size:13px;color:var(--gray)}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:0 0 16px;font-size:14px;color:var(--muted)}
+    .legal{margin:10px 0 0;font-size:13px;color:var(--muted)}
     body.modal-open{overflow:hidden}
     .thanks{display:none}
-    body.sent .page,body.sent .modal{display:none}
+    body.sent .page,body.sent .modal,body.sent .nav{display:none}
     body.sent .thanks{display:grid;place-items:center;min-height:100svh;padding:48px 24px;background:var(--mint)}
     .thanks-card{width:min(520px,100%);text-align:center}
 
     @media(max-width:960px){
-      .hero{grid-template-columns:1fr}
-      .fold{height:auto}
-      .hero-right{height:48vh;min-height:280px}
-      .hero-left{padding:28px 20px 32px}
-      .nav{padding:14px 20px}
-      .why-grid,.expert-grid,.fct-inner,.fw-grid{grid-template-columns:1fr;gap:36px}
-      .pains-grid,.results-grid{grid-template-columns:1fr 1fr}
-      .bento{grid-template-columns:1fr 1fr}
-      .b-card.col2{grid-column:1 / -1}
+      .hero-grid,.live-grid,.fct-inner{grid-template-columns:1fr;gap:32px}
+      .photo-cap{left:16px}
+      .stats,.res-grid,.scene-grid{grid-template-columns:1fr 1fr}
+      .learn-grid{grid-template-columns:1fr 1fr}
+      .ephir-grid{grid-template-columns:1fr 1fr}
+      .ephir-card,.ephir-card:nth-child(4),.ephir-card:nth-child(5){grid-column:span 1}
+      .how-copy{padding:28px 22px 16px}
     }
-    @media(max-width:560px){
-      .section,.final-cta{padding:48px 0}
-      .pains-grid,.results-grid,.bento{grid-template-columns:1fr}
-      .pains-cta{padding:24px 20px;flex-direction:column;align-items:stretch}
-      .why-big-n{font-size:52px}
-      .btn-white-sm,.btn-fw{width:100%;justify-content:center}
+    @media(max-width:640px){
+      .nav{padding:0 20px;height:64px}
+      .hero{padding:28px 0 12px}
+      .section,.final-cta{padding:56px 0}
+      .stats,.res-grid,.scene-grid,.learn-grid{grid-template-columns:1fr}
+      .ephir-grid{grid-template-columns:1fr}
+      .hero-gift,.btn-fw{width:100%}
+      .fct-inner{gap:24px}
     }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover,.btn-primary:hover{transform:none}}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .btn:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.btn-fw:hover{transform:none}
+      .how-track{transition:none}
+    }
   </style>
 </head>
 <body>
+  <header class="nav">
+    <div class="logo">Наталья Зайцева</div>
+    <button class="nav-cta" type="button" data-open="anketa">Занять место</button>
+  </header>
+
   <div class="page">
-    <div class="fold">
-      <header class="nav">
-        <div class="logo">Наталья Зайцева</div>
-        <button class="nav-cta" type="button" data-open="anketa">Анкета предзаписи</button>
-      </header>
-      <section class="hero">
-        <div class="hero-left">
-          <div class="hero-inner">
-            <p class="hero-eyebrow">Анкета предзаписи</p>
-            <h1>Школа здоровых отношений</h1>
-            <p class="hero-pain">Как перестать жить в конфликтах и напряжении, вернуть близость и уважение, и научиться говорить без крика, давления и чувства вины.</p>
-            <p class="hero-how">Заполните анкету предзаписи и получите место на закрытом эфире.</p>
-            <div class="hero-cta">
-              <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
-              <p class="hero-gift">После анкеты. Лучшие условия следующего набора только у тех, кто уже в списке.</p>
-            </div>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-eyebrow">Анкета предзаписи</p>
+          <h1>Школа здоровых отношений</h1>
+          <p class="hero-lead">Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.</p>
+          <div class="hero-cta">
+            <button class="btn" type="button" data-open="anketa">Занять место</button>
+            <p class="hero-gift">Займи место в предзаписи и получи гарантированный шанс получить место на следующий поток, бонусы и самую низкую стоимость.</p>
           </div>
         </div>
-        <div class="hero-right">
-          <img src="assets/predzapis-hero.jpg" alt="Наталья Зайцева, врач-психотерапевт" width="900" height="1200">
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="assets/predzapis-hero.jpg" alt="Наталья Зайцева, врач-психотерапевт" width="900" height="1125">
           <div class="photo-cap">
             <strong>Наталья Зайцева</strong>
             <span>врач-психотерапевт</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <div class="stats-wrap">
+      <div class="container">
+        <div class="stats">
+          <article class="stat">
+            <div class="stat-n">19</div>
+            <p class="stat-d">лет работы врачом-психотерапевтом</p>
+          </article>
+          <article class="stat">
+            <div class="stat-n">5</div>
+            <p class="stat-d">потоков Школы с 2023 года</p>
+          </article>
+          <article class="stat">
+            <div class="stat-n">60</div>
+            <p class="stat-d">уроков по 10–15 минут</p>
+          </article>
+          <article class="stat">
+            <div class="stat-n">232</div>
+            <p class="stat-d">живых примера с прошлых потоков</p>
+          </article>
+        </div>
+      </div>
     </div>
 
-    <section class="pains section" id="get">
+    <section class="pains section" id="predzapis">
       <div class="container">
-        <div class="s-label">На закрытом эфире</div>
-        <h2 class="s-title">На закрытом эфире вы узнаете</h2>
-        <p class="s-sub">Даже если он не пьёт и не бьёт, а дома всё равно холодно. И даже если орёте вы, а потом ненавидите свой голос.</p>
-        <div class="pains-grid">
-          <article class="pain-card">
-            <div class="pain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <div class="pain-t">Почему серьёзный разговор срывается</div>
-            <p class="pain-d">Даже если вы оба хотели поговорить, и вечером он снова у телевизора, а вы в телефоне.</p>
+        <div class="s-label">Предзапись</div>
+        <h2 class="s-title">Что даёт предзапись</h2>
+        <p class="s-sub">В предзаписи ты получишь доступ к закрытому эфиру и короткий лист сразу после анкеты.</p>
+
+        <h3 class="s-title" style="font-size:clamp(22px,2.4vw,32px);margin-top:40px">На закрытом эфире ты узнаешь</h3>
+        <div class="ephir-grid">
+          <article class="ephir-card">
+            <div class="ephir-n">01</div>
+            <p class="ephir-t">Почему ты уже сто раз серьёзно поговорила, а вечером он снова у телевизора, а ты в телефоне.</p>
           </article>
-          <article class="pain-card">
-            <div class="pain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-            <div class="pain-t">Чем жизнь соседями отличается от жестокости</div>
-            <p class="pain-d">Если он не пьёт, не курит и руку не поднимал, а лечь и назвать, что болит, всё равно нельзя.</p>
+          <article class="ephir-card">
+            <div class="ephir-n">02</div>
+            <p class="ephir-t">Как понять, что дома что-то не так, если он не пьёт, не курит и руку не поднимал.</p>
           </article>
-          <article class="pain-card">
-            <div class="pain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <div class="pain-t">Что делать со своим криком</div>
-            <p class="pain-d">Если ребёнок уже слышит, вы обещали себе не орать, а к шести снова срываетесь.</p>
+          <article class="ephir-card">
+            <div class="ephir-n">03</div>
+            <p class="ephir-t">Что делать со своим криком, если ребёнок уже слышит, а ты обещала себе не орать.</p>
           </article>
-          <article class="pain-card">
-            <div class="pain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
-            <div class="pain-t">Почему кабинет уже был</div>
-            <p class="pain-d">Год на исправление уже вышел, а на завтрашний вечер по-прежнему нечего сказать.</p>
+          <article class="ephir-card">
+            <div class="ephir-n">04</div>
+            <p class="ephir-t">Почему после психолога на завтрашний вечер всё равно нечего сказать.</p>
           </article>
-          <article class="pain-card">
-            <div class="pain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-            <div class="pain-t">Оставаться, уходить или отодвинуть</div>
-            <p class="pain-d">Как понять, что делать с человеком, и чего я не обещаю второму человеку.</p>
-          </article>
-          <article class="pain-card">
-            <div class="pain-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-            <div class="pain-t">Что вы сделаете руками за этот вечер</div>
-            <p class="pain-d">Одну строку про вашего человека, чтобы после эфира было что дописать, а не «было интересно».</p>
+          <article class="ephir-card">
+            <div class="ephir-n">05</div>
+            <p class="ephir-t">Как решить, оставаться или уходить, и чего я не обещаю за другого человека.</p>
           </article>
         </div>
-        <div class="pains-cta">
-          <p class="pains-cta-text">Это одна Школа. Три сцены одного дома.<span>Я не веду отдельно «про мужа», отдельно «про ребёнка» и отдельно «про маму».</span></p>
-          <button class="btn-white-sm" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
+
+        <div class="res-grid">
+          <article class="res-card">
+            <div class="res-k">Место</div>
+            <h3 class="res-t">Занять место на следующий поток</h3>
+            <p class="res-d">«Школы здоровых отношений» на самых лучших условиях.</p>
+          </article>
+          <article class="res-card">
+            <div class="res-k">Условия</div>
+            <h3 class="res-t">Гарантированно получить бонусы и самую низкую стоимость</h3>
+            <p class="res-d">Только тем, кто заполнил анкету. Какие именно цифры, я скажу на эфире.</p>
+          </article>
+          <article class="res-card">
+            <div class="res-k">Бонус</div>
+            <h3 class="res-t">Бонус-урок «Как просить»</h3>
+            <p class="res-d">Это платная лекция из Школы здоровых отношений. Чтобы завтра вечером было что сказать, а не снова ор или молчание.</p>
+          </article>
+        </div>
+        <p class="pains-note">Мест в потоке столько, сколько мы успеваем провести. Задания читают живые люди.</p>
+        <div class="section-cta">
+          <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
       </div>
     </section>
 
-    <section class="section" id="why">
+    <section class="scenes section" id="self">
       <div class="container">
-        <div class="why-grid">
-          <div class="why-text">
-            <div class="s-label">Коротко, что это за Школа</div>
-            <h2 class="s-title">Три сцены одного дома сходятся к одной точке</h2>
-            <p>Я не веду отдельно «про мужа», отдельно «про ребёнка» и отдельно «про маму». Это одна Школа.</p>
-            <p>Все сходятся к одной точке: перестать жить в конфликтах и напряжении, вернуть близость и уважение, научиться говорить без крика, давления и чувства вины.</p>
-            <div class="why-nums">
-              <div><div class="why-n">3</div><div class="why-l">сцены одного дома</div></div>
-              <div><div class="why-n">1</div><div class="why-l">Школа, не три разных курса</div></div>
+        <div class="s-label">Узнаёшь себя</div>
+        <h2 class="s-title">Ты уже сто раз серьёзно поговорила. Кухня та же.</h2>
+        <p class="scene-lead">Школу я собрала, чтобы ты узнала себя в этих вечерах и могла жить с людьми без постоянной войны и без вечной вины.</p>
+        <div class="scene-grid">
+          <article class="scene-card">
+            <img src="assets/predzapis/scene-01-neighbors.jpg" alt="Дома он молчит, ты говоришь, вас как будто нет в одной квартире" width="1200" height="900">
+            <div class="scene-body">
+              <h3 class="scene-q">«Жили соседями.»</h3>
+              <p class="scene-d">На людях всё выглядит нормально. Дома он молчит, ты говоришь, и вас как будто нет в одной квартире. Он у телевизора, ты в телефоне. Когда гости уходят, снова тишина или снова ор.</p>
+            </div>
+          </article>
+          <article class="scene-card">
+            <img src="assets/predzapis/scene-02-voice.jpg" alt="К шести снова срыв, часто при ребёнке" width="1200" height="900">
+            <div class="scene-body">
+              <h3 class="scene-q">«Ненавижу свой голос.»</h3>
+              <p class="scene-d">К шести снова срыв, часто при ребёнке. Потом спор, кто первый начал. Весь вечер ты уже не узнаёшь себя и обещаешь, что завтра так не будет.</p>
+            </div>
+          </article>
+          <article class="scene-card">
+            <img src="assets/predzapis/scene-03-years.jpg" alt="Со стороны хорошая семья, а дома плохо уже годы" width="1200" height="900">
+            <div class="scene-body">
+              <h3 class="scene-q">Он не пьёт, не курит, руку не поднимал.</h3>
+              <p class="scene-d">Психолог уже был, деньги уже были. На завтрашний вечер снова нечего сказать. Со стороны хорошая семья, а дома плохо уже не две недели, а годы.</p>
+            </div>
+          </article>
+        </div>
+        <p class="honest">Школа не для того, чтобы спасти брак любой ценой. Сохранить можно. Уйти можно. Отодвинуть человека можно. Тёплым станет не каждый дом, и этого я не обещаю.</p>
+        <div class="section-cta">
+          <button class="btn" type="button" data-open="anketa">Занять место</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn section" id="learn">
+      <div class="container">
+        <div class="s-label">Школа</div>
+        <h2 class="s-title">По итогу Школы ты научишься</h2>
+        <div class="learn-grid">
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-01-home.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Увидеть, что происходит дома</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-02-quiet.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Понять, что не так, если ремня нет</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-03-table.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Назвать это своими словами</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-04-own.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Увидеть своё, не только его</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-05-ask.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Просить, не срываясь на крик</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-06-refuse.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Отказать без вечной вины</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-07-child.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Говорить с ребёнком, не ненавидя свой голос</p>
+          </article>
+          <article class="learn-card">
+            <img src="assets/predzapis/learn-08-step.jpg" alt="" width="1200" height="900">
+            <p class="learn-t">Решить: остаться, уйти или отодвинуть</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section" id="how">
+      <div class="container">
+        <div class="s-label">Формат</div>
+        <h2 class="s-title">Как устроена Школа</h2>
+        <div class="how-stage">
+          <div class="how-viewport">
+            <div class="how-track" id="how-track">
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">01</span>
+                  <h3>Короткие уроки на каждый день</h3>
+                  <p>Один урок занимает 10–15 минут. Смотришь с телефона, когда получится. Не трёхчасовой эфир.</p>
+                </div>
+                <img src="assets/predzapis/how-01-phone.jpg" alt="Телефон с коротким уроком на 10–15 минут" width="1600" height="900">
+              </article>
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">02</span>
+                  <h3>Живые примеры на каждую ситуацию</h3>
+                  <p>К каждой ситуации сразу лежит, как это уже делали люди с прошлых потоков. На одну ситуацию не один пример, а больше десяти. Таких примеров 232.</p>
+                </div>
+                <img src="assets/predzapis/how-02-example.jpg" alt="Страница живого примера без имени" width="1600" height="900">
+              </article>
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">03</span>
+                  <h3>Задание на твоих людей</h3>
+                  <p>Ты отрабатываешь не отношения вообще, а вечер с мужем, ребёнком, мамой или коллегой. Тем человеком, с кем сейчас тяжелее всего.</p>
+                </div>
+                <img src="assets/predzapis/how-03-people.jpg" alt="Список людей дома" width="1600" height="900">
+              </article>
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">04</span>
+                  <h3>Как просить, говорить своё и отказывать</h3>
+                  <p>Три цели разговора. Чтобы завтра вечером было что сказать, а не снова ор, молчание и вина.</p>
+                </div>
+                <img src="assets/predzapis/how-04-three-sheets.jpg" alt="Три листа: попросить, сказать своё, отказать" width="1600" height="900">
+              </article>
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">05</span>
+                  <h3>Понять дом, если ремня нет</h3>
+                  <p>Ты учишься видеть, где ещё можно жить, где уже нездорово, а где это жестокость. Чтобы не гадать по чужому ярлыку.</p>
+                </div>
+                <img src="assets/predzapis/how-05-three-evenings.jpg" alt="Три вечера одного дома" width="1600" height="900">
+              </article>
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">06</span>
+                  <h3>Без чата. Всё уже собрано</h3>
+                  <p>Сидеть в ленте и ждать ответа не нужно. Сам шаг и сразу живой пример рядом.</p>
+                </div>
+                <img src="assets/predzapis/how-06-files.jpg" alt="Тетрадь и файлы уроков, не переписка" width="1600" height="900">
+              </article>
+              <article class="how-slide">
+                <div class="how-copy">
+                  <span class="how-num">07</span>
+                  <h3>Задания читают живые люди</h3>
+                  <p>Мест в потоке столько, сколько мы успеваем провести. Это не бесконечная группа, где тебя не видят.</p>
+                </div>
+                <img src="assets/predzapis/how-07-mark.jpg" alt="Пометка на задании без имени" width="1600" height="900">
+              </article>
             </div>
           </div>
-          <div class="why-card">
-            <div class="why-big-n">1</div>
-            <div class="why-big-label">Школа на три сцены дома</div>
-            <div class="why-big-sub">Муж, ребёнок, мама. Не отдельно. Все сходятся к одной точке: без крика, давления и чувства вины.</div>
+          <div class="how-nav">
+            <button class="how-btn" type="button" id="how-prev" aria-label="Предыдущий слайд">‹</button>
+            <button class="how-btn" type="button" id="how-next" aria-label="Следующий слайд">›</button>
+            <div class="how-dots" id="how-dots"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="results section" id="results">
+    <section class="live section" id="live">
       <div class="container">
-        <div class="results-head">
+        <div class="live-grid">
+          <div class="live-photo-wrap">
+            <div class="live-photo-shadow"></div>
+            <img class="live-photo" src="assets/expert-studio.jpg" alt="Наталья Зайцева" width="800" height="1066">
+          </div>
           <div>
-            <div class="s-label">В предзаписи</div>
-            <h2 class="s-title">В предзаписи вы получите</h2>
-          </div>
-          <p class="s-sub" style="max-width:300px">Доступ к закрытому эфиру и карте «с кем вы живёте»</p>
-        </div>
-        <div class="results-grid">
-          <article class="res-card">
-            <div class="res-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-            <div class="res-t">Занять место на следующий набор</div>
-            <p class="res-d">Школы здоровых отношений на самых выгодных условиях этого потока. Какие именно цифры, скажу на закрытом эфире.</p>
-          </article>
-          <article class="res-card">
-            <div class="res-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 4.6L19 8.2l-3.4 3.3.8 4.7L12 14.6 7.6 16.2l.8-4.7L5 8.2l4.8-.6L12 3z"/></svg></div>
-            <div class="res-t">Лучшие условия только тем, кто в анкете</div>
-            <p class="res-d">Не общая рассылка всем сразу. Сначала те, кто уже в списке.</p>
-          </article>
-          <article class="res-card">
-            <div class="res-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
-            <div class="res-t">Карта «с кем вы живёте» сразу после анкеты</div>
-            <p class="res-d">Семь сторон жизни, оценка от нуля до десяти, один человек, с которым сейчас тяжелее всего. Десять минут за столом.</p>
-          </article>
-        </div>
-        <div class="results-tags">
-          <span class="res-tag">Кураторы читают домашние</span>
-          <span class="res-tag">Столько человек, сколько успеваем за 12 недель</span>
-          <span class="res-tag">Не сколько нажало кнопку</span>
-        </div>
-        <div class="get-cta">
-          <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="format" style="background:var(--off-white)">
-      <div class="container">
-        <div class="s-label">следующий набор</div>
-        <h2 class="s-title">В этот раз к каждому шагу вы получите живые разборы</h2>
-        <p class="s-sub">Не пустой чат, в котором надо сидеть.</p>
-        <div class="bento">
-          <div class="b-card col2">
-            <div class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-            <div class="b-t">Школа это двенадцать недель</div>
-            <div class="b-d">Урок в день, до пятнадцати минут. Пройти на троечку тоже считается.</div>
-          </div>
-          <div class="b-card">
-            <div class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-            <div class="b-t">Само задание</div>
-            <div class="b-d">Чужие домашние не живут в ленте сообщений. Это упакованные ситуации.</div>
-          </div>
-          <div class="b-card">
-            <div class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-            <div class="b-t">Как уже делали люди</div>
-            <div class="b-d">Само задание и рядом, как его уже делали люди.</div>
-          </div>
-          <div class="b-card col2 light">
-            <div class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-            <div class="b-t">Двести тридцать два разбора по шагам</div>
-            <div class="b-d">За несколько лет через Школу прошли сотни домашних. На каждый шаг вы видите, что человек писал, где спотыкался, что делал руками, и как из этого выходил.</div>
-          </div>
-          <div class="b-card light">
-            <div class="b-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
-            <div class="b-t">Тем, кто в этой анкете</div>
-            <div class="b-d">Кто придёт в набор из этой анкеты, получит эти разборы целиком.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="expert">
-      <div class="container">
-        <div class="expert-grid">
-          <div class="expert-photo-wrap">
-            <div class="expert-photo-shadow"></div>
-            <img class="expert-photo" src="assets/expert-studio.jpg" alt="Наталья Зайцева" width="800" height="1000">
-          </div>
-          <div class="expert-content">
-            <div class="s-label">Зачем я это собрала</div>
-            <h2>Наталья Зайцева —<br>врач-психотерапевт</h2>
-            <blockquote class="expert-quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
-            <div class="expert-creds">
-              <div class="expert-cred"><div class="cred-dot"></div>Врач-психотерапевт и психиатр</div>
-              <div class="expert-cred"><div class="cred-dot"></div>Работаю в когнитивно-поведенческой и диалектической поведенческой терапии</div>
-              <div class="expert-cred"><div class="cred-dot"></div>Сама прожила одиннадцать лет в браке, где не было побоев и не было тепла</div>
-              <div class="expert-cred"><div class="cred-dot"></div>Школа выросла из этого, а не из теории про идеальную семью</div>
-              <div class="expert-cred"><div class="cred-dot"></div>Разборы набраны с живых потоков, это не придуманные примеры</div>
+            <div class="s-label">Живые примеры</div>
+            <h2 class="s-title">Следующий поток — это Школа с живыми примерами на каждую ситуацию, которая бывает у тебя вечером.</h2>
+            <p class="s-sub">Чтобы было на что опереться, а не сидеть одной в чате и угадывать.</p>
+            <div class="live-points">
+              <p>Вопрос «а как это делают живые люди?» закрыт. На каждую ситуацию рядом видно, что человек говорил дома, что пробовал, и что у него получалось.</p>
+              <p>На одну ситуацию ты видишь не один пример, а больше десяти.</p>
+              <p>Не надо сидеть в чате. К каждой ситуации сразу лежит живой пример. Ждать ответ в ленте не нужно.</p>
+              <p>Это уже прожили люди на прошлых потоках. Мы собирали эти примеры несколько лет.</p>
             </div>
-            <div class="expert-nums">
-              <div><div class="en-n">12</div><div class="en-l">недель Школы</div></div>
-              <div><div class="en-n">15</div><div class="en-l">минут на урок</div></div>
-              <div><div class="en-n">232</div><div class="en-l">разбора с потоков</div></div>
+            <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
+            <p class="live-close">Если хочешь пройти это с живыми примерами рядом, занимай место. Жду тебя.</p>
+            <div class="section-cta">
+              <button class="btn" type="button" data-open="anketa">Занять место</button>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="forWhom" style="background:var(--off-white)">
-      <div class="container">
-        <div class="s-label">Кому сюда</div>
-        <h2 class="s-title">Кому сюда не надо</h2>
-        <p class="s-sub">Школа не про то, чтобы спасти брак любой ценой. Сохранить можно. Уйти можно. Отодвинуть человека из близких в знакомые можно. Тёплым станет не каждый дом, и этого я не обещаю.</p>
-        <div class="fw-grid">
-          <div class="fw-card yes">
-            <div class="fw-title">Если узнали свой дом</div>
-            <ul class="fw-list">
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Даже если он не пьёт и не бьёт, а дома всё равно холодно</li>
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Серьёзный разговор уже был, а вечером снова телевизор и телефон</li>
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>Кабинет уже был, а на завтрашний вечер по-прежнему нечего сказать</li>
-            </ul>
-          </div>
-          <div class="fw-card no">
-            <div class="fw-title">Сюда не надо, если</div>
-            <ul class="fw-list">
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Не тянете быт, есть риск навредить себе или другим, или жизни угрожает опасность. Сначала врач и кризисный центр.</li>
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Ищете, где познакомиться, или ждёте, что близкие поймут без слов. Это соседняя задача.</li>
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Нужен курс о том, как выжить под постоянной атакой. Здесь не учат терпеть умеючи.</li>
-              <li class="fw-item"><div class="fw-chk"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>Ждёте, что я переделаю второго человека. Меняется ваша часть разговора, и вместе с ней иногда меняется дом.</li>
-            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <section class="final-cta">
-      <div class="container">
-        <div class="fct-inner">
-          <div>
-            <h2>Если узнали свой дом, заполняйте анкету</h2>
-            <p class="fct-sub">Оплаты на этой странице нет.</p>
-          </div>
-          <button class="btn-fw" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
-        </div>
+      <div class="container fct-inner">
+        <h2>Если хочешь пройти это с живыми примерами рядом, занимай место.</h2>
+        <button class="btn-fw" type="button" data-open="anketa">Занять место</button>
       </div>
     </section>
 
@@ -442,14 +496,14 @@
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="anketa-title">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
       <form class="form" action="#" method="post">
-        <h3 id="anketa-title">Заполнить анкету предзаписи</h3>
+        <h3 id="anketa-title">Занять место в предзаписи</h3>
         <p class="hint">Имя, телеграм и с кем сейчас тяжелее всего. Оплаты здесь нет.</p>
         <div class="field">
-          <label for="name1">Как к вам обращаться</label>
+          <label for="name1">Как к тебе обращаться</label>
           <input id="name1" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="contact1">Телеграм, куда прислать карту и ссылку на эфир</label>
+          <label for="contact1">Телеграм, куда прислать короткий лист и ссылку на эфир</label>
           <input id="contact1" name="telegram" type="text" inputmode="text" placeholder="@username" required>
         </div>
         <p class="pains-label">С кем сейчас тяжелее всего</p>
@@ -462,7 +516,7 @@
           <label class="pill"><input type="radio" name="who" value="self"><span>С собой</span></label>
         </div>
         <label class="consent"><input type="checkbox" name="pd" required><span>Согласие на обработку персональных данных</span></label>
-        <button class="btn btn-wide" type="submit">Заполнить анкету предзаписи</button>
+        <button class="btn btn-wide" type="submit">Занять место</button>
         <p class="legal">Оплаты здесь нет. Кризисную помощь эта анкета не заменяет.</p>
       </form>
     </div>
@@ -472,7 +526,7 @@
     <div class="thanks-card">
       <p class="hero-eyebrow">Предзапись</p>
       <h1>Место в предзаписи занято</h1>
-      <p class="hero-how" style="margin-left:auto;margin-right:auto">Когда подключим бот, туда придут карта «с кем вы живёте» и ссылка на закрытый эфир. Оплаты на этой странице нет.</p>
+      <p class="s-sub" style="margin:16px auto 0">Когда подключим бот, туда придут короткий лист и ссылка на закрытый эфир. Оплаты на этой странице нет.</p>
     </div>
   </section>
 
@@ -505,6 +559,32 @@
         document.body.classList.add("sent");
         window.scrollTo(0, 0);
       });
+
+      var track = document.getElementById("how-track");
+      var slides = track.querySelectorAll(".how-slide");
+      var dots = document.getElementById("how-dots");
+      var i = 0;
+      var n = slides.length;
+      for (var d = 0; d < n; d++) {
+        var b = document.createElement("button");
+        b.className = "how-dot" + (d === 0 ? " is-on" : "");
+        b.type = "button";
+        b.setAttribute("aria-label", "Слайд " + (d + 1));
+        b.addEventListener("click", goTo.bind(null, d));
+        dots.appendChild(b);
+      }
+      function paint() {
+        track.style.transform = "translateX(" + (-i * 100) + "%)";
+        dots.querySelectorAll(".how-dot").forEach(function (el, idx) {
+          el.classList.toggle("is-on", idx === i);
+        });
+      }
+      function goTo(idx) {
+        i = (idx + n) % n;
+        paint();
+      }
+      document.getElementById("how-prev").addEventListener("click", function () { goTo(i - 1); });
+      document.getElementById("how-next").addEventListener("click", function () { goTo(i + 1); });
     })();
   </script>
 </body>
