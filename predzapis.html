@@ -89,7 +89,7 @@
     .scene-lead{margin-top:4px;max-width:42em;font-size:16px;line-height:1.65;color:var(--gray)}
     .scene-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
     .scene-card{background:#fff;border:1.5px solid var(--gray-light);border-radius:var(--r);overflow:hidden;min-width:0}
-    .scene-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .scene-card img{width:100%;aspect-ratio:2.2/1;object-fit:cover;object-position:center 40%}
     .scene-body{padding:22px 22px 26px}
     .scene-q{font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
     .scene-d{font-size:14px;line-height:1.65;color:var(--gray)}
@@ -99,7 +99,7 @@
     .learn-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px}
     .learn-card{background:#fff;border-radius:var(--r);overflow:hidden;min-width:0;transition:transform .2s,box-shadow .2s}
     .learn-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-    .learn-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .learn-card img{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:center 45%}
     .learn-t{padding:16px 16px 18px;font-size:15px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
 
     .how{background:#fff}
@@ -111,7 +111,7 @@
     .how-num{display:block;font-size:13px;font-weight:800;letter-spacing:.12em;color:var(--g);margin-bottom:10px}
     .how-copy h3{font-size:clamp(22px,2.4vw,32px);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
     .how-copy p{max-width:40em;font-size:16px;line-height:1.65;color:var(--gray)}
-    .how-slide img{width:100%;height:340px;object-fit:cover}
+    .how-slide img{width:100%;height:168px;object-fit:cover;object-position:center 40%}
     .how-nav{display:flex;align-items:center;gap:10px;margin-top:18px}
     .how-btn{width:40px;height:40px;border:1.5px solid var(--gray-light);border-radius:50%;background:#fff;color:var(--black);font-size:20px;display:flex;align-items:center;justify-content:center}
     .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
@@ -120,9 +120,9 @@
     .how-dot.is-on{background:var(--g);transform:scale(1.4)}
 
     .live{background:var(--off-white);overflow:hidden}
-    .live-grid{display:grid;grid-template-columns:400px minmax(0,1fr);gap:80px;align-items:start}
-    .live-photo-wrap{position:relative;max-width:400px}
-    .live-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 18%;border-radius:24px;position:relative;z-index:1}
+    .live-grid{display:grid;grid-template-columns:280px minmax(0,1fr);gap:64px;align-items:start}
+    .live-photo-wrap{position:relative;max-width:280px}
+    .live-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;border-radius:20px;position:relative;z-index:1}
     .live-photo-shadow{position:absolute;inset:0;background:var(--g);border-radius:24px;transform:translate(12px,12px);z-index:0}
     .live-points{margin-top:28px;display:flex;flex-direction:column;gap:14px}
     .live-points p{padding-left:16px;border-left:3px solid var(--g);font-size:16px;line-height:1.65;color:var(--gray)}
@@ -166,15 +166,15 @@
 
     @media(max-width:960px){
       .hero{grid-template-columns:1fr;height:auto;min-height:0}
-      .hero-right{height:60vw;min-height:300px;order:-1}
+      .hero-right{height:42vw;min-height:220px;order:-1}
       .hero-left{padding:40px 20px 48px}
       .hero-img{position:absolute}
       .live-grid,.fct-inner{grid-template-columns:1fr;gap:36px}
-      .live-photo-wrap{max-width:380px}
+      .live-photo-wrap{max-width:240px}
       .stats,.res-grid,.scene-grid{grid-template-columns:1fr 1fr}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
       .how-copy{padding:28px 22px 16px}
-      .how-slide img{height:220px}
+      .how-slide img{height:140px}
     }
     @media(max-width:768px){
       .section,.final-cta{padding:64px 0}
@@ -182,9 +182,9 @@
     }
     @media(max-width:560px){
       .stats,.res-grid,.scene-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
-      .hero-right{height:72vw}
+      .hero-right{height:48vw}
       .btn-fw{width:100%}
-      .how-slide img{height:180px}
+      .how-slide img{height:120px}
       .live-photo-shadow{transform:translate(8px,8px);border-radius:16px}
       .live-photo{border-radius:16px}
     }
