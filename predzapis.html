@@ -138,10 +138,14 @@
 
     .live{background:var(--off-white);overflow:hidden}
     .live.section{padding:72px 0}
-    .live-head{max-width:34em}
-    .live-head .s-title{margin-bottom:0}
+    .live-block{background:#fff;border-radius:24px;padding:40px 40px 32px}
+    .live-head{max-width:46em}
+    .live-head .s-title{margin-bottom:12px}
+    .live-copy{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
+    .live-copy p{margin:0 0 10px}
+    .live-copy p:last-child{margin:0}
     .info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
-    .info-card{position:relative;overflow:hidden;background:#fff;border-radius:var(--r);padding:22px 22px 20px;min-width:0}
+    .info-card{position:relative;overflow:hidden;background:var(--off-white);border-radius:var(--r);padding:22px 22px 20px;min-width:0}
     .info-card.feat{background:var(--g);color:#fff}
     .info-viz{height:40px;margin-bottom:12px;position:relative}
     .info-n{font-size:clamp(28px,3.2vw,40px);font-weight:800;letter-spacing:-.05em;line-height:1}
@@ -163,9 +167,7 @@
     .flow-node:last-child{background:var(--g);border-color:var(--g)}
     .flow-line{flex:1;height:2px;background:var(--g-light);position:relative;overflow:hidden;border-radius:2px;max-width:72px}
     .flow-line::after{content:"";position:absolute;inset:0;background:var(--g);transform:scaleX(0);transform-origin:left;animation:line-run 2.8s ease-out infinite}
-    .live-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
-    .live-points p{margin:0;background:#fff;border-radius:16px;padding:20px 22px;font-size:15px;line-height:1.65;color:var(--gray)}
-    .quote-panel{position:relative;overflow:hidden;margin-top:20px;background:#fff;border-radius:24px;padding:22px 24px;display:flex;align-items:center;gap:20px}
+    .quote-panel{position:relative;overflow:hidden;margin-top:16px;background:var(--g-pale);border-radius:20px;padding:22px 24px;display:flex;align-items:center;gap:20px}
     .quote-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--g) 28%, transparent);pointer-events:none;animation:ring-drift 18s linear infinite}
     .quote-ring.a{width:180px;height:180px;top:-70px;right:-50px}
     .quote-ring.b{width:120px;height:120px;bottom:-40px;left:-30px;animation-direction:reverse;animation-duration:22s}
@@ -219,19 +221,20 @@
       .hero-img{position:absolute}
       .hero-leaf-a{left:auto;right:12px;top:8px;width:88px}
       .hero-leaf-b{display:none}
-      .info-grid,.live-points{grid-template-columns:1fr 1fr}
+      .info-grid{grid-template-columns:1fr 1fr}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
       .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
       .section{padding:64px 0}
       .stats-wrap{padding:32px 0 8px}
+      .live-block{padding:28px 20px 24px}
     }
     @media(max-width:560px){
       .stats,.res-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
       .how-slide{flex-basis:min(280px,82vw)}
       .hero-right{height:48vw}
-      .info-grid,.live-points{grid-template-columns:1fr}
+      .info-grid{grid-template-columns:1fr}
       .quote-panel{padding:24px 20px}
     }
     @media(prefers-reduced-motion:reduce){
@@ -450,41 +453,47 @@
 
     <section class="live section" id="live">
       <div class="container">
-        <div class="live-head">
-          <div class="s-label">Живые примеры</div>
-          <h2 class="s-title">Живые примеры на ситуации, которые бывают у тебя вечером.</h2>
-        </div>
-        <div class="info-grid">
-          <article class="info-card feat">
-            <div class="info-viz" aria-hidden="true">
-              <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
+        <div class="live-block">
+          <div class="live-head">
+            <div class="s-label">Живые примеры</div>
+            <h2 class="s-title">Живые примеры на ситуации, которые бывают у тебя вечером.</h2>
+            <div class="live-copy">
+              <p>Чтобы было на что опереться, а не сидеть одной в чате и угадывать. На каждую ситуацию рядом видно, что человек говорил дома, что пробовал и что у него получалось.</p>
+              <p>На одну ситуацию ты видишь не один пример, а больше десяти. Это уже прожили люди на прошлых потоках, мы собирали эти примеры несколько лет, и ждать ответ в ленте не нужно.</p>
             </div>
-            <div class="info-n">232</div>
-            <p class="info-l">живых примера с прошлых потоков</p>
-          </article>
-          <article class="info-card">
-            <div class="info-viz" aria-hidden="true">
-              <div class="dots">
-                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
-                <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
+          </div>
+          <div class="info-grid">
+            <article class="info-card feat">
+              <div class="info-viz" aria-hidden="true">
+                <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
               </div>
-            </div>
-            <div class="info-n">10+</div>
-            <p class="info-l">примеров на одну ситуацию</p>
-          </article>
-          <article class="info-card">
-            <div class="info-viz" aria-hidden="true">
-              <div class="flow"><span class="flow-node"></span><span class="flow-line"></span><span class="flow-node"></span></div>
-            </div>
-            <div class="info-n" style="font-size:clamp(24px,2.6vw,34px)">сразу</div>
-            <p class="info-l">шаг и пример рядом, без чата</p>
-          </article>
-        </div>
-        <div class="quote-panel">
-          <span class="quote-ring a" aria-hidden="true"></span>
-          <span class="quote-ring b" aria-hidden="true"></span>
-          <img class="quote-ava" src="assets/quote-nata.png" alt="Наталья Зайцева" width="72" height="72">
-          <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
+              <div class="info-n">232</div>
+              <p class="info-l">живых примера с прошлых потоков</p>
+            </article>
+            <article class="info-card">
+              <div class="info-viz" aria-hidden="true">
+                <div class="dots">
+                  <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
+                  <span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span>
+                </div>
+              </div>
+              <div class="info-n">10+</div>
+              <p class="info-l">примеров на одну ситуацию</p>
+            </article>
+            <article class="info-card">
+              <div class="info-viz" aria-hidden="true">
+                <div class="flow"><span class="flow-node"></span><span class="flow-line"></span><span class="flow-node"></span></div>
+              </div>
+              <div class="info-n" style="font-size:clamp(24px,2.6vw,34px)">сразу</div>
+              <p class="info-l">живой пример рядом, без чата</p>
+            </article>
+          </div>
+          <div class="quote-panel">
+            <span class="quote-ring a" aria-hidden="true"></span>
+            <span class="quote-ring b" aria-hidden="true"></span>
+            <img class="quote-ava" src="assets/quote-nata.png" alt="Наталья Зайцева" width="72" height="72">
+            <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
+          </div>
         </div>
       </div>
     </section>
