@@ -124,22 +124,6 @@
     .res-card.is-feat .res-d{color:rgba(255,255,255,.78)}
     .res-hl{background:var(--g-light);color:var(--g-dark);font-style:normal;font-weight:800;padding:.12em .3em;border-radius:6px;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 
-    .learn{position:relative;background:var(--off-white);overflow:hidden}
-    .learn::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--g-light) 0%,transparent 70%);right:-120px;top:-80px;pointer-events:none}
-    .learn-head{position:relative;z-index:1;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:8px}
-    .learn-head .s-title{margin-bottom:0;max-width:10em}
-    .learn-aside{max-width:16em;margin:0 0 6px;font-size:15px;line-height:1.5;color:var(--gray);text-align:right}
-    .learn-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:32px}
-    .learn-card{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:24px;padding:24px 22px 26px;min-width:0;box-shadow:0 10px 30px color-mix(in srgb, var(--g) 8%, transparent);transition:transform .2s,box-shadow .2s}
-    .learn-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px color-mix(in srgb, var(--g) 14%, transparent)}
-    .learn-ico{width:88px;height:88px;border-radius:22px;overflow:hidden;background:#E8EDE0;margin-bottom:16px}
-    .learn-ico img{width:100%;height:100%;object-fit:cover;display:block}
-    .learn-t{margin:0 0 8px;padding:0;font-size:17px;font-weight:800;letter-spacing:-.03em;line-height:1.3}
-    .learn-d{margin:0;font-size:14px;line-height:1.6;color:var(--gray)}
-    .learn-ring{position:absolute;border-radius:50%;border:1px solid color-mix(in srgb, var(--g) 26%, transparent);pointer-events:none}
-    .learn-ring.a{width:160px;height:160px;left:-50px;bottom:-40px}
-    .learn-ring.b{width:90px;height:90px;right:18%;top:28px}
-
     .how{background:#fff;overflow:hidden}
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .how-top .s-title{margin-bottom:0}
@@ -238,9 +222,7 @@
       .upd-facts{grid-template-columns:1fr 1fr}
       .upd-facts div:last-child{grid-column:1/-1}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
-      .learn-head{flex-direction:column;align-items:flex-start;gap:12px}
-      .learn-aside{text-align:left;max-width:36em}
-      .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
+      .ephir-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
       .section{padding:64px 0}
@@ -248,7 +230,7 @@
       .live-block{padding:28px 20px 24px}
     }
     @media(max-width:560px){
-      .stats,.res-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
+      .stats,.res-grid,.ephir-grid{grid-template-columns:1fr}
       .how-slide{flex-basis:min(280px,82vw)}
       .hero-right{height:48vw}
       .photo-cap{left:16px;bottom:16px;width:min(300px,calc(100% - 32px));padding:18px 16px 16px 18px;border-radius:20px}
@@ -261,7 +243,7 @@
     }
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
-      .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.hero-nudge-in{transform:none;animation:none}
+      .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.hero-nudge-in{transform:none;animation:none}
       .quote-ring,.sheet{animation:none}
       .stat,.stat-n,.stat-d{transition:none}
     }
@@ -458,60 +440,6 @@
             <div class="how-pic"><img src="assets/how-review.jpg" alt="Проверка задания врачом-психотерапевтом" width="1024" height="768"></div>
             <h3>Проверка домашней работы врачом-психотерапевтом и психологом</h3>
             <p>На тарифе с проверкой. Живых звонков нет. Читает человек, не бот.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="learn section" id="learn">
-      <span class="learn-ring a" aria-hidden="true"></span>
-      <span class="learn-ring b" aria-hidden="true"></span>
-      <div class="container">
-        <div class="s-label">После Школы</div>
-        <div class="learn-head">
-          <h2 class="s-title">Вот чему вы научитесь в Школе</h2>
-          <p class="learn-aside">Не ещё один серьёзный разговор. Слова, которые можно сказать завтра вечером.</p>
-        </div>
-        <div class="learn-grid">
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-evening.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Увидите, как у вас проходит обычный вечер</p>
-            <p class="learn-d">Не по советам из интернета. По тому, кто у вас молчит, кто орёт и кто уходит в другую комнату.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-house.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Поймёте, что дом может быть тяжёлым, даже если руки никто не поднимает</p>
-            <p class="learn-d">Холод, молчание и давление тоже считаются. «Он же не бьёт» ещё не значит, что дома нормально.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-words.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Сможете сказать вслух, что именно случилось</p>
-            <p class="learn-d">Не общее «нам надо поговорить», а конкретное: что было вечером и чего вы больше не согласны.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-both.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Заметите, где орёте или молчите сами, а не только где это делает он</p>
-            <p class="learn-d">Не чтобы стыдиться. Чтобы видеть всю ссору целиком: и его, и себя.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-ask.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Научитесь просить, не срываясь на крик при ребёнке</p>
-            <p class="learn-d">К шести вечера будет готовая фраза. Не очередной срыв, после которого вы себя не узнаёте.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-no.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Сможете сказать нет и не крутить это в голове всю ночь</p>
-            <p class="learn-d">Отказ не обязан превращаться в вину до утра. Сказали нет, и можно спать.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-child.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Сможете поговорить с ребёнком и не стыдиться потом своего голоса</p>
-            <p class="learn-d">После разговора не будет мысли, что вы опять наорали и звучали так, как самим противно слышать.</p>
-          </article>
-          <article class="learn-card">
-            <div class="learn-ico" aria-hidden="true"><img src="assets/learn-choose.png" alt="" width="88" height="88"></div>
-            <p class="learn-t">Сами решите, оставаться, уходить или отодвинуть человека</p>
-            <p class="learn-d">Школа не обещает, что дом станет тёплым. Сохранить можно, уйти можно, отойти в сторону тоже можно.</p>
           </article>
         </div>
       </div>
