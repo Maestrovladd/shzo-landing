@@ -1,8 +1,6 @@
 <!doctype html>
-<!-- impeccable-disable single-font: Alifer kit, Figtree only -->
-<!-- impeccable-disable dark-glow: locked dark screens, brand sage shadow -->
-<!-- impeccable-disable side-tab: lock quote bar, user-approved -->
-<!-- impeccable-disable em-dash-overuse: existing copy locked -->
+<!-- impeccable-disable single-font: Alifer/Olga kit, Figtree only -->
+<!-- impeccable-disable side-tab: lock quote bar -->
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -14,18 +12,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --g: #5F7350;
-      --g-dark: #4A5C3E;
-      --g-light: #E8EEE4;
-      --cream: #d9d3c9;
-      --paper: #fffcf7;
-      --off: #f9f8f5;
-      --ink: #1a1a1a;
-      --muted: #6b7180;
-      --line: #e5e7eb;
+      --mint: oklch(0.965 0.032 155);
+      --mint-2: oklch(0.93 0.044 155);
+      --paper: oklch(0.995 0.008 95);
+      --cream: oklch(0.982 0.014 95);
+      --g: oklch(0.42 0.078 155);
+      --g-dark: oklch(0.34 0.07 155);
+      --g-ink: oklch(0.30 0.055 155);
+      --ink: oklch(0.22 0.02 155);
+      --muted: oklch(0.48 0.02 155);
+      --line: color-mix(in oklab, var(--g) 16%, white);
       --r: 24px;
-      --shadow: 0 18px 40px color-mix(in oklab, var(--g-dark) 16%, transparent);
-      --ease: cubic-bezier(0.23, 1, 0.32, 1);
+      --r-sm: 16px;
+      --sh: 0 18px 40px color-mix(in oklab, var(--g) 14%, transparent);
+      --sh-btn: 0 4px 14px color-mix(in oklab, var(--g) 28%, transparent);
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -33,30 +34,36 @@
       margin: 0;
       font-family: Figtree, ui-sans-serif, system-ui, sans-serif;
       color: var(--ink);
-      background: #fff;
+      background: var(--paper);
       line-height: 1.55;
-      font-size: 16px;
-      overflow-x: hidden;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
     button, input { font-family: inherit; }
-    ul { margin: 0; padding: 0; list-style: none; }
+    ul, ol { margin: 0; padding: 0; list-style: none; }
+    h1, h2, h3 { text-wrap: balance; }
     .col { width: min(1120px, calc(100% - 96px)); margin: 0 auto; }
+    .center { text-align: center; }
+    .measure { max-width: 760px; margin-left: auto; margin-right: auto; }
+    em { font-style: italic; color: var(--g-ink); }
 
     .nav {
-      position: relative;
-      z-index: 2;
+      position: sticky;
+      top: 0;
+      z-index: 30;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 20px 48px;
-      background: var(--ink);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      height: 72px;
+      padding: 0 48px;
+      background: color-mix(in oklab, white 78%, var(--mint));
+      backdrop-filter: saturate(140%) blur(10px);
+      border-bottom: 1px solid color-mix(in oklab, var(--g) 10%, white);
     }
-    .logo { font-size: 15px; font-weight: 600; color: #fff; }
+    .logo { font-size: 15px; font-weight: 600; }
     .nav-cta {
       appearance: none;
       border: 0;
@@ -64,733 +71,515 @@
       display: inline-flex;
       align-items: center;
       height: 40px;
-      padding: 0 20px;
+      padding: 0 18px;
       background: var(--g);
       color: #fff;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 600;
+      box-shadow: var(--sh-btn);
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease);
     }
-    .nav-cta:hover { background: var(--g-dark); }
+    .nav-cta:hover { background: var(--g-dark); transform: translateY(-2px); }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.25fr 0.85fr;
-      height: calc(100svh - 81px);
-      min-height: 640px;
-      background: var(--ink);
-      position: relative;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 48px;
+      align-items: center;
+      min-height: calc(100svh - 72px);
+      padding: 48px 48px 64px;
+      background:
+        radial-gradient(ellipse 70% 80% at 88% 18%, color-mix(in oklab, var(--mint-2) 80%, white), transparent 62%),
+        linear-gradient(180deg, var(--mint) 0%, var(--paper) 100%);
     }
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 48px 56px 72px 48px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-inner { width: min(580px, 100%); }
-    .hero h1 {
-      margin: 0 0 20px;
-      font-size: clamp(34px, 4.2vw, 56px);
-      font-weight: 800;
-      letter-spacing: -0.045em;
-      line-height: 1.08;
-      color: #fff;
-    }
-    .hero-pain {
-      margin: 0 0 12px;
-      font-size: 17px;
-      line-height: 1.45;
-      color: rgba(255,255,255,.7);
-      max-width: 38ch;
-    }
-    .hero-mech {
-      margin: 0 0 14px;
-    }
-    .hero-mech span {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      min-height: 40px;
-      padding: 0 16px;
-      border: 1px solid rgba(255,255,255,.28);
+      height: 32px;
+      padding: 0 14px;
+      margin: 0 0 18px;
       border-radius: 999px;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 700;
+      background: color-mix(in oklab, white 70%, var(--mint-2));
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--g-ink);
+    }
+    .hero h1 {
+      margin: 0 0 18px;
+      font-size: clamp(36px, 4.6vw, 56px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.08;
+    }
+    .hero-pain {
+      margin: 0 0 14px;
+      max-width: 34em;
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.4;
     }
     .hero-how {
       margin: 0 0 28px;
-      font-size: 16px;
-      line-height: 1.5;
-      color: rgba(255,255,255,.55);
-      max-width: 40ch;
+      max-width: 32em;
+      color: var(--muted);
     }
-    .hero-cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
-    .hero-gift {
+    .hero-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero-note {
       margin: 0;
-      width: min(240px, 100%);
-      padding: 12px 16px;
-      background: color-mix(in oklab, var(--g) 28%, #1a1a1a);
-      border: 1px solid color-mix(in oklab, var(--g) 50%, transparent);
-      border-radius: 16px;
-      color: rgba(255,255,255,.88);
-      font-size: 13px;
-      line-height: 1.4;
+      max-width: 28em;
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--muted);
     }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--g);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-    .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--g); }
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: var(--g-dark);
-    }
-    .hero-right::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 140px;
-      background: linear-gradient(to right, var(--ink), transparent);
-      z-index: 2;
-      pointer-events: none;
-    }
-    .hero-right img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 16%;
-    }
-    .photo-cap {
-      position: absolute;
-      left: 28px;
-      bottom: 28px;
-      z-index: 3;
-      width: min(240px, calc(100% - 48px));
-      padding: 14px 16px;
-      background: var(--paper);
-      color: var(--ink);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-    }
-    .photo-cap strong { display: block; font-size: 16px; font-weight: 800; }
-    .photo-cap span { font-size: 13px; color: var(--muted); }
-    .scroll-cue {
-      position: absolute;
-      left: 48px;
-      bottom: 28px;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: rgba(255,255,255,.45);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .scroll-cue svg {
-      width: 28px;
-      height: 28px;
-      animation: cue 1.6s var(--ease) infinite;
-    }
-    @keyframes cue {
-      0%, 100% { transform: translateY(0); opacity: .55; }
-      50% { transform: translateY(8px); opacity: 1; }
-    }
+    .hero-note b { color: var(--g-ink); font-weight: 600; }
 
     .btn {
       appearance: none;
       border: 0;
+      cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 58px;
-      padding: 0 32px;
-      border-radius: 999px;
+      height: 58px;
+      padding: 0 28px;
       background: var(--g);
       color: #fff;
+      border-radius: 999px;
       font-size: 16px;
       font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 8px 32px rgba(95,115,80,.35);
-      transition: transform 180ms var(--ease), background 180ms ease;
+      box-shadow: var(--sh-btn);
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease);
     }
-    .btn:hover { background: var(--g-dark); transform: translateY(-2px); }
+    .btn:hover { background: var(--g-dark); transform: translateY(-2px); box-shadow: 0 8px 22px color-mix(in oklab, var(--g) 32%, transparent); }
+    .btn:active { transform: scale(.97); }
+    .btn:focus-visible, .nav-cta:focus-visible {
+      outline: 0;
+      box-shadow: var(--sh-btn), 0 0 0 3px color-mix(in oklab, var(--g) 28%, white);
+    }
     .btn-wide { width: 100%; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--g-dark);
-      border: 1px solid color-mix(in oklab, var(--g) 45%, var(--ink));
-      box-shadow: none;
-    }
-    .btn-ghost:hover { background: var(--g-light); }
 
-    .get { background: var(--off); padding: 88px 0; }
-    .center { text-align: center; }
-    .lead-get {
-      margin: 0 auto 22px;
-      max-width: 46ch;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.45;
-    }
-    .center-wrap { display: flex; justify-content: center; margin: 0 0 40px; }
-    .get-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 10px 28px;
-      background: var(--g-dark);
-      color: #fff;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-    }
-    .learn-h {
-      text-align: center;
-      margin: 0 0 24px;
-      font-size: clamp(24px, 2.8vw, 36px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-    .learn-h em { font-style: normal; color: var(--g-dark); }
-    h2 {
-      margin: 0 0 14px;
-      font-size: clamp(28px, 3.2vw, 44px);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.12;
-    }
-    h2 em { font-style: normal; color: var(--g-dark); }
-    .ephir {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(240px, 300px) minmax(0, 1fr);
-      gap: 8px 28px;
-      align-items: center;
-      margin-bottom: 28px;
-    }
-    .ephir-list {
-      margin: 0;
-      padding: 0;
-    }
-    .ephir-list li {
+    .hero-photo {
       position: relative;
-      padding-left: 18px;
-      margin-bottom: 18px;
-      font-size: 16px;
-      line-height: 1.45;
-      font-weight: 600;
+      max-width: 480px;
+      margin-left: auto;
     }
-    .ephir-list li:last-child { margin-bottom: 0; }
-    .ephir-list li::before {
-      content: "";
-      position: absolute;
-      left: 0; top: 8px;
-      width: 7px; height: 7px;
-      border-radius: 50%;
-      background: var(--g);
-    }
-    .ephir-window {
-      position: relative;
-      aspect-ratio: 4 / 5;
-      border-radius: var(--r);
-      overflow: hidden;
-      background: var(--g-dark);
-      box-shadow: var(--shadow);
-    }
-    .ephir-window img {
-      position: absolute;
-      inset: 0;
+    .hero-photo img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
-      object-position: 32% 28%;
+      object-position: center 12%;
+      border-radius: 26px;
+      box-shadow: 0 24px 60px color-mix(in oklab, var(--g) 22%, transparent);
     }
-    .ephir-window::after {
-      content: "";
+    .photo-cap {
       position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(to top, rgb(26 26 26 / .45), transparent 42%);
-      pointer-events: none;
-    }
-    .play {
-      position: absolute;
-      top: 46%;
-      left: 50%;
-      z-index: 2;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: rgb(255 252 247 / .94);
-      box-shadow: 0 10px 28px color-mix(in oklab, var(--g-dark) 28%, transparent);
-      transform: translate(-50%, -50%);
-    }
-    .play::after {
-      content: "";
-      position: absolute;
-      left: 23px;
-      top: 18px;
-      border-style: solid;
-      border-width: 11px 0 11px 18px;
-      border-color: transparent transparent transparent var(--g-dark);
-    }
-    .photo-chip {
-      position: absolute;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      z-index: 2;
-      padding: 12px 14px;
+      left: -14px;
+      bottom: 28px;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid var(--line);
       border-radius: 16px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
+      box-shadow: var(--sh);
     }
-    .photo-chip b { display: block; font-size: 14px; font-weight: 800; letter-spacing: -0.02em; }
-    .photo-chip span { font-size: 12px; color: var(--muted); }
-    .gathered {
+    .photo-cap strong { display: block; font-size: 15px; }
+    .photo-cap span { font-size: 13px; color: var(--muted); }
+
+    .sec { padding: 76px 0; }
+    .sec h2 {
       margin: 0 0 12px;
-      font-size: 14px;
-      color: rgba(255,255,255,.5);
+      font-size: clamp(28px, 3.4vw, 38px);
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: -.02em;
     }
-    .cards3 {
+    .sec-lead {
+      margin: 0 auto 36px;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .gets { background: var(--paper); }
+    .school { background: linear-gradient(180deg, var(--mint) 0%, var(--paper) 100%); }
+    .ephir { background: var(--cream); }
+    .next { background: var(--paper); }
+    .why { background: linear-gradient(180deg, var(--cream) 0%, var(--mint) 100%); }
+    .nofit { background: var(--paper); }
+
+    .chips {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-bottom: 0;
-    }
-    .get-cta {
-      display: flex;
-      justify-content: center;
       margin-top: 36px;
     }
-    .card {
+    .chip {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 18px 18px 16px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--sh);
+    }
+    .chip svg { width: 22px; height: 22px; flex: none; color: var(--g); margin-top: 2px; }
+    .chip b { display: block; font-size: 16px; line-height: 1.3; color: var(--g-ink); }
+    .chip p { margin: 6px 0 0; font-size: 15px; color: var(--muted); }
+
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 36px 0 28px;
+    }
+    .scene {
+      padding: 22px 22px 20px;
       background: #fff;
-      border-radius: var(--r);
-      padding: 28px 26px 32px;
-      box-shadow: 0 10px 28px color-mix(in oklab, var(--g-dark) 8%, transparent);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--sh);
     }
-    .ico {
-      width: 44px; height: 44px;
-      border-radius: 12px;
-      background: var(--g);
-      margin-bottom: 16px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 20px;
-    }
-    .ico-place { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E"); }
-    .ico-gift { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8M12 22V12M2 7h20v5H2zM12 7a3 3 0 1 0-3-3c0 3 3 3 3 3zm0 0a3 3 0 1 1 3-3c0 3-3 3-3 3z'/%3E%3C/svg%3E"); }
-    .ico-stamp { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Cpath d='M12 3l2.2 4.6L19 8.2l-3.4 3.3.8 4.7L12 14.6 7.6 16.2l.8-4.7L5 8.2l4.8-.6L12 3z'/%3E%3C/svg%3E"); }
-    .card h3 { margin: 0 0 10px; font-size: 17px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
-    .card p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
-    .stamp {
+    .scene .n {
       display: inline-flex;
       align-items: center;
-      margin: 12px 0 0;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: var(--g-light);
-      color: var(--g-dark);
-      font-size: 11px;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      background: var(--mint-2);
+      color: var(--g-ink);
+      font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    }
+    .scene h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.25; }
+    .scene p { margin: 0; font-size: 15px; color: var(--muted); }
+    .meet {
+      display: flex;
+      justify-content: center;
+    }
+    .meet span {
+      display: inline-flex;
+      max-width: 720px;
+      padding: 14px 22px;
+      background: var(--g);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 1.35;
+      box-shadow: var(--sh-btn);
     }
 
-    .stream { background: var(--ink); color: #fff; padding: 88px 0 80px; }
-    .stream h2 {
-      color: #fff;
-      margin: 0 0 16px;
-      line-height: 1.18;
-    }
-    .stream .lead {
-      color: rgba(255,255,255,.62);
-      margin: 0 0 28px;
-      font-size: 18px;
-      line-height: 1.55;
-    }
-    .stream-stage {
-      display: grid;
-      grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
-      gap: 40px;
-      align-items: stretch;
-      margin-bottom: 48px;
-    }
-    .stream-photo {
-      position: relative;
-      margin: 0;
-      border-radius: var(--r);
-      overflow: hidden;
-      background: #111;
-      box-shadow: 0 18px 40px color-mix(in oklab, var(--g-dark) 28%, transparent);
-      min-height: 520px;
-    }
-    .stream-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 18%;
-    }
-    .stream-photo .photo-chip {
-      left: 18px;
-      right: auto;
-      bottom: 18px;
-      width: max-content;
-      max-width: calc(100% - 36px);
-      color: var(--ink);
-    }
-    .why-viz {
-      display: grid;
-      grid-template-columns: 200px minmax(0, 1fr);
-      gap: 20px 24px;
-      align-items: center;
-      padding: 22px 22px 22px 18px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--r);
-      background: rgba(255,255,255,.03);
-    }
-    .why-viz .k {
-      grid-column: 1 / -1;
-      margin: 0;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--g);
-    }
-    .loop {
-      position: relative;
-      width: 200px;
-      height: 200px;
-    }
-    .loop svg { width: 200px; height: 200px; display: block; }
-    .loop .ln {
-      position: absolute;
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-    .loop .ln.a { top: 6px; left: 50%; transform: translateX(-50%); }
-    .loop .ln.b { right: 4px; bottom: 42px; }
-    .loop .ln.c { left: 8px; bottom: 42px; }
-    .why-viz .why-line {
-      margin: 0;
-      font-size: clamp(20px, 2.2vw, 28px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.25;
-    }
-    .day-ruler {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 14px;
-    }
-    .day-ruler b {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--g);
-      letter-spacing: 0.04em;
-    }
-    .ticks {
-      height: 8px;
-      border-radius: 999px;
-      background: repeating-linear-gradient(90deg,
-        rgba(95,115,80,.95) 0 2px,
-        transparent 2px 3.4%);
-    }
-    .stream .gathered {
-      margin: 0 0 16px;
-      font-size: 14px;
-      color: rgba(255,255,255,.45);
-    }
-    .prog-map {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .prog-map li {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-height: 132px;
-      padding: 18px 16px 20px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 20px;
-      background: rgba(255,255,255,.03);
-    }
-    .prog-map .n {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--g);
-    }
-    .prog-map svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--g);
-      fill: none;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .prog-map b {
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.3;
-    }
-    .close-row {
+    .pains {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-      margin-top: 44px;
-      padding-top: 36px;
-      border-top: 1px solid rgba(255,255,255,.12);
+      gap: 16px;
+      margin-top: 36px;
     }
-    .close-left {
-      margin: 0;
-      font-size: clamp(22px, 2.4vw, 32px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.22;
+    .pain {
+      padding: 22px 24px 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--sh);
+      transition: transform .18s var(--ease), box-shadow .18s var(--ease);
     }
-    .close-right p {
-      margin: 0 0 24px;
-      font-size: 17px;
-      line-height: 1.5;
-      color: rgba(255,255,255,.7);
-    }
-    .close-right .btn { margin-top: 24px; }
+    .pain h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; line-height: 1.28; }
+    .pain p { margin: 0; font-size: 15px; color: var(--muted); }
+    .pain-wide { grid-column: 1 / -1; }
 
+    .cta-row { display: flex; justify-content: center; margin-top: 40px; }
+    .foot-note {
+      margin: 28px auto 0;
+      max-width: 640px;
+      text-align: center;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 36px 0 40px;
+    }
+    .stat {
+      padding: 28px 24px 24px;
+      text-align: center;
+      background: var(--mint);
+      border-radius: 22px;
+      border: 1px solid var(--line);
+    }
+    .stat b {
+      display: block;
+      font-size: clamp(40px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1;
+      color: var(--g-ink);
+    }
+    .stat span { display: block; margin-top: 10px; font-size: 16px; color: var(--muted); }
+
+    .how3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .how {
+      padding: 24px 24px 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--sh);
+    }
+    .how .k {
+      margin: 0 0 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--g);
+    }
+    .how h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.25; }
+    .how p { margin: 0; font-size: 15px; color: var(--muted); }
+    .how .res {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--g-ink);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .why-photo {
+      position: relative;
+    }
+    .why-photo img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: 26px;
+      box-shadow: var(--sh);
+    }
+    .quote {
+      position: relative;
+      padding: 32px 32px 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--sh);
+    }
+    .quote::before {
+      content: "«";
+      display: block;
+      margin-bottom: 8px;
+      font-size: 64px;
+      line-height: .7;
+      color: color-mix(in oklab, var(--g) 35%, white);
+      font-family: Georgia, serif;
+    }
+    .quote p {
+      margin: 0 0 18px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .quote .bio { margin: 0; font-size: 16px; color: var(--muted); font-weight: 400; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .col-card {
+      padding: 28px 28px 24px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+    }
+    .col-card.yes { background: var(--mint); }
+    .col-card.no { background: #fff; }
+    .col-card h3 { margin: 0 0 14px; font-size: 20px; }
+    .col-card li {
+      position: relative;
+      padding-left: 18px;
+      margin: 0 0 10px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+    .col-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .55em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--g);
+    }
+    .col-card.no li::before { background: color-mix(in oklab, var(--ink) 35%, white); }
+
+    .close {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 40px;
+      padding: 28px 32px;
+      background: var(--mint-2);
+      border-radius: 26px;
+    }
+    .close p { margin: 0; max-width: 28em; font-weight: 600; }
+
+    .footer {
+      padding: 40px 0 56px;
+      background: var(--cream);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer .logo { color: var(--ink); margin-bottom: 10px; }
+    .footer p { margin: 0 0 10px; }
+    .footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+    .modal[hidden] { display: none; }
     .modal {
       position: fixed;
       inset: 0;
-      z-index: 50;
+      z-index: 40;
       display: grid;
       place-items: center;
       padding: 24px;
     }
-    .modal[hidden] { display: none; }
     .modal-backdrop {
       position: absolute;
       inset: 0;
-      background: rgb(26 26 26 / .62);
+      background: color-mix(in oklab, var(--ink) 45%, transparent);
     }
     .modal-card {
       position: relative;
       z-index: 1;
-      width: min(480px, 100%);
-      max-height: min(92svh, 820px);
+      width: min(520px, 100%);
+      max-height: min(92svh, 840px);
       overflow: auto;
+      padding: 32px 28px 28px;
+      background: var(--paper);
+      border-radius: 26px;
+      box-shadow: 0 24px 80px color-mix(in oklab, var(--g) 28%, transparent);
+      animation: pop .2s var(--ease);
+    }
+    @keyframes pop {
+      from { opacity: 0; transform: scale(.96); }
+      to { opacity: 1; transform: scale(1); }
     }
     .modal-x {
       position: absolute;
       top: 14px;
-      right: 16px;
-      z-index: 2;
+      right: 14px;
       width: 36px;
       height: 36px;
       border: 0;
-      border-radius: 999px;
-      background: var(--g-light);
-      color: var(--ink);
+      border-radius: 50%;
+      background: var(--mint);
+      color: var(--g-ink);
       font-size: 22px;
-      line-height: 1;
       cursor: pointer;
     }
-    body.modal-open { overflow: hidden; }
-
-    .modal-card .form {
-      padding: 44px 28px 32px;
-      color: var(--ink);
-      background: var(--paper);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-    }
-    .form h3 { margin: 0 0 4px; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
-    .form .hint { margin: 0 0 18px; color: var(--muted); font-size: 13px; }
-    .field { margin-bottom: 12px; }
-    .field label, .pains-label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-    input[type="text"] {
+    .form h3 { margin: 0 0 8px; font-size: 24px; }
+    .hint { margin: 0 0 22px; color: var(--muted); font-size: 15px; }
+    .field { margin: 0 0 14px; }
+    .field label, .pains-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; }
+    .field input {
       width: 100%;
-      border: 1px solid color-mix(in oklab, var(--cream) 55%, var(--ink));
+      height: 52px;
+      padding: 0 14px;
+      border: 1.5px solid var(--line);
       border-radius: 14px;
       background: #fff;
-      color: var(--ink);
       font-size: 16px;
-      padding: 12px 14px;
-      outline: none;
     }
-    input:focus-visible {
-      border-color: var(--g-dark);
-      box-shadow: 0 0 0 3px color-mix(in oklab, var(--g) 35%, transparent);
+    .field input:focus {
+      outline: 0;
+      border-color: var(--g);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--g) 18%, white);
     }
-    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
-    .pill {
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+    .pill { cursor: pointer; }
+    .pill input { position: absolute; opacity: 0; pointer-events: none; }
+    .pill span {
       display: inline-flex;
       align-items: center;
-      min-height: 40px;
-      padding: 6px 12px;
+      height: 40px;
+      padding: 0 14px;
       border-radius: 999px;
-      border: 1px solid color-mix(in oklab, var(--cream) 60%, var(--ink));
+      border: 1.5px solid var(--line);
       background: #fff;
-      font-size: 13px;
-      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
     }
-    .pill input { position: absolute; opacity: 0; pointer-events: none; }
-    .pill:has(input:checked) {
-      background: var(--g-dark);
-      border-color: var(--g-dark);
-      color: #fff;
+    .pill:has(input:checked) span {
+      background: var(--mint);
+      border-color: var(--g);
+      color: var(--g-ink);
     }
     .consent {
-      display: grid;
-      grid-template-columns: 18px 1fr;
-      gap: 8px;
-      margin: 0 0 8px;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.35;
-    }
-    .consent input { width: 16px; height: 16px; margin-top: 1px; accent-color: var(--g-dark); }
-    .legal { margin: 10px 0 0; font-size: 12px; color: var(--muted); }
-    .learn-sub {
-      text-align: center;
-      max-width: 40em;
-      margin: -8px auto 28px;
-      font-size: 16px;
-      line-height: 1.5;
-      color: var(--muted);
-    }
-    .note-get {
-      max-width: 44em;
-      margin: 28px auto 0;
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.55;
-      color: var(--muted);
-    }
-    .quote-lock {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
       margin: 0 0 18px;
-      padding: 22px 24px;
-      border-radius: var(--r);
-      background: var(--paper);
-      color: var(--ink);
-      font-size: clamp(17px, 1.8vw, 21px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.4;
-      box-shadow: var(--shadow);
+      font-size: 14px;
+      color: var(--muted);
     }
-    .bio-lead {
-      margin: 0 0 28px;
-      max-width: 46em;
-      font-size: 17px;
-      line-height: 1.55;
-      color: rgba(255,255,255,.62);
-    }
-    .no-fit p {
-      margin: 0 0 10px;
-      font-size: 15px;
-      line-height: 1.5;
-      color: rgba(255,255,255,.55);
-    }
+    .legal { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
+    body.modal-open { overflow: hidden; }
 
-    .footer {
-      background: #111;
-      color: rgba(255,255,255,.45);
-      padding: 36px 48px 28px;
-    }
-    .footer .logo { color: rgba(255,255,255,.85); }
-    .f-ip { margin: 10px 0 0; font-size: 12px; line-height: 1.6; color: rgba(255,255,255,.28); }
-    .footer a { color: rgba(255,255,255,.5); }
-    .f-copy { margin: 18px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); font-size: 11px; color: rgba(255,255,255,.22); }
-
-    .thanks {
-      display: none;
+    .thanks { display: none; }
+    body.sent .page, body.sent .modal { display: none; }
+    body.sent .thanks {
+      display: grid;
+      place-items: center;
       min-height: 100svh;
-      background: var(--off);
-      padding: 80px 24px;
+      padding: 48px 24px;
+      background: var(--mint);
     }
-    .thanks-card {
-      width: min(560px, 100%);
-      margin: 0 auto;
-      background: var(--paper);
-      border-radius: var(--r);
-      box-shadow: var(--shadow);
-      padding: 40px 32px;
-    }
-    .thanks-card h1 { font-size: 32px; letter-spacing: -0.03em; }
-    body.sent .page { display: none; }
-    body.sent .thanks { display: block; }
+    .thanks-card { width: min(560px, 100%); text-align: center; }
+    .thanks h1 { font-size: 36px; margin: 8px 0 12px; }
 
-    @media (max-width: 960px) {
+    @media (hover: hover) and (pointer: fine) {
+      .pain:hover { transform: translateY(-3px); box-shadow: 0 16px 40px color-mix(in oklab, var(--g) 18%, transparent); }
+    }
+    @media (max-width: 920px) {
       .col { width: min(1120px, calc(100% - 40px)); }
-      .nav, .footer { padding-left: 20px; padding-right: 20px; }
-      .hero { grid-template-columns: 1fr; height: auto; min-height: 0; }
-      .hero-right { order: -1; height: 64vw; min-height: 280px; max-height: 420px; }
-      .hero-right::before { width: 100%; height: 80px; inset: auto 0 0; background: linear-gradient(to bottom, transparent, var(--ink)); }
-      .hero-left { padding: 28px 20px 88px; }
-      .hero-inner { width: 100%; }
-      .scroll-cue { left: 20px; }
-      .cards3 { grid-template-columns: 1fr; gap: 16px; }
-      .ephir { grid-template-columns: 1fr; gap: 24px; }
-      .ephir-window {
-        order: -1;
-        width: min(300px, 100%);
-        margin: 0 auto;
-      }
-      .stream-stage,
-      .why-viz,
-      .close-row { grid-template-columns: 1fr; gap: 24px; }
-      .stream-photo { min-height: 0; height: 64vw; max-height: 420px; }
-      .prog-map { grid-template-columns: 1fr 1fr; }
-      .get { padding: 56px 0; }
-      .stream { padding: 56px 0 56px; }
-      .btn { width: 100%; }
-      .hero-cta .btn,
-      .get-cta .btn { width: auto; }
+      .nav, .hero { padding-left: 20px; padding-right: 20px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 28px; }
+      .hero-photo { max-width: 420px; margin: 0 auto; }
+      .chips, .scenes, .stats, .how3, .why-grid, .split, .pains { grid-template-columns: 1fr; }
+      .pain-wide { grid-column: auto; }
+      .close { flex-direction: column; align-items: stretch; }
+      .close .btn { width: 100%; }
+      .photo-cap { left: 12px; }
     }
     @media (max-width: 640px) {
-      .photo-cap { display: none; }
-      .hero-cta { flex-direction: column; align-items: stretch; }
-      .hero-cta .btn { width: 100%; }
-      .hero-gift { width: 100%; }
+      .sec { padding: 56px 0; }
+      .hero h1 { font-size: 32px; }
+      .meet span { border-radius: 22px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .btn { transition: none; }
-      .btn:hover { transform: none; }
-      .scroll-cue svg { animation: none; }
+      .btn, .nav-cta, .pain { transition: none; }
+      .btn:hover, .nav-cta:hover, .pain:hover { transform: none; }
+      .modal-card { animation: none; }
     }
   </style>
 </head>
@@ -802,25 +591,17 @@
     </header>
 
     <section class="hero">
-      <div class="hero-left">
-        <div class="hero-inner">
-          <p class="eyebrow">Анкета предзаписи</p>
-          <h1>Школа здоровых отношений</h1>
-          <p class="hero-pain">Как перестать жить в конфликтах и напряжении, вернуть близость и уважение, и научиться говорить без крика, давления и чувства вины.</p>
-          <p class="hero-how">Заполните анкету предзаписи и получите место на закрытом эфире.</p>
-          <div class="hero-cta">
-            <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
-            <p class="hero-gift">После анкеты. Лучшие условия следующего набора только у тех, кто уже в списке.</p>
-          </div>
+      <div>
+        <p class="eyebrow">Анкета предзаписи</p>
+        <h1>Школа здоровых отношений</h1>
+        <p class="hero-pain">Как перестать жить в конфликтах и напряжении, вернуть близость и уважение, и научиться говорить без крика, давления и чувства вины.</p>
+        <p class="hero-how">Заполните анкету предзаписи и получите место на закрытом эфире.</p>
+        <div class="hero-cta">
+          <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
+          <p class="hero-note"><b>После анкеты.</b> Лучшие условия следующего набора остаются только у тех, кто уже в списке.</p>
         </div>
-        <a class="scroll-cue" href="#get">
-          <span>что получите</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-        </a>
       </div>
-      <div class="hero-right">
+      <div class="hero-photo">
         <img src="assets/predzapis-hero.jpg" alt="Наталья Зайцева, врач-психотерапевт" width="900" height="1200">
         <div class="photo-cap">
           <strong>Наталья Зайцева</strong>
@@ -829,168 +610,177 @@
       </div>
     </section>
 
-    <section class="get" id="get">
+    <section class="sec gets" id="get">
       <div class="col">
         <h2 class="center">В предзаписи <em>вы получите</em></h2>
-        <div class="center-wrap"><span class="get-pill">доступ к закрытому эфиру и карте «с кем вы живёте»</span></div>
-        <p class="lead-get">Я не веду отдельно «про мужа», отдельно «про ребёнка» и отдельно «про маму». Это одна Школа. Три сцены одного дома, и все сходятся к одной точке: перестать жить в конфликтах и напряжении, вернуть близость и уважение, научиться говорить без крика, давления и чувства вины.</p>
-        <h3 class="learn-h">На закрытом эфире <em>вы узнаете</em></h3>
-        <p class="learn-sub">Даже если он не пьёт и не бьёт, а дома всё равно холодно. И даже если орёте вы, а потом ненавидите свой голос.</p>
-
-        <div class="ephir">
-          <ul class="ephir-list">
-            <li>Почему серьёзный разговор срывается, даже если вы оба хотели поговорить, и вечером он снова у телевизора, а вы в телефоне</li>
-            <li>Чем жизнь соседями отличается от жестокости, если он не пьёт, не курит и руку не поднимал, а лечь и назвать, что болит, всё равно нельзя</li>
-            <li>Что делать со своим криком, если ребёнок уже слышит, вы обещали себе не орать, а к шести снова срываетесь</li>
-          </ul>
-          <div class="ephir-window">
-            <img src="assets/hero.png" alt="Наталья Зайцева" width="800" height="1000">
-            <span class="play" aria-hidden="true"></span>
-            <div class="photo-chip">
-              <b>Закрытый эфир</b>
-              <span>для тех, кто уже в анкете</span>
+        <div class="chips">
+          <article class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <div>
+              <b>Место на закрытом эфире</b>
+              <p>Для тех, кто уже в анкете. Не для всей ленты сразу.</p>
             </div>
-          </div>
-          <ul class="ephir-list">
-            <li>Почему кабинет уже был, год на исправление уже вышел, а на завтрашний вечер по-прежнему нечего сказать</li>
-            <li>Как понять, оставаться, уходить или отодвинуть человека из близких в знакомые, и чего я не обещаю второму человеку</li>
-            <li>Что вы сделаете руками за этот вечер: одну строку про вашего человека, чтобы после эфира было что дописать, а не «было интересно»</li>
-          </ul>
+          </article>
+          <article class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            <div>
+              <b>Карта «с кем вы живёте»</b>
+              <p>Семь сторон жизни, оценка от нуля до десяти, один человек, с которым сейчас тяжелее всего. Десять минут за столом.</p>
+            </div>
+          </article>
+          <article class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            <div>
+              <b>Место в списке на набор</b>
+              <p>Школы здоровых отношений на самых выгодных условиях этого потока. Какие именно цифры, скажу на закрытом эфире.</p>
+            </div>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <div class="cards3">
-          <article class="card">
-            <div class="ico ico-place" aria-hidden="true"></div>
-            <h3>Занять место на следующий набор</h3>
-            <p>Школы здоровых отношений на самых выгодных условиях этого потока. Какие именно цифры, скажу на закрытом эфире.</p>
+    <section class="sec school">
+      <div class="col">
+        <h2 class="center">Это одна Школа, не три разных курса</h2>
+        <p class="sec-lead center">Я не веду отдельно «про мужа», отдельно «про ребёнка» и отдельно «про маму». Три сцены одного дома.</p>
+        <div class="scenes">
+          <article class="scene">
+            <span class="n">01</span>
+            <h3>Про мужа</h3>
+            <p>Не отдельный курс «как разговаривать с ним».</p>
           </article>
-          <article class="card">
-            <div class="ico ico-stamp" aria-hidden="true"></div>
-            <h3>Лучшие условия только тем, кто в анкете</h3>
-            <p>Не общая рассылка всем сразу. Сначала те, кто уже в списке.</p>
+          <article class="scene">
+            <span class="n">02</span>
+            <h3>Про ребёнка</h3>
+            <p>Не отдельный курс «как не орать к шести».</p>
           </article>
-          <article class="card">
-            <div class="ico ico-gift" aria-hidden="true"></div>
-            <h3>Карта «с кем вы живёте» сразу после анкеты</h3>
-            <p>Семь сторон жизни, оценка от нуля до десяти, один человек, с которым сейчас тяжелее всего. Десять минут за столом.</p>
+          <article class="scene">
+            <span class="n">03</span>
+            <h3>Про маму</h3>
+            <p>Не отдельный курс «как выдержать родных».</p>
           </article>
         </div>
-        <p class="note-get">Домашние читают живые люди, кураторы. Поэтому в набор входит столько человек, сколько мы реально успеваем провести за двенадцать недель, а не сколько нажало кнопку.</p>
-        <p class="note-get">Школа не про то, чтобы спасти брак любой ценой. Сохранить можно. Уйти можно. Отодвинуть человека из близких в знакомые можно. Тёплым станет не каждый дом, и этого я не обещаю.</p>
-        <div class="get-cta">
+        <p class="meet"><span>Все сходятся к одной точке: перестать жить в конфликтах и напряжении</span></p>
+      </div>
+    </section>
+
+    <section class="sec ephir">
+      <div class="col">
+        <h2 class="center">На закрытом эфире <em>вы узнаете</em></h2>
+        <p class="sec-lead center">Даже если он не пьёт и не бьёт, а дома всё равно холодно. И даже если орёте вы, а потом ненавидите свой голос.</p>
+        <div class="pains">
+          <article class="pain">
+            <h3>Почему серьёзный разговор срывается</h3>
+            <p>Даже если вы оба хотели поговорить, и вечером он снова у телевизора, а вы в телефоне.</p>
+          </article>
+          <article class="pain">
+            <h3>Чем жизнь соседями отличается от жестокости</h3>
+            <p>Если он не пьёт, не курит и руку не поднимал, а лечь и назвать, что болит, всё равно нельзя.</p>
+          </article>
+          <article class="pain">
+            <h3>Что делать со своим криком</h3>
+            <p>Если ребёнок уже слышит, вы обещали себе не орать, а к шести снова срываетесь.</p>
+          </article>
+          <article class="pain">
+            <h3>Почему кабинет уже был, а вечером снова пусто</h3>
+            <p>Год на исправление уже вышел, а на завтрашний вечер по-прежнему нечего сказать.</p>
+          </article>
+          <article class="pain">
+            <h3>Оставаться, уходить или отодвинуть</h3>
+            <p>Как понять, что делать с человеком, и чего я не обещаю второму человеку.</p>
+          </article>
+          <article class="pain">
+            <h3>Что вы сделаете руками за этот вечер</h3>
+            <p>Одну строку про вашего человека, чтобы после эфира было что дописать, а не «было интересно».</p>
+          </article>
+        </div>
+        <p class="foot-note">Домашние читают живые люди, кураторы. Поэтому в набор входит столько человек, сколько мы реально успеваем провести за двенадцать недель, а не сколько нажало кнопку.</p>
+        <div class="cta-row">
           <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
         </div>
       </div>
     </section>
 
-    <section class="stream" id="course">
+    <section class="sec next" id="course">
       <div class="col">
-        <p class="eyebrow">следующий набор</p>
-        <div class="stream-stage">
-          <figure class="stream-photo">
+        <p class="center"><span class="eyebrow">следующий набор</span></p>
+        <h2 class="center">В этот раз к каждому шагу вы получите живые разборы</h2>
+        <p class="sec-lead center">Не пустой чат, в котором надо сидеть. Школа это двенадцать недель. Урок в день, до пятнадцати минут. Пройти на троечку тоже считается.</p>
+        <div class="stats">
+          <div class="stat"><b>12</b><span>недель, урок в день</span></div>
+          <div class="stat"><b>15</b><span>минут, не лекция на вечер</span></div>
+          <div class="stat"><b>232</b><span>разбора с живых потоков</span></div>
+        </div>
+        <div class="how3">
+          <article class="how">
+            <p class="k">Что лежит рядом</p>
+            <h3>Само задание</h3>
+            <p>Чужие домашние не живут в ленте сообщений. Это упакованные ситуации.</p>
+            <p class="res">Результат: видно, что делать руками, а не «было интересно».</p>
+          </article>
+          <article class="how">
+            <p class="k">Как уже делали</p>
+            <h3>Чужой разбор рядом</h3>
+            <p>На каждый шаг вы видите, что человек писал, где спотыкался, что делал руками, и как из этого выходил.</p>
+            <p class="res">Результат: не теория про идеальную семью, а живые потоки.</p>
+          </article>
+          <article class="how">
+            <p class="k">Кому это отдаём</p>
+            <h3>Тем, кто в этой анкете</h3>
+            <p>Кто придёт в набор из этой анкеты, получит эти разборы целиком.</p>
+            <p class="res">Результат: 232 разбора разложены по шагам, не свалены в чат.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec why">
+      <div class="col">
+        <div class="why-grid">
+          <figure class="why-photo">
             <img src="assets/expert-studio.jpg" alt="Наталья Зайцева" width="800" height="1000">
-            <figcaption class="photo-chip">
-              <b>12 недель</b>
-              <span>урок до пятнадцати минут</span>
-            </figcaption>
           </figure>
-          <div>
-            <h2>В этот раз к каждому шагу вы получите живые разборы. Не пустой чат, в котором надо сидеть.</h2>
-            <p class="lead">Школа это двенадцать недель. Урок в день, до пятнадцати минут. Пройти на троечку тоже считается.</p>
-            <div class="why-viz">
-              <p class="k">Как устроены разборы</p>
-              <div class="loop" aria-hidden="true">
-                <svg viewBox="0 0 200 200">
-                  <defs>
-                    <marker id="loop-arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                      <path d="M0 1 L8 4 L0 7 Z" fill="#5F7350"></path>
-                    </marker>
-                  </defs>
-                  <circle cx="100" cy="108" r="62" fill="none" stroke="rgba(95,115,80,.35)" stroke-width="1.5" stroke-dasharray="3 8"></circle>
-                  <path d="M100 46 A62 62 0 0 1 153.7 139" fill="none" stroke="#5F7350" stroke-width="1.7" marker-end="url(#loop-arr)"></path>
-                  <path d="M148 150 A62 62 0 0 1 52 150" fill="none" stroke="#5F7350" stroke-width="1.7" marker-end="url(#loop-arr)"></path>
-                  <path d="M46.3 139 A62 62 0 0 1 100 46" fill="none" stroke="#5F7350" stroke-width="1.7" marker-end="url(#loop-arr)"></path>
-                  <circle cx="100" cy="46" r="4" fill="#5F7350"></circle>
-                  <circle cx="153.7" cy="139" r="4" fill="#5F7350"></circle>
-                  <circle cx="46.3" cy="139" r="4" fill="#5F7350"></circle>
-                </svg>
-                <span class="ln a">задание</span>
-                <span class="ln b">как делали</span>
-                <span class="ln c">где споткнулись</span>
-              </div>
-              <p class="why-line">Чужие домашние не живут в ленте. Это упакованные ситуации: само задание и рядом, как его уже делали люди.</p>
-            </div>
-          </div>
-        </div>
-        <p class="quote-lock">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</p>
-        <p class="bio-lead">Я врач-психотерапевт и психиатр. Работаю в когнитивно-поведенческой и диалектической поведенческой терапии. Я сама прожила одиннадцать лет в браке, где не было побоев и не было тепла. Школа выросла из этого, а не из теории про идеальную семью. Разборы набраны с живых потоков, это не придуманные примеры.</p>
-        <div class="day-ruler" aria-hidden="true">
-          <b>1</b>
-          <div class="ticks"></div>
-          <b>12</b>
-        </div>
-        <p class="gathered">232 разбора с живых потоков</p>
-        <ol class="prog-map">
-          <li>
-            <span class="n">01</span>
-            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-            <b>12 недель</b>
-          </li>
-          <li>
-            <span class="n">02</span>
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
-            <b>до 15 минут</b>
-          </li>
-          <li>
-            <span class="n">03</span>
-            <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
-            <b>на троечку тоже</b>
-          </li>
-          <li>
-            <span class="n">04</span>
-            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            <b>не чат</b>
-          </li>
-          <li>
-            <span class="n">05</span>
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"></path></svg>
-            <b>232 разбора</b>
-          </li>
-          <li>
-            <span class="n">06</span>
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            <b>кураторы читают</b>
-          </li>
-          <li>
-            <span class="n">07</span>
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-            <b>остаться или уйти</b>
-          </li>
-          <li>
-            <span class="n">08</span>
-            <svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>
-            <b>строка про человека</b>
-          </li>
-        </ol>
-        <div class="close-row">
-          <p class="close-left">Если узнали свой дом, заполняйте анкету. Оплаты на этой странице нет.</p>
-          <div class="close-right">
-            <div class="no-fit">
-              <p>Если не тянете быт, есть риск навредить себе или другим, или жизни угрожает опасность, сначала врач и кризисный центр.</p>
-              <p>Если ищете, где познакомиться, или ждёте, что близкие поймут без слов, это соседняя задача.</p>
-              <p>Если нужен курс о том, как выжить под постоянной атакой, здесь не учат терпеть умеючи.</p>
-              <p>Второго человека я не переделаю. Меняется ваша часть разговора, и вместе с ней иногда меняется дом.</p>
-            </div>
-            <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
+          <div class="quote">
+            <p>Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</p>
+            <p class="bio">Я врач-психотерапевт и психиатр. Работаю в когнитивно-поведенческой и диалектической поведенческой терапии. Я сама прожила одиннадцать лет в браке, где не было побоев и не было тепла. Школа выросла из этого. Разборы набраны с живых потоков, это не придуманные примеры.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="sec nofit">
+      <div class="col">
+        <h2 class="center">Кому сюда не надо</h2>
+        <div class="split">
+          <div class="col-card no">
+            <h3>Сначала не сюда</h3>
+            <ul>
+              <li>Если не тянете быт, есть риск навредить себе или другим, или жизни угрожает опасность, сначала врач и кризисный центр.</li>
+              <li>Если ищете, где познакомиться, или ждёте, что близкие поймут без слов, это соседняя задача.</li>
+            </ul>
+          </div>
+          <div class="col-card no">
+            <h3>И это я не обещаю</h3>
+            <ul>
+              <li>Если нужен курс о том, как выжить под постоянной атакой, здесь не учат терпеть умеючи.</li>
+              <li>Второго человека я не переделаю. Меняется ваша часть разговора, и вместе с ней иногда меняется дом.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="foot-note">Школа не про то, чтобы спасти брак любой ценой. Сохранить можно. Уйти можно. Отодвинуть человека из близких в знакомые можно. Тёплым станет не каждый дом, и этого я не обещаю.</p>
+        <div class="close">
+          <p>Если узнали свой дом, заполняйте анкету. Оплаты на этой странице нет.</p>
+          <button class="btn" type="button" data-open="anketa">Заполнить анкету предзаписи</button>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
-      <div class="logo">Наталья Зайцева · врач-психотерапевт</div>
-      <p class="f-ip">Индивидуальный предприниматель Зайцева Наталья Леонидовна<br>ОГРНИП: 310366827100181 · ИНН: 366227331702<br><a href="mailto:psyfactum@mail.ru">psyfactum@mail.ru</a> · <a href="https://t.me/psy_factum">t.me/psy_factum</a><br>Договор оферты · Политика обработки персональных данных</p>
-      <p class="f-copy">Информация носит образовательный характер и не является медицинской рекомендацией. Школа не заменяет личную психотерапию, лечение у врача и помощь кризисных служб.</p>
+      <div class="col">
+        <div class="logo">Наталья Зайцева · врач-психотерапевт</div>
+        <p>Индивидуальный предприниматель Зайцева Наталья Леонидовна<br>ОГРНИП: 310366827100181 · ИНН: 366227331702<br><a href="mailto:psyfactum@mail.ru">psyfactum@mail.ru</a> · <a href="https://t.me/psy_factum">t.me/psy_factum</a><br>Договор оферты · Политика обработки персональных данных</p>
+        <p>Информация носит образовательный характер и не является медицинской рекомендацией. Школа не заменяет личную психотерапию, лечение у врача и помощь кризисных служб.</p>
+      </div>
     </footer>
   </div>
 
@@ -1029,7 +819,7 @@
     <div class="thanks-card">
       <p class="eyebrow">Предзапись</p>
       <h1>Место в предзаписи занято</h1>
-      <p class="lead">Когда подключим бот, туда придут карта «с кем вы живёте» и ссылка на закрытый эфир. Оплаты на этой странице нет.</p>
+      <p class="hero-how">Когда подключим бот, туда придут карта «с кем вы живёте» и ссылка на закрытый эфир. Оплаты на этой странице нет.</p>
     </div>
   </section>
 

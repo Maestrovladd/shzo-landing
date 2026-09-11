@@ -11,3 +11,5 @@ Product: 12 недель, 60 уроков 10–15 мин, 12 обязатель�
 CTA pay: https://psyfactum.com/school_hr
 Do not on product: narcissist hook, diagnose NPD, remake the other person, dating, «комфортно обоим», VIP, chat, fake student count, old prices.
 Missing for efir: дата и слоты эфира, URL анкеты / GetCourse / бота — не выдумывать.
+
+3. `predzapis.html` — анкета предзаписи. Не касса 16 900. Три экрана: название и офер; что получите и закрытый эфир; следующий набор и зачем собрала. Эталон сборки блоков: курс Алифер GetCourse + Ольга. Не эталон: тёмная предзапись Алифер. Герой светлый, мятный. Форма в попапе.
