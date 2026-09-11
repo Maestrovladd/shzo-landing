@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="version" content="2026-09-11-v11">
+  <meta name="version" content="2026-09-11-v12">
   <title>Школа здоровых отношений — анкета предзаписи</title>
   <meta name="description" content="Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,10 +94,71 @@
 
     .how{background:#fff}
     .how-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px}
-    .how-card{background:var(--off-white);border-radius:var(--r);padding:24px 22px;min-width:0}
+    .how-card{display:flex;flex-direction:column;background:var(--off-white);border-radius:var(--r);padding:22px 22px 24px;min-width:0;overflow:hidden}
+    .how-card:last-child{background:var(--g);color:#fff}
+    .how-viz{height:64px;margin-bottom:16px;display:flex;align-items:center}
     .how-card .learn-n{font-size:13px;font-weight:600;color:var(--gray);letter-spacing:.04em;margin-bottom:10px}
+    .how-card:last-child .learn-n,.how-card:last-child .how-d{color:rgba(255,255,255,.72)}
     .how-card .learn-t{margin:0 0 8px;font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
+    .how-card:last-child .learn-t{color:#fff}
     .how-d{margin:0;font-size:14px;line-height:1.65;color:var(--gray)}
+
+    .hv-days{display:flex;align-items:flex-end;gap:7px;height:52px}
+    .hv-days i{display:block;width:9px;border-radius:5px;background:var(--g-light);transform-origin:bottom center;height:18px}
+    .hv-days i:nth-child(2){height:28px}
+    .hv-days i:nth-child(3){height:46px;background:var(--g);animation:bar-pulse 2.6s ease-in-out infinite}
+    .hv-days i:nth-child(4){height:24px}
+    .hv-days i:nth-child(5){height:34px}
+    .hv-days i:nth-child(6){height:16px}
+    .hv-days i:nth-child(7){height:22px}
+
+    .hv-sheets{position:relative;width:58px;height:56px}
+    .hv-sheet{position:absolute;width:34px;height:44px;border-radius:6px;border:1.5px solid var(--g);background:var(--g-light);animation:sheet-float 3.2s ease-in-out infinite}
+    .hv-sheet:nth-child(1){left:0;top:10px;animation-delay:0s}
+    .hv-sheet:nth-child(2){left:10px;top:5px;animation-delay:.2s}
+    .hv-sheet:nth-child(3){left:20px;top:0;background:color-mix(in srgb,var(--g) 22%,#fff);animation-delay:.4s}
+
+    .hv-people{display:flex;align-items:center;height:56px}
+    .hv-p{width:34px;height:34px;border-radius:50%;border:2px solid #fff;background:var(--g-light);margin-left:-8px}
+    .hv-p:first-child{margin-left:0}
+    .hv-p.on{background:var(--g);transform:scale(1.12);z-index:1}
+
+    .hv-goals{display:flex;align-items:center;gap:6px;height:56px}
+    .hv-g{width:34px;height:34px;border-radius:10px;border:1.5px solid var(--g);background:#fff;position:relative}
+    .hv-g::after{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--g-light)}
+    .hv-g.on{background:var(--g)}
+    .hv-g.on::after{background:#fff}
+    .hv-g-line{width:10px;height:2px;background:var(--g-light);border-radius:2px}
+
+    .hv-spec{position:relative;width:min(100%,168px);height:56px}
+    .hv-bar{position:absolute;left:0;right:0;top:23px;height:10px;border-radius:99px;display:flex;overflow:hidden}
+    .hv-bar span{flex:1}
+    .hv-bar span:nth-child(1){background:#C5D0A8}
+    .hv-bar span:nth-child(2){background:var(--g)}
+    .hv-bar span:nth-child(3){background:var(--g-dark)}
+    .hv-knob{position:absolute;top:50%;left:0;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--g);box-shadow:var(--shadow);animation:knob-x 3.8s ease-in-out infinite}
+
+    .hv-pack{position:relative;width:72px;height:56px}
+    .hv-feed{position:absolute;left:0;top:10px;width:36px;opacity:.28}
+    .hv-feed b{display:block;height:6px;margin-bottom:6px;border-radius:3px;background:var(--gray)}
+    .hv-feed b:nth-child(2){width:72%}
+    .hv-feed b:nth-child(3){width:88%;margin:0}
+    .hv-ready{position:absolute;right:0;top:4px;width:40px;height:48px;border-radius:8px;background:#fff;border:1.5px solid var(--g);box-shadow:var(--shadow)}
+    .hv-ready::after{content:"";position:absolute;right:8px;bottom:8px;width:12px;height:12px;border-radius:50%;background:var(--g)}
+
+    .hv-seats{display:grid;grid-template-columns:repeat(4,14px);gap:8px}
+    .hv-seat{width:14px;height:14px;border-radius:4px;background:var(--g-light)}
+    .hv-seat.on{background:var(--g);animation:dot-pulse 2.4s ease-in-out infinite}
+
+    .hv-go{display:flex;align-items:center;gap:10px;height:56px}
+    .hv-pay{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.18)}
+    .hv-go-line{width:42px;height:2px;border-radius:2px;background:rgba(255,255,255,.28);position:relative;overflow:hidden}
+    .hv-go-line::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left;animation:line-run 2.8s ease-out infinite}
+    .hv-play{width:36px;height:36px;border-radius:50%;background:#fff;position:relative;flex-shrink:0}
+    .hv-play::after{content:"";position:absolute;left:14px;top:11px;border-style:solid;border-width:7px 0 7px 11px;border-color:transparent transparent transparent var(--g)}
+
+    @keyframes bar-pulse{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.08)}}
+    @keyframes knob-x{0%,100%{transform:translate(10px,-50%)}50%{transform:translate(118px,-50%)}}
 
     .live{background:var(--off-white);overflow:hidden}
     .live-head{max-width:46em}
@@ -196,7 +257,7 @@
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}
       .btn:hover,.btn-primary:hover,.nav-cta:hover,.res-card:hover,.learn-card:hover,.btn-fw:hover{transform:none}
-      .sheet,.dot,.flow-line::after,.quote-ring{animation:none}
+      .sheet,.dot,.flow-line::after,.quote-ring,.hv-sheet,.hv-days i,.hv-seat.on,.hv-knob,.hv-go-line::after{animation:none}
     }
   </style>
 </head>
@@ -326,41 +387,49 @@
         <h2 class="s-title">Как устроена Школа</h2>
         <div class="how-grid">
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-days"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
             <div class="learn-n">01//</div>
             <p class="learn-t">Короткие уроки на каждый день</p>
             <p class="how-d">Один урок занимает 10–15 минут. Смотришь с телефона, когда получится. Не трёхчасовой эфир.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-sheets"><span class="hv-sheet"></span><span class="hv-sheet"></span><span class="hv-sheet"></span></div></div>
             <div class="learn-n">02//</div>
             <p class="learn-t">Живые примеры на каждую ситуацию</p>
             <p class="how-d">К каждой ситуации сразу лежит, как это уже делали люди с прошлых потоков. На одну ситуацию не один пример, а больше десяти. Таких примеров 232.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-people"><span class="hv-p"></span><span class="hv-p on"></span><span class="hv-p"></span><span class="hv-p"></span></div></div>
             <div class="learn-n">03//</div>
             <p class="learn-t">Задание на твоих людей</p>
             <p class="how-d">Ты отрабатываешь не отношения вообще, а вечер с мужем, ребёнком, мамой или коллегой. Тем человеком, с кем сейчас тяжелее всего.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-goals"><span class="hv-g"></span><span class="hv-g-line"></span><span class="hv-g on"></span><span class="hv-g-line"></span><span class="hv-g"></span></div></div>
             <div class="learn-n">04//</div>
             <p class="learn-t">Как просить, говорить своё и отказывать</p>
             <p class="how-d">Три цели разговора. Чтобы завтра вечером было что сказать, а не снова ор, молчание и вина.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-spec"><div class="hv-bar"><span></span><span></span><span></span></div><b class="hv-knob"></b></div></div>
             <div class="learn-n">05//</div>
             <p class="learn-t">Понять дом, если ремня нет</p>
             <p class="how-d">Ты учишься видеть, где ещё можно жить, где уже нездорово, а где это жестокость. Чтобы не гадать по чужому ярлыку.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-pack"><div class="hv-feed"><b></b><b></b><b></b></div><span class="hv-ready"></span></div></div>
             <div class="learn-n">06//</div>
             <p class="learn-t">Без чата. Всё уже собрано</p>
             <p class="how-d">Сидеть в ленте и ждать ответа не нужно. Сам шаг и сразу живой пример рядом.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-seats"><span class="hv-seat on"></span><span class="hv-seat on"></span><span class="hv-seat on"></span><span class="hv-seat"></span><span class="hv-seat"></span><span class="hv-seat"></span><span class="hv-seat"></span><span class="hv-seat"></span></div></div>
             <div class="learn-n">07//</div>
             <p class="learn-t">Задания читают живые люди</p>
             <p class="how-d">Мест в потоке столько, сколько мы успеваем провести. Это не бесконечная группа, где тебя не видят.</p>
           </article>
           <article class="how-card">
+            <div class="how-viz" aria-hidden="true"><div class="hv-go"><span class="hv-pay"></span><span class="hv-go-line"></span><span class="hv-play"></span></div></div>
             <div class="learn-n">08//</div>
             <p class="learn-t">Приступаешь сразу после оплаты</p>
             <p class="how-d">Когда купила, можно сразу открыть первый урок. Не ждёшь, пока наберётся группа.</p>
