@@ -144,18 +144,9 @@
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .how-top .s-title{margin-bottom:0}
     .how-lead{margin:10px 0 0;font-size:16px;line-height:1.55;color:var(--gray);max-width:38em}
-    .how-check{margin-top:24px;background:#D7F0E6;border-radius:24px;padding:6px 28px}
-    .how-check li{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid rgba(90,110,100,.18);font-size:20px;font-weight:700;letter-spacing:-.03em;line-height:1.3;color:#4A524C}
-    .how-check li:last-child{border-bottom:0}
-    .how-check i{width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;flex-shrink:0;margin-top:1px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-    .how-check i svg{width:14px;height:14px}
-    .how-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-    .how-chip{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:var(--g-pale);color:var(--g-dark);font-size:13px;font-weight:700;letter-spacing:-.01em}
+    .how-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+    .how-chip{display:inline-flex;align-items:center;min-height:34px;padding:6px 14px;border-radius:999px;background:var(--g-pale);color:var(--g-dark);font-size:13px;font-weight:700;letter-spacing:-.01em;line-height:1.25}
     .how-chip.is-hot{background:var(--g);color:#fff}
-    @media(max-width:560px){
-      .how-check{padding:4px 18px;border-radius:20px}
-      .how-check li{font-size:16px;padding:16px 0;gap:12px}
-    }
     .how-nav{display:flex;gap:8px}
     .how-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gray-light);background:#fff;display:grid;place-items:center;color:var(--black)}
     .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
@@ -402,25 +393,11 @@
             <button class="how-btn" type="button" data-how="1" aria-label="Листать вправо"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
           </div>
         </div>
-        <ul class="how-check">
-          <li>
-            <i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3.2 8.2 6.3 11.4 12.8 4.6" stroke="#7A8C52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
-            60 видеоуроков
-          </li>
-          <li>
-            <i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3.2 8.2 6.3 11.4 12.8 4.6" stroke="#7A8C52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
-            12 обязательных заданий
-          </li>
-          <li>
-            <i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3.2 8.2 6.3 11.4 12.8 4.6" stroke="#7A8C52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
-            48 вспомогательных заданий
-          </li>
-          <li>
-            <i aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3.2 8.2 6.3 11.4 12.8 4.6" stroke="#7A8C52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
-            60 примеров выполнения заданий участниками прошлых потоков
-          </li>
-        </ul>
         <div class="how-chips">
+          <span class="how-chip">60 видеоуроков</span>
+          <span class="how-chip">12 обязательных заданий</span>
+          <span class="how-chip">48 вспомогательных заданий</span>
+          <span class="how-chip">60 примеров выполнения заданий</span>
           <span class="how-chip is-hot">10–15 минут</span>
           <span class="how-chip">самостоятельно</span>
           <span class="how-chip">тетрадь и бланки</span>
