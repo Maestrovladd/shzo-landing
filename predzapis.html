@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="version" content="2026-09-11-v15">
+  <meta name="version" content="2026-09-11-v16">
   <title>Школа здоровых отношений — анкета предзаписи</title>
   <meta name="description" content="Перестань жить в конфликтах и напряжении, верни близость и уважение, и научись говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,23 +100,22 @@
     .learn-n{font-size:13px;font-weight:600;color:var(--gray);letter-spacing:.04em;margin-bottom:10px}
     .learn-t{margin:0;padding:0;font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
 
-    .how{background:#fff}
-    .how-check{margin-top:40px;background:var(--g-pale);border-radius:var(--r);overflow:hidden}
-    .how-check li{display:flex;align-items:flex-start;gap:14px;padding:20px 24px;border-bottom:1px solid color-mix(in srgb,var(--g) 16%,transparent);font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
-    .how-check li:last-child{border-bottom:0}
-    .how-tick{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#fff;color:var(--g);display:grid;place-items:center;margin-top:1px}
-    .how-shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-    .how-shot{background:var(--off-white);border-radius:var(--r);overflow:hidden;min-width:0}
-    .how-shot img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#ddd}
-    .how-shot-body{padding:22px 22px 26px}
-    .how-shot .learn-t{margin:0 0 8px;font-size:20px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
-    .how-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:16px}
-    .how-card{display:flex;flex-direction:column;background:var(--off-white);border-radius:var(--r);padding:24px 22px;min-width:0}
-    .how-card:last-child{background:var(--g);color:#fff}
-    .how-card .learn-n{font-size:13px;font-weight:600;color:var(--gray);letter-spacing:.04em;margin-bottom:10px}
-    .how-card:last-child .learn-n,.how-card:last-child .how-d{color:rgba(255,255,255,.72)}
-    .how-card .learn-t{margin:0 0 8px;font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.35}
-    .how-card:last-child .learn-t{color:#fff}
+    .how{background:#fff;overflow:hidden}
+    .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .how-top .s-title{margin-bottom:0}
+    .how-nav{display:flex;gap:8px}
+    .how-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gray-light);background:#fff;display:grid;place-items:center;color:var(--black)}
+    .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
+    .how-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
+    .how-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-top:36px;padding-bottom:8px}
+    .how-rail::-webkit-scrollbar{display:none}
+    .how-slide{flex:0 0 320px;scroll-snap-align:start;background:var(--off-white);border-radius:var(--r);overflow:hidden;min-width:0}
+    .how-pic{aspect-ratio:4/3;background:#EFEBE3;overflow:hidden}
+    .how-pic img{width:100%;height:100%;object-fit:cover;display:block}
+    .how-pic.is-obj{display:grid;place-items:center;padding:18px}
+    .how-pic.is-obj img{width:72%;height:72%;object-fit:contain}
+    .how-slide h3{margin:16px 20px 8px;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.25}
+    .how-slide p{margin:0 20px 20px;font-size:14px;line-height:1.6;color:var(--gray)}
     .how-d{margin:0;font-size:14px;line-height:1.65;color:var(--gray)}
 
     .live{background:var(--off-white);overflow:hidden}
@@ -205,14 +204,15 @@
       .fct-inner{grid-template-columns:1fr;gap:36px}
       .info-grid,.live-points{grid-template-columns:1fr 1fr}
       .stats,.res-grid{grid-template-columns:1fr 1fr}
-      .learn-grid,.ephir-grid,.how-grid,.how-shots{grid-template-columns:1fr 1fr}
+      .learn-grid,.ephir-grid{grid-template-columns:1fr 1fr}
     }
     @media(max-width:768px){
       .section,.final-cta{padding:64px 0}
       .stats-wrap{padding:32px 0 8px}
     }
     @media(max-width:560px){
-      .stats,.res-grid,.learn-grid,.ephir-grid,.how-grid,.how-shots{grid-template-columns:1fr}
+      .stats,.res-grid,.learn-grid,.ephir-grid{grid-template-columns:1fr}
+      .how-slide{flex-basis:min(280px,82vw)}
       .hero-right{height:48vw}
       .btn-fw{width:100%}
       .info-grid,.live-points{grid-template-columns:1fr}
@@ -361,57 +361,56 @@
 
     <section class="how section" id="how">
       <div class="container">
-        <div class="s-label">Формат</div>
-        <h2 class="s-title">Как устроена Школа</h2>
-        <ul class="how-check">
-          <li><span class="how-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>60 видеоуроков</li>
-          <li><span class="how-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>12 обязательных заданий</li>
-          <li><span class="how-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>48 вспомогательных заданий</li>
-          <li><span class="how-tick" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>232 живых примера с прошлых потоков</li>
-        </ul>
-        <div class="how-shots">
-          <article class="how-shot">
-            <img src="assets/how-lessons.jpg" alt="Урок Школы на ноутбуке: Наталья объясняет шкалу здоровых отношений" width="764" height="616">
-            <div class="how-shot-body">
-              <p class="learn-t">Короткие видеоуроки</p>
-              <p class="how-d">60 уроков по 10–15 минут. Смотришь с телефона или с ноутбука, когда получится. Не трёхчасовой эфир.</p>
-            </div>
-          </article>
-          <article class="how-shot">
-            <img src="assets/how-sheets.jpg" alt="Бланк задания Школы: отношения на работе, рядом телефон" width="792" height="640">
-            <div class="how-shot-body">
-              <p class="learn-t">Задания на бланке</p>
-              <p class="how-d">12 обязательных и 48 вспомогательных. Ты заполняешь их про мужа, ребёнка, маму или коллегу. Про того, с кем сейчас тяжелее всего.</p>
-            </div>
-          </article>
-          <article class="how-shot">
-            <img src="assets/how-examples.jpg" alt="Распечатанные примеры выполнения заданий участницы прошлых потоков" width="784" height="634">
-            <div class="how-shot-body">
-              <p class="learn-t">Примеры, как уже делали</p>
-              <p class="how-d">К заданию сразу лежит, что писали люди с прошлых потоков. На одну ситуацию не один пример, а больше десяти.</p>
-            </div>
-          </article>
+        <div class="how-top">
+          <div>
+            <div class="s-label">Формат</div>
+            <h2 class="s-title">Как устроена Школа</h2>
+          </div>
+          <div class="how-nav">
+            <button class="how-btn" type="button" data-how="-1" aria-label="Листать влево"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <button class="how-btn" type="button" data-how="1" aria-label="Листать вправо"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
         </div>
-        <div class="how-grid">
-          <article class="how-card">
-            <p class="learn-t">Как просить, говорить своё и отказывать</p>
-            <p class="how-d">Три цели разговора. Чтобы завтра вечером было что сказать, а не снова ор, молчание и вина.</p>
+        <div class="how-rail" id="how-rail">
+          <article class="how-slide">
+            <div class="how-pic"><img src="assets/how-lessons.jpg" alt="Урок Школы на ноутбуке" width="764" height="616"></div>
+            <h3>Короткие видеоуроки</h3>
+            <p>60 уроков по 10–15 минут. Смотришь с телефона, когда получится. Не трёхчасовой эфир.</p>
           </article>
-          <article class="how-card">
-            <p class="learn-t">Понять дом, если ремня нет</p>
-            <p class="how-d">Ты учишься видеть, где ещё можно жить, где уже нездорово, а где это жестокость. Чтобы не гадать по чужому ярлыку.</p>
+          <article class="how-slide">
+            <div class="how-pic"><img src="assets/how-sheets.jpg" alt="Бланк задания Школы" width="792" height="640"></div>
+            <h3>Задания про твоих людей</h3>
+            <p>12 обязательных и 48 вспомогательных. Заполняешь про мужа, ребёнка, маму или коллегу. Про того, с кем сейчас тяжелее всего.</p>
           </article>
-          <article class="how-card">
-            <p class="learn-t">Без чата. Всё уже собрано</p>
-            <p class="how-d">Сидеть в ленте и ждать ответа не нужно. Сам шаг и сразу живой пример рядом.</p>
+          <article class="how-slide">
+            <div class="how-pic"><img src="assets/how-examples.jpg" alt="Примеры выполнения заданий" width="784" height="634"></div>
+            <h3>Примеры, как уже делали</h3>
+            <p>К заданию сразу видно, что писали люди с прошлых потоков. На одну ситуацию не один пример, а больше десяти. Таких примеров 232.</p>
           </article>
-          <article class="how-card">
-            <p class="learn-t">Задания читают живые люди</p>
-            <p class="how-d">Мест в потоке столько, сколько мы успеваем провести. Это не бесконечная группа, где тебя не видят.</p>
+          <article class="how-slide">
+            <div class="how-pic is-obj"><img src="assets/how-ask.png" alt="" width="512" height="512"></div>
+            <h3>Просить, сказать своё и отказать</h3>
+            <p>Завтра вечером будет что сказать дома. Не снова ор, не молчание и не вина.</p>
           </article>
-          <article class="how-card">
-            <p class="learn-t">Приступаешь сразу после оплаты</p>
-            <p class="how-d">Когда купила, можно сразу открыть первый урок. Не ждёшь, пока наберётся группа.</p>
+          <article class="how-slide">
+            <div class="how-pic is-obj"><img src="assets/how-home.png" alt="" width="512" height="512"></div>
+            <h3>Понять, что у вас дома, если ударов нет</h3>
+            <p>Где ещё можно жить, где уже плохо, а где это жестокость.</p>
+          </article>
+          <article class="how-slide">
+            <div class="how-pic is-obj"><img src="assets/how-ready.png" alt="" width="512" height="512"></div>
+            <h3>Без чата. Всё уже собрано</h3>
+            <p>Сидеть в ленте и ждать ответа не нужно. Сам шаг и сразу живой пример рядом.</p>
+          </article>
+          <article class="how-slide">
+            <div class="how-pic is-obj"><img src="assets/predzapis-place.png" alt="" width="512" height="512"></div>
+            <h3>Задания читают живые люди</h3>
+            <p>Мест в потоке столько, сколько мы успеваем провести. Это не бесконечная группа, где тебя не видят.</p>
+          </article>
+          <article class="how-slide">
+            <div class="how-pic is-obj"><img src="assets/predzapis-gift.png" alt="" width="512" height="512"></div>
+            <h3>Приступаешь сразу после оплаты</h3>
+            <p>Когда купила, можно сразу открыть первый урок. Не ждёшь, пока наберётся группа.</p>
           </article>
         </div>
       </div>
@@ -551,6 +550,14 @@
         closeModal();
         document.body.classList.add("sent");
         window.scrollTo(0, 0);
+      });
+      var rail = document.getElementById("how-rail");
+      document.querySelectorAll("[data-how]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var card = rail.querySelector(".how-slide");
+          var step = card.getBoundingClientRect().width + 16;
+          rail.scrollBy({ left: Number(btn.getAttribute("data-how")) * step, behavior: "smooth" });
+        });
       });
     })();
   </script>
