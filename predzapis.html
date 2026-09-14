@@ -145,7 +145,7 @@
     .upd-copy .s-title{max-width:14em;margin-bottom:16px}
     .upd-copy .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .upd-lead{margin:0 0 20px;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
-    .upd-what{margin:0 0 22px;padding:20px 22px;background:var(--off-white);border-radius:18px}
+    .upd-what{margin:0 0 28px;padding:20px 22px;background:var(--off-white);border-radius:18px}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
     .upd-what ul{margin:12px 0 0;padding:0;list-style:none}
@@ -153,17 +153,10 @@
     .upd-what li{position:relative;margin-top:8px;padding-left:1.15em;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
     .upd-what li:first-child{margin-top:4px}
     .upd-what li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
-    .upd-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:28px}
-    .upd-facts div{padding:14px 14px 16px;background:var(--g-pale);border-radius:16px}
-    .upd-facts b{display:block;font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--g-dark)}
-    .upd-facts span{display:block;margin-top:6px;font-size:13px;line-height:1.4;color:var(--gray);font-weight:600}
     .upd-stage{position:relative;min-height:0}
     .upd-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:4/5;background:#EFEBE3}
     .upd-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
     .upd-photo.is-sheet img{object-fit:cover;object-position:center top}
-    .upd-badge{position:absolute;top:18px;left:18px;z-index:2;padding:12px 14px;background:var(--g);color:#fff;border-radius:16px;box-shadow:var(--shadow)}
-    .upd-badge strong{display:block;font-size:22px;font-weight:800;letter-spacing:-.04em;line-height:1}
-    .upd-badge span{display:block;margin-top:4px;font-size:12px;line-height:1.3;color:rgba(255,255,255,.82);font-weight:600}
     .upd-note{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;margin:0;padding:14px 16px;background:#fff;border-radius:16px;box-shadow:var(--shadow)}
     .upd-note strong{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em}
     .upd-note span{display:block;margin-top:4px;font-size:13px;line-height:1.45;color:var(--gray);font-weight:600}
@@ -219,8 +212,6 @@
       .hero-img{position:absolute}
       .upd{grid-template-columns:1fr;gap:28px}
       .upd-photo{aspect-ratio:4/3;max-height:420px}
-      .upd-facts{grid-template-columns:1fr 1fr}
-      .upd-facts div:last-child{grid-column:1/-1}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .ephir-grid{grid-template-columns:1fr 1fr}
     }
@@ -237,8 +228,6 @@
       .photo-cap strong{font-size:18px}
       .photo-cap li{font-size:13px}
       .photo-i{width:28px;height:28px;font-size:15px;top:-11px;left:-6px}
-      .upd-facts{grid-template-columns:1fr}
-      .upd-facts div:last-child{grid-column:auto}
       .quote-panel{padding:24px 20px}
     }
     @media(prefers-reduced-motion:reduce){
@@ -418,17 +407,11 @@
                 <p>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</p>
                 <p>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</p>
               </div>
-              <div class="upd-facts">
-                <div><b>232</b><span>разбора с прошлых потоков</span></div>
-                <div><b>10+</b><span>разборов на одно занятие</span></div>
-                <div><b>сразу</b><span>уже лежит к занятию, не в чате</span></div>
-              </div>
               <button class="btn" type="button" data-open="anketa">Занять место</button>
             </div>
             <div class="upd-stage">
               <div class="upd-photo is-sheet">
                 <img src="assets/upd-razbor.jpg" alt="Разбор с прошлого потока Школы" width="1310" height="1853">
-                <p class="upd-badge"><strong>232</strong><span>разбора уже лежат к занятию</span></p>
                 <p class="upd-note"><strong>Так выглядит разбор.</strong><span>Человек с прошлого потока уже писал, что было дома и что получилось.</span></p>
               </div>
             </div>
