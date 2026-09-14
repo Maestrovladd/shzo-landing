@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-14-waitlist -->
+<!-- deploy: 2026-09-14-1637 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru">
+<html lang="ru" data-deploy="2026-09-14-1637">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +9,21 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>Школа здоровых отношений — лист ожидания</title>
+  <script>
+    (function(){
+      var stamp = document.documentElement.getAttribute("data-deploy");
+      fetch("predzapis.html?r=5&fresh=" + Date.now(), {cache:"no-store"})
+        .then(function(r){ return r.text(); })
+        .then(function(html){
+          var m = html.match(/data-deploy="([^"]+)"/);
+          if (!m || m[1] === stamp) return;
+          document.open();
+          document.write(html);
+          document.close();
+        })
+        .catch(function(){});
+    })();
+  </script>
   <meta name="description" content="Перестаньте жить в конфликтах и напряжении, верните близость и уважение, и научитесь говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
