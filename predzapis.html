@@ -75,6 +75,8 @@
 
     .section{padding:96px 0}
     .s-label{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px 0 10px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px}
+    .s-labels{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+    .s-labels .s-label{margin-bottom:0;padding:0 12px}
     .s-label-gift{width:13px;height:13px;flex-shrink:0}
     .s-title{font-size:clamp(28px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.12;margin-bottom:12px}
     .s-sub{font-size:16px;color:var(--gray);line-height:1.65;max-width:42em}
@@ -396,7 +398,10 @@
         <div class="live-block">
           <div class="upd">
             <div class="upd-copy">
-              <div class="s-label">Бонус · бесплатно</div>
+              <div class="s-labels">
+                <div class="s-label">Бонус</div>
+                <div class="s-label">Бесплатно</div>
+              </div>
               <h2 class="s-title">Сборник <em>разборов</em></h2>
               <p class="upd-lead">В период с 2022 по 2026 год я и мои коллеги провели 232 терапевтических разбора в Школе здоровых отношений.</p>
               <div class="upd-what">
