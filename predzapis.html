@@ -148,10 +148,11 @@
     .upd-what{margin:0 0 22px;padding:20px 22px;background:var(--off-white);border-radius:18px}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
-    .upd-what ul{margin:12px 0 0;padding:0 0 0 1.15em}
+    .upd-what ul{margin:12px 0 0;padding:0;list-style:none}
     .upd-what ul + p{margin-top:14px}
-    .upd-what li{margin-top:6px;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
-    .upd-what li:first-child{margin-top:0}
+    .upd-what li{position:relative;margin-top:8px;padding-left:1.15em;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
+    .upd-what li:first-child{margin-top:4px}
+    .upd-what li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
     .upd-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:28px}
     .upd-facts div{padding:14px 14px 16px;background:var(--g-pale);border-radius:16px}
     .upd-facts b{display:block;font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--g-dark)}
