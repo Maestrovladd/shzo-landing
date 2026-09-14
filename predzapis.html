@@ -45,7 +45,10 @@
     .hero-banners{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:18px}
     .hero-banner{display:inline-flex;align-items:center;gap:8px;width:max-content;height:34px;padding:0 14px;background:var(--g);color:#fff;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
     .hero-banner i{width:6px;height:6px;border-radius:50%;background:#fff;flex-shrink:0}
-    .hero-own{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:var(--g-light);color:var(--g-dark);font-size:13px;font-weight:800;letter-spacing:-.01em;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+    .hero-own{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px 0 9px;border-radius:999px;background:var(--g-light);color:var(--g-dark);font-size:13px;font-weight:800;letter-spacing:-.01em}
+    .hero-own-rings{width:15px;height:15px;flex-shrink:0}
+    .hero-own-txt{position:relative;display:inline-block;line-height:1;padding:0 1px 4px}
+    .hero-own-line{position:absolute;left:-2px;right:-2px;bottom:0;height:7px;width:calc(100% + 4px);overflow:visible;pointer-events:none}
     .hero h1{font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.04;letter-spacing:-.04em;margin-bottom:16px;text-wrap:balance}
     .hero h1 .line{display:block}
     .hero h1 em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
@@ -248,7 +251,17 @@
       <div class="hero-left">
         <div class="hero-banners">
           <p class="hero-banner"><i></i> Лист ожидания</p>
-          <p class="hero-own">Только для своих</p>
+          <p class="hero-own">
+            <svg class="hero-own-rings" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="6" cy="8" r="4.15" stroke="currentColor" stroke-width="1.55"/>
+              <circle cx="10" cy="8" r="4.15" stroke="currentColor" stroke-width="1.55"/>
+            </svg>
+            <span class="hero-own-txt">Только для своих
+              <svg class="hero-own-line" viewBox="0 0 132 8" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M1.5 5.1c22-2.2 44 1.8 66 .2 21-1.5 42-2.6 63 .7" stroke="currentColor" stroke-width="2.15" fill="none" stroke-linecap="round"/>
+              </svg>
+            </span>
+          </p>
         </div>
         <h1>
           <span class="line">Школа</span>
