@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1512 -->
+<!-- deploy: 2026-09-15-1518 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1512" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1518" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=13&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=14&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -180,13 +180,14 @@
     .live{background:var(--g-pale);overflow:hidden}
     .live.section{padding:72px 0}
     .live-block{background:#fff;border-radius:24px;padding:40px 40px 32px}
-    .upd{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"copy stage" "cta stage";column-gap:40px;row-gap:0;align-items:center}
-    .upd-copy{grid-area:copy}
-    .upd-stage{grid-area:stage;position:relative;min-height:0}
-    .upd-cta{grid-area:cta;margin-top:28px;justify-self:start}
-    .upd-copy .s-title{max-width:14em;margin-bottom:16px}
+    .upd{display:flex;flex-direction:column;align-items:stretch}
+    .upd-cta{margin-top:28px;align-self:start}
+    .upd-copy .s-title{max-width:18em;margin-bottom:16px}
     .upd-copy .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
-    .upd-lead{margin:0 0 20px;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
+    .upd-lead{margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
+    .upd-visuals{position:relative;margin:24px 0 32px;min-height:560px;display:flex;justify-content:center;align-items:center}
+    .upd-phone-img{width:min(400px,70%);height:auto;display:block;position:relative;z-index:1}
+    .upd-sheet-img{position:absolute;left:max(0px,2%);top:14%;width:min(300px,42%);border-radius:18px;box-shadow:0 18px 44px rgba(0,0,0,.18);transform:rotate(-8deg);z-index:2;background:#fff}
     .upd-what{margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
@@ -195,11 +196,7 @@
     .upd-what li{position:relative;margin-top:8px;padding-left:1.15em;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
     .upd-what li:first-child{margin-top:4px}
     .upd-what li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
-    .upd-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:4/5;background:#EFEBE3}
-    .upd-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-    .upd-photo.is-sheet img{object-fit:cover;object-position:center top}
-    .upd-photo::after{content:"";position:absolute;inset:auto 0 0;height:52%;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--g-dark) 22%,transparent) 46%,color-mix(in srgb,var(--g-dark) 48%,transparent));pointer-events:none;z-index:1}
-    .upd-note{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;margin:0;padding:16px 18px 16px 20px;background:var(--g-pale);border:1.5px solid var(--g);border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.16),inset 4px 0 0 var(--g)}
+    .upd-note{margin:20px 0 0;padding:16px 18px 16px 20px;background:var(--g-pale);border:1.5px solid var(--g);border-radius:16px;box-shadow:inset 4px 0 0 var(--g)}
     .upd-note strong{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--black)}
     .upd-note span{display:block;margin-top:8px;font-size:13px;line-height:1.45;color:var(--g-dark);font-weight:600}
     .quote-panel{position:relative;overflow:hidden;margin-top:24px;background:var(--g-pale);border-radius:20px;padding:22px 24px;display:flex;align-items:center;gap:20px}
@@ -259,7 +256,6 @@
       .hero-img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:3/4;max-height:min(70vh,560px);object-fit:cover;object-position:center 12%}
       .photo-cap{position:absolute;left:20px;right:20px;bottom:44px;width:auto;margin:0;padding:14px 16px 13px 18px}
       .photo-i{left:12px}
-      .upd{grid-template-columns:1fr;grid-template-areas:"copy" "stage" "cta";row-gap:20px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .ephir-grid{grid-template-columns:1fr 1fr}
     }
@@ -303,12 +299,10 @@
       .upd-lead{font-size:16px}
       .upd-what{padding:16px 16px 18px;margin-bottom:0}
       .upd-what p,.upd-what li{font-size:15px}
-      .upd-stage{display:block}
-      .upd-cta{margin-top:0;justify-self:stretch}
-      .upd-photo{aspect-ratio:5/4;max-height:none;border-radius:20px}
-      .upd-photo img,.upd-photo.is-sheet img{object-fit:cover;object-position:center top}
-      .upd-photo::after{display:none}
-      .upd-note{position:static;margin-top:12px;box-shadow:none}
+      .upd-visuals{min-height:0;flex-direction:column;gap:18px;margin:20px 0 24px}
+      .upd-phone-img{width:min(340px,86%)}
+      .upd-sheet-img{position:static;transform:none;width:min(100%,420px);box-shadow:var(--shadow-md)}
+      .upd-note{margin-top:16px;box-shadow:none}
       .quote-panel{flex-direction:column;align-items:flex-start;gap:16px;padding:20px 18px 22px;margin-top:20px}
       .quote-ring{display:none}
       .quote-ava{order:0;width:64px;height:64px}
@@ -436,7 +430,9 @@
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
-    html.is-phone .upd{grid-template-columns:1fr!important;grid-template-areas:"copy" "stage" "cta"!important}
+    html.is-phone .upd-visuals{min-height:0!important;flex-direction:column!important;margin:20px 0 24px!important}
+    html.is-phone .upd-phone-img{width:min(340px,86%)!important}
+    html.is-phone .upd-sheet-img{position:static!important;transform:none!important;width:min(100%,420px)!important}
     html.is-phone .quote-panel{flex-direction:column!important;align-items:flex-start!important}
     html.is-phone .quote-ring{display:none!important}
     html.is-phone .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))!important}
@@ -583,6 +579,10 @@
               </div>
               <h2 class="s-title">Сборник <em>разборов</em></h2>
               <p class="upd-lead">В период с 2022 по 2026 год мы провели 232 терапевтических разбора в Школе здоровых отношений.</p>
+              <div class="upd-visuals">
+                <img class="upd-phone-img" src="assets/upd-chat-phone.png" alt="Разбор в чате Школы здоровых отношений" width="728" height="1116">
+                <img class="upd-sheet-img" src="assets/upd-sheet.jpg" alt="Рабочий лист Психологическое насилие" width="590" height="478">
+              </div>
               <div class="upd-what">
                 <p>В них принимали участие разные люди с разными проблемами:</p>
                 <ul>
@@ -595,12 +595,7 @@
                 <p>Мы сохранили все эти разборы и собрали их в единый сборник. Там вы найдёте дополнительные примеры выполнения заданий и увидите, как реальные люди решали свои проблемы с помощью Школы здоровых отношений.</p>
               </div>
             </div>
-            <div class="upd-stage">
-              <div class="upd-photo is-sheet">
-                <img src="assets/upd-razbor.jpg" alt="Разбор с прошлого потока Школы" width="1310" height="1853">
-              </div>
-              <p class="upd-note"><strong>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</span></p>
-            </div>
+            <p class="upd-note"><strong>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</span></p>
             <button class="btn upd-cta" type="button" data-open="anketa">Занять место</button>
           </div>
           <div class="quote-panel">
