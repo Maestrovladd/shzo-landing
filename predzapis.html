@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1540 -->
+<!-- deploy: 2026-09-15-1542 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1540" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1542" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=19&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=20&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -185,9 +185,8 @@
     .upd-copy .s-title{max-width:18em;margin-bottom:16px}
     .upd-copy .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .upd-lead{margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
-    .upd-visuals{position:relative;margin:24px 0 32px;min-height:420px;display:flex;justify-content:center;align-items:center}
-    .upd-phone-img{width:min(260px,48%);height:auto;display:block;position:relative;z-index:1}
-    .upd-sheet-img{position:absolute;left:max(0px,8%);top:18%;width:min(210px,34%);border-radius:18px;box-shadow:0 18px 44px rgba(0,0,0,.18);transform:rotate(-8deg);z-index:2;background:#fff}
+    .upd-visuals{margin:24px 0 32px;display:flex;justify-content:center}
+    .upd-phone-img{width:min(260px,48%);height:auto;display:block}
     .upd-what{margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
@@ -302,9 +301,8 @@
       .upd-lead{font-size:16px}
       .upd-what{padding:16px 16px 18px;margin-bottom:0}
       .upd-what p,.upd-what li{font-size:15px}
-      .upd-visuals{min-height:0;flex-direction:column;gap:18px;margin:20px 0 24px}
+      .upd-visuals{margin:20px 0 24px}
       .upd-phone-img{width:min(230px,64%)}
-      .upd-sheet-img{position:static;transform:none;width:min(100%,280px);box-shadow:var(--shadow-md)}
       .upd-note{margin-top:16px;box-shadow:none}
       .quote-panel{flex-direction:column;align-items:flex-start;gap:16px;padding:20px 18px 22px;margin-top:20px}
       .quote-ring{display:none}
@@ -434,9 +432,8 @@
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
-    html.is-phone .upd-visuals{min-height:0!important;flex-direction:column!important;margin:20px 0 24px!important}
+    html.is-phone .upd-visuals{margin:20px 0 24px!important}
     html.is-phone .upd-phone-img{width:min(230px,64%)!important}
-    html.is-phone .upd-sheet-img{position:static!important;transform:none!important;width:min(100%,280px)!important}
     html.is-phone .quote-panel{flex-direction:column!important;align-items:flex-start!important}
     html.is-phone .quote-who{order:0!important;width:100%!important}
     html.is-phone .quote-ava{width:64px!important;height:64px!important}
@@ -587,7 +584,6 @@
               <p class="upd-lead">В период с 2022 по 2026 год мы провели 232 терапевтических разбора в Школе здоровых отношений.</p>
               <div class="upd-visuals">
                 <img class="upd-phone-img" src="assets/upd-chat-phone.png" alt="Разбор в чате Школы здоровых отношений" width="728" height="1116">
-                <img class="upd-sheet-img" src="assets/upd-list.jpg?v=2" alt="Рабочий лист Психологическое насилие" width="608" height="468">
               </div>
               <div class="upd-what">
                 <p>В них принимали участие разные люди с разными проблемами:</p>
