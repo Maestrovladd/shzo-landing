@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1948 -->
+<!-- deploy: 2026-09-15-1952 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1948" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1952" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=54&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=55&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -624,6 +624,9 @@
             <h3 class="wait-t">Дата старта, условия и цена будут в боте.</h3>
             <p class="wait-d">Когда откроется следующий поток, вы узнаете в боте, когда начинаем и на каких условиях.</p>
           </article>
+        </div>
+        <div class="section-cta">
+          <button class="btn" type="button" data-open="anketa">Занять место в листе ожидания</button>
         </div>
       </div>
     </section>
