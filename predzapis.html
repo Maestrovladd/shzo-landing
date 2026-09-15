@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1533 -->
+<!-- deploy: 2026-09-15-1534 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1533" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1534" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=16&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=17&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -91,7 +91,7 @@
     .hero h1 em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .hero-banner,.hero-own,.hero-lead,.hero-gift{margin:0}
     .hero-lead{font-size:17px;color:#2C2C2C;line-height:1.55;margin:0 0 28px;max-width:480px;font-weight:500}
-    .hero-lead mark{background:var(--g-light);color:var(--g-dark);font-weight:700;padding:.05em .18em;border-radius:6px;display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+    .hero-lead mark{background:var(--g-light);color:var(--g-dark);font-weight:700;padding:.05em .18em;border-radius:6px;display:inline;-webkit-box-decoration-break:clone;box-decoration-break:clone;overflow-wrap:normal;word-break:normal}
     .hero-actions{display:flex;align-items:center;gap:6px;margin-bottom:0}
     .btn,.btn-primary{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:var(--g);color:#fff;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:-.01em;transition:background .2s,transform .15s;flex-shrink:0}
     .btn:hover,.btn-primary:hover{background:var(--g-dark);transform:translateY(-2px)}
@@ -271,6 +271,7 @@
       .hero-banners{margin-bottom:14px}
       .hero h1{font-size:clamp(30px,8.6vw,38px)}
       .hero-lead{font-size:16px;line-height:1.5}
+      .hero-lead mark{padding:.05em .12em}
       .hero-actions .btn{width:100%}
       .photo-cap{left:16px;right:16px;bottom:40px;padding:12px 14px 12px 16px;border-radius:18px}
       .photo-cap strong{font-size:16px}
@@ -459,7 +460,7 @@
           <span class="line"><em>отношений</em></span>
           <span class="line">Натальи Зайцевой</span>
         </h1>
-        <div class="hero-lead">Перестаньте жить в конфликтах и напряжении, верните близость и уважение, и научитесь говорить <mark>без крика, давления и чувства вины</mark>.</div>
+        <div class="hero-lead">Перестаньте жить в конфликтах и напряжении, верните близость и уважение, и научитесь говорить <mark>без крика, давления и&nbsp;чувства&nbsp;вины</mark>.</div>
         <div class="hero-actions">
           <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
