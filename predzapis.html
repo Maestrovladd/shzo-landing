@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1636 -->
+<!-- deploy: 2026-09-15-1638 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1636" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1638" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=27&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=28&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -182,7 +182,7 @@
     .live{background:var(--g-pale);overflow:hidden}
     .live.section{padding:72px 0}
     .live-block{background:#fff;border-radius:24px;padding:40px 40px 32px}
-    .upd{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"head stage" "what stage" "note stage" "cta stage";column-gap:40px;row-gap:16px;align-items:center}
+    .upd{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"head stage" "what stage" "cta note";column-gap:40px;row-gap:16px;align-items:start}
     .upd-head{grid-area:head}
     .upd-stage{grid-area:stage;display:flex;justify-content:center;align-items:center;min-height:0}
     .upd-what{grid-area:what;margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
