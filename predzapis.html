@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1612 -->
+<!-- deploy: 2026-09-15-1614 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1612" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1614" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=23&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=24&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -292,15 +292,16 @@
       .photo-cap li + li{margin-top:5px}
       .photo-i{width:24px;height:24px;font-size:13px;top:-10px;left:8px}
       .res-grid{grid-template-columns:1fr;width:auto;max-width:none;gap:12px;margin:24px 0 0}
-      .res-card{display:grid;grid-template-columns:92px 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:4px;align-items:center;aspect-ratio:auto;min-height:0;padding:16px 16px;border-radius:20px}
-      .res-viz{grid-column:1;grid-row:1/span 2;flex:none;width:84px;height:84px;align-self:center;justify-self:center;padding:0}
-      .res-viz::before{display:block;width:84px;height:84px;top:50%;left:50%;transform:translate(-50%,-50%)}
+      .res-card{display:grid;grid-template-columns:112px 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:4px;align-items:center;aspect-ratio:auto;min-height:0;padding:16px 16px;border-radius:20px}
+      .res-viz{grid-column:1;grid-row:1/span 2;flex:none;width:102px;height:102px;align-self:center;justify-self:center;padding:0}
+      .res-viz::before{display:block;width:102px;height:102px;top:50%;left:50%;transform:translate(-50%,-50%)}
       .res-ring,.sheets{display:none}
-      .res-viz b{font-size:26px}
+      .res-viz b{font-size:28px}
       .res-viz small{margin-top:2px;font-size:8px;letter-spacing:.08em;white-space:nowrap}
-      .res-sum,.res-sum-money{font-size:22px}
+      .res-sum{font-size:22px}
+      .res-viz b.res-sum-money{font-size:22px;letter-spacing:-.04em}
       .res-money-rule{width:28px;margin:5px auto 4px}
-      .res-money-u{font-size:9px}
+      .res-money-u{font-size:10px}
       .res-t{grid-column:2;grid-row:1;margin:0;align-self:end;font-size:16px}
       .res-d{grid-column:2;grid-row:2;font-size:14px;line-height:1.45}
       .how-top{align-items:center}
@@ -331,8 +332,7 @@
     @media(max-width:560px){
       .ephir-grid{grid-template-columns:1fr}
       .s-title{font-size:26px;line-height:1.15}
-      .res-card{grid-template-columns:80px 1fr;column-gap:12px;padding:16px 14px}
-      .res-viz,.res-viz::before{width:72px;height:72px}
+      .res-card{grid-template-columns:112px 1fr;column-gap:12px;padding:16px 14px}
       .how-slide{flex-basis:calc(100% - 24px);max-width:calc(100% - 24px)}
     }
     @media(max-width:380px){
@@ -341,8 +341,8 @@
       .container,.page .container{padding:0 16px}
       .s-title{font-size:24px}
       .hero h1{font-size:clamp(26px,8.2vw,32px)}
-      .res-card{grid-template-columns:76px 1fr;padding:14px 12px}
-      .res-viz,.res-viz::before{width:68px;height:68px}
+      .res-card{grid-template-columns:108px 1fr;padding:14px 12px}
+      .res-viz,.res-viz::before{width:98px;height:98px}
       .how-slide h3{font-size:16px;margin:12px 14px 6px}
       .how-slide p{margin:0 14px 16px;font-size:13px}
     }
@@ -436,12 +436,14 @@
     html.is-phone .s-title{font-size:26px!important;line-height:1.18!important;text-align:center!important}
     html.is-phone .section-cta .btn,html.is-phone .upd-cta{width:100%!important}
     html.is-phone .res-grid{grid-template-columns:1fr!important;width:auto!important;max-width:none!important;gap:12px!important;margin:24px 0 0!important}
-    html.is-phone .res-card{display:grid!important;grid-template-columns:92px 1fr!important;grid-template-rows:auto auto!important;align-items:center!important;aspect-ratio:auto!important;min-height:0!important;padding:16px 16px!important;border-radius:20px!important;column-gap:14px!important}
-    html.is-phone .res-viz{grid-column:1!important;grid-row:1/span 2!important;flex:none!important;align-self:center!important;justify-self:center!important;width:84px!important;height:84px!important;padding:0!important}
-    html.is-phone .res-viz::before{display:block!important;width:84px!important;height:84px!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important}
+    html.is-phone .res-card{display:grid!important;grid-template-columns:112px 1fr!important;grid-template-rows:auto auto!important;align-items:center!important;aspect-ratio:auto!important;min-height:0!important;padding:16px 16px!important;border-radius:20px!important;column-gap:14px!important}
+    html.is-phone .res-viz{grid-column:1!important;grid-row:1/span 2!important;flex:none!important;align-self:center!important;justify-self:center!important;width:102px!important;height:102px!important;padding:0!important}
+    html.is-phone .res-viz::before{display:block!important;width:102px!important;height:102px!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important}
     html.is-phone .res-ring,html.is-phone .sheets{display:none!important}
-    html.is-phone .res-viz b{font-size:26px!important}
+    html.is-phone .res-viz b{font-size:28px!important}
+    html.is-phone .res-viz b.res-sum-money{font-size:22px!important}
     html.is-phone .res-viz small{white-space:nowrap!important;font-size:8px!important}
+    html.is-phone .res-money-u{font-size:10px!important}
     html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
     html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
