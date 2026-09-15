@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1802 -->
+<!-- deploy: 2026-09-15-1810 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1802" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1810" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=43&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=44&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -67,9 +67,9 @@
     button{cursor:pointer;border:none;background:none}
 
     .container{max-width:1280px;margin:0 auto;padding:0 48px}
-    .how-slide p,.res-d,.f-ip,.f-copy,.hero-lead,.upd-lead,.quote,.wait-lead,.wait-d{overflow-wrap:break-word;word-wrap:break-word}
+    .how-slide p,.res-d,.f-ip,.f-copy,.hero-lead,.upd-lead,.quote,.wait-copy p{overflow-wrap:break-word;word-wrap:break-word}
     .s-title,.hero h1,.how-slide h3,.quote-name{text-wrap:balance}
-    .hero-lead,.upd-lead,.upd-what p,.upd-note,.quote,.res-d,.how-slide p,.f-copy,.wait-lead,.wait-d{text-wrap:pretty}
+    .hero-lead,.upd-lead,.upd-what p,.upd-note,.quote,.res-d,.how-slide p,.f-copy,.wait-copy p{text-wrap:pretty}
     @media(max-width:768px){.container,.page .container{padding:0 20px}}
 
     .nav{position:relative;z-index:2;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--gray-light)}
@@ -124,14 +124,9 @@
     .section-cta{margin-top:40px}
 
     .wait{background:#fff}
-    .wait .s-title{max-width:16em}
-    .wait-lead{margin:0 0 14px;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:36em}
-    .wait-lead + .wait-lead{font-weight:500}
-    .wait-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--gray-light);border-radius:var(--r);overflow:hidden;margin-top:32px}
-    .wait-card{background:var(--off-white);padding:28px 24px;min-width:0}
-    .wait-n{width:36px;height:36px;border-radius:10px;background:var(--g-light);color:var(--g);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-    .wait-t{margin:0 0 8px;font-size:16px;font-weight:800;letter-spacing:-.03em;line-height:1.35}
-    .wait-d{margin:0;font-size:15px;line-height:1.6;color:#2C2C2C;font-weight:500}
+    .wait .s-title{max-width:18em;margin-bottom:20px}
+    .wait-copy{display:flex;flex-direction:column;gap:14px;max-width:38em}
+    .wait-copy p{margin:0;font-size:18px;line-height:1.55;font-weight:500;color:#2C2C2C}
 
     .pains{background:var(--off-white)}
     .ephir-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--gray-light);border-radius:var(--r);overflow:hidden;margin-top:48px}
@@ -284,7 +279,7 @@
       .photo-cap{position:absolute;left:20px;right:20px;bottom:44px;width:auto;margin:0;padding:14px 16px 13px 18px}
       .photo-i{left:12px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
-      .wait-grid{grid-template-columns:1fr}
+      .ephir-grid{grid-template-columns:1fr 1fr}
       .upd{display:flex;flex-direction:column;gap:20px}
       .upd-copy,.upd-stage,.upd-aside{display:contents}
       .upd-head{order:1}
@@ -295,6 +290,7 @@
       .upd-what{order:3;flex:none}
       .upd-note{order:4;margin-top:0;width:100%}
       .pains .container,.how .container,.wait .container,.live-block,.footer .container{text-align:center}
+      .wait-copy{margin-left:auto;margin-right:auto}
       .s-label{margin-left:auto;margin-right:auto}
       .s-labels{justify-content:center}
       .s-labels .s-label{margin-left:0;margin-right:0}
@@ -363,7 +359,7 @@
       .anketa-card{padding:28px 8px 8px;width:100%;max-width:100%;overflow-x:hidden}
     }
     @media(max-width:560px){
-      .ephir-grid,.wait-grid{grid-template-columns:1fr}
+      .ephir-grid{grid-template-columns:1fr}
       .s-title{font-size:26px;line-height:1.15}
       .res-card{grid-template-columns:112px 1fr;column-gap:12px;padding:16px 14px}
       .how-slide{flex-basis:calc(100% - 24px);max-width:calc(100% - 24px)}
@@ -481,7 +477,8 @@
     html.is-phone .res-money-u{font-size:10px!important}
     html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
     html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
-    html.is-phone .ephir-grid,html.is-phone .wait-grid{grid-template-columns:1fr!important}
+    html.is-phone .ephir-grid{grid-template-columns:1fr!important}
+    html.is-phone .wait-copy{margin-left:auto!important;margin-right:auto!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
     html.is-phone .upd{display:flex!important;flex-direction:column!important;gap:20px!important}
@@ -557,26 +554,11 @@
 
     <section class="wait section" id="wait">
       <div class="container">
-        <div class="s-label">Лист ожидания</div>
-        <h2 class="s-title">Вы занимаете место в списке следующего&nbsp;потока.</h2>
-        <p class="wait-lead">Это ещё не учёба в&nbsp;Школе. Оплаты сейчас нет.</p>
-        <p class="wait-lead">Вы заполняете короткую анкету, и&nbsp;мы вносим вас в&nbsp;лист ожидания. Когда Наталья откроет следующий поток, вы узнаете все подробности первыми. Тогда уже можно решать, идти в&nbsp;Школу или&nbsp;нет.</p>
-        <div class="wait-grid">
-          <article class="wait-card">
-            <div class="wait-n">1</div>
-            <h3 class="wait-t">Вы заполняете короткую анкету.</h3>
-            <p class="wait-d">На этой странице вы ничего не платите.</p>
-          </article>
-          <article class="wait-card">
-            <div class="wait-n">2</div>
-            <h3 class="wait-t">Мы вносим вас в лист ожидания.</h3>
-            <p class="wait-d">Письма Натальи придут в&nbsp;Telegram.</p>
-          </article>
-          <article class="wait-card">
-            <div class="wait-n">3</div>
-            <h3 class="wait-t">Когда она откроет следующий поток, вы узнаете первыми.</h3>
-            <p class="wait-d">Скидка и сборник разборов будут ждать вас в&nbsp;этом списке.</p>
-          </article>
+        <h2 class="s-title">Оплаты сейчас нет.</h2>
+        <div class="wait-copy">
+          <p>Этот список только для своих. Вы заполняете короткую анкету и&nbsp;остаётесь в&nbsp;листе ожидания следующего потока.</p>
+          <p>Школа при этом ещё не начинается.</p>
+          <p>Письма будут приходить в&nbsp;Telegram. Когда откроется следующий поток, вы узнаете все подробности первыми.</p>
         </div>
       </div>
     </section>
