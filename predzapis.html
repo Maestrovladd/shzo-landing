@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1725 -->
+<!-- deploy: 2026-09-15-1732 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1725" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1732" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=38&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=39&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -186,17 +186,17 @@
     .upd-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
     .upd-stage{height:0;min-height:100%;min-width:0}
     .upd-aside{height:100%;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-    .upd-phone-slot{flex:1 1 0;min-height:0;min-width:0;display:flex;align-items:stretch}
-    .upd-phone{height:100%;width:auto;aspect-ratio:390/640;max-width:100%;container-type:size;position:relative;padding:1.7% 1.9% 2%;border-radius:13%/7.9%;background:linear-gradient(160deg,#f3e6cf 0%,#cbb58e 28%,#8a7354 58%,#2b241c 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 1.2px rgba(255,255,255,.22),0 18px 36px rgba(40,28,12,.22)}
+    .upd-phone-slot{flex:1 1 0;min-height:0;min-width:0;display:flex;align-items:flex-start}
+    .upd-phone{width:min(248px,100%);height:auto;aspect-ratio:390/640;flex:0 0 auto;display:flex;flex-direction:column;position:relative;padding:1.7% 1.9% 2%;border-radius:13%/7.9%;background:linear-gradient(160deg,#f3e6cf 0%,#cbb58e 28%,#8a7354 58%,#2b241c 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 1.2px rgba(255,255,255,.22),0 18px 36px rgba(40,28,12,.22)}
     .upd-phone:before,.upd-phone:after{content:"";position:absolute;background:#3a3228;border-radius:2px}
     .upd-phone:before{left:-1.15%;top:16%;width:1.15%;height:8%;box-shadow:0 14px 0 0 #3a3228,0 26px 0 0 #3a3228}
     .upd-phone:after{right:-1.15%;top:22%;width:1.15%;height:11%}
-    .upd-phone-glass{height:100%;border-radius:11.2%/6.8%;overflow:hidden;position:relative;background:#e8f3dc;box-shadow:inset 0 0 0 1px #111;display:flex;flex-direction:column}
-    .upd-island{position:absolute;z-index:4;top:1.05%;left:50%;width:32%;height:3.35%;transform:translateX(-50%);border-radius:999px;background:#050505;box-shadow:0 0 0 .55cqh #111, inset 0 1px 1px rgba(255,255,255,.1)}
+    .upd-phone-glass{flex:1 1 auto;width:100%;min-height:0;height:auto;border-radius:11.2%/6.8%;overflow:hidden;position:relative;background:#e8f3dc;box-shadow:inset 0 0 0 1px #111;display:flex;flex-direction:column}
+    .upd-island{position:absolute;z-index:4;top:1.05%;left:50%;width:32%;height:3.35%;transform:translateX(-50%);border-radius:999px;background:#050505;box-shadow:0 0 0 2px #111, inset 0 1px 1px rgba(255,255,255,.1)}
     .upd-island i{position:absolute;right:10%;top:50%;width:24%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle at 35% 32%,#4a6a7c 0 18%,#1a303c 42%,#070b0e 100%);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.18)}
-    .upd-ios{position:relative;z-index:3;flex:0 0 8.2%;display:flex;align-items:flex-end;justify-content:space-between;padding:0 5.6% 1.6% 6.4%;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;font-weight:600;font-size:3.4cqw;letter-spacing:-.03em;line-height:1}
-    .upd-ios-sys{display:flex;align-items:center;gap:.5cqw;height:3cqw}
-    .upd-ios-sys svg{display:block;height:2.9cqw;width:auto;fill:#111}
+    .upd-ios{position:relative;z-index:3;flex:0 0 8.2%;display:flex;align-items:flex-end;justify-content:space-between;padding:0 5.6% 1.6% 6.4%;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;font-weight:600;font-size:11px;letter-spacing:-.03em;line-height:1}
+    .upd-ios-sys{display:flex;align-items:center;gap:3px;height:11px}
+    .upd-ios-sys svg{display:block;height:11px;width:auto;fill:#111}
     .upd-phone-img{display:block;flex:1 1 0;min-height:0;width:100%;height:auto;object-fit:cover;object-position:top center}
     .upd-home{position:absolute;z-index:3;left:50%;bottom:1.35%;width:30%;height:.7%;transform:translateX(-50%);border-radius:999px;background:#1a1a1a;opacity:.9}
     .upd-what{margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
@@ -280,7 +280,7 @@
       .upd-head{order:1}
       .upd-head .s-title{margin-left:auto;margin-right:auto}
       .upd-phone-slot{order:2;flex:none;height:auto;aspect-ratio:auto}
-      .upd-phone{height:auto;width:min(250px,68%);margin:0 auto;aspect-ratio:390/640}
+      .upd-phone{height:auto;width:min(250px,68%);margin:0 auto;aspect-ratio:390/640;flex:none}
       .upd-phone-img{height:auto;flex:1 1 auto}
       .upd-what{order:3;flex:none}
       .upd-note{order:4;margin-top:0;width:100%}
@@ -479,7 +479,7 @@
     html.is-phone .upd-head{order:1!important}
     html.is-phone .upd-head .s-title{margin-left:auto!important;margin-right:auto!important}
     html.is-phone .upd-phone-slot{order:2!important;flex:none!important;height:auto!important;aspect-ratio:auto!important}
-    html.is-phone .upd-phone{height:auto!important;width:min(250px,68%)!important;margin:0 auto!important;aspect-ratio:390/640!important}
+    html.is-phone .upd-phone{height:auto!important;width:min(250px,68%)!important;margin:0 auto!important;aspect-ratio:390/640!important;flex:none!important}
     html.is-phone .upd-phone-img{order:2!important;height:auto!important;width:100%!important;margin:0!important}
     html.is-phone .upd-what{order:3!important;flex:none!important}
     html.is-phone .upd-note{order:4!important;margin-top:0!important;width:100%!important}
@@ -674,7 +674,7 @@
                         <svg viewBox="0 0 27 13" width="27" height="13"><rect x=".75" y="1.1" width="22.2" height="10.8" rx="2.4" fill="none" stroke="#111" stroke-width="1.5"/><rect x="23.3" y="4.2" width="2.1" height="4.6" rx=".7"/><rect x="2.55" y="2.9" width="16.4" height="7.2" rx="1.3"/></svg>
                       </span>
                     </div>
-                    <img class="upd-phone-img" src="assets/upd-chat-screen.png?v=38" alt="Разбор в чате Школы здоровых отношений" width="632" height="970">
+                    <img class="upd-phone-img" src="assets/upd-chat-screen.png?v=39" alt="Разбор в чате Школы здоровых отношений" width="632" height="970">
                     <span class="upd-home" aria-hidden="true"></span>
                   </div>
                 </div>
