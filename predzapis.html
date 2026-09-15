@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1618 -->
+<!-- deploy: 2026-09-15-1630 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1618" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1630" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=25&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=26&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -209,6 +209,14 @@
     .quote-ava{width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0}
     .quote-name{margin:0;font-size:15px;font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--black)}
     .quote{position:relative;z-index:1;margin:0;flex:1;min-width:0;font-size:clamp(15px,1.6vw,18px);font-weight:600;font-style:italic;letter-spacing:-.025em;line-height:1.4;padding-left:16px;border-left:3px solid var(--g)}
+    .wait-close{position:relative;overflow:hidden;min-height:min(520px,70svh);display:grid;align-items:center}
+    .wait-close-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%}
+    .wait-close::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,22,14,.88) 0%,rgba(18,22,14,.62) 46%,rgba(18,22,14,.28) 100%)}
+    .wait-close-in{position:relative;z-index:1;max-width:720px;padding:64px 0}
+    .wait-close .hero-banner{margin:0 0 18px}
+    .wait-close-t{margin:0 0 14px;color:#fff;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.15;text-wrap:balance}
+    .wait-close-s{margin:0 0 28px;color:rgba(255,255,255,.86);font-size:18px;font-weight:600;line-height:1.45;max-width:28em}
+    .wait-close .btn{height:52px;padding:0 28px}
     @keyframes ring-drift{to{transform:rotate(360deg)}}
     @keyframes gift-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
     @keyframes sheet-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
@@ -272,6 +280,9 @@
       .section-cta{display:flex;justify-content:center}
       .upd-cta{justify-self:center}
       .upd-lead,.upd-note,.how-slide h3,.how-slide p,.f-logo,.f-ip,.f-copy{text-align:center}
+      .wait-close{text-align:center}
+      .wait-close::after{background:rgba(18,22,14,.72)}
+      .wait-close-in{margin:0 auto;padding:56px 0}
       .res-card,.photo-cap{text-align:left}
     }
     @media(max-width:768px){
@@ -324,6 +335,13 @@
       .quote-ava{width:64px;height:64px}
       .quote-name{text-align:left}
       .quote{font-size:16px;line-height:1.55;padding-left:0;border-left:none;border-top:3px solid var(--g);padding-top:14px;text-align:center}
+      .wait-close{min-height:0;text-align:center}
+      .wait-close::after{background:rgba(18,22,14,.72)}
+      .wait-close-in{padding:48px 0;margin:0 auto}
+      .wait-close-t{font-size:28px}
+      .wait-close-s{font-size:16px;margin-left:auto;margin-right:auto}
+      .wait-close .hero-banner{margin-left:auto;margin-right:auto}
+      .wait-close .btn{width:100%}
       .upd-what{text-align:center}
       .upd-what ul{display:block;width:max-content;max-width:100%;margin:12px auto 0;text-align:left}
       .upd-what li{text-align:left}
@@ -467,6 +485,13 @@
     html.is-phone .quote-ava{width:64px!important;height:64px!important}
     html.is-phone .quote-name{text-align:left!important}
     html.is-phone .quote{padding-left:0!important;border-left:none!important;border-top:3px solid var(--g)!important;padding-top:14px!important;text-align:center!important}
+    html.is-phone .wait-close{min-height:0!important;text-align:center!important}
+    html.is-phone .wait-close::after{background:rgba(18,22,14,.72)!important}
+    html.is-phone .wait-close-in{padding:48px 0!important;margin:0 auto!important}
+    html.is-phone .wait-close-t{font-size:28px!important}
+    html.is-phone .wait-close-s{font-size:16px!important;margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .wait-close .hero-banner{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .wait-close .btn{width:100%!important}
     html.is-phone .upd-what{text-align:center!important}
     html.is-phone .upd-what ul{display:block!important;width:max-content!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:left!important}
     html.is-phone .upd-what li{text-align:left!important}
@@ -642,6 +667,18 @@
             </div>
             <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в&nbsp;конфликтах и&nbsp;напряжении, вернуть близость и&nbsp;уважение в&nbsp;отношения и&nbsp;научиться общаться без крика, давления и&nbsp;чувства&nbsp;вины.»</blockquote>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wait-close" aria-label="Лист ожидания">
+      <img class="wait-close-img" src="assets/predzapis-hero.jpg" alt="" width="1600" height="2100">
+      <div class="container">
+        <div class="wait-close-in">
+          <div class="hero-banner"><i></i> Лист ожидания</div>
+          <p class="wait-close-t">Если вы хотите попасть в следующий поток, займите место в листе ожидания.</p>
+          <p class="wait-close-s">Когда откроем набор, напишем вам.</p>
+          <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
       </div>
     </section>
