@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1914 -->
+<!-- deploy: 2026-09-15-1924 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1914" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1924" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=50&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=51&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -127,11 +127,12 @@
     .wait .s-title{max-width:18em;margin-bottom:16px}
     .wait-copy{max-width:38em}
     .wait-copy p{margin:0;font-size:18px;line-height:1.55;font-weight:500;color:#2C2C2C}
-    .wait-grid{display:grid;grid-template-columns:repeat(3,minmax(0,232px));gap:10px;margin-top:20px;justify-content:start}
-    .wait-card{aspect-ratio:1;background:var(--off-white);border-radius:20px;padding:16px 16px 14px;min-width:0;display:flex;flex-direction:column}
-    .wait-n{width:22px;height:22px;border-radius:6px;background:var(--g-light);color:var(--g);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:10px;flex-shrink:0}
-    .wait-t{margin:0 0 6px;font-size:17px;font-weight:800;letter-spacing:-.03em;line-height:1.25}
-    .wait-d{margin:0;font-size:14px;line-height:1.45;color:#2C2C2C;font-weight:500}
+    .wait-copy p + p{margin-top:12px}
+    .wait-grid{display:grid;grid-template-columns:repeat(3,minmax(0,280px));gap:12px;margin-top:24px;justify-content:start}
+    .wait-card{background:var(--off-white);border-radius:20px;padding:20px 18px 18px;min-width:0;display:flex;flex-direction:column}
+    .wait-n{width:22px;height:22px;border-radius:6px;background:var(--g-light);color:var(--g);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px;flex-shrink:0}
+    .wait-t{margin:0 0 8px;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.28}
+    .wait-d{margin:0;font-size:15px;line-height:1.5;color:#2C2C2C;font-weight:500}
 
     .pains{background:var(--off-white)}
     .ephir-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--gray-light);border-radius:var(--r);overflow:hidden;margin-top:48px}
@@ -564,23 +565,24 @@
       <div class="container">
         <h2 class="s-title">Как попасть в лист ожидания?</h2>
         <div class="wait-copy">
-          <p>Оплаты сейчас нет.</p>
+          <p>Оплаты сейчас нет. Этот список только для своих.</p>
+          <p>После анкеты на почту придёт письмо со ссылкой на Telegram-бот. Дату старта, условия и цену вы узнаете уже там.</p>
         </div>
         <div class="wait-grid">
           <article class="wait-card">
             <div class="wait-n">1</div>
-            <h3 class="wait-t">Вы заполняете анкету.</h3>
-            <p class="wait-d">Школа ещё не начинается.</p>
+            <h3 class="wait-t">Вы оставляете почту и отвечаете на вопросы.</h3>
+            <p class="wait-d">Так вы попадаете в лист ожидания следующего потока.</p>
           </article>
           <article class="wait-card">
             <div class="wait-n">2</div>
             <h3 class="wait-t">На почту придёт письмо.</h3>
-            <p class="wait-d">В нём будет ссылка на Telegram-бот.</p>
+            <p class="wait-d">В нём будет ссылка на Telegram-бот. Откройте письмо и перейдите по ссылке.</p>
           </article>
           <article class="wait-card">
             <div class="wait-n">3</div>
             <h3 class="wait-t">Дата старта, условия и цена будут в боте.</h3>
-            <p class="wait-d">Вы узнаете их, когда откроется следующий поток.</p>
+            <p class="wait-d">Когда откроется следующий поток, вы узнаете в боте, когда начинаем и на каких условиях.</p>
           </article>
         </div>
       </div>
