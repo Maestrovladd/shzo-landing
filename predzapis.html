@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1752 -->
+<!-- deploy: 2026-09-15-1756 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1752" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1756" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=41&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=42&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -174,7 +174,7 @@
     .res-ring.b{width:70px;height:70px;bottom:-22px;left:-18px}
     .res-card.is-feat .res-ring{border-color:rgba(255,255,255,.18)}
 
-    .how{background:#fff;overflow:hidden}
+    .how{display:none!important;background:#fff;overflow:hidden}
     .how-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .how-top .s-title{margin-bottom:0;max-width:18em}
     .how-top .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
@@ -637,7 +637,7 @@
       </div>
     </section>
 
-    <section class="how section" id="how">
+    <section class="how section" id="how" hidden>
       <div class="container">
         <div class="how-top">
           <div>
