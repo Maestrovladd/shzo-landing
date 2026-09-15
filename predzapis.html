@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1756 -->
+<!-- deploy: 2026-09-15-1802 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1756" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1802" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=42&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=43&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -83,15 +83,13 @@
     .hero-left::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,var(--g-light) 0%,transparent 70%);left:-90px;top:12%;pointer-events:none}
     .hero-left > *{position:relative;z-index:1}
     .hero-banners{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-    .hero-banner{display:inline-flex;align-items:center;gap:8px;width:max-content;height:34px;padding:0 14px;background:var(--g);color:#fff;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-    .hero-banner i{width:6px;height:6px;border-radius:50%;background:#fff;flex-shrink:0}
-    .hero-own{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px 0 9px;border-radius:999px;background:var(--g-light);color:var(--g-dark);font-size:13px;font-weight:800;letter-spacing:-.01em}
+    .hero-banner{display:inline-flex;align-items:center;gap:10px;width:max-content;height:44px;padding:0 18px;background:var(--g);color:#fff;border-radius:999px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .hero-banner i{width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0}
+    .hero-own{display:inline-flex;align-items:center;gap:7px;height:44px;padding:0 14px 0 11px;border-radius:999px;background:var(--g-light);color:var(--g-dark);font-size:14px;font-weight:800;letter-spacing:-.01em}
     .hero-own-rings{width:15px;height:15px;flex-shrink:0}
     .hero-own-txt{display:inline-block;line-height:1;padding-bottom:3px;border-bottom:2px solid currentColor}
-    .hero h1{margin:0 0 16px;padding:0}
+    .hero h1{font-size:clamp(32px,4vw,56px);font-weight:800;line-height:1.04;letter-spacing:-.04em;margin:0 0 16px;padding:0}
     .hero h1 .line{display:block}
-    .hero-wait{font-size:clamp(44px,5.8vw,76px);font-weight:800;line-height:1.02;letter-spacing:-.045em}
-    .hero-into{margin-top:10px;max-width:16em;font-size:clamp(18px,2.05vw,26px);font-weight:800;line-height:1.25;letter-spacing:-.03em}
     .hero h1 em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .hero-banner,.hero-own,.hero-lead,.hero-gift{margin:0}
     .hero-lead{font-size:17px;color:#2C2C2C;line-height:1.55;margin:0 0 28px;max-width:480px;font-weight:500}
@@ -274,8 +272,7 @@
       .hero-left{order:1;padding:32px 24px 28px;justify-content:flex-start;align-items:center;text-align:center}
       .hero-left::before{width:220px;height:220px;left:50%;top:-20px;transform:translateX(-50%)}
       .hero-banners{justify-content:center}
-      .hero-wait{font-size:clamp(40px,10vw,56px)}
-      .hero-into{font-size:clamp(18px,4.4vw,22px);max-width:none}
+      .hero h1{font-size:clamp(32px,8.4vw,48px);margin:0 0 14px}
       .hero-lead{margin:0 0 22px;max-width:none}
       .hero-actions{flex-wrap:wrap;align-items:stretch;justify-content:center;gap:14px}
       .hero-actions .btn{height:52px;padding:0 28px}
@@ -317,8 +314,7 @@
       .live-block{padding:24px 18px 20px;border-radius:20px}
       .hero-left{padding:24px 20px 20px}
       .hero-banners{margin-bottom:14px}
-      .hero-wait{font-size:clamp(38px,10.5vw,48px)}
-      .hero-into{font-size:clamp(17px,4.6vw,20px)}
+      .hero h1{font-size:clamp(30px,8.6vw,38px)}
       .hero-lead{font-size:16px;line-height:1.5}
       .hero-lead mark{padding:.05em .12em}
       .hero-actions .btn{width:100%}
@@ -377,8 +373,7 @@
       .hero-left{padding:20px 16px 18px}
       .container,.page .container{padding:0 16px}
       .s-title{font-size:24px}
-      .hero-wait{font-size:clamp(34px,10vw,42px)}
-      .hero-into{font-size:clamp(16px,4.5vw,18px)}
+      .hero h1{font-size:clamp(26px,8.2vw,32px)}
       .quote-name{font-size:13px}
       .res-card{grid-template-columns:108px 1fr;padding:14px 12px}
       .res-viz,.res-viz::before{width:98px;height:98px}
@@ -456,9 +451,7 @@
     html.is-phone .hero-left{order:1!important;padding:24px 20px 20px!important;justify-content:flex-start!important;align-items:center!important;text-align:center!important}
     html.is-phone .hero-left::before{width:220px!important;height:220px!important;left:50%!important;top:-20px!important;transform:translateX(-50%)!important}
     html.is-phone .hero-banners{justify-content:center!important}
-    html.is-phone .hero h1{margin:0 0 14px!important}
-    html.is-phone .hero-wait{font-size:clamp(38px,10.5vw,48px)!important}
-    html.is-phone .hero-into{font-size:clamp(17px,4.6vw,20px)!important;max-width:none!important}
+    html.is-phone .hero h1{font-size:clamp(30px,8.6vw,38px)!important;margin:0 0 14px!important}
     html.is-phone .hero-lead{margin:0 0 22px!important;font-size:16px!important;line-height:1.5!important;max-width:none!important}
     html.is-phone .hero-actions{flex-wrap:wrap!important;align-items:stretch!important;justify-content:center!important;gap:14px!important}
     html.is-phone .hero-actions .btn{width:100%!important;height:auto!important;min-height:52px!important;padding:12px 18px!important}
@@ -539,8 +532,9 @@
           </div>
         </div>
         <h1>
-          <span class="line hero-wait">Лист ожидания</span>
-          <span class="line hero-into">В <em>Школу здоровых отношений</em> Натальи&nbsp;Зайцевой</span>
+          <span class="line">В Школу здоровых</span>
+          <span class="line"><em>отношений</em></span>
+          <span class="line">Натальи Зайцевой</span>
         </h1>
         <div class="hero-lead">Перестаньте жить в&nbsp;конфликтах и&nbsp;напряжении, верните близость и&nbsp;уважение, и&nbsp;научитесь говорить <mark>без крика, давления и&nbsp;чувства&nbsp;вины</mark>.</div>
         <div class="hero-actions">
