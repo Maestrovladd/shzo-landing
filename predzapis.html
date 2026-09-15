@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1600 -->
+<!-- deploy: 2026-09-15-1610 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1600" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1610" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=21&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=22&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -67,7 +67,9 @@
     button{cursor:pointer;border:none;background:none}
 
     .container{max-width:1280px;margin:0 auto;padding:0 48px}
-    .s-title,.how-slide h3,.how-slide p,.res-d,.f-ip,.f-copy,.hero-lead{overflow-wrap:break-word;word-wrap:break-word}
+    .how-slide p,.res-d,.f-ip,.f-copy,.hero-lead,.upd-lead,.quote{overflow-wrap:break-word;word-wrap:break-word}
+    .s-title,.hero h1,.how-slide h3,.quote-name{text-wrap:balance}
+    .hero-lead,.upd-lead,.upd-what p,.upd-note,.quote,.res-d,.how-slide p,.f-copy{text-wrap:pretty}
     @media(max-width:768px){.container,.page .container{padding:0 20px}}
 
     .nav{position:relative;z-index:2;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--gray-light)}
@@ -259,11 +261,20 @@
       .photo-i{left:12px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .ephir-grid{grid-template-columns:1fr 1fr}
+      .pains .container,.how .container,.live-block,.footer .container{text-align:center}
+      .s-label{margin-left:auto;margin-right:auto}
+      .s-labels{justify-content:center}
+      .how-top{flex-direction:column;align-items:center;text-align:center}
+      .how-nav{justify-content:center}
+      .section-cta{display:flex;justify-content:center}
+      .upd-cta{align-self:center}
+      .upd-lead,.upd-note,.how-slide h3,.how-slide p,.f-logo,.f-ip,.f-copy{text-align:center}
+      .res-card,.photo-cap{text-align:left}
     }
     @media(max-width:768px){
       .nav{padding:14px 20px}
       .section{padding:56px 0}
-      .s-title{font-size:30px;margin-bottom:10px}
+      .s-title{font-size:26px;margin-bottom:10px;line-height:1.18}
       .section-cta{margin-top:28px}
       .section-cta .btn,.upd-cta{width:100%}
       .live.section{padding:48px 0}
@@ -292,7 +303,7 @@
       .res-money-u{font-size:9px}
       .res-t{grid-column:2;grid-row:1;margin:0;align-self:end;font-size:16px}
       .res-d{grid-column:2;grid-row:2;font-size:14px;line-height:1.45}
-      .how-top{align-items:flex-start}
+      .how-top{align-items:center}
       .how-top .s-title{max-width:none}
       .how-rail{margin:20px 0 0;padding:0 0 16px;gap:12px}
       .how-slide{flex:0 0 calc(100% - 28px);max-width:calc(100% - 28px)}
@@ -304,11 +315,15 @@
       .upd-visuals{margin:20px 0 24px}
       .upd-phone-img{width:min(230px,64%)}
       .upd-note{margin-top:16px;box-shadow:none}
-      .quote-panel{flex-direction:column;align-items:flex-start;gap:16px;padding:20px 18px 22px;margin-top:20px}
+      .quote-panel{flex-direction:column;align-items:center;gap:16px;padding:20px 18px 22px;margin-top:20px;text-align:center}
       .quote-ring{display:none}
-      .quote-who{order:0;width:100%}
+      .quote-who{order:0;width:100%;justify-content:center}
       .quote-ava{width:64px;height:64px}
-      .quote{font-size:16px;line-height:1.55;padding-left:14px}
+      .quote-name{text-align:left}
+      .quote{font-size:16px;line-height:1.55;padding-left:0;border-left:none;border-top:3px solid var(--g);padding-top:14px;text-align:center}
+      .upd-what{text-align:center}
+      .upd-what ul{display:flex;flex-direction:column;align-items:center}
+      .upd-what li{text-align:left}
       .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))}
       .anketa-layer,#anketa{padding:8px}
       .anketa-card{padding:28px 8px 8px;width:100%;max-width:100%;overflow-x:hidden}
@@ -418,7 +433,7 @@
     html.is-phone .nav{padding:14px 20px!important}
     html.is-phone .container,html.is-phone .page .container{padding-left:20px!important;padding-right:20px!important}
     html.is-phone .section{padding:56px 0!important}
-    html.is-phone .s-title{font-size:30px!important}
+    html.is-phone .s-title{font-size:26px!important;line-height:1.18!important;text-align:center!important}
     html.is-phone .section-cta .btn,html.is-phone .upd-cta{width:100%!important}
     html.is-phone .res-grid{grid-template-columns:1fr!important;width:auto!important;max-width:none!important;gap:12px!important;margin:24px 0 0!important}
     html.is-phone .res-card{display:grid!important;grid-template-columns:92px 1fr!important;grid-template-rows:auto auto!important;align-items:center!important;aspect-ratio:auto!important;min-height:0!important;padding:16px 16px!important;border-radius:20px!important;column-gap:14px!important}
@@ -434,9 +449,23 @@
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
     html.is-phone .upd-visuals{margin:20px 0 24px!important}
     html.is-phone .upd-phone-img{width:min(230px,64%)!important}
-    html.is-phone .quote-panel{flex-direction:column!important;align-items:flex-start!important}
-    html.is-phone .quote-who{order:0!important;width:100%!important}
+    html.is-phone .pains .container,html.is-phone .how .container,html.is-phone .live-block,html.is-phone .footer .container{text-align:center!important}
+    html.is-phone .s-label{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .s-labels{justify-content:center!important}
+    html.is-phone .how-top{flex-direction:column!important;align-items:center!important;text-align:center!important}
+    html.is-phone .how-nav{justify-content:center!important}
+    html.is-phone .section-cta{display:flex!important;justify-content:center!important}
+    html.is-phone .upd-cta{align-self:center!important}
+    html.is-phone .upd-lead,html.is-phone .upd-note,html.is-phone .how-slide h3,html.is-phone .how-slide p,html.is-phone .f-logo,html.is-phone .f-ip,html.is-phone .f-copy{text-align:center!important}
+    html.is-phone .res-card,html.is-phone .photo-cap{text-align:left!important}
+    html.is-phone .quote-panel{flex-direction:column!important;align-items:center!important;text-align:center!important}
+    html.is-phone .quote-who{order:0!important;width:100%!important;justify-content:center!important}
     html.is-phone .quote-ava{width:64px!important;height:64px!important}
+    html.is-phone .quote-name{text-align:left!important}
+    html.is-phone .quote{padding-left:0!important;border-left:none!important;border-top:3px solid var(--g)!important;padding-top:14px!important;text-align:center!important}
+    html.is-phone .upd-what{text-align:center!important}
+    html.is-phone .upd-what ul{display:flex!important;flex-direction:column!important;align-items:center!important}
+    html.is-phone .upd-what li{text-align:left!important}
     html.is-phone .quote-ring{display:none!important}
     html.is-phone .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))!important}
     html.is-phone #anketa{padding:8px!important}
@@ -462,7 +491,7 @@
           <span class="line"><em>отношений</em></span>
           <span class="line">Натальи Зайцевой</span>
         </h1>
-        <div class="hero-lead">Перестаньте жить в конфликтах и напряжении, верните близость и уважение, и научитесь говорить <mark>без крика, давления и&nbsp;чувства&nbsp;вины</mark>.</div>
+        <div class="hero-lead">Перестаньте жить в&nbsp;конфликтах и&nbsp;напряжении, верните близость и&nbsp;уважение, и&nbsp;научитесь говорить <mark>без крика, давления и&nbsp;чувства&nbsp;вины</mark>.</div>
         <div class="hero-actions">
           <button class="btn" type="button" data-open="anketa">Занять место</button>
         </div>
@@ -474,8 +503,8 @@
           <strong>Наталья Зайцева</strong>
           <ul>
             <li>врач-психотерапевт, психиатр</li>
-            <li>20 лет опыта работы</li>
-            <li>когнитивно-поведенческий и диалектический поведенческий терапевт</li>
+            <li>20&nbsp;лет опыта работы</li>
+            <li>когнитивно-поведенческий и&nbsp;диалектический поведенческий терапевт</li>
           </ul>
         </div>
       </div>
@@ -493,26 +522,26 @@
           </svg>
           Бонусы и скидки
         </div>
-        <h2 class="s-title">Только для участников листа ожидания:</h2>
+        <h2 class="s-title">Только для участников листа&nbsp;ожидания:</h2>
 
         <div class="res-grid">
           <article class="res-card">
             <span class="res-ring a" aria-hidden="true"></span>
             <div class="res-viz" aria-hidden="true"><b>30%</b></div>
             <h3 class="res-t">Скидка</h3>
-            <p class="res-d">Самая низкая цена следующего потока.</p>
+            <p class="res-d">Самая низкая цена следующего&nbsp;потока.</p>
           </article>
           <article class="res-card">
             <div class="res-viz" aria-hidden="true"><b class="res-sum res-sum-money"><span class="res-money-n"><span class="res-approx">≈</span>6–12</span><span class="res-money-rule"></span><span class="res-money-u">тыс. ₽</span></b></div>
             <h3 class="res-t">Экономия</h3>
-            <p class="res-d">Вы можете сэкономить от 6&nbsp;000 до<br>12&nbsp;000 рублей за счёт скидки.</p>
+            <p class="res-d">Вы можете сэкономить от&nbsp;6&nbsp;000 до&nbsp;12&nbsp;000 рублей за&nbsp;счёт скидки.</p>
           </article>
           <article class="res-card">
             <div class="res-viz" aria-hidden="true">
               <b class="res-sum">1<span class="res-unit">год</span></b>
             </div>
-            <h3 class="res-t">Доступ к материалам ×2</h3>
-            <p class="res-d">Стандартный доступ к Школе здоровых отношений длится 24 недели. Но у вас он будет увеличен до 52 недель.</p>
+            <h3 class="res-t">Доступ к&nbsp;материалам&nbsp;×2</h3>
+            <p class="res-d">Стандартный доступ к&nbsp;Школе здоровых&nbsp;отношений длится 24&nbsp;недели. Но у&nbsp;вас он будет увеличен до&nbsp;52&nbsp;недель.</p>
           </article>
           <article class="res-card is-feat">
             <span class="res-ring a" aria-hidden="true"></span>
@@ -522,7 +551,7 @@
               <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
             </div>
             <h3 class="res-t">Бонус</h3>
-            <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых отношений, с 2022 по 2026 год.</p>
+            <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых&nbsp;отношений, с&nbsp;2022 по&nbsp;2026&nbsp;год.</p>
           </article>
         </div>
         <div class="section-cta">
@@ -536,7 +565,7 @@
         <div class="how-top">
           <div>
             <div class="s-label">Что вас ждёт</div>
-            <h2 class="s-title">Как устроена <em>Школа здоровых отношений</em></h2>
+            <h2 class="s-title">Как устроена <em>Школа здоровых&nbsp;отношений</em></h2>
           </div>
           <div class="how-nav">
             <button class="how-btn" type="button" data-how="-1" aria-label="Листать влево"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -546,23 +575,23 @@
         <div class="how-rail" id="how-rail">
           <article class="how-slide">
             <div class="how-pic"><img src="assets/how-lessons.jpg" alt="Уроки Школы на GetCourse" width="764" height="616"></div>
-            <h3>Уроки на GetCourse</h3>
-            <p>60 видеоуроков с научно обоснованной информацией продолжительностью до 10–15 минут</p>
+            <h3>Уроки на&nbsp;GetCourse</h3>
+            <p>60 видеоуроков с&nbsp;научно обоснованной информацией продолжительностью до&nbsp;10–15&nbsp;минут</p>
           </article>
           <article class="how-slide">
             <div class="how-pic"><img src="assets/how-sheets.jpg" alt="Рабочие листы для выполнения заданий" width="792" height="640"></div>
-            <h3>Рабочие листы для выполнения заданий</h3>
-            <p>12 обязательных и 48 необязательных практических заданий с рабочими листами для их выполнения</p>
+            <h3>Рабочие листы для выполнения&nbsp;заданий</h3>
+            <p>12 обязательных и&nbsp;48 необязательных практических заданий с&nbsp;рабочими листами для их выполнения</p>
           </article>
           <article class="how-slide">
             <div class="how-pic"><img src="assets/how-examples.jpg" alt="Примеры выполнения заданий" width="784" height="634"></div>
-            <h3>Примеры выполнения заданий</h3>
-            <p>60+ текстовых файлов с примерами выполнения заданий участниками предыдущих потоков</p>
+            <h3>Примеры выполнения&nbsp;заданий</h3>
+            <p>60+ текстовых файлов с&nbsp;примерами выполнения заданий участниками предыдущих потоков</p>
           </article>
           <article class="how-slide">
             <div class="how-pic"><img src="assets/how-review.jpg" alt="Проверка домашнего задания в чате" width="1376" height="1032"></div>
-            <h3>Проверка домашних заданий</h3>
-            <p>Только на тарифе с куратором: врачом-психотерапевтом или психологом</p>
+            <h3>Проверка домашних&nbsp;заданий</h3>
+            <p>Только на&nbsp;тарифе с&nbsp;куратором: врачом-психотерапевтом или&nbsp;психологом</p>
           </article>
         </div>
         <div class="section-cta">
@@ -581,23 +610,23 @@
                 <div class="s-label">Бесплатно</div>
               </div>
               <h2 class="s-title">Сборник <em>разборов</em></h2>
-              <p class="upd-lead">В период с 2022 по 2026 год мы провели 232 терапевтических разбора в Школе здоровых отношений.</p>
+              <p class="upd-lead">В период с&nbsp;2022 по&nbsp;2026 год мы провели 232&nbsp;терапевтических разбора в&nbsp;Школе здоровых&nbsp;отношений.</p>
               <div class="upd-visuals">
                 <img class="upd-phone-img" src="assets/upd-chat-phone.png" alt="Разбор в чате Школы здоровых отношений" width="728" height="1116">
               </div>
               <div class="upd-what">
-                <p>В них принимали участие разные люди с разными проблемами:</p>
+                <p>В них принимали участие разные люди с&nbsp;разными проблемами:</p>
                 <ul>
-                  <li>в отношениях с мужем или партнёром</li>
-                  <li>в общении с детьми</li>
-                  <li>с мамой и родными</li>
-                  <li>на работе</li>
-                  <li>в отношениях с собой</li>
+                  <li>в&nbsp;отношениях с&nbsp;мужем или&nbsp;партнёром</li>
+                  <li>в&nbsp;общении с&nbsp;детьми</li>
+                  <li>с&nbsp;мамой и&nbsp;родными</li>
+                  <li>на&nbsp;работе</li>
+                  <li>в&nbsp;отношениях с&nbsp;собой</li>
                 </ul>
-                <p>Мы сохранили все эти разборы и собрали их в единый сборник. Там вы найдёте дополнительные примеры выполнения заданий и увидите, как реальные люди решали свои проблемы с помощью Школы здоровых отношений.</p>
+                <p>Мы сохранили все эти разборы и&nbsp;собрали их в&nbsp;единый сборник. Там вы найдёте дополнительные примеры выполнения заданий и&nbsp;увидите, как реальные люди решали свои проблемы с&nbsp;помощью Школы здоровых&nbsp;отношений.</p>
               </div>
             </div>
-            <p class="upd-note"><strong>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</span></p>
+            <p class="upd-note"><strong>Вам больше не&nbsp;потребуется разгребать сотни новых сообщений в&nbsp;чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у&nbsp;вас под&nbsp;рукой в&nbsp;едином сборнике, который останется у&nbsp;вас навсегда.</span></p>
             <button class="btn upd-cta" type="button" data-open="anketa">Занять место</button>
           </div>
           <div class="quote-panel">
@@ -605,9 +634,9 @@
             <span class="quote-ring b" aria-hidden="true"></span>
             <div class="quote-who">
               <img class="quote-ava" src="assets/quote-nata.png" alt="" width="72" height="72">
-              <p class="quote-name">Врач-психотерапевт Наталья Зайцева</p>
+              <p class="quote-name">Врач-психотерапевт<br>Наталья&nbsp;Зайцева</p>
             </div>
-            <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.»</blockquote>
+            <blockquote class="quote">«Я создала эту программу, чтобы помочь людям перестать жить в&nbsp;конфликтах и&nbsp;напряжении, вернуть близость и&nbsp;уважение в&nbsp;отношения и&nbsp;научиться общаться без крика, давления и&nbsp;чувства&nbsp;вины.»</blockquote>
           </div>
         </div>
       </div>
@@ -617,7 +646,7 @@
       <div class="container">
         <div class="f-logo">Наталья Зайцева · врач-психотерапевт</div>
         <p class="f-ip">Индивидуальный предприниматель Зайцева Наталья Леонидовна<br>ОГРНИП: 310366827100181 · ИНН: 366227331702<br><a href="mailto:psyfactum@mail.ru">psyfactum@mail.ru</a> · <a href="https://t.me/psy_factum">t.me/psy_factum</a><br>Договор оферты · Политика обработки персональных данных</p>
-        <p class="f-copy">Информация носит образовательный характер и не является медицинской рекомендацией. Школа не заменяет личную психотерапию, лечение у врача и помощь кризисных служб.</p>
+        <p class="f-copy">Информация носит образовательный характер и&nbsp;не&nbsp;является медицинской рекомендацией. Школа не&nbsp;заменяет личную психотерапию, лечение у&nbsp;врача и&nbsp;помощь кризисных служб.</p>
       </div>
     </footer>
   </div>
