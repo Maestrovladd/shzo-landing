@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1610 -->
+<!-- deploy: 2026-09-15-1612 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1610" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1612" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=22&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=23&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -322,7 +322,7 @@
       .quote-name{text-align:left}
       .quote{font-size:16px;line-height:1.55;padding-left:0;border-left:none;border-top:3px solid var(--g);padding-top:14px;text-align:center}
       .upd-what{text-align:center}
-      .upd-what ul{display:flex;flex-direction:column;align-items:center}
+      .upd-what ul{display:block;width:max-content;max-width:100%;margin:12px auto 0;text-align:left}
       .upd-what li{text-align:left}
       .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))}
       .anketa-layer,#anketa{padding:8px}
@@ -464,7 +464,7 @@
     html.is-phone .quote-name{text-align:left!important}
     html.is-phone .quote{padding-left:0!important;border-left:none!important;border-top:3px solid var(--g)!important;padding-top:14px!important;text-align:center!important}
     html.is-phone .upd-what{text-align:center!important}
-    html.is-phone .upd-what ul{display:flex!important;flex-direction:column!important;align-items:center!important}
+    html.is-phone .upd-what ul{display:block!important;width:max-content!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:left!important}
     html.is-phone .upd-what li{text-align:left!important}
     html.is-phone .quote-ring{display:none!important}
     html.is-phone .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))!important}
