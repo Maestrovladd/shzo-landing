@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1930 -->
+<!-- deploy: 2026-09-15-1938 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1930" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1938" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=52&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=53&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -67,9 +67,9 @@
     button{cursor:pointer;border:none;background:none}
 
     .container{max-width:1280px;margin:0 auto;padding:0 48px}
-    .how-slide p,.res-d,.f-ip,.f-copy,.hero-lead,.upd-lead,.quote,.wait-copy p,.wait-d{overflow-wrap:break-word;word-wrap:break-word}
+    .how-slide p,.res-d,.f-ip,.f-copy,.hero-lead,.upd-lead,.quote,.wait-d{overflow-wrap:break-word;word-wrap:break-word}
     .s-title,.hero h1,.how-slide h3,.quote-name{text-wrap:balance}
-    .hero-lead,.upd-lead,.upd-what p,.upd-note,.quote,.res-d,.how-slide p,.f-copy,.wait-copy p,.wait-d,.wait-t{text-wrap:pretty}
+    .hero-lead,.upd-lead,.upd-what p,.upd-note,.quote,.res-d,.how-slide p,.f-copy,.wait-d,.wait-t{text-wrap:pretty}
     @media(max-width:768px){.container,.page .container{padding:0 20px}}
 
     .nav{position:relative;z-index:2;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--gray-light)}
@@ -123,16 +123,15 @@
     .s-sub{font-size:16px;color:var(--gray);line-height:1.65;max-width:42em}
     .section-cta{margin-top:40px}
 
-    .wait{background:#fff}
-    .wait .s-title{max-width:18em;margin-bottom:16px}
-    .wait-copy{max-width:38em}
-    .wait-copy p{margin:0;font-size:18px;line-height:1.55;font-weight:500;color:#2C2C2C}
-    .wait-copy p + p{margin-top:12px}
-    .wait-grid{display:grid;grid-template-columns:repeat(3,minmax(0,280px));gap:12px;margin-top:24px;justify-content:start}
-    .wait-card{background:var(--off-white);border-radius:20px;padding:20px 18px 18px;min-width:0;display:flex;flex-direction:column}
-    .wait-n{width:22px;height:22px;border-radius:6px;background:var(--g-light);color:var(--g);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:12px;flex-shrink:0}
-    .wait-t{margin:0 0 8px;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.28}
-    .wait-d{margin:0;font-size:15px;line-height:1.5;color:#2C2C2C;font-weight:500}
+    .wait{background:var(--g-pale)}
+    .wait .s-title{max-width:18em;margin-bottom:28px}
+    .wait-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border-radius:24px;overflow:hidden;border:1px solid color-mix(in srgb,var(--g) 16%,transparent);box-shadow:0 10px 36px color-mix(in srgb,var(--g) 10%,transparent)}
+    .wait-card{position:relative;padding:32px 28px 30px;min-width:0;background:#fff}
+    .wait-card + .wait-card{box-shadow:inset 1px 0 0 color-mix(in srgb,var(--g) 18%,transparent)}
+    .wait-n{display:block;width:auto;height:auto;margin:0 0 18px;padding:0;border-radius:0;background:none;color:var(--g);font-size:13px;font-weight:800;letter-spacing:.16em;line-height:1;justify-content:flex-start}
+    .wait-n:after{content:"";display:block;width:28px;height:2px;margin-top:10px;background:var(--g);border-radius:2px}
+    .wait-t{margin:0 0 10px;font-size:20px;font-weight:800;letter-spacing:-.035em;line-height:1.28}
+    .wait-d{margin:0;font-size:15px;line-height:1.55;color:#3A3A3A;font-weight:500}
 
     .pains{background:var(--off-white)}
     .ephir-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--gray-light);border-radius:var(--r);overflow:hidden;margin-top:48px}
@@ -285,8 +284,8 @@
       .photo-cap{position:absolute;left:20px;right:20px;bottom:44px;width:auto;margin:0;padding:14px 16px 13px 18px}
       .photo-i{left:12px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
-      .wait-grid{grid-template-columns:1fr}
-      .wait-card{aspect-ratio:auto}
+      .wait-board{grid-template-columns:1fr}
+      .wait-card + .wait-card{box-shadow:inset 0 1px 0 color-mix(in srgb,var(--g) 18%,transparent)}
       .upd{display:flex;flex-direction:column;gap:20px}
       .upd-copy,.upd-stage,.upd-aside{display:contents}
       .upd-head{order:1}
@@ -297,7 +296,7 @@
       .upd-what{order:3;flex:none}
       .upd-note{order:4;margin-top:0;width:100%}
       .pains .container,.how .container,.wait .container,.live-block,.footer .container{text-align:center}
-      .wait-copy{margin-left:auto;margin-right:auto}
+      .wait-board{margin-left:auto;margin-right:auto;text-align:left}
       .s-label{margin-left:auto;margin-right:auto}
       .s-labels{justify-content:center}
       .s-labels .s-label{margin-left:0;margin-right:0}
@@ -485,9 +484,9 @@
     html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
     html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
-    html.is-phone .wait-grid{grid-template-columns:1fr!important}
-    html.is-phone .wait-card{aspect-ratio:auto!important;text-align:left!important}
-    html.is-phone .wait-copy{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:left!important}
+    html.is-phone .wait-card{text-align:left!important}
+    html.is-phone .wait-card + .wait-card{box-shadow:inset 0 1px 0 color-mix(in srgb,var(--g) 18%,transparent)!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
     html.is-phone .upd{display:flex!important;flex-direction:column!important;gap:20px!important}
@@ -564,22 +563,19 @@
     <section class="wait section" id="wait">
       <div class="container">
         <h2 class="s-title">Как попасть в лист ожидания?</h2>
-        <div class="wait-copy">
-          <p>Оплаты сейчас нет. Этот список только для своих.</p>
-        </div>
-        <div class="wait-grid">
+        <div class="wait-board">
           <article class="wait-card">
-            <div class="wait-n">1</div>
+            <div class="wait-n">01</div>
             <h3 class="wait-t">Вы оставляете почту и отвечаете на вопросы.</h3>
             <p class="wait-d">Так вы попадаете в лист ожидания следующего потока.</p>
           </article>
           <article class="wait-card">
-            <div class="wait-n">2</div>
+            <div class="wait-n">02</div>
             <h3 class="wait-t">На почту придёт письмо.</h3>
             <p class="wait-d">В нём будет ссылка на Telegram-бот. Откройте письмо и перейдите по ссылке.</p>
           </article>
           <article class="wait-card">
-            <div class="wait-n">3</div>
+            <div class="wait-n">03</div>
             <h3 class="wait-t">Дата старта, условия и цена будут в боте.</h3>
             <p class="wait-d">Когда откроется следующий поток, вы узнаете в боте, когда начинаем и на каких условиях.</p>
           </article>
