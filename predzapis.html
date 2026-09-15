@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1614 -->
+<!-- deploy: 2026-09-15-1618 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1614" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1618" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=24&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=25&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -182,14 +182,15 @@
     .live{background:var(--g-pale);overflow:hidden}
     .live.section{padding:72px 0}
     .live-block{background:#fff;border-radius:24px;padding:40px 40px 32px}
-    .upd{display:flex;flex-direction:column;align-items:stretch}
-    .upd-cta{margin-top:28px;align-self:start}
-    .upd-copy .s-title{max-width:18em;margin-bottom:16px}
-    .upd-copy .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
-    .upd-lead{margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
-    .upd-visuals{margin:24px 0 32px;display:flex;justify-content:center}
-    .upd-phone-img{width:min(260px,48%);height:auto;display:block}
-    .upd-what{margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
+    .upd{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"head stage" "what stage" "note stage" "cta stage";column-gap:40px;row-gap:16px;align-items:center}
+    .upd-head{grid-area:head}
+    .upd-stage{grid-area:stage;display:flex;justify-content:center;align-items:center;min-height:0}
+    .upd-what{grid-area:what;margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
+    .upd-cta{grid-area:cta;margin-top:12px;justify-self:start}
+    .upd-head .s-title{max-width:14em;margin-bottom:16px}
+    .upd-head .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
+    .upd-lead{margin:0 0 8px;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
+    .upd-phone-img{width:min(360px,100%);height:auto;display:block}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
     .upd-what ul{margin:12px 0 0;padding:0;list-style:none}
@@ -197,7 +198,7 @@
     .upd-what li{position:relative;margin-top:8px;padding-left:1.15em;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
     .upd-what li:first-child{margin-top:4px}
     .upd-what li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
-    .upd-note{margin:20px 0 0;padding:16px 18px 16px 20px;background:var(--g-pale);border:1.5px solid var(--g);border-radius:16px;box-shadow:inset 4px 0 0 var(--g)}
+    .upd-note{grid-area:note;margin:0;padding:16px 18px 16px 20px;background:var(--g-pale);border:1.5px solid var(--g);border-radius:16px;box-shadow:inset 4px 0 0 var(--g)}
     .upd-note strong{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--black)}
     .upd-note span{display:block;margin-top:8px;font-size:13px;line-height:1.45;color:var(--g-dark);font-weight:600}
     .quote-panel{position:relative;overflow:hidden;margin-top:24px;background:var(--g-pale);border-radius:20px;padding:22px 24px;display:flex;align-items:center;gap:20px}
@@ -261,13 +262,15 @@
       .photo-i{left:12px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .ephir-grid{grid-template-columns:1fr 1fr}
+      .upd{grid-template-columns:1fr;grid-template-areas:"head" "stage" "what" "note" "cta";row-gap:20px;align-items:stretch}
+      .upd-phone-img{width:min(280px,56%)}
       .pains .container,.how .container,.live-block,.footer .container{text-align:center}
       .s-label{margin-left:auto;margin-right:auto}
       .s-labels{justify-content:center}
       .how-top{flex-direction:column;align-items:center;text-align:center}
       .how-nav{justify-content:center}
       .section-cta{display:flex;justify-content:center}
-      .upd-cta{align-self:center}
+      .upd-cta{justify-self:center}
       .upd-lead,.upd-note,.how-slide h3,.how-slide p,.f-logo,.f-ip,.f-copy{text-align:center}
       .res-card,.photo-cap{text-align:left}
     }
@@ -313,7 +316,6 @@
       .upd-lead{font-size:16px}
       .upd-what{padding:16px 16px 18px;margin-bottom:0}
       .upd-what p,.upd-what li{font-size:15px}
-      .upd-visuals{margin:20px 0 24px}
       .upd-phone-img{width:min(230px,64%)}
       .upd-note{margin-top:16px;box-shadow:none}
       .quote-panel{flex-direction:column;align-items:center;gap:16px;padding:20px 18px 22px;margin-top:20px;text-align:center}
@@ -449,15 +451,15 @@
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
-    html.is-phone .upd-visuals{margin:20px 0 24px!important}
+    html.is-phone .upd{grid-template-columns:1fr!important;grid-template-areas:"head" "stage" "what" "note" "cta"!important;row-gap:20px!important;align-items:stretch!important}
     html.is-phone .upd-phone-img{width:min(230px,64%)!important}
+    html.is-phone .upd-cta{justify-self:center!important;width:100%!important}
     html.is-phone .pains .container,html.is-phone .how .container,html.is-phone .live-block,html.is-phone .footer .container{text-align:center!important}
     html.is-phone .s-label{margin-left:auto!important;margin-right:auto!important}
     html.is-phone .s-labels{justify-content:center!important}
     html.is-phone .how-top{flex-direction:column!important;align-items:center!important;text-align:center!important}
     html.is-phone .how-nav{justify-content:center!important}
     html.is-phone .section-cta{display:flex!important;justify-content:center!important}
-    html.is-phone .upd-cta{align-self:center!important}
     html.is-phone .upd-lead,html.is-phone .upd-note,html.is-phone .how-slide h3,html.is-phone .how-slide p,html.is-phone .f-logo,html.is-phone .f-ip,html.is-phone .f-copy{text-align:center!important}
     html.is-phone .res-card,html.is-phone .photo-cap{text-align:left!important}
     html.is-phone .quote-panel{flex-direction:column!important;align-items:center!important;text-align:center!important}
@@ -606,17 +608,18 @@
       <div class="container">
         <div class="live-block">
           <div class="upd">
-            <div class="upd-copy">
+            <div class="upd-head">
               <div class="s-labels">
                 <div class="s-label">Бонус</div>
                 <div class="s-label">Бесплатно</div>
               </div>
               <h2 class="s-title">Сборник <em>разборов</em></h2>
               <p class="upd-lead">В период с&nbsp;2022 по&nbsp;2026 год мы провели 232&nbsp;терапевтических разбора в&nbsp;Школе здоровых&nbsp;отношений.</p>
-              <div class="upd-visuals">
-                <img class="upd-phone-img" src="assets/upd-chat-phone.png" alt="Разбор в чате Школы здоровых отношений" width="728" height="1116">
-              </div>
-              <div class="upd-what">
+            </div>
+            <div class="upd-stage">
+              <img class="upd-phone-img" src="assets/upd-chat-phone.png" alt="Разбор в чате Школы здоровых отношений" width="728" height="1116">
+            </div>
+            <div class="upd-what">
                 <p>В них принимали участие разные люди с&nbsp;разными проблемами:</p>
                 <ul>
                   <li>в&nbsp;отношениях с&nbsp;мужем или&nbsp;партнёром</li>
@@ -626,7 +629,6 @@
                   <li>в&nbsp;отношениях с&nbsp;собой</li>
                 </ul>
                 <p>Мы сохранили все эти разборы и&nbsp;собрали их в&nbsp;единый сборник. Там вы найдёте дополнительные примеры выполнения заданий и&nbsp;увидите, как реальные люди решали свои проблемы с&nbsp;помощью Школы здоровых&nbsp;отношений.</p>
-              </div>
             </div>
             <p class="upd-note"><strong>Вам больше не&nbsp;потребуется разгребать сотни новых сообщений в&nbsp;чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у&nbsp;вас под&nbsp;рукой в&nbsp;едином сборнике, который останется у&nbsp;вас навсегда.</span></p>
             <button class="btn upd-cta" type="button" data-open="anketa">Занять место</button>
