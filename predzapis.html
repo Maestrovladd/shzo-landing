@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1048 -->
+<!-- deploy: 2026-09-15-1050 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1048">
+<html lang="ru" data-deploy="2026-09-15-1050">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -156,11 +156,14 @@
     .live{background:var(--g-pale);overflow:hidden}
     .live.section{padding:72px 0}
     .live-block{background:#fff;border-radius:24px;padding:40px 40px 32px}
-    .upd{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+    .upd{display:grid;grid-template-columns:1.05fr .95fr;grid-template-areas:"copy stage" "cta stage";column-gap:40px;row-gap:0;align-items:center}
+    .upd-copy{grid-area:copy}
+    .upd-stage{grid-area:stage;position:relative;min-height:0}
+    .upd-cta{grid-area:cta;margin-top:28px;justify-self:start}
     .upd-copy .s-title{max-width:14em;margin-bottom:16px}
     .upd-copy .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .upd-lead{margin:0 0 20px;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
-    .upd-what{margin:0 0 28px;padding:20px 22px;background:var(--off-white);border-radius:18px}
+    .upd-what{margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
     .upd-what ul{margin:12px 0 0;padding:0;list-style:none}
@@ -168,7 +171,6 @@
     .upd-what li{position:relative;margin-top:8px;padding-left:1.15em;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
     .upd-what li:first-child{margin-top:4px}
     .upd-what li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
-    .upd-stage{position:relative;min-height:0}
     .upd-photo{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:4/5;background:#EFEBE3}
     .upd-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
     .upd-photo.is-sheet img{object-fit:cover;object-position:center top}
@@ -232,7 +234,7 @@
       .hero-img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:3/4;max-height:min(70vh,560px);object-fit:cover;object-position:center 12%}
       .photo-cap{position:relative;left:auto;bottom:auto;width:auto;margin:-40px 20px 32px;padding:18px 18px 16px 20px}
       .photo-i{left:12px}
-      .upd{grid-template-columns:1fr;gap:24px}
+      .upd{grid-template-columns:1fr;grid-template-areas:"copy" "stage" "cta";row-gap:20px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .ephir-grid{grid-template-columns:1fr 1fr}
     }
@@ -241,7 +243,7 @@
       .section{padding:56px 0}
       .s-title{font-size:30px;margin-bottom:10px}
       .section-cta{margin-top:28px}
-      .section-cta .btn,.upd-copy > .btn{width:100%}
+      .section-cta .btn,.upd-cta{width:100%}
       .live.section{padding:48px 0}
       .live-block{padding:24px 18px 20px;border-radius:20px}
       .hero-left{padding:24px 20px 20px}
@@ -269,9 +271,14 @@
       .how-slide h3{margin:14px 16px 6px;font-size:17px}
       .how-slide p{margin:0 16px 18px;font-size:14px;line-height:1.6}
       .upd-lead{font-size:16px}
-      .upd-what{padding:16px 16px 18px;margin-bottom:20px}
+      .upd-what{padding:16px 16px 18px;margin-bottom:0}
       .upd-what p,.upd-what li{font-size:15px}
-      .upd-stage{display:none}
+      .upd-stage{display:block}
+      .upd-cta{margin-top:0;justify-self:stretch}
+      .upd-photo{aspect-ratio:5/4;max-height:none;border-radius:20px}
+      .upd-photo img,.upd-photo.is-sheet img{object-fit:cover;object-position:center top}
+      .upd-photo::after{display:none}
+      .upd-note{position:static;margin-top:12px;box-shadow:none}
       .quote-panel{flex-direction:column;align-items:flex-start;gap:16px;padding:20px 18px 22px;margin-top:20px}
       .quote-ring{display:none}
       .quote-ava{order:0;width:64px;height:64px}
@@ -462,14 +469,14 @@
                 </ul>
                 <p>Мы сохранили все эти разборы и собрали их в единый сборник. Там вы найдёте дополнительные примеры выполнения заданий и увидите, как реальные люди решали свои проблемы с помощью Школы здоровых отношений.</p>
               </div>
-              <button class="btn" type="button" data-open="anketa">Занять место</button>
             </div>
             <div class="upd-stage">
               <div class="upd-photo is-sheet">
                 <img src="assets/upd-razbor.jpg" alt="Разбор с прошлого потока Школы" width="1310" height="1853">
-                <p class="upd-note"><strong>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</span></p>
               </div>
+              <p class="upd-note"><strong>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</span></p>
             </div>
+            <button class="btn upd-cta" type="button" data-open="anketa">Занять место</button>
           </div>
           <div class="quote-panel">
             <span class="quote-ring a" aria-hidden="true"></span>
