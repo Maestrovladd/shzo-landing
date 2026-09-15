@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-15-1640 -->
+<!-- deploy: 2026-09-15-1642 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-15-1640" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-15-1642" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=29&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=30&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -190,7 +190,7 @@
     .upd-head .s-title{max-width:14em;margin-bottom:16px}
     .upd-head .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
     .upd-lead{margin:0 0 8px;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
-    .upd-phone-img{width:min(360px,100%);height:auto;display:block}
+    .upd-phone-img{width:min(250px,72%);height:auto;display:block}
     .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
     .upd-what p + p{margin-top:12px}
     .upd-what ul{margin:12px 0 0;padding:0;list-style:none}
