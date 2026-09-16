@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-16-1415 -->
+<!-- deploy: 2026-09-16-1708 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-16-1415" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-16-1708" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +46,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=61&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=62&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -270,8 +270,9 @@
     .f-ip a{text-decoration:underline;text-underline-offset:3px;color:rgba(255,255,255,.62)}
     .f-copy{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:rgba(255,255,255,.42);line-height:1.6}
 
-    #anketa{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:24px;opacity:1!important;background:transparent}
-    #anketa[hidden]{display:grid!important;visibility:hidden;pointer-events:none;opacity:0!important}
+    #anketa{position:fixed;inset:0;z-index:100000;place-items:center;padding:24px;background:transparent}
+    #anketa[hidden]{display:none!important;visibility:hidden;pointer-events:none;opacity:0}
+    #anketa:not([hidden]){display:grid!important;visibility:visible!important;opacity:1!important;pointer-events:auto}
     .anketa-dim{position:absolute;inset:0;z-index:0;background:rgba(0,0,0,.55)}
     .anketa-card{position:relative;z-index:2;width:min(520px,100%);max-width:100%;max-height:min(92svh,840px);overflow:auto;padding:20px 20px 8px;background:#fff;border-radius:16px;box-shadow:0 24px 80px rgba(0,0,0,.3);opacity:1!important}
     .anketa-x{position:absolute;top:10px;right:10px;z-index:3;width:36px;height:36px;border-radius:50%;background:var(--g-light);color:var(--g-dark);font-size:22px}
@@ -486,8 +487,9 @@
       #anketa{padding:8px!important}
       .anketa-card{padding:28px 8px 8px!important;width:100%!important;max-width:100%!important;overflow-x:hidden!important}
     }
-    #anketa{z-index:2147483000!important}
-    #anketa:not([hidden]){opacity:1!important;visibility:visible!important;filter:none!important}
+    #anketa{z-index:100000!important}
+    #anketa[hidden]{display:none!important;visibility:hidden!important;pointer-events:none!important;opacity:0!important}
+    #anketa:not([hidden]){display:grid!important;opacity:1!important;visibility:visible!important;filter:none!important;pointer-events:auto!important}
     .anketa-dim{z-index:0!important}
     .anketa-card,.gc-widget,.gc-widget iframe{opacity:1!important;filter:none!important}
     .anketa-card{z-index:2!important;background:#fff!important}
@@ -926,12 +928,8 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && !modal.hidden) closeModal();
       });
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", injectWidget);
-      } else {
-        injectWidget();
-      }
-      setTimeout(injectWidget, 400);
+      /* Виджет грузим только по кнопке: на iPhone ранняя загрузка iframe
+         внутри скрытого оверлея давала белый экран. */
       var rail = document.getElementById("how-rail");
       document.querySelectorAll("[data-how]").forEach(function (btn) {
         btn.addEventListener("click", function () {
