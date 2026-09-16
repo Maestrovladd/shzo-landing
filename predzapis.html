@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-16-1003 -->
+<!-- deploy: 2026-09-16-1006 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-16-1003" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-16-1006" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=56&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=57&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -576,6 +576,56 @@
       </div>
     </section>
 
+    <section class="pains section" id="predzapis">
+      <div class="container">
+        <div class="s-label">
+          <svg class="s-label-gift" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 5.4C6.2 2.8 4.2 3.4 4.4 4.8c.2 1.2 1.8 1.6 3.6.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            <path d="M8 5.4c1.8-2.6 3.8-2 3.6-.6-.2 1.2-1.8 1.6-3.6.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            <rect x="3.1" y="6.3" width="9.8" height="2.1" rx=".45" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M3.4 8.4h9.2v5.1a.6.6 0 0 1-.6.6H4a.6.6 0 0 1-.6-.6V8.4Z" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M8 6.3v7.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+          </svg>
+          Бонусы и скидки
+        </div>
+        <h2 class="s-title">Только для участников листа&nbsp;ожидания:</h2>
+
+        <div class="res-grid">
+          <article class="res-card">
+            <span class="res-ring a" aria-hidden="true"></span>
+            <div class="res-viz" aria-hidden="true"><b>30%</b></div>
+            <h3 class="res-t">Скидка</h3>
+            <p class="res-d">Самая низкая цена следующего&nbsp;потока.</p>
+          </article>
+          <article class="res-card">
+            <div class="res-viz" aria-hidden="true"><b class="res-sum res-sum-money"><span class="res-money-n"><span class="res-approx">≈</span>6–12</span><span class="res-money-rule"></span><span class="res-money-u">тыс. ₽</span></b></div>
+            <h3 class="res-t">Экономия</h3>
+            <p class="res-d">Вы можете сэкономить от&nbsp;6&nbsp;000 до&nbsp;12&nbsp;000 рублей за&nbsp;счёт скидки.</p>
+          </article>
+          <article class="res-card">
+            <div class="res-viz" aria-hidden="true">
+              <b class="res-sum">1<span class="res-unit">год</span></b>
+            </div>
+            <h3 class="res-t">Доступ к&nbsp;материалам&nbsp;×2</h3>
+            <p class="res-d">Стандартный доступ к&nbsp;Школе здоровых&nbsp;отношений длится 24&nbsp;недели. Но у&nbsp;вас он будет увеличен до&nbsp;52&nbsp;недель.</p>
+          </article>
+          <article class="res-card is-feat">
+            <span class="res-ring a" aria-hidden="true"></span>
+            <span class="res-ring b" aria-hidden="true"></span>
+            <div class="res-viz" aria-hidden="true">
+              <b>232<small>примера</small></b>
+              <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
+            </div>
+            <h3 class="res-t">Бонус</h3>
+            <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых&nbsp;отношений, с&nbsp;2022 по&nbsp;2026&nbsp;год.</p>
+          </article>
+        </div>
+        <div class="section-cta">
+          <button class="btn" type="button" data-open="anketa">Занять место в листе ожидания</button>
+        </div>
+      </div>
+    </section>
+
     <section class="wait section" id="wait">
       <div class="container">
         <h2 class="s-title">Как попасть в лист ожидания?</h2>
@@ -623,56 +673,6 @@
             </div>
             <h3 class="wait-t">Дата старта, условия и цена будут в боте.</h3>
             <p class="wait-d">Когда откроется следующий поток, вы узнаете в боте, когда начинаем и на каких условиях.</p>
-          </article>
-        </div>
-        <div class="section-cta">
-          <button class="btn" type="button" data-open="anketa">Занять место в листе ожидания</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="pains section" id="predzapis">
-      <div class="container">
-        <div class="s-label">
-          <svg class="s-label-gift" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <path d="M8 5.4C6.2 2.8 4.2 3.4 4.4 4.8c.2 1.2 1.8 1.6 3.6.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
-            <path d="M8 5.4c1.8-2.6 3.8-2 3.6-.6-.2 1.2-1.8 1.6-3.6.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
-            <rect x="3.1" y="6.3" width="9.8" height="2.1" rx=".45" stroke="currentColor" stroke-width="1.25"/>
-            <path d="M3.4 8.4h9.2v5.1a.6.6 0 0 1-.6.6H4a.6.6 0 0 1-.6-.6V8.4Z" stroke="currentColor" stroke-width="1.25"/>
-            <path d="M8 6.3v7.8" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
-          </svg>
-          Бонусы и скидки
-        </div>
-        <h2 class="s-title">Только для участников листа&nbsp;ожидания:</h2>
-
-        <div class="res-grid">
-          <article class="res-card">
-            <span class="res-ring a" aria-hidden="true"></span>
-            <div class="res-viz" aria-hidden="true"><b>30%</b></div>
-            <h3 class="res-t">Скидка</h3>
-            <p class="res-d">Самая низкая цена следующего&nbsp;потока.</p>
-          </article>
-          <article class="res-card">
-            <div class="res-viz" aria-hidden="true"><b class="res-sum res-sum-money"><span class="res-money-n"><span class="res-approx">≈</span>6–12</span><span class="res-money-rule"></span><span class="res-money-u">тыс. ₽</span></b></div>
-            <h3 class="res-t">Экономия</h3>
-            <p class="res-d">Вы можете сэкономить от&nbsp;6&nbsp;000 до&nbsp;12&nbsp;000 рублей за&nbsp;счёт скидки.</p>
-          </article>
-          <article class="res-card">
-            <div class="res-viz" aria-hidden="true">
-              <b class="res-sum">1<span class="res-unit">год</span></b>
-            </div>
-            <h3 class="res-t">Доступ к&nbsp;материалам&nbsp;×2</h3>
-            <p class="res-d">Стандартный доступ к&nbsp;Школе здоровых&nbsp;отношений длится 24&nbsp;недели. Но у&nbsp;вас он будет увеличен до&nbsp;52&nbsp;недель.</p>
-          </article>
-          <article class="res-card is-feat">
-            <span class="res-ring a" aria-hidden="true"></span>
-            <span class="res-ring b" aria-hidden="true"></span>
-            <div class="res-viz" aria-hidden="true">
-              <b>232<small>примера</small></b>
-              <div class="sheets"><span class="sheet"></span><span class="sheet"></span><span class="sheet"></span></div>
-            </div>
-            <h3 class="res-t">Бонус</h3>
-            <p class="res-d">Сборник всех предыдущих разборов потоков Школы здоровых&nbsp;отношений, с&nbsp;2022 по&nbsp;2026&nbsp;год.</p>
           </article>
         </div>
         <div class="section-cta">
