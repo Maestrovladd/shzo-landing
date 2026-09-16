@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-16-1009 -->
+<!-- deploy: 2026-09-16-1105 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-16-1028" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-16-1105" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
   <script>
     (function(){
       var stamp = document.documentElement.getAttribute("data-deploy");
-          fetch("predzapis.html?r=59&fresh=" + Date.now(), {cache:"no-store"})
+          fetch("predzapis.html?r=60&fresh=" + Date.now(), {cache:"no-store"})
         .then(function(r){ return r.text(); })
         .then(function(html){
           var m = html.match(/data-deploy="([^"]+)"/);
@@ -59,7 +59,7 @@
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;color-scheme:only light;background:#fff}
-    body{font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--black);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body{font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--black);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%}
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
     ul{list-style:none}
@@ -125,12 +125,12 @@
 
     .wait{background:var(--g-pale)}
     .wait .s-title{max-width:18em;margin-bottom:28px}
-    .wait-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border-radius:24px;overflow:hidden;border:1px solid color-mix(in srgb,var(--g) 16%,transparent);box-shadow:0 10px 36px color-mix(in srgb,var(--g) 10%,transparent)}
+    .wait-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border-radius:24px;overflow:hidden;border:1px solid rgba(122,140,82,.16);box-shadow:0 10px 36px rgba(122,140,82,.10)}
     .wait-card{position:relative;padding:28px 26px 28px;min-width:0;background:#fff;overflow:hidden;display:flex;flex-direction:column}
-    .wait-card + .wait-card{box-shadow:inset 1px 0 0 color-mix(in srgb,var(--g) 18%,transparent)}
+    .wait-card + .wait-card{box-shadow:inset 1px 0 0 rgba(122,140,82,.18)}
     .wait-card.is-feat{background:var(--g);color:#fff}
     .wait-card.is-feat + .wait-card,.wait-card + .wait-card.is-feat{box-shadow:none}
-    .wait-ring{position:absolute;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--g) 22%,transparent);pointer-events:none}
+    .wait-ring{position:absolute;border-radius:50%;border:1.5px solid rgba(122,140,82,.22);pointer-events:none}
     .wait-ring.a{width:120px;height:120px;top:-48px;right:-40px}
     .wait-ring.b{width:72px;height:72px;bottom:-28px;left:-22px}
     .wait-card.is-feat .wait-ring{border-color:rgba(255,255,255,.22)}
@@ -139,7 +139,7 @@
     .wait-card.is-feat .wait-n{color:#fff}
     .wait-card.is-feat .wait-n:after{background:#fff}
     .wait-viz{position:relative;width:96px;height:96px;border-radius:28px;background:var(--g-light);display:grid;place-items:center;margin:0 0 20px;color:var(--g-dark);flex-shrink:0}
-    .wait-viz::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--g) 28%,transparent);pointer-events:none}
+    .wait-viz::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px solid rgba(122,140,82,.28);pointer-events:none}
     .wait-viz svg{position:relative;z-index:1;width:44px;height:44px;display:block}
     .wait-card.is-feat .wait-viz{background:rgba(255,255,255,.16);color:#fff}
     .wait-card.is-feat .wait-viz::before{border-color:rgba(255,255,255,.28)}
@@ -299,7 +299,11 @@
       .photo-i{left:12px}
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .wait-board{grid-template-columns:1fr}
-      .wait-card + .wait-card{box-shadow:inset 0 1px 0 color-mix(in srgb,var(--g) 18%,transparent)}
+      .wait-card + .wait-card{box-shadow:inset 0 1px 0 rgba(122,140,82,.18)}
+      .wait-card{padding:24px 20px}
+      .wait-t{font-size:18px}
+      .wait-d{font-size:14px;line-height:1.5}
+      .wait .s-title{margin-bottom:20px}
       .upd{display:flex;flex-direction:column;gap:20px}
       .upd-copy,.upd-stage,.upd-aside{display:contents}
       .upd-head{order:1}
@@ -417,7 +421,15 @@
     .standard-page-content{
       padding-left:0!important;
       padding-right:0!important;
+      margin:0!important;
     }
+    .page p,.page h1,.page h2,.page h3,.page ul,.page li{
+      max-width:none;
+    }
+    .wait-card h3.wait-t{margin:0 0 10px!important}
+    .wait-card p.wait-d{margin:0!important}
+    .section-cta{margin-top:40px!important}
+    .section-cta .btn{margin:0!important}
     .gc-main-content>.container{
       width:auto!important;
       max-width:none!important;
@@ -498,11 +510,15 @@
     html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
     html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
-    html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:left!important}
+    html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:left!important;margin-left:auto!important;margin-right:auto!important}
     html.is-phone .wait-ring{display:none!important}
-    html.is-phone .wait-viz{width:80px!important;height:80px!important;border-radius:22px!important;margin-bottom:16px!important}
-    html.is-phone .wait-card{text-align:left!important}
-    html.is-phone .wait-card + .wait-card{box-shadow:inset 0 1px 0 color-mix(in srgb,var(--g) 18%,transparent)!important}
+    html.is-phone .wait-viz{width:80px!important;height:80px!important;border-radius:22px!important;margin:0 0 16px!important}
+    html.is-phone .wait-card{text-align:left!important;padding:24px 20px!important}
+    html.is-phone .wait-t{margin:0 0 10px!important;font-size:18px!important}
+    html.is-phone .wait-d{margin:0!important;font-size:14px!important;line-height:1.5!important}
+    html.is-phone .wait .s-title{margin-bottom:20px!important}
+    html.is-phone .wait-card + .wait-card{box-shadow:inset 0 1px 0 rgba(122,140,82,.18)!important}
+    html.is-phone .wait-card p,html.is-phone .wait-card h3{margin-left:0!important;margin-right:0!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
     html.is-phone .upd{display:flex!important;flex-direction:column!important;gap:20px!important}
@@ -671,7 +687,7 @@
                 <circle cx="24" cy="38" r="1.6" fill="currentColor"/>
               </svg>
             </div>
-            <h3 class="wait-t">Дата старта, условия и цена будут в боте.</h3>
+            <h3 class="wait-t">Дата старта, условия и цена будут в боте</h3>
             <p class="wait-d">Когда откроется следующий поток, дату старта и условия вы узнаете в боте.</p>
           </article>
         </div>
