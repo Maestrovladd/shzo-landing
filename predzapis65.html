@@ -1,8 +1,8 @@
 <!doctype html>
-<!-- build r65 css-phone-page-safe no-broken-is-phone-comma -->
-<!-- deploy: 2026-09-16-1955 -->
+<!-- build r66 css-phone-page-safe wait-center no-broken-is-phone-comma -->
+<!-- deploy: 2026-09-16-2000 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-16-1955" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-16-2000" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Школа здоровых отношений — лист ожидания · r65</title>
+  <title>Школа здоровых отношений — лист ожидания · r66</title>
   <meta name="description" content="Перестаньте жить в конфликтах и напряжении, верните близость и уважение, и научитесь говорить без крика, давления и чувства вины.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -291,10 +291,13 @@
       .res-grid{grid-template-columns:1fr 1fr;width:min(560px,100%);margin-left:auto;margin-right:auto}
       .wait-board{grid-template-columns:1fr}
       .wait-card + .wait-card{box-shadow:inset 0 1px 0 rgba(122,140,82,.18)}
-      .wait-card{padding:24px 20px}
+      .wait-card{padding:24px 20px;align-items:center;text-align:center}
+      .wait-n:after{margin-left:auto;margin-right:auto}
+      .wait-viz{margin-left:auto;margin-right:auto}
       .wait-t{font-size:18px}
       .wait-d{font-size:14px;line-height:1.5}
       .wait .s-title{margin-bottom:20px}
+      .wait-board{margin-left:auto;margin-right:auto;text-align:center}
       .upd{display:flex;flex-direction:column;gap:20px}
       .upd-copy,.upd-stage,.upd-aside{display:contents}
       .upd-head{order:1}
@@ -305,7 +308,6 @@
       .upd-what{order:3;flex:none}
       .upd-note{order:4;margin-top:0;width:100%}
       .pains .container,.how .container,.wait .container,.live-block,.footer .container{text-align:center}
-      .wait-board{margin-left:auto;margin-right:auto;text-align:left}
       .s-label{margin-left:auto;margin-right:auto}
       .s-labels{justify-content:center}
       .s-labels .s-label{margin-left:0;margin-right:0}
@@ -506,15 +508,16 @@
     html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
     html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
     html.is-phone .ephir-grid{grid-template-columns:1fr!important}
-    html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:left!important;margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important}
     html.is-phone .wait-ring{display:none!important}
-    html.is-phone .wait-viz{width:80px!important;height:80px!important;border-radius:22px!important;margin:0 0 16px!important}
-    html.is-phone .wait-card{text-align:left!important;padding:24px 20px!important}
-    html.is-phone .wait-t{margin:0 0 10px!important;font-size:18px!important}
-    html.is-phone .wait-d{margin:0!important;font-size:14px!important;line-height:1.5!important}
+    html.is-phone .wait-viz{width:80px!important;height:80px!important;border-radius:22px!important;margin:0 auto 16px!important}
+    html.is-phone .wait-card{text-align:center!important;align-items:center!important;padding:24px 20px!important}
+    html.is-phone .wait-n:after{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .wait-t{margin:0 0 10px!important;font-size:18px!important;text-align:center!important}
+    html.is-phone .wait-d{margin:0!important;font-size:14px!important;line-height:1.5!important;text-align:center!important}
     html.is-phone .wait .s-title{margin-bottom:20px!important}
     html.is-phone .wait-card + .wait-card{box-shadow:inset 0 1px 0 rgba(122,140,82,.18)!important}
-    html.is-phone .wait-card p,html.is-phone .wait-card h3{margin-left:0!important;margin-right:0!important}
+    html.is-phone .wait-card p,html.is-phone .wait-card h3{margin-left:0!important;margin-right:0!important;text-align:center!important}
     html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
     html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
     html.is-phone .upd{display:flex!important;flex-direction:column!important;gap:20px!important}
