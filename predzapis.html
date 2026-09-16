@@ -1,7 +1,7 @@
 <!doctype html>
-<!-- deploy: 2026-09-16-1938 -->
+<!-- deploy: 2026-09-16-1950 -->
 <!-- impeccable-disable single-font: Alifer GetCourse kit, Figtree only -->
-<html lang="ru" data-deploy="2026-09-16-1938" style="color-scheme:only light">
+<html lang="ru" data-deploy="2026-09-16-1950" style="color-scheme:only light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,19 +22,10 @@
         var tinyDevice = shortSide <= 520;
         if (phoneUA || narrow || tinyDevice) html.classList.add("is-phone");
         else html.classList.remove("is-phone");
-        function syncPage(){
-          var page = document.querySelector(".page");
-          if (!page) return;
-          if (html.classList.contains("is-phone")) page.classList.add("is-phone");
-          else page.classList.remove("is-phone");
-        }
-        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", syncPage);
-        else syncPage();
         window.addEventListener("resize", function(){
           var w = window.innerWidth || html.clientWidth || 9999;
           var on = phoneUA || tinyDevice || w <= 768;
           html.classList.toggle("is-phone", on);
-          syncPage();
         });
       } catch (e) {}
     })();
@@ -478,83 +469,83 @@
     .anketa-dim{z-index:0!important}
     .anketa-card,.gc-widget,.gc-widget iframe{opacity:1!important;filter:none!important}
     .anketa-card{z-index:2!important;background:#fff!important}
-    .page.is-phone,html.is-phone .hero{display:flex!important;flex-direction:column!important;height:auto!important;min-height:0!important}
-    .page.is-phone,html.is-phone .hero-left{order:1!important;padding:24px 20px 20px!important;justify-content:flex-start!important;align-items:center!important;text-align:center!important}
-    .page.is-phone,html.is-phone .hero-left::before{width:220px!important;height:220px!important;left:50%!important;top:-20px!important;transform:translateX(-50%)!important}
-    .page.is-phone,html.is-phone .hero-banners{justify-content:center!important}
-    .page.is-phone,html.is-phone .hero h1{font-size:clamp(30px,8.6vw,38px)!important;margin:0 0 14px!important}
-    .page.is-phone,html.is-phone .hero-lead{margin:0 0 22px!important;font-size:16px!important;line-height:1.5!important;max-width:none!important}
-    .page.is-phone,html.is-phone .hero-actions{flex-wrap:wrap!important;align-items:stretch!important;justify-content:center!important;gap:14px!important}
-    .page.is-phone,html.is-phone .hero-actions .btn{width:100%!important;height:auto!important;min-height:52px!important;padding:12px 18px!important}
-    .page.is-phone,html.is-phone .btn,.page.is-phone,html.is-phone .btn-primary{white-space:normal!important;height:auto!important;min-height:52px!important;padding:12px 18px!important;line-height:1.25!important;text-align:center!important}
-    .page.is-phone,html.is-phone .hero-nudge{display:none!important}
-    .page.is-phone,html.is-phone .hero-gift{flex:1 1 100%!important;max-width:none!important;text-align:center!important}
-    .page.is-phone,html.is-phone .hero-right{order:2!important;height:auto!important;min-height:0!important;overflow:visible!important}
-    .page.is-phone,html.is-phone .hero-right::after{display:none!important}
-    .page.is-phone,html.is-phone .hero-img{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:3/4!important;max-height:min(70vh,560px)!important;object-fit:cover!important;object-position:center 12%!important}
-    .page.is-phone,html.is-phone .photo-cap{position:absolute!important;left:16px!important;right:16px!important;bottom:40px!important;width:auto!important;margin:0!important;padding:12px 14px 12px 16px!important;border-radius:18px!important}
-    .page.is-phone,html.is-phone .photo-cap strong{font-size:16px!important}
-    .page.is-phone,html.is-phone .photo-cap li{font-size:12px!important;line-height:1.35!important}
-    .page.is-phone,html.is-phone .photo-i{width:24px!important;height:24px!important;font-size:13px!important;top:-10px!important;left:8px!important}
-    .page.is-phone,html.is-phone .nav{padding:14px 20px!important}
-    .page.is-phone,html.is-phone .container,.page.is-phone,html.is-phone .page .container{padding-left:20px!important;padding-right:20px!important}
-    .page.is-phone,html.is-phone .section{padding:56px 0!important}
-    .page.is-phone,html.is-phone .s-title{font-size:26px!important;line-height:1.18!important;text-align:center!important}
-    .page.is-phone,html.is-phone .section-cta .btn,.page.is-phone,html.is-phone .live-cta{width:100%!important}
-    .page.is-phone,html.is-phone .res-grid{grid-template-columns:1fr!important;width:auto!important;max-width:none!important;gap:12px!important;margin:24px 0 0!important}
-    .page.is-phone,html.is-phone .res-card{display:grid!important;grid-template-columns:112px 1fr!important;grid-template-rows:auto auto!important;align-items:center!important;aspect-ratio:auto!important;min-height:0!important;padding:16px 16px!important;border-radius:20px!important;column-gap:14px!important}
-    .page.is-phone,html.is-phone .res-viz{grid-column:1!important;grid-row:1/span 2!important;flex:none!important;align-self:center!important;justify-self:center!important;width:102px!important;height:102px!important;padding:0!important}
-    .page.is-phone,html.is-phone .res-viz::before{display:block!important;width:102px!important;height:102px!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important}
-    .page.is-phone,html.is-phone .res-ring,.page.is-phone,html.is-phone .sheets{display:none!important}
-    .page.is-phone,html.is-phone .res-viz b{font-size:28px!important}
-    .page.is-phone,html.is-phone .res-viz b.res-sum-money{font-size:22px!important}
-    .page.is-phone,html.is-phone .res-viz small{white-space:nowrap!important;font-size:8px!important}
-    .page.is-phone,html.is-phone .res-money-u{font-size:10px!important}
-    .page.is-phone,html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
-    .page.is-phone,html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
-    .page.is-phone,html.is-phone .ephir-grid{grid-template-columns:1fr!important}
-    .page.is-phone,html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:left!important;margin-left:auto!important;margin-right:auto!important}
-    .page.is-phone,html.is-phone .wait-ring{display:none!important}
-    .page.is-phone,html.is-phone .wait-viz{width:80px!important;height:80px!important;border-radius:22px!important;margin:0 0 16px!important}
-    .page.is-phone,html.is-phone .wait-card{text-align:left!important;padding:24px 20px!important}
-    .page.is-phone,html.is-phone .wait-t{margin:0 0 10px!important;font-size:18px!important}
-    .page.is-phone,html.is-phone .wait-d{margin:0!important;font-size:14px!important;line-height:1.5!important}
-    .page.is-phone,html.is-phone .wait .s-title{margin-bottom:20px!important}
-    .page.is-phone,html.is-phone .wait-card + .wait-card{box-shadow:inset 0 1px 0 rgba(122,140,82,.18)!important}
-    .page.is-phone,html.is-phone .wait-card p,.page.is-phone,html.is-phone .wait-card h3{margin-left:0!important;margin-right:0!important}
-    .page.is-phone,html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
-    .page.is-phone,html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
-    .page.is-phone,html.is-phone .upd{display:flex!important;flex-direction:column!important;gap:20px!important}
-    .page.is-phone,html.is-phone .upd-copy,.page.is-phone,html.is-phone .upd-stage,.page.is-phone,html.is-phone .upd-aside{display:contents!important}
-    .page.is-phone,html.is-phone .upd-head{order:1!important}
-    .page.is-phone,html.is-phone .upd-head .s-title{margin-left:auto!important;margin-right:auto!important}
-    .page.is-phone,html.is-phone .upd-phone-slot{order:2!important;flex:none!important;height:auto!important;aspect-ratio:auto!important}
-    .page.is-phone,html.is-phone .upd-phone{height:auto!important;width:min(250px,68%)!important;margin:0 auto!important;aspect-ratio:390/640!important;flex:none!important}
-    .page.is-phone,html.is-phone .upd-phone-img{order:2!important;height:auto!important;width:100%!important;margin:0!important}
-    .page.is-phone,html.is-phone .upd-what{order:3!important;flex:none!important}
-    .page.is-phone,html.is-phone .upd-note{order:4!important;margin-top:0!important;width:100%!important}
-    .page.is-phone,html.is-phone .live-cta{display:flex!important;justify-content:center!important;width:100%!important}
-    .page.is-phone,html.is-phone .pains .container,.page.is-phone,html.is-phone .how .container,.page.is-phone,html.is-phone .wait .container,.page.is-phone,html.is-phone .live-block,.page.is-phone,html.is-phone .footer .container{text-align:center!important}
-    .page.is-phone,html.is-phone .s-label{margin-left:auto!important;margin-right:auto!important}
-    .page.is-phone,html.is-phone .s-labels{justify-content:center!important}
-    .page.is-phone,html.is-phone .s-labels .s-label{margin-left:0!important;margin-right:0!important}
-    .page.is-phone,html.is-phone .how-top{flex-direction:column!important;align-items:center!important;text-align:center!important}
-    .page.is-phone,html.is-phone .how-nav{justify-content:center!important}
-    .page.is-phone,html.is-phone .section-cta{display:flex!important;justify-content:center!important}
-    .page.is-phone,html.is-phone .upd-lead,.page.is-phone,html.is-phone .upd-note,.page.is-phone,html.is-phone .how-slide h3,.page.is-phone,html.is-phone .how-slide p,.page.is-phone,html.is-phone .f-logo,.page.is-phone,html.is-phone .f-ip,.page.is-phone,html.is-phone .f-copy{text-align:center!important}
-    .page.is-phone,html.is-phone .res-card,.page.is-phone,html.is-phone .photo-cap{text-align:left!important}
-    .page.is-phone,html.is-phone .quote-panel{flex-direction:column!important;align-items:center!important;text-align:center!important}
-    .page.is-phone,html.is-phone .quote-who{order:0!important;width:100%!important;justify-content:center!important}
-    .page.is-phone,html.is-phone .quote-ava{width:64px!important;height:64px!important}
-    .page.is-phone,html.is-phone .quote-name{text-align:left!important;white-space:nowrap!important}
-    .page.is-phone,html.is-phone .quote{padding-left:0!important;border-left:none!important;border-top:3px solid var(--g)!important;padding-top:14px!important;text-align:center!important}
-    .page.is-phone,html.is-phone .upd-what{text-align:center!important}
-    .page.is-phone,html.is-phone .upd-what ul{display:block!important;width:max-content!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:left!important}
-    .page.is-phone,html.is-phone .upd-what li{text-align:left!important}
-    .page.is-phone,html.is-phone .quote-ring{display:none!important}
-    .page.is-phone,html.is-phone .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))!important}
-    .page.is-phone,html.is-phone #anketa{padding:8px!important}
-    .page.is-phone,html.is-phone .anketa-card{padding:28px 8px 8px!important;width:100%!important;max-width:100%!important}
+    html.is-phone .hero{display:flex!important;flex-direction:column!important;height:auto!important;min-height:0!important}
+    html.is-phone .hero-left{order:1!important;padding:24px 20px 20px!important;justify-content:flex-start!important;align-items:center!important;text-align:center!important}
+    html.is-phone .hero-left::before{width:220px!important;height:220px!important;left:50%!important;top:-20px!important;transform:translateX(-50%)!important}
+    html.is-phone .hero-banners{justify-content:center!important}
+    html.is-phone .hero h1{font-size:clamp(30px,8.6vw,38px)!important;margin:0 0 14px!important}
+    html.is-phone .hero-lead{margin:0 0 22px!important;font-size:16px!important;line-height:1.5!important;max-width:none!important}
+    html.is-phone .hero-actions{flex-wrap:wrap!important;align-items:stretch!important;justify-content:center!important;gap:14px!important}
+    html.is-phone .hero-actions .btn{width:100%!important;height:auto!important;min-height:52px!important;padding:12px 18px!important}
+    html.is-phone .btn,html.is-phone .btn-primary{white-space:normal!important;height:auto!important;min-height:52px!important;padding:12px 18px!important;line-height:1.25!important;text-align:center!important}
+    html.is-phone .hero-nudge{display:none!important}
+    html.is-phone .hero-gift{flex:1 1 100%!important;max-width:none!important;text-align:center!important}
+    html.is-phone .hero-right{order:2!important;height:auto!important;min-height:0!important;overflow:visible!important}
+    html.is-phone .hero-right::after{display:none!important}
+    html.is-phone .hero-img{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:3/4!important;max-height:min(70vh,560px)!important;object-fit:cover!important;object-position:center 12%!important}
+    html.is-phone .photo-cap{position:absolute!important;left:16px!important;right:16px!important;bottom:40px!important;width:auto!important;margin:0!important;padding:12px 14px 12px 16px!important;border-radius:18px!important}
+    html.is-phone .photo-cap strong{font-size:16px!important}
+    html.is-phone .photo-cap li{font-size:12px!important;line-height:1.35!important}
+    html.is-phone .photo-i{width:24px!important;height:24px!important;font-size:13px!important;top:-10px!important;left:8px!important}
+    html.is-phone .nav{padding:14px 20px!important}
+    html.is-phone .container,html.is-phone .page .container{padding-left:20px!important;padding-right:20px!important}
+    html.is-phone .section{padding:56px 0!important}
+    html.is-phone .s-title{font-size:26px!important;line-height:1.18!important;text-align:center!important}
+    html.is-phone .section-cta .btn,html.is-phone .live-cta{width:100%!important}
+    html.is-phone .res-grid{grid-template-columns:1fr!important;width:auto!important;max-width:none!important;gap:12px!important;margin:24px 0 0!important}
+    html.is-phone .res-card{display:grid!important;grid-template-columns:112px 1fr!important;grid-template-rows:auto auto!important;align-items:center!important;aspect-ratio:auto!important;min-height:0!important;padding:16px 16px!important;border-radius:20px!important;column-gap:14px!important}
+    html.is-phone .res-viz{grid-column:1!important;grid-row:1/span 2!important;flex:none!important;align-self:center!important;justify-self:center!important;width:102px!important;height:102px!important;padding:0!important}
+    html.is-phone .res-viz::before{display:block!important;width:102px!important;height:102px!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important}
+    html.is-phone .res-ring,html.is-phone .sheets{display:none!important}
+    html.is-phone .res-viz b{font-size:28px!important}
+    html.is-phone .res-viz b.res-sum-money{font-size:22px!important}
+    html.is-phone .res-viz small{white-space:nowrap!important;font-size:8px!important}
+    html.is-phone .res-money-u{font-size:10px!important}
+    html.is-phone .res-t{grid-column:2!important;grid-row:1!important;margin:0!important}
+    html.is-phone .res-d{grid-column:2!important;grid-row:2!important}
+    html.is-phone .ephir-grid{grid-template-columns:1fr!important}
+    html.is-phone .wait-board{grid-template-columns:1fr!important;text-align:left!important;margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .wait-ring{display:none!important}
+    html.is-phone .wait-viz{width:80px!important;height:80px!important;border-radius:22px!important;margin:0 0 16px!important}
+    html.is-phone .wait-card{text-align:left!important;padding:24px 20px!important}
+    html.is-phone .wait-t{margin:0 0 10px!important;font-size:18px!important}
+    html.is-phone .wait-d{margin:0!important;font-size:14px!important;line-height:1.5!important}
+    html.is-phone .wait .s-title{margin-bottom:20px!important}
+    html.is-phone .wait-card + .wait-card{box-shadow:inset 0 1px 0 rgba(122,140,82,.18)!important}
+    html.is-phone .wait-card p,html.is-phone .wait-card h3{margin-left:0!important;margin-right:0!important}
+    html.is-phone .how-rail{margin:20px 0 0!important;padding:0 0 16px!important}
+    html.is-phone .how-slide{flex:0 0 calc(100% - 28px)!important;max-width:calc(100% - 28px)!important}
+    html.is-phone .upd{display:flex!important;flex-direction:column!important;gap:20px!important}
+    html.is-phone .upd-copy,html.is-phone .upd-stage,html.is-phone .upd-aside{display:contents!important}
+    html.is-phone .upd-head{order:1!important}
+    html.is-phone .upd-head .s-title{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .upd-phone-slot{order:2!important;flex:none!important;height:auto!important;aspect-ratio:auto!important}
+    html.is-phone .upd-phone{height:auto!important;width:min(250px,68%)!important;margin:0 auto!important;aspect-ratio:390/640!important;flex:none!important}
+    html.is-phone .upd-phone-img{order:2!important;height:auto!important;width:100%!important;margin:0!important}
+    html.is-phone .upd-what{order:3!important;flex:none!important}
+    html.is-phone .upd-note{order:4!important;margin-top:0!important;width:100%!important}
+    html.is-phone .live-cta{display:flex!important;justify-content:center!important;width:100%!important}
+    html.is-phone .pains .container,html.is-phone .how .container,html.is-phone .wait .container,html.is-phone .live-block,html.is-phone .footer .container{text-align:center!important}
+    html.is-phone .s-label{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .s-labels{justify-content:center!important}
+    html.is-phone .s-labels .s-label{margin-left:0!important;margin-right:0!important}
+    html.is-phone .how-top{flex-direction:column!important;align-items:center!important;text-align:center!important}
+    html.is-phone .how-nav{justify-content:center!important}
+    html.is-phone .section-cta{display:flex!important;justify-content:center!important}
+    html.is-phone .upd-lead,html.is-phone .upd-note,html.is-phone .how-slide h3,html.is-phone .how-slide p,html.is-phone .f-logo,html.is-phone .f-ip,html.is-phone .f-copy{text-align:center!important}
+    html.is-phone .res-card,html.is-phone .photo-cap{text-align:left!important}
+    html.is-phone .quote-panel{flex-direction:column!important;align-items:center!important;text-align:center!important}
+    html.is-phone .quote-who{order:0!important;width:100%!important;justify-content:center!important}
+    html.is-phone .quote-ava{width:64px!important;height:64px!important}
+    html.is-phone .quote-name{text-align:left!important;white-space:nowrap!important}
+    html.is-phone .quote{padding-left:0!important;border-left:none!important;border-top:3px solid var(--g)!important;padding-top:14px!important;text-align:center!important}
+    html.is-phone .upd-what{text-align:center!important}
+    html.is-phone .upd-what ul{display:block!important;width:max-content!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important;text-align:left!important}
+    html.is-phone .upd-what li{text-align:left!important}
+    html.is-phone .quote-ring{display:none!important}
+    html.is-phone .footer{padding:32px 0 calc(48px + env(safe-area-inset-bottom,0px))!important}
+    html.is-phone #anketa{padding:8px!important}
+    html.is-phone .anketa-card{padding:28px 8px 8px!important;width:100%!important;max-width:100%!important}
   </style>
 </head>
 <body>
