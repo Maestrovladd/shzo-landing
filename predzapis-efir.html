@@ -45,8 +45,8 @@
   h2 em,h3.learn em{font-style:normal;color:var(--g)}
   .pill-wrap{display:flex;justify-content:center;margin:22px 0 48px}
   .pill{display:inline-flex;align-items:center;height:44px;padding:0 18px;background:var(--g-light);border:1px solid #D5DCC4;color:var(--g-dark);border-radius:999px;font-size:15px;font-weight:700}
-  .stage{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin:0 0 56px;align-items:stretch}
-  .diagram{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 24px;box-shadow:0 24px 46px -22px rgba(92,107,62,.28);display:flex;flex-direction:column;justify-content:center}
+  .stage{display:grid;grid-template-columns:1fr;gap:16px;margin:0 0 56px;align-items:stretch}
+  .diagram{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 24px;box-shadow:0 24px 46px -22px rgba(92,107,62,.28);display:flex;flex-direction:column;justify-content:center;max-width:720px;margin:0 auto;width:100%}
   .d-row{display:grid;grid-template-columns:1fr 48px 1fr;gap:10px;align-items:center}
   .d-box{border-radius:18px;padding:18px 16px;min-height:120px}
   .d-box span{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
@@ -56,10 +56,6 @@
   .d-mid{width:48px;height:48px;border-radius:50%;background:var(--g-light);color:var(--g-dark);display:grid;place-items:center}
   .d-mid svg{width:26px;height:26px}
   .diagram p{margin-top:18px;font-size:16px;font-weight:700;line-height:1.4}
-  .shots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .shots figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -24px rgba(92,107,62,.4)}
-  .shots img{width:100%;height:132px;object-fit:cover;object-position:top}
-  .shots figcaption{padding:10px 12px 12px;font-size:14px;font-weight:700;line-height:1.3;letter-spacing:-.02em}
   .learn{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.03em;text-align:center;margin:8px 0 36px}
   .ephir{display:grid;grid-template-columns:1fr 1px 1fr;gap:28px 40px;align-items:start}
   .ephir .rule{background:#D5DCC4;width:1px;justify-self:center;align-self:stretch}
@@ -77,12 +73,12 @@
   .layer b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
   .layer p{font-size:16px;line-height:1.45;font-weight:500;max-width:34ch}
   .mono-foot{padding:18px 28px;border-top:1px solid var(--line);font-size:16px;font-weight:700;letter-spacing:-.02em;background:#fff}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-  .card{background:#fff;border-radius:20px;padding:22px 22px 24px;border:1px solid var(--line);box-shadow:0 18px 36px -24px rgba(92,107,62,.45)}
-  .ico{width:40px;height:40px;border-radius:12px;background:var(--g);color:#fff;display:grid;place-items:center;margin-bottom:14px}
-  .ico svg{width:20px;height:20px}
-  .card h3{font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.25;margin:0 0 8px}
-  .card p{font-size:15px;line-height:1.45;color:var(--gray);font-weight:500}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+  .card{background:#fff;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 36px -24px rgba(92,107,62,.4);display:flex;flex-direction:column}
+  .face{height:168px;margin:10px 10px 0;border-radius:20px;background:var(--g-pale);color:var(--g-dark);display:grid;place-items:center}
+  .face svg{width:56px;height:56px}
+  .card h3{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.2;margin:0;padding:16px 18px 0}
+  .card p{font-size:15px;line-height:1.45;color:var(--gray);font-weight:500;padding:8px 18px 20px}
   .get-cta{display:flex;justify-content:center;margin-top:36px}
 
   .footer{background:#fff;color:var(--gray);padding:28px 6vw 36px;border-top:1px solid var(--line)}
@@ -110,7 +106,7 @@
     .note{text-align:left}
     .get{padding:56px 20px 48px}
     .stage{grid-template-columns:1fr}
-    .shots img{height:120px}
+    .face{height:140px}
     .ephir{grid-template-columns:1fr;gap:22px}
     .ephir .rule{height:1px;width:100%}
     .layers{grid-template-columns:1fr}
@@ -167,24 +163,6 @@
           </div>
           <p>Обида вылезает наружу. Человек напротив её чувствует, даже если вы говорите спокойно.</p>
         </div>
-        <div class="shots">
-          <figure>
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/388/h/c24a3d771dd74a4f8d7e32f9cd7baa2f.jpg" alt="Урок Школы" width="764" height="616">
-            <figcaption>Урок, который вы смотрите сами</figcaption>
-          </figure>
-          <figure>
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/497/h/cd01608f0a031817af470714912fb365.jpg" alt="Рабочий лист" width="792" height="640">
-            <figcaption>Лист, который заполняете руками</figcaption>
-          </figure>
-          <figure>
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/55/h/dfdf2c1e3ae11bbe4c6f1f0ff534efdc.jpg" alt="Пример выполнения задания" width="784" height="634">
-            <figcaption>Как это сделал человек с прошлого потока</figcaption>
-          </figure>
-          <figure>
-            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/200/h/b47058f800312ccfaf6abde6e6478575.jpg" alt="Разбор в чате" width="1376" height="1032">
-            <figcaption>Разбор задания в чате</figcaption>
-          </figure>
-        </div>
       </div>
       <h3 class="learn">На эфире <em>вы узнаете</em></h3>
       <div class="ephir">
@@ -202,21 +180,21 @@
       </div>
       <div class="cards">
         <article class="card">
-          <div class="ico" aria-hidden="true">
+          <div class="face" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.2a6.5 6.5 0 0 1 13 0"/></svg>
           </div>
           <h3>Место на следующий поток</h3>
           <p>Школы здоровых отношений. Сначала я открою его тем, кто уже в этой анкете.</p>
         </article>
         <article class="card">
-          <div class="ico" aria-hidden="true">
+          <div class="face" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M16.5 7.2c-.8-1.4-2.3-2.2-4.5-2.2-2.6 0-4 1.3-4 3.1 0 4.2 9 2.2 9 6.2 0 2-1.7 3.4-4.6 3.4-2.4 0-4.2-.9-5-2.4"/></svg>
           </div>
           <h3>Скидка, тарифы и рассрочка</h3>
           <p>Цифры пришлю в бот, когда откроется закрытая продажа. За два дня предупрежу.</p>
         </article>
         <article class="card">
-          <div class="ico" aria-hidden="true">
+          <div class="face" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16v8a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8z"/><path d="M3 7h18v4H3zM12 7v13"/><path d="M12 7c-1.4-2.2-3.2-3-4.2-2.2-1 .8-.6 2.4.8 3.2M12 7c1.4-2.2 3.2-3 4.2-2.2 1 .8.6 2.4-.8 3.2"/></svg>
           </div>
           <h3>Сборник из 232 примеров</h3>
