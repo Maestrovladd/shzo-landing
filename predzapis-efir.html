@@ -45,13 +45,17 @@
   .pill-wrap{display:flex;justify-content:center;margin:22px 0 48px}
   .pill{display:inline-flex;align-items:center;height:48px;padding:0 22px;background:var(--g);color:#fff;border-radius:999px;font-size:16px;font-weight:700}
   .learn{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.035em;text-align:center;margin:0 0 36px}
-  .ephir{display:grid;grid-template-columns:1fr 280px 1fr;gap:28px;align-items:center}
+  .ephir{display:grid;grid-template-columns:1fr 1px 1fr;gap:28px 36px;align-items:start}
+  .ephir .rule{background:rgba(92,107,62,.28)}
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px}
-  .ephir li{font-size:16px;line-height:1.45;font-weight:500;padding-left:18px;position:relative}
-  .ephir li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
-  .shot{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;background:#BBC2CB;box-shadow:0 12px 40px rgba(92,107,62,.18)}
-  .shot img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .ephir li{font-size:17px;line-height:1.4;font-weight:600;letter-spacing:-.02em;padding-left:16px;position:relative}
+  .ephir li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--g)}
+  .path{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px}
+  .path article{background:#fff;border-radius:20px;padding:16px 14px 18px;min-height:148px;box-shadow:0 2px 16px rgba(92,107,62,.08)}
+  .path span{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--g);margin-bottom:6px}
+  .path b{display:block;font-size:20px;font-weight:800;letter-spacing:-.03em;color:var(--g-dark);line-height:1.15;margin-bottom:8px}
+  .path p{font-size:14px;line-height:1.35;font-weight:600}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
   .card{background:#fff;border-radius:24px;padding:22px 22px 24px;box-shadow:0 2px 16px rgba(92,107,62,.08)}
   .ico{width:40px;height:40px;border-radius:12px;background:var(--g);color:#fff;display:grid;place-items:center;margin-bottom:14px}
   .ico svg{width:20px;height:20px}
@@ -84,7 +88,9 @@
     .aside{text-align:left}
     .get{padding:56px 20px 48px}
     .ephir{grid-template-columns:1fr;gap:22px}
-    .shot{max-width:280px;margin:0 auto}
+    .ephir .rule{height:1px;width:100%}
+    .path{display:flex;overflow-x:auto;padding-bottom:6px}
+    .path article{flex:0 0 210px}
     .cards{grid-template-columns:1fr}
     .footer{padding:32px 20px}
   }
@@ -125,17 +131,42 @@
       <div class="ephir">
         <ul>
           <li>Почему правильный разговор не держит отношения, если внутри обида и стыд</li>
-          <li>Дело не в вас и не в другом человеке, а в представлениях о здоровых отношениях</li>
-          <li>Отношения проверяются, когда нужно отказать, попросить или сказать иначе</li>
+          <li>Что дело не в вас и не в другом человеке, а в представлениях о здоровых отношениях</li>
+          <li>В какой момент отношения проверяются: когда нужно отказать, попросить или сказать иначе</li>
         </ul>
-        <div class="shot">
-          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/300/h/59f7bb8191fa68dd2e5f84961abaa72a.jpg" alt="" width="800" height="1066">
-        </div>
+        <div class="rule" aria-hidden="true"></div>
         <ul>
           <li>Как устроена Школа: ваши люди, прошлое и разговор, когда общего знаменателя нет</li>
           <li>Чем здоровые отношения отличаются от идеальных, и что делать, если снова сорвались в прежнее</li>
           <li>Как строить отношения, в которых и вам хорошо, и с вами хорошо</li>
         </ul>
+      </div>
+      <div class="path">
+        <article>
+          <span>01</span>
+          <b>2 недели</b>
+          <p>Ваши люди и то, что между вами сейчас</p>
+        </article>
+        <article>
+          <span>02</span>
+          <b>5 недель</b>
+          <p>Прошлое, которое до сих пор сидит в этом вечере</p>
+        </article>
+        <article>
+          <span>03</span>
+          <b>2 недели</b>
+          <p>Разговор, когда общего знаменателя уже нет</p>
+        </article>
+        <article>
+          <span>04</span>
+          <b>2 недели</b>
+          <p>Восемь принципов и свой ориентир</p>
+        </article>
+        <article>
+          <span>05</span>
+          <b>Последняя неделя</b>
+          <p>Когда отношения лучше завершить</p>
+        </article>
       </div>
       <div class="cards">
         <article class="card">
