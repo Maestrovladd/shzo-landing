@@ -45,7 +45,22 @@
   h2 em,h3.learn em{font-style:normal;color:var(--g)}
   .pill-wrap{display:flex;justify-content:center;margin:22px 0 48px}
   .pill{display:inline-flex;align-items:center;height:44px;padding:0 18px;background:var(--g-light);border:1px solid #D5DCC4;color:var(--g-dark);border-radius:999px;font-size:15px;font-weight:700}
-  .learn{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.03em;text-align:center;margin:0 0 36px}
+  .stage{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin:0 0 56px;align-items:stretch}
+  .diagram{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 24px;box-shadow:0 24px 46px -22px rgba(92,107,62,.28);display:flex;flex-direction:column;justify-content:center}
+  .d-row{display:grid;grid-template-columns:1fr 48px 1fr;gap:10px;align-items:center}
+  .d-box{border-radius:18px;padding:18px 16px;min-height:120px}
+  .d-box span{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .d-box b{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
+  .d-box.out{background:var(--g-pale);color:var(--g-dark)}
+  .d-box.in{background:var(--g);color:#fff}
+  .d-mid{width:48px;height:48px;border-radius:50%;background:var(--g-light);color:var(--g-dark);display:grid;place-items:center}
+  .d-mid svg{width:26px;height:26px}
+  .diagram p{margin-top:18px;font-size:16px;font-weight:700;line-height:1.4}
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .shots figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 18px 36px -24px rgba(92,107,62,.4)}
+  .shots img{width:100%;height:132px;object-fit:cover;object-position:top}
+  .shots figcaption{padding:10px 12px 12px;font-size:14px;font-weight:700;line-height:1.3;letter-spacing:-.02em}
+  .learn{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.03em;text-align:center;margin:8px 0 36px}
   .ephir{display:grid;grid-template-columns:1fr 1px 1fr;gap:28px 40px;align-items:start}
   .ephir .rule{background:#D5DCC4;width:1px;justify-self:center;align-self:stretch}
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px}
@@ -92,6 +107,8 @@
     .hero-actions{flex-direction:column;align-items:center}
     .aside{text-align:left}
     .get{padding:56px 20px 48px}
+    .stage{grid-template-columns:1fr}
+    .shots img{height:120px}
     .ephir{grid-template-columns:1fr;gap:22px}
     .ephir .rule{height:1px;width:100%}
     .layers{grid-template-columns:1fr}
@@ -131,6 +148,42 @@
     <div class="col">
       <h2>В предзаписи <em>вы получите</em></h2>
       <div class="pill-wrap"><span class="pill">доступ к эфиру</span></div>
+      <div class="stage">
+        <div class="diagram">
+          <div class="d-row">
+            <div class="d-box out">
+              <span>Снаружи</span>
+              <b>Спокойные слова</b>
+            </div>
+            <div class="d-mid" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6"/><path d="M10 7l-5 5 5 5"/></svg>
+            </div>
+            <div class="d-box in">
+              <span>Внутри</span>
+              <b>Обида и стыд</b>
+            </div>
+          </div>
+          <p>Обида вылезает наружу. Человек напротив её чувствует, даже если вы говорите спокойно.</p>
+        </div>
+        <div class="shots">
+          <figure>
+            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/388/h/c24a3d771dd74a4f8d7e32f9cd7baa2f.jpg" alt="Урок Школы" width="764" height="616">
+            <figcaption>Урок, который вы смотрите сами</figcaption>
+          </figure>
+          <figure>
+            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/497/h/cd01608f0a031817af470714912fb365.jpg" alt="Рабочий лист" width="792" height="640">
+            <figcaption>Лист, который заполняете руками</figcaption>
+          </figure>
+          <figure>
+            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/55/h/dfdf2c1e3ae11bbe4c6f1f0ff534efdc.jpg" alt="Пример выполнения задания" width="784" height="634">
+            <figcaption>Как это сделал человек с прошлого потока</figcaption>
+          </figure>
+          <figure>
+            <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/200/h/b47058f800312ccfaf6abde6e6478575.jpg" alt="Разбор в чате" width="1376" height="1032">
+            <figcaption>Разбор задания в чате</figcaption>
+          </figure>
+        </div>
+      </div>
       <h3 class="learn">На эфире <em>вы узнаете</em></h3>
       <div class="ephir">
         <ul>
@@ -144,21 +197,6 @@
           <li>Что делать, если вы опять поругались так же, как раньше</li>
           <li>Что Школа не спасает от измены, а помогает пережить её и не развалиться</li>
         </ul>
-      </div>
-      <div class="mono">
-        <div class="layers">
-          <div class="layer out">
-            <span class="k">Снаружи</span>
-            <b>Правильный разговор</b>
-            <p>Не перебивать, не повышать голос, говорить из «я».</p>
-          </div>
-          <div class="layer in">
-            <span class="k">Внутри</span>
-            <b>Обида, стыд, «почему я должна»</b>
-            <p>Это просачивается наружу и блокирует все навыки.</p>
-          </div>
-        </div>
-        <p class="mono-foot">Обиду не спрятать спокойными словами. Человек напротив её всё равно чувствует.</p>
       </div>
       <div class="cards">
         <article class="card">
