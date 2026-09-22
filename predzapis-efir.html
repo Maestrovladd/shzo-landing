@@ -57,6 +57,10 @@
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px 28px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5)}
   .ephir li{font-size:17px;line-height:1.45;font-weight:600;letter-spacing:-.02em;padding-left:22px;position:relative;color:var(--black)}
   .ephir li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 0 5px rgba(122,140,82,.14)}
+  .shots-rail{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px;margin:28px 0 4px}
+  .shots-rail figure{position:relative;margin:0;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--g-pale);box-shadow:0 14px 28px -20px rgba(92,107,62,.45)}
+  .shots-rail img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .shots-rail figcaption{position:absolute;left:8px;bottom:8px;right:8px;width:max-content;max-width:calc(100% - 16px);background:rgba(92,107,62,.92);color:#fff;font-size:11px;font-weight:700;letter-spacing:-.01em;line-height:1.2;padding:5px 8px;border-radius:999px}
   .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
   .also-row article{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5);overflow:hidden;display:flex;flex-direction:column}
   .mini{height:148px;margin:0;border-radius:0;background:#F4F6EF;display:grid;place-items:center}
@@ -110,6 +114,8 @@
     .get h2{font-size:28px}
     .get h2 em{white-space:normal}
     .ephir{grid-template-columns:1fr}
+    .shots-rail{display:flex;overflow-x:auto;gap:10px;padding:0 0 6px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .shots-rail figure{flex:0 0 112px;scroll-snap-align:start}
     .also-row{grid-template-columns:1fr;gap:12px}
     .also-row article{display:grid;grid-template-columns:104px 1fr;align-items:center}
     .mini{width:88px;height:88px;margin:12px 0 12px 12px;border-radius:16px}
@@ -177,6 +183,40 @@
           <li>Что делать, если вы опять поругались так же, как раньше</li>
           <li>Как пережить измену: Школа её не остановит, но поможет вам не потерять себя</li>
         </ul>
+      </div>
+      <div class="shots-rail" aria-label="Как выглядит Школа">
+        <figure>
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/388/h/c24a3d771dd74a4f8d7e32f9cd7baa2f.jpg" alt="Урок Школы" width="764" height="616">
+          <figcaption>Урок</figcaption>
+        </figure>
+        <figure>
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/497/h/cd01608f0a031817af470714912fb365.jpg" alt="Рабочий лист" width="792" height="640">
+          <figcaption>Лист</figcaption>
+        </figure>
+        <figure>
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/55/h/dfdf2c1e3ae11bbe4c6f1f0ff534efdc.jpg" alt="Пример задания" width="784" height="634">
+          <figcaption>Пример</figcaption>
+        </figure>
+        <figure>
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/200/h/b47058f800312ccfaf6abde6e6478575.jpg" alt="Разбор в чате" width="1376" height="1032">
+          <figcaption>Чат</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/school-alt.png" alt="Занятия дома" width="1320" height="960">
+          <figcaption>Дома</figcaption>
+        </figure>
+        <figure>
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/300/h/59f7bb8191fa68dd2e5f84961abaa72a.jpg" alt="Наталья Зайцева" width="1600" height="2100">
+          <figcaption>Наталья</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/natasha-hero.png" alt="Наталья Зайцева" width="960" height="1136" style="object-position:center 12%;background:#E4E8DC">
+          <figcaption>Эфир</figcaption>
+        </figure>
+        <figure>
+          <img src="https://static.tildacdn.com/tild6565-3765-4039-b166-396163333566/70c839c4-c01d-493a-b.png" alt="Урок на экране" width="1320" height="960">
+          <figcaption>Разбор</figcaption>
+        </figure>
       </div>
       <p class="subhead also">а также:</p>
       <div class="also-row">
