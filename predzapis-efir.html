@@ -18,7 +18,7 @@
   body{font-family:Figtree,ui-sans-serif,system-ui,sans-serif;color:var(--black);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
   img{display:block;max-width:100%}
   button{font-family:inherit;cursor:pointer;border:none;background:none}
-  .btn{display:inline-flex;align-items:center;justify-content:center;height:58px;padding:0 32px;background:var(--g);color:#fff;border-radius:999px;font-size:16px;font-weight:700;letter-spacing:-.01em;box-shadow:0 16px 30px -14px rgba(122,140,82,.65);transition:background .2s,transform .15s}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:58px;height:auto;padding:14px 28px;background:var(--g);color:#fff;border-radius:999px;font-size:16px;font-weight:700;letter-spacing:-.01em;box-shadow:0 16px 30px -14px rgba(122,140,82,.65);transition:background .2s,transform .15s;text-align:center;line-height:1.25}
   .btn:hover{background:var(--g-dark);transform:translateY(-2px)}
   .btn:focus-visible,.modal-x:focus-visible{outline:2px solid var(--g-dark);outline-offset:3px}
 
@@ -33,7 +33,7 @@
   .offer{display:block;margin:0 0 32px;font-size:clamp(16px,1.35vw,20px);font-weight:500;letter-spacing:-.02em;line-height:1.3;color:var(--black);white-space:nowrap}
   .offer em{font-style:normal;font-weight:800;color:var(--g-dark)}
   .hero-actions{display:flex;align-items:center;gap:18px;max-width:640px}
-  .btn{flex-shrink:0;white-space:nowrap}
+  .btn{flex-shrink:0}
   .aside{display:flex;align-items:flex-start;gap:10px;min-width:0}
   .aside svg{flex-shrink:0;width:28px;height:22px;margin-top:3px;color:var(--g)}
   .aside p{font-size:15px;line-height:1.45;color:var(--gray);font-weight:500}
@@ -138,7 +138,7 @@
       <h1><span class="line1">в Школу здоровых</span><em>отношений<svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><g fill="currentColor"><rect x="10.15" y="1" width="3.7" height="22" rx="1.5"/><rect x="1" y="10.15" width="22" height="3.7" rx="1.5"/><rect x="10.15" y="1" width="3.7" height="22" rx="1.5" transform="rotate(45 12 12)"/><rect x="10.15" y="1" width="3.7" height="22" rx="1.5" transform="rotate(-45 12 12)"/></g></svg></em></h1>
       <p class="offer">как построить <em>счастливые отношения</em></p>
       <div class="hero-actions">
-        <button class="btn" type="button" data-open>Занять место</button>
+        <button class="btn" type="button" data-open>Занять место в анкете предзаписи</button>
         <div class="aside">
           <svg viewBox="0 0 36 28" fill="none" aria-hidden="true">
             <path d="M34 4c-8 2-14 8-16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
@@ -227,7 +227,7 @@
         </article>
       </div>
       <div class="get-cta">
-        <button class="btn" type="button" data-open>Занять место</button>
+        <button class="btn" type="button" data-open>Занять место в анкете предзаписи</button>
       </div>
     </div>
   </section>
@@ -278,7 +278,7 @@
         </li>
       </ul>
       <div class="get-cta">
-        <button class="btn" type="button" data-open>Занять место</button>
+        <button class="btn" type="button" data-open>Занять место в анкете предзаписи</button>
       </div>
     </div>
   </section>
@@ -293,7 +293,7 @@
     <div class="dim" data-close></div>
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="anketa-title">
       <button class="modal-x" type="button" data-close aria-label="Закрыть">×</button>
-      <h2 id="anketa-title">Занять место</h2>
+      <h2 id="anketa-title">Занять место в анкете предзаписи</h2>
       <p>Сюда встанет форма GetCourse.</p>
     </div>
   </div>
