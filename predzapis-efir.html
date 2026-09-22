@@ -49,8 +49,9 @@
   .get{background:linear-gradient(180deg,#fff 0%,var(--g-pale) 100%);padding:96px 6vw 88px}
   .col{max-width:1080px;margin:0 auto}
   .get h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;text-align:center;line-height:1.12;margin:0 auto 22px}
-  .get h2 em{font-style:normal;color:var(--g)}
+  .get h2 em{font-style:normal;color:var(--g);white-space:nowrap}
   .subhead{text-align:center;font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--black);margin:10px 0 32px}
+  .subhead:not(.also){width:max-content;margin:18px auto 36px;background:var(--g);color:#fff;padding:10px 20px;border-radius:999px;font-size:16px;font-weight:700}
   .subhead.also{margin:64px 0 20px}
   .ephir{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px 28px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5)}
@@ -105,6 +106,7 @@
     .aside{text-align:left;width:100%}
     .get{padding:48px 20px 40px}
     .get h2{font-size:28px}
+    .get h2 em{white-space:normal}
     .ephir{grid-template-columns:1fr}
     .also-row{grid-template-columns:1fr;gap:12px}
     .also-row article{display:grid;grid-template-columns:104px 1fr;align-items:center}
@@ -160,7 +162,7 @@
 
   <section class="get" id="efir">
     <div class="col">
-      <h2>Только участники анкеты предзаписи смогут<br><em>попасть на эфир</em></h2>
+      <h2>Только участники анкеты предзаписи смогут<br><em>попасть на закрытый эфир</em></h2>
       <p class="subhead">на котором узнаете:</p>
       <div class="ephir">
         <ul>
