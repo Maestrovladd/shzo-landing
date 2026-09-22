@@ -80,20 +80,26 @@
   .modal-card p{font-size:16px;line-height:1.45}
 
   @media(max-width:900px){
-    .hero{grid-template-columns:1fr;min-height:0}
-    .hero-right{min-height:520px;order:-1}
+    .hero{display:flex;flex-direction:column;min-height:0}
+    .hero-left{order:1;text-align:center;align-items:center;padding:28px 20px 24px}
+    .hero-right{order:2;min-height:460px}
     .hero-right img{height:88%}
-    .photo-cap{left:14px;bottom:14px;width:min(280px,calc(100% - 28px));padding:16px 16px 14px 18px}
+    .photo-cap{left:14px;right:14px;bottom:16px;width:auto;padding:14px 14px 12px 16px}
     .photo-i{width:24px;height:24px;font-size:13px;top:-10px;left:8px}
-    .photo-cap strong{font-size:18px}
-    .hero-left{text-align:center;align-items:center;padding:36px 20px 40px}
+    .photo-cap strong{font-size:16px}
+    .photo-cap li{font-size:13px;line-height:1.35}
     h1{font-size:clamp(32px,8.6vw,42px)}
-    .offer{margin-left:auto;margin-right:auto}
-    .hero-actions{flex-direction:column;align-items:center}
-    .aside{text-align:left}
-    .get{padding:56px 20px 48px}
+    .offer{margin-left:auto;margin-right:auto;white-space:normal}
+    .hero-actions{flex-direction:column;align-items:stretch;width:100%;max-width:none}
+    .hero .btn,.get .btn{width:100%}
+    .aside{text-align:left;width:100%}
+    .get{padding:48px 20px 40px}
+    .get h2{font-size:28px}
     .ephir{grid-template-columns:1fr}
-    .also-row{grid-template-columns:1fr;gap:22px}
+    .also-row{grid-template-columns:1fr;gap:12px}
+    .also-row article{display:grid;grid-template-columns:104px 1fr;align-items:center}
+    .mini{width:88px;height:88px;margin:12px 0 12px 12px}
+    .also-row p{padding:14px 14px 14px 4px;font-size:15px}
     .footer{padding:28px 20px 36px}
   }
   @media(prefers-reduced-motion:reduce){
