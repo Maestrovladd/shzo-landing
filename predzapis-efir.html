@@ -64,6 +64,15 @@
   .also-row .hot{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 18px 36px -16px rgba(92,107,62,.65)}
   .also-row .hot p{font-weight:800}
   .get-cta{display:flex;justify-content:center;margin-top:40px}
+  .fit{margin-top:72px}
+  .fit-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fit-grid p{margin:0;padding:28px 22px 32px;font-size:16px;line-height:1.45;font-weight:600;letter-spacing:-.02em}
+  .fit-grid p + p{border-left:1px solid var(--line)}
+  .tick{display:grid;place-items:center;width:28px;height:28px;margin-bottom:16px;border-radius:6px;background:var(--g);color:#fff}
+  .tick svg{width:14px;height:14px}
+  .fit-notes{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:28px}
+  .fit-notes p{margin:0;padding:4px 28px;font-size:15.5px;line-height:1.5;font-weight:600}
+  .fit-notes p + p{border-left:1px solid var(--line)}
 
   .footer{background:#fff;color:var(--gray);padding:28px 6vw 36px;border-top:1px solid var(--line)}
   .footer .f-logo{font-weight:700;margin-bottom:8px;color:var(--black)}
@@ -100,6 +109,13 @@
     .also-row article{display:grid;grid-template-columns:104px 1fr;align-items:center}
     .mini{width:88px;height:88px;margin:12px 0 12px 12px}
     .also-row p{padding:14px 14px 14px 4px;font-size:15px}
+    .fit{margin-top:48px}
+    .fit-grid{grid-template-columns:1fr}
+    .fit-grid p{padding:20px 4px}
+    .fit-grid p + p{border-left:none;border-top:1px solid var(--line)}
+    .fit-notes{grid-template-columns:1fr;gap:16px}
+    .fit-notes p{padding:0}
+    .fit-notes p + p{border-left:none;padding-top:16px;border-top:1px solid var(--line)}
     .footer{padding:28px 20px 36px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -203,6 +219,19 @@
           </div>
           <p>Успеть занять 1 из 40 мест на тарифе с обратной связью врача-психотерапевта или психолога</p>
         </article>
+      </div>
+      <div class="fit">
+        <h2>Вам подойдёт, если вы:</h2>
+        <div class="fit-grid">
+          <p><span class="tick" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.2l3 3.2 6-6.6"/></svg></span>говорите спокойно и всё равно срываетесь на крик</p>
+          <p><span class="tick" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.2l3 3.2 6-6.6"/></svg></span>думаете, что дело в вас или в другом человеке</p>
+          <p><span class="tick" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.2l3 3.2 6-6.6"/></svg></span>ищете человека с такими же взглядами, как у вас</p>
+          <p><span class="tick" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.2l3 3.2 6-6.6"/></svg></span>не понимаете, здоровые ли у вас отношения, когда вы не согласны</p>
+        </div>
+        <div class="fit-notes">
+          <p>Регистрация в закрытый канал нужна, чтобы попасть на эфир и понять, подходит ли вам Школа или сейчас нужна личная помощь.</p>
+          <p>Это не обязывает вас покупать Школу. После эфира будет яснее, что делать дальше.</p>
+        </div>
       </div>
       <div class="get-cta">
         <button class="btn" type="button" data-open>Занять место</button>
