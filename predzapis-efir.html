@@ -6,7 +6,7 @@
 <title>Анкета предзаписи в Школу здоровых отношений</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
     color-scheme:only light;
@@ -28,7 +28,7 @@
   .eyebrow{display:inline-flex;align-items:center;width:max-content;background:#fff;border:1px solid #D5DCC4;color:var(--black);padding:8px 16px;border-radius:999px;font-size:15px;font-weight:600;margin:0 0 28px}
   h1{font-size:clamp(40px,4.6vw,68px);font-weight:800;line-height:1.02;letter-spacing:-.04em;margin:0 0 16px;max-width:11em}
   h1 em{display:block;font-style:normal;font-weight:800;color:var(--g);margin-top:4px}
-  .offer{display:block;max-width:18em;margin:0 0 32px;font-size:clamp(20px,1.8vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.35;color:var(--black)}
+  .offer{display:block;margin:0 0 32px;font-size:clamp(18px,1.7vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.2;color:var(--black);white-space:nowrap}
   .offer em{font-style:normal;font-weight:800;color:var(--g-dark)}
   .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:16px;max-width:520px}
   .btn{flex-shrink:0;white-space:nowrap}
@@ -36,8 +36,7 @@
   .note p{font-size:15px;line-height:1.45;color:var(--black);font-weight:600}
   .clip{position:absolute;top:-12px;right:18px;width:28px;height:28px;color:var(--g-dark);background:var(--g-pale);border-radius:50%}
   .hero-right{position:relative;background:#E4E8DC;overflow:hidden;min-height:100svh}
-  .scribble{position:absolute;z-index:2;top:9%;left:8%;right:16%;margin:0;font-family:"Bad Script",cursive;font-size:clamp(24px,2.2vw,32px);line-height:1.2;color:var(--g-dark);transform:rotate(-6deg)}
-  .hero-right img{position:absolute;left:0;right:0;bottom:0;width:100%;height:86%;object-fit:contain;object-position:center bottom}
+  .hero-right img{position:absolute;left:0;right:0;bottom:0;width:100%;height:94%;object-fit:contain;object-position:center bottom}
 
   .get{background:linear-gradient(180deg,#fff 0%,var(--g-pale) 100%);padding:88px 6vw 80px}
   .col{max-width:1080px;margin:0 auto}
@@ -98,8 +97,7 @@
   @media(max-width:900px){
     .hero{grid-template-columns:1fr;min-height:0}
     .hero-right{min-height:520px;order:-1}
-    .scribble{top:6%;left:6%;right:8%;font-size:22px}
-    .hero-right img{height:78%}
+    .hero-right img{height:88%}
     .hero-left{text-align:center;align-items:center;padding:36px 20px 40px}
     .offer{margin-left:auto;margin-right:auto}
     .hero-actions{align-items:center}
@@ -137,7 +135,6 @@
       </div>
     </div>
     <div class="hero-right">
-      <p class="scribble">И вам хорошо, и с вами хорошо.</p>
       <img src="assets/natasha-hero.png" alt="Наталья Зайцева, врач-психотерапевт" width="960" height="1136">
     </div>
   </section>
