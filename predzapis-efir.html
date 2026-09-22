@@ -48,35 +48,17 @@
 
   .get{background:linear-gradient(180deg,#fff 0%,var(--g-pale) 100%);padding:88px 6vw 80px}
   .col{max-width:1080px;margin:0 auto}
-  h2{font-size:clamp(32px,4vw,46px);font-weight:800;letter-spacing:-.03em;text-align:center;line-height:1.15}
-  h2 em,h3.learn em{font-style:normal;color:var(--g)}
-  h2 em{white-space:nowrap}
-  .pill-wrap{display:flex;justify-content:center;margin:22px 0 28px}
-  .pill{display:inline-flex;align-items:center;height:44px;padding:0 18px;background:var(--g-light);border:1px solid #D5DCC4;color:var(--g-dark);border-radius:999px;font-size:15px;font-weight:700}
-  .learn{font-size:clamp(26px,3vw,36px);font-weight:800;letter-spacing:-.03em;text-align:center;margin:8px 0 36px}
-  .ephir{display:grid;grid-template-columns:1fr 1px 1fr;gap:28px 40px;align-items:start}
-  .ephir .rule{background:#D5DCC4;width:1px;justify-self:center;align-self:stretch}
-  .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px}
-  .ephir li{font-size:16.5px;line-height:1.45;font-weight:600;letter-spacing:-.02em;padding-left:18px;position:relative;color:var(--black)}
+  h2{font-size:clamp(28px,3.1vw,38px);font-weight:700;letter-spacing:-.03em;text-align:center;line-height:1.25;margin:0 auto 36px}
+  .subhead{text-align:center;font-size:clamp(22px,2.4vw,28px);font-weight:600;letter-spacing:-.02em;margin:0 0 28px}
+  .subhead.also{margin:52px 0 28px}
+  .ephir{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+  .ephir ul{list-style:none;display:flex;flex-direction:column;gap:18px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 20px 22px 18px}
+  .ephir li{font-size:16px;line-height:1.45;font-weight:600;letter-spacing:-.02em;padding-left:18px;position:relative;color:var(--black)}
   .ephir li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 0 4px rgba(122,140,82,.16)}
-  .mono{margin-top:36px;background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 46px -22px rgba(92,107,62,.28)}
-  .layers{display:grid;grid-template-columns:1fr 1fr;min-height:220px}
-  .layer{padding:28px 28px 24px}
-  .layer.out{background:#fff}
-  .layer.in{background:var(--g);color:#fff}
-  .layer .k{display:inline-flex;align-items:center;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;padding:7px 12px;border-radius:999px}
-  .layer.out .k{background:var(--g);color:#fff}
-  .layer.in .k{background:#fff;color:var(--g-dark)}
-  .layer b{display:block;font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:10px}
-  .layer p{font-size:16px;line-height:1.45;font-weight:500;max-width:34ch}
-  .mono-foot{padding:18px 28px;border-top:1px solid var(--line);font-size:16px;font-weight:700;letter-spacing:-.02em;background:#fff}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
-  .card{background:#fff;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 36px -24px rgba(92,107,62,.4);display:flex;flex-direction:column}
-  .face{height:112px;margin:8px 8px 0;border-radius:16px;background:var(--g-pale);color:var(--g-dark);display:grid;place-items:center}
-  .face svg{width:min(210px,88%);height:auto}
-  .card h3{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.2;margin:0;padding:16px 18px 0}
-  .card p{font-size:15px;line-height:1.45;color:var(--gray);font-weight:500;padding:8px 18px 20px}
-  .get-cta{display:flex;justify-content:center;margin-top:36px}
+  .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 40px;max-width:920px;margin:0 auto}
+  .also-row p{font-size:16px;line-height:1.45;font-weight:500}
+  .also-row .hot{font-weight:800}
+  .get-cta{display:flex;justify-content:center;margin-top:48px}
 
   .footer{background:#fff;color:var(--gray);padding:28px 6vw 36px;border-top:1px solid var(--line)}
   .footer .f-logo{font-weight:700;margin-bottom:8px;color:var(--black)}
@@ -105,11 +87,8 @@
     .hero-actions{flex-direction:column;align-items:center}
     .aside{text-align:left}
     .get{padding:56px 20px 48px}
-    .face{height:100px}
-    .ephir{grid-template-columns:1fr;gap:22px}
-    .ephir .rule{height:1px;width:100%}
-    .layers{grid-template-columns:1fr}
-    .cards{grid-template-columns:1fr}
+    .ephir{grid-template-columns:1fr}
+    .also-row{grid-template-columns:1fr;gap:22px}
     .footer{padding:28px 20px 36px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -152,76 +131,25 @@
 
   <section class="get" id="efir">
     <div class="col">
-      <h2>После регистрации вы попадете <em>в закрытый канал с:</em></h2>
-      <div class="pill-wrap"><span class="pill">доступ к эфиру</span></div>
-      <h3 class="learn">На эфире <em>вы узнаете</em></h3>
+      <h2>Только участники анкеты предзаписи смогут<br>попасть на эфир</h2>
+      <p class="subhead">на котором узнают:</p>
       <div class="ephir">
         <ul>
           <li>Почему можно говорить спокойно и всё равно сорваться на крик: обида внутри вылезает наружу</li>
           <li>Почему дело не в вас и не в другом человеке: вы просто не знаете, какими бывают здоровые отношения</li>
           <li>Почему не получится просто найти «своего» человека: одинаковых взглядов не бывает</li>
         </ul>
-        <div class="rule" aria-hidden="true"></div>
         <ul>
           <li>Как понять, здоровые ли у вас отношения: по тому, как вы разговариваете, когда не согласны</li>
           <li>Что делать, если вы опять поругались так же, как раньше</li>
           <li>Что Школа не спасает от измены, а помогает пережить её и не развалиться</li>
         </ul>
       </div>
-      <div class="cards">
-        <article class="card">
-          <div class="face" aria-hidden="true">
-            <svg viewBox="0 0 220 78" fill="none">
-              <circle cx="28" cy="26" r="13" fill="#7A8C52"/>
-              <path d="M10 70c1.6-16 10-22 18-22s16.4 6 18 22" fill="#7A8C52"/>
-              <circle cx="78" cy="30" r="11" stroke="#7A8C52" stroke-width="1.6"/>
-              <path d="M62 70c1.4-13 8.2-18 16-18s14.6 5 16 18" stroke="#7A8C52" stroke-width="1.6"/>
-              <circle cx="124" cy="33" r="10" stroke="#C5CDB4" stroke-width="1.6"/>
-              <path d="M110 70c1.2-11 7-15 14-15s12.8 4 14 15" stroke="#C5CDB4" stroke-width="1.6"/>
-              <circle cx="168" cy="36" r="9" stroke="#D5DCC4" stroke-width="1.6"/>
-              <path d="M156 70c1-9 6-13 12-13s11 4 12 13" stroke="#D5DCC4" stroke-width="1.6"/>
-              <path d="M196 40h16M204 32l8 8-8 8" stroke="#7A8C52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Место на следующий поток</h3>
-          <p>Школы здоровых отношений. Сначала я открою его тем, кто уже в этой анкете.</p>
-        </article>
-        <article class="card">
-          <div class="face" aria-hidden="true">
-            <svg viewBox="0 0 220 78" fill="none">
-              <rect x="18" y="24" width="52" height="42" rx="8" fill="#fff" stroke="#D5DCC4"/>
-              <rect x="28" y="36" width="32" height="5" rx="2.5" fill="#E4E8DC"/>
-              <rect x="28" y="46" width="22" height="5" rx="2.5" fill="#EFF2E8"/>
-              <rect x="84" y="10" width="52" height="56" rx="8" fill="#fff" stroke="#7A8C52" stroke-width="1.6"/>
-              <rect x="94" y="24" width="32" height="5" rx="2.5" fill="#7A8C52"/>
-              <rect x="94" y="34" width="24" height="5" rx="2.5" fill="#C5CDB4"/>
-              <rect x="150" y="24" width="52" height="42" rx="8" fill="#fff" stroke="#D5DCC4"/>
-              <rect x="160" y="36" width="32" height="5" rx="2.5" fill="#E4E8DC"/>
-              <rect x="160" y="46" width="22" height="5" rx="2.5" fill="#EFF2E8"/>
-            </svg>
-          </div>
-          <h3>Скидка, тарифы и рассрочка</h3>
-          <p>Цифры пришлю в бот, когда откроется закрытая продажа. За два дня предупрежу.</p>
-        </article>
-        <article class="card">
-          <div class="face" aria-hidden="true">
-            <svg viewBox="0 0 220 78" fill="none">
-              <g transform="rotate(-16 62 42)">
-                <rect x="28" y="16" width="68" height="50" rx="6" fill="#fff" stroke="#D5DCC4"/>
-                <text x="40" y="44" fill="#C5CDB4" font-family="Figtree,sans-serif" font-size="11" font-weight="700">2022</text>
-              </g>
-              <g transform="rotate(-4 110 42)">
-                <rect x="76" y="14" width="68" height="50" rx="6" fill="#fff" stroke="#C5CDB4"/>
-              </g>
-              <g transform="rotate(10 156 44)">
-                <rect x="122" y="12" width="72" height="52" rx="6" fill="#fff" stroke="#7A8C52" stroke-width="1.6"/>
-                <text x="136" y="44" fill="#5C6B3E" font-family="Figtree,sans-serif" font-size="18" font-weight="800">232</text>
-              </g>
-            </svg>
-          </div>
-          <h3>Сборник из 232 примеров</h3>
-          <p>Разборы потоков с 2022 по 2026 год. Его получают те, кто приходит в следующий поток через эту анкету.</p>
-        </article>
+      <p class="subhead also">а также:</p>
+      <div class="also-row">
+        <p>Занять место на следующий поток Школы здоровых отношений</p>
+        <p>Гарантированно получить дополнительные бонусы и самую низкую стоимость</p>
+        <p class="hot">Успеть занять 1 из 40 мест на тарифе с обратной связью врача-психотерапевта или психолога</p>
       </div>
       <div class="get-cta">
         <button class="btn" type="button" data-open>Занять место</button>
