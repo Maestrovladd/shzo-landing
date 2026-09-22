@@ -56,9 +56,13 @@
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:20px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px 26px;box-shadow:0 24px 46px -28px rgba(92,107,62,.45)}
   .ephir li{font-size:16.5px;line-height:1.45;font-weight:600;letter-spacing:-.02em;padding-left:20px;position:relative;color:var(--black)}
   .ephir li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 0 4px rgba(122,140,82,.16)}
-  .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .also-row p{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 36px -24px rgba(92,107,62,.45);padding:26px 22px;font-size:16.5px;line-height:1.45;font-weight:600;letter-spacing:-.02em}
-  .also-row .hot{background:var(--g);border-color:var(--g);color:#fff;font-weight:800;box-shadow:0 18px 36px -16px rgba(92,107,62,.65)}
+  .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+  .also-row article{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 36px -24px rgba(92,107,62,.45);overflow:hidden;display:flex;flex-direction:column}
+  .mini{height:108px;margin:8px 8px 0;border-radius:16px;background:var(--g-pale);display:grid;place-items:center}
+  .mini svg{width:min(200px,88%);height:auto}
+  .also-row p{padding:16px 18px 20px;font-size:16.5px;line-height:1.45;font-weight:600;letter-spacing:-.02em}
+  .also-row .hot{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 18px 36px -16px rgba(92,107,62,.65)}
+  .also-row .hot p{font-weight:800}
   .get-cta{display:flex;justify-content:center;margin-top:40px}
 
   .footer{background:#fff;color:var(--gray);padding:28px 6vw 36px;border-top:1px solid var(--line)}
@@ -148,9 +152,51 @@
       </div>
       <p class="subhead also">а также:</p>
       <div class="also-row">
-        <p>Занять место на следующий поток Школы здоровых отношений</p>
-        <p>Гарантированно получить дополнительные бонусы и самую низкую стоимость</p>
-        <p class="hot">Успеть занять 1 из 40 мест на тарифе с обратной связью врача-психотерапевта или психолога</p>
+        <article>
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 220 78" fill="none">
+              <circle cx="28" cy="26" r="13" fill="#7A8C52"/>
+              <path d="M10 70c1.6-16 10-22 18-22s16.4 6 18 22" fill="#7A8C52"/>
+              <circle cx="78" cy="30" r="11" stroke="#7A8C52" stroke-width="1.6"/>
+              <path d="M62 70c1.4-13 8.2-18 16-18s14.6 5 16 18" stroke="#7A8C52" stroke-width="1.6"/>
+              <circle cx="124" cy="33" r="10" stroke="#C5CDB4" stroke-width="1.6"/>
+              <path d="M110 70c1.2-11 7-15 14-15s12.8 4 14 15" stroke="#C5CDB4" stroke-width="1.6"/>
+              <circle cx="168" cy="36" r="9" stroke="#D5DCC4" stroke-width="1.6"/>
+              <path d="M156 70c1-9 6-13 12-13s11 4 12 13" stroke="#D5DCC4" stroke-width="1.6"/>
+              <path d="M196 40h16M204 32l8 8-8 8" stroke="#7A8C52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p>Занять место на следующий поток Школы здоровых отношений</p>
+        </article>
+        <article>
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 220 78" fill="none">
+              <rect x="24" y="30" width="48" height="32" rx="6" fill="#fff" stroke="#7A8C52" stroke-width="1.6"/>
+              <path d="M24 42h48M48 30v32" stroke="#7A8C52" stroke-width="1.6"/>
+              <path d="M48 30c-7-9-16-7-14 0M48 30c7-9 16-7 14 0" stroke="#7A8C52" stroke-width="1.6" stroke-linecap="round"/>
+              <rect x="108" y="48" width="22" height="16" rx="4" fill="#7A8C52"/>
+              <rect x="142" y="32" width="22" height="32" rx="4" fill="#fff" stroke="#C5CDB4"/>
+              <rect x="176" y="18" width="22" height="46" rx="4" fill="#fff" stroke="#D5DCC4"/>
+            </svg>
+          </div>
+          <p>Гарантированно получить дополнительные бонусы и самую низкую стоимость</p>
+        </article>
+        <article class="hot">
+          <div class="mini" aria-hidden="true">
+            <svg viewBox="0 0 220 78" fill="none">
+              <g fill="#D5DCC4">
+                <circle cx="16" cy="10" r="3.4"/><circle cx="42" cy="10" r="3.4"/><circle cx="68" cy="10" r="3.4"/><circle cx="94" cy="10" r="3.4"/><circle cx="120" cy="10" r="3.4"/><circle cx="146" cy="10" r="3.4"/><circle cx="172" cy="10" r="3.4"/><circle cx="198" cy="10" r="3.4"/>
+                <circle cx="16" cy="24" r="3.4"/><circle cx="42" cy="24" r="3.4"/><circle cx="68" cy="24" r="3.4"/><circle cx="94" cy="24" r="3.4"/><circle cx="120" cy="24" r="3.4"/><circle cx="146" cy="24" r="3.4"/><circle cx="172" cy="24" r="3.4"/><circle cx="198" cy="24" r="3.4"/>
+                <circle cx="16" cy="38" r="3.4"/><circle cx="42" cy="38" r="3.4"/><circle cx="68" cy="38" r="3.4"/><circle cx="120" cy="38" r="3.4"/><circle cx="146" cy="38" r="3.4"/><circle cx="172" cy="38" r="3.4"/><circle cx="198" cy="38" r="3.4"/>
+                <circle cx="16" cy="52" r="3.4"/><circle cx="42" cy="52" r="3.4"/><circle cx="68" cy="52" r="3.4"/><circle cx="94" cy="52" r="3.4"/><circle cx="120" cy="52" r="3.4"/><circle cx="146" cy="52" r="3.4"/><circle cx="172" cy="52" r="3.4"/><circle cx="198" cy="52" r="3.4"/>
+                <circle cx="16" cy="66" r="3.4"/><circle cx="42" cy="66" r="3.4"/><circle cx="68" cy="66" r="3.4"/><circle cx="94" cy="66" r="3.4"/><circle cx="120" cy="66" r="3.4"/><circle cx="146" cy="66" r="3.4"/><circle cx="172" cy="66" r="3.4"/><circle cx="198" cy="66" r="3.4"/>
+              </g>
+              <circle cx="94" cy="38" r="8" fill="#7A8C52"/>
+              <text x="94" y="42" text-anchor="middle" fill="#fff" font-family="Figtree,sans-serif" font-size="10" font-weight="800">1</text>
+            </svg>
+          </div>
+          <p>Успеть занять 1 из 40 мест на тарифе с обратной связью врача-психотерапевта или психолога</p>
+        </article>
       </div>
       <div class="get-cta">
         <button class="btn" type="button" data-open>Занять место</button>
