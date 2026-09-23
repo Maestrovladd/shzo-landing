@@ -57,10 +57,9 @@
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px 28px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5)}
   .ephir li{font-size:17px;line-height:1.45;font-weight:600;letter-spacing:-.02em;padding-left:22px;position:relative;color:var(--black)}
   .ephir li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 0 5px rgba(122,140,82,.14)}
-  .shots-rail{display:flex;justify-content:center;flex-wrap:nowrap;gap:6px;margin:18px auto 2px;max-width:720px}
-  .shots-rail figure{position:relative;margin:0;flex:0 0 72px;width:72px;height:72px;border-radius:10px;overflow:hidden;border:1px solid rgba(197,205,180,.55);background:var(--g-pale);opacity:.88}
+  .shots-rail{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px;margin:20px 0 2px;width:100%}
+  .shots-rail figure{position:relative;margin:0;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--g-pale)}
   .shots-rail img{width:100%;height:100%;object-fit:cover;object-position:center}
-  .shots-rail figcaption{display:none}
   .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
   .also-row article{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5);overflow:hidden;display:flex;flex-direction:column}
   .mini{height:148px;margin:0;border-radius:0;background:#F4F6EF;display:grid;place-items:center}
@@ -114,8 +113,8 @@
     .get h2{font-size:28px}
     .get h2 em{white-space:normal}
     .ephir{grid-template-columns:1fr}
-    .shots-rail{max-width:none;justify-content:flex-start;overflow-x:auto;gap:6px;padding:0 0 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-    .shots-rail figure{flex:0 0 64px;width:64px;height:64px;scroll-snap-align:start}
+    .shots-rail{display:flex;overflow-x:auto;gap:8px;padding:0 0 4px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .shots-rail figure{flex:0 0 96px;width:96px;aspect-ratio:3/4;height:auto;scroll-snap-align:start}
     .also-row{grid-template-columns:1fr;gap:12px}
     .also-row article{display:grid;grid-template-columns:104px 1fr;align-items:center}
     .mini{width:88px;height:88px;margin:12px 0 12px 12px;border-radius:16px}
@@ -186,22 +185,31 @@
       </div>
       <div class="shots-rail" aria-hidden="true">
         <figure>
-          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/388/h/c24a3d771dd74a4f8d7e32f9cd7baa2f.jpg" alt="" width="764" height="616">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/388/h/c24a3d771dd74a4f8d7e32f9cd7baa2f.jpg" alt="" width="764" height="616" loading="lazy">
         </figure>
         <figure>
-          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/497/h/cd01608f0a031817af470714912fb365.jpg" alt="" width="792" height="640">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/497/h/cd01608f0a031817af470714912fb365.jpg" alt="" width="792" height="640" loading="lazy">
         </figure>
         <figure>
-          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/55/h/dfdf2c1e3ae11bbe4c6f1f0ff534efdc.jpg" alt="" width="784" height="634">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/55/h/dfdf2c1e3ae11bbe4c6f1f0ff534efdc.jpg" alt="" width="784" height="634" loading="lazy">
         </figure>
         <figure>
-          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/200/h/b47058f800312ccfaf6abde6e6478575.jpg" alt="" width="1376" height="1032">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/200/h/b47058f800312ccfaf6abde6e6478575.jpg" alt="" width="1376" height="1032" loading="lazy">
         </figure>
         <figure>
-          <img src="assets/school-alt.png" alt="" width="1320" height="960">
+          <img src="assets/school-alt.png" alt="" width="1320" height="960" loading="lazy">
         </figure>
         <figure>
-          <img src="https://static.tildacdn.com/tild6565-3765-4039-b166-396163333566/70c839c4-c01d-493a-b.png" alt="" width="1320" height="960">
+          <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/300/h/59f7bb8191fa68dd2e5f84961abaa72a.jpg" alt="" width="1600" height="2100" loading="lazy" style="object-position:center 18%">
+        </figure>
+        <figure>
+          <img src="https://static.tildacdn.com/tild6565-3765-4039-b166-396163333566/70c839c4-c01d-493a-b.png" alt="" width="1320" height="960" loading="lazy">
+        </figure>
+        <figure>
+          <img src="https://static.tildacdn.com/tild6164-3864-4461-b138-636336613233/image_183.png" alt="" width="800" height="1000" loading="lazy" style="object-position:center top;background:#E4E8DC">
+        </figure>
+        <figure>
+          <img src="https://static.tildacdn.com/tild3637-3634-4364-a139-366535303566/o_1.jpg" alt="" width="800" height="1000" loading="lazy">
         </figure>
       </div>
       <p class="subhead also">а также:</p>
