@@ -75,11 +75,14 @@
   .alt h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.12;text-align:center;margin:0 auto 14px}
   .alt-lead{text-align:center;font-size:clamp(18px,2vw,22px);line-height:1.45;font-weight:600;color:var(--black);margin:0 auto 40px;max-width:28em}
   .alt-lead mark{display:inline;background:var(--g);color:#fff;font-weight:700;padding:.12em .4em;border-radius:999px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-  .alt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0 0 40px;align-items:stretch}
-  .alt-grid article{background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5);overflow:hidden;display:flex;flex-direction:column}
-  .alt-face{height:148px;margin:0;border-radius:0;background:#F4F6EF;display:grid;place-items:center}
-  .alt-face svg{width:88%;height:auto;max-height:118px}
-  .alt-grid p{margin:0;padding:18px 18px 22px;font-size:16.5px;line-height:1.45;font-weight:600;letter-spacing:-.02em}
+  .alt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 32px;align-items:stretch}
+  .alt-grid article{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 14px 32px -22px rgba(92,107,62,.45);overflow:hidden;display:flex;flex-direction:column}
+  .alt-face{height:96px;margin:0;border-radius:0;background:#F4F6EF;display:grid;place-items:center}
+  .alt-face svg{width:82%;height:auto;max-height:78px}
+  .alt-grid p{margin:0;padding:14px 16px 16px;font-size:15px;line-height:1.4;font-weight:600;letter-spacing:-.02em}
+  .alt-grid article.hot{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 16px 36px -16px rgba(92,107,62,.7)}
+  .alt-grid article.hot .alt-face{background:#F4F6EF}
+  .alt-grid article.hot p{font-weight:800;color:#fff}
 
   .footer{background:#fff;color:var(--gray);padding:28px 6vw 36px;border-top:1px solid var(--line)}
   .footer .f-logo{font-weight:700;margin-bottom:8px;color:var(--black)}
@@ -131,11 +134,11 @@
     .alt{padding:24px 20px 56px}
     .alt h2{font-size:clamp(26px,7vw,30px)}
     .alt-lead{font-size:17px;margin:0 auto 28px;line-height:1.4}
-    .alt-grid{grid-template-columns:1fr;gap:12px;margin:0 0 28px}
-    .alt-grid article{display:flex;flex-direction:column}
-    .alt-face{width:auto;height:112px;margin:0;border-radius:0}
-    .alt-face svg{width:78%;max-height:88px}
-    .alt-grid p{padding:14px 16px 18px;font-size:15.5px}
+    .alt-grid{grid-template-columns:1fr;gap:10px;margin:0 0 24px}
+    .alt-grid article{display:flex;flex-direction:column;border-radius:16px}
+    .alt-face{width:auto;height:80px;margin:0;border-radius:0}
+    .alt-face svg{width:74%;max-height:64px}
+    .alt-grid p{padding:12px 14px 14px;font-size:14.5px}
     .footer{padding:28px 20px 36px;text-align:center}
     .footer p{margin-left:auto;margin-right:auto}
   }
@@ -333,7 +336,7 @@
           </div>
           <p>Имеет научную базу, чёткую структуру и понятные цели</p>
         </article>
-        <article>
+        <article class="hot">
           <div class="alt-face" aria-hidden="true">
             <svg viewBox="0 0 220 90" fill="none">
               <circle cx="72" cy="28" r="12" fill="#7A8C52"/>
