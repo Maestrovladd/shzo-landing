@@ -26,8 +26,8 @@
   .hero-left{position:relative;display:flex;flex-direction:column;justify-content:center;min-width:0;padding:64px 56px 64px 7vw}
   .hero-left>*{position:relative;z-index:1}
   .eyebrow{display:inline-flex;align-items:center;width:max-content;background:var(--g);color:#fff;padding:10px 18px;border-radius:999px;font-size:15px;font-weight:600;margin:0 0 28px}
-  h1{font-size:clamp(48px,6.4vw,96px);font-weight:800;line-height:.9;letter-spacing:-.045em;margin:0 0 20px;max-width:100%;color:var(--black)}
-  h1 .line1{display:block;font-size:.7em;line-height:.95;white-space:nowrap}
+  h1{font-size:clamp(48px,6.4vw,96px);font-weight:800;line-height:1.05;letter-spacing:-.045em;margin:0 0 20px;max-width:100%;color:var(--black)}
+  h1 .line1{display:block;font-size:.7em;line-height:1.15;white-space:nowrap}
   h1 em{display:block;font-style:normal;font-weight:800;font-size:1em;color:var(--black);margin:0;white-space:nowrap}
   .offer{display:block;margin:4px 0 36px;font-size:clamp(20px,1.9vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.35;color:var(--black);max-width:22em}
   .offer .offer-mid{color:var(--g-dark);font-weight:800}
@@ -50,8 +50,8 @@
 
   .get{background:linear-gradient(180deg,#fff 0%,var(--g-pale) 100%);padding:96px 6vw 40px}
   .col{max-width:1080px;margin:0 auto}
-  .get h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;text-align:center;line-height:1.12;margin:0 auto 22px}
-  .get h2 em{font-style:normal;color:var(--g);white-space:nowrap}
+  .get h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;text-align:center;line-height:1.25;margin:0 auto 22px}
+  .get h2 em{display:block;font-style:normal;color:var(--g);white-space:nowrap}
   .subhead{text-align:center;font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--black);margin:10px 0 32px}
   .subhead:not(.also){width:max-content;margin:18px auto 36px;background:var(--g);color:#fff;padding:10px 20px;border-radius:999px;font-size:16px;font-weight:700}
   .subhead.also{width:auto;margin:28px auto 18px;background:none;color:var(--g-dark);padding:0;border-radius:0;font-size:clamp(20px,2vw,24px);font-weight:800;letter-spacing:-.02em}
@@ -78,7 +78,7 @@
 
   .alt{background:linear-gradient(180deg,var(--g-pale) 0%,#fff 72%);padding:36px 6vw 96px}
   .alt .col{max-width:1080px}
-  .alt h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.12;text-align:center;margin:0 auto 14px}
+  .alt h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.25;text-align:center;margin:0 auto 14px}
   .alt-lead{text-align:center;font-size:clamp(18px,2vw,22px);line-height:1.45;font-weight:600;color:var(--black);margin:0 auto 40px;max-width:28em}
   .alt-lead mark{display:inline;background:var(--g);color:#fff;font-weight:700;padding:.12em .4em;border-radius:999px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
   .alt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 32px;align-items:stretch}
@@ -113,7 +113,8 @@
     .photo-i{width:24px;height:24px;font-size:13px;top:-10px;left:8px}
     .photo-cap strong{font-size:16px}
     .photo-cap li{font-size:13px;line-height:1.35}
-    h1{font-size:clamp(40px,11vw,52px);line-height:1.05}
+    h1{font-size:clamp(40px,11vw,52px);line-height:1.15}
+    h1 .line1{line-height:1.2}
     h1 .line1,h1 em{white-space:normal}
     .offer{margin-left:auto;margin-right:auto;font-size:clamp(20px,5.2vw,26px);text-align:center;max-width:18em}
     .hero-actions{flex-direction:column;align-items:stretch;width:100%;max-width:none}
@@ -121,9 +122,8 @@
     .aside{text-align:left;width:100%}
     .get{padding:48px 20px 28px}
     .get .col{max-width:100%}
-    .get h2{font-size:clamp(26px,7vw,30px);margin:0 auto 18px}
-    .get h2 br{display:none}
-    .get h2 em{white-space:normal}
+    .get h2{font-size:clamp(26px,7vw,30px);margin:0 auto 18px;line-height:1.3}
+    .get h2 em{display:inline;white-space:normal}
     .subhead:not(.also){margin:8px auto 22px;font-size:15px;padding:9px 16px}
     .subhead.also{margin:22px auto 14px;font-size:18px;padding:0}
     .ephir{grid-template-columns:1fr;grid-template-areas:"a" "mid" "b";gap:12px}
@@ -194,7 +194,7 @@
 
   <section class="get" id="efir">
     <div class="col">
-      <h2>Только участники анкеты предзаписи смогут<br><em>попасть на закрытый эфир</em></h2>
+      <h2>Только участники анкеты предзаписи смогут <em>попасть на закрытый эфир</em></h2>
       <p class="subhead">на котором узнаете:</p>
       <div class="ephir">
         <ul class="ephir-a">
