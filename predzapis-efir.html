@@ -54,11 +54,15 @@
   .subhead{text-align:center;font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;color:var(--black);margin:10px 0 32px}
   .subhead:not(.also){width:max-content;margin:18px auto 36px;background:var(--g);color:#fff;padding:10px 20px;border-radius:999px;font-size:16px;font-weight:700}
   .subhead.also{width:max-content;margin:28px auto 18px;background:var(--g);color:#fff;padding:10px 20px;border-radius:999px;font-size:16px;font-weight:700}
-  .ephir{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  .ephir{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"a b" "shots shots";gap:20px;align-items:stretch}
+  .ephir-a{grid-area:a}
+  .ephir-b{grid-area:b}
+  .ephir-mid{display:none;grid-area:mid;margin:0;border-radius:14px;overflow:hidden}
+  .ephir-mid img{width:100%;height:auto;display:block;vertical-align:top}
   .ephir ul{list-style:none;display:flex;flex-direction:column;gap:22px;background:#fff;border:1px solid var(--line);border-radius:26px;padding:32px 28px;box-shadow:0 22px 50px -30px rgba(92,107,62,.5)}
   .ephir li{font-size:17px;line-height:1.45;font-weight:600;letter-spacing:-.02em;padding-left:22px;position:relative;color:var(--black)}
   .ephir li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:50%;background:var(--g);box-shadow:0 0 0 5px rgba(122,140,82,.14)}
-  .shots-rail{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:0;margin:20px 0 2px;width:100%;border-radius:16px;overflow:hidden}
+  .shots-rail{grid-area:shots;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:0;margin:0;width:100%;border-radius:16px;overflow:hidden}
   .shots-rail figure{position:relative;margin:0;height:104px;border-radius:0;overflow:hidden;background:var(--g-pale)}
   .shots-rail img{width:100%;height:100%;object-fit:cover;object-position:center}
   .also-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}
@@ -120,12 +124,11 @@
     .get h2 em{white-space:normal}
     .subhead:not(.also){margin:8px auto 22px;font-size:15px;padding:9px 16px}
     .subhead.also{margin:22px auto 14px;font-size:15px;padding:9px 16px}
-    .ephir{grid-template-columns:1fr;gap:12px}
+    .ephir{grid-template-columns:1fr;grid-template-areas:"a" "mid" "b";gap:12px}
     .ephir ul{padding:22px 20px;border-radius:22px;gap:16px;box-shadow:0 16px 36px -24px rgba(92,107,62,.45)}
     .ephir li{font-size:15.5px;line-height:1.42}
-    .shots-rail{display:flex;flex-wrap:nowrap;gap:0;margin:14px 0 0;width:100%;overflow-x:auto;overflow-y:hidden;border-radius:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-    .shots-rail::-webkit-scrollbar{display:none}
-    .shots-rail figure{flex:0 0 30%;width:30%;height:92px;aspect-ratio:auto;border-radius:0;scroll-snap-align:start}
+    .ephir-mid{display:block}
+    .shots-rail{display:none}
     .also-row{grid-template-columns:1fr;gap:10px}
     .also-row article{display:flex;flex-direction:column;border-radius:16px}
     .mini{width:auto;height:76px;margin:0;border-radius:0}
@@ -192,18 +195,20 @@
       <h2>Только участники анкеты предзаписи смогут<br><em>попасть на закрытый эфир</em></h2>
       <p class="subhead">на котором узнаете:</p>
       <div class="ephir">
-        <ul>
+        <ul class="ephir-a">
           <li>Красные флаги в отношениях</li>
           <li>Когда ни в коем случае нельзя идти на семейную психотерапию</li>
           <li>Когда отношения лучше завершить</li>
         </ul>
-        <ul>
+        <figure class="ephir-mid" aria-hidden="true">
+          <img src="assets/ephir-mid.png" alt="" width="1200" height="360" loading="lazy">
+        </figure>
+        <ul class="ephir-b">
           <li>Как правильно расставаться</li>
           <li>Как сохранить отношения и сделать их более здоровыми</li>
           <li>Как склеить «разбитую чашу» и восстановить утраченное доверие в отношениях</li>
         </ul>
-      </div>
-      <div class="shots-rail" aria-hidden="true">
+        <div class="shots-rail" aria-hidden="true">
         <figure>
           <img src="https://fs.getcourse.ru/fileservice/file/download/a/81178/sc/388/h/c24a3d771dd74a4f8d7e32f9cd7baa2f.jpg" alt="" width="764" height="616" loading="lazy">
         </figure>
@@ -231,6 +236,7 @@
         <figure>
           <img src="https://static.tildacdn.com/tild3637-3634-4364-a139-366535303566/o_1.jpg" alt="" width="800" height="1000" loading="lazy">
         </figure>
+      </div>
       </div>
       <p class="subhead also">а также:</p>
       <div class="also-row">
