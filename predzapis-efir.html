@@ -113,7 +113,8 @@
     .photo-i{width:24px;height:24px;font-size:13px;top:-10px;left:8px}
     .photo-cap strong{font-size:16px}
     .photo-cap li{font-size:13px;line-height:1.35}
-    h1{font-size:clamp(46px,12.5vw,58px)}
+    h1{font-size:clamp(40px,11vw,52px);line-height:1.05}
+    h1 .line1,h1 em{white-space:normal}
     .offer{margin-left:auto;margin-right:auto;font-size:clamp(20px,5.2vw,26px);text-align:center;max-width:18em}
     .hero-actions{flex-direction:column;align-items:stretch;width:100%;max-width:none}
     .hero .btn,.get .btn,.alt .btn{width:100%}
@@ -141,10 +142,10 @@
     .alt-lead{font-size:17px;margin:0 auto 28px;line-height:1.4}
     .alt-grid{grid-template-columns:1fr;gap:10px;margin:0 0 24px}
     .alt-grid article{display:flex;flex-direction:column;border-radius:16px}
-    .alt-face{width:auto;height:112px;aspect-ratio:auto;margin:0;border-radius:0}
-    .alt-face img{width:100%;height:100%;object-fit:contain}
-    .alt-grid p{padding:12px 14px 14px;font-size:14.5px}
-    .footer{padding:28px 20px 36px;text-align:center}
+    .alt-face{width:auto;height:132px;aspect-ratio:auto;margin:0;border-radius:0}
+    .alt-face img{width:100%;height:100%;object-fit:contain;object-position:center}
+    .alt-grid p{padding:14px 16px 16px;font-size:15px;text-align:center}
+    .footer{padding:28px 20px calc(36px + env(safe-area-inset-bottom));text-align:center}
     .footer p{margin-left:auto;margin-right:auto}
   }
   @media(max-width:420px){
