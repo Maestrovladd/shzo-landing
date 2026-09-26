@@ -1,4 +1,4 @@
-<!-- shzo-build: 2026-09-26-r71 fragment-no-html-body css-phone-page-safe gc-shell fig-lock prodazha -->
+<!-- shzo-build: 2026-09-26-r72 fragment-no-html-body css-phone-page-safe gc-shell fig-lock prodazha -->
 <!-- ФРАГМЕНТ для GetCourse: вставлять целиком, без html/body. Картинки с GitHub Pages. -->
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,17 +47,24 @@
     .s-label{display:inline-flex;align-items:center;height:28px;padding:0 12px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px}
     .how .s-label{height:44px;padding:0 18px;font-size:18px;font-weight:700;letter-spacing:-.02em;text-transform:none}
     .s-title{font-size:clamp(28px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.12;text-align:center;margin:0 auto 36px}
-    .how{background:#fff;overflow:visible}
-    .how-top{position:relative;text-align:center;margin-bottom:28px}
-    .how-top .s-title{margin:0 auto 0;max-width:14em}
+    .how{background:#fff;overflow:hidden}
+    .how-top{position:relative;text-align:center;margin-bottom:0}
+    .how-top .s-title{margin:0 auto 36px;max-width:14em}
     .how-top .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
-    .how-nav{display:none}
-    .how-rail{display:flex;flex-direction:column;gap:20px;margin:0 auto;max-width:720px;padding:0;overflow:visible}
-    .how-slide{flex:none;width:100%;background:var(--off-white);border-radius:var(--r);overflow:hidden;min-width:0}
-    .how-pic{position:relative;aspect-ratio:16/10;background:#EFEBE3;overflow:hidden}
+    .how-nav{position:absolute;right:0;bottom:0;display:flex;gap:8px}
+    .how-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gray-light);background:#fff;display:grid;place-items:center;color:var(--black);transition:border-color .18s cubic-bezier(.16,1,.3,1),background-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}
+    .how-btn:hover{border-color:var(--g);background:var(--g-pale)}
+    @media (hover:hover) and (pointer:fine){
+      .how-btn:hover{transform:translateY(-1px)}
+    }
+    .how-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none}
+    .how-rail{display:flex;flex-direction:row;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-top:0;padding-bottom:8px;max-width:none}
+    .how-rail::-webkit-scrollbar{display:none}
+    .how-slide{flex:0 0 320px;width:auto;scroll-snap-align:start;background:var(--off-white);border-radius:var(--r);overflow:hidden;min-width:0}
+    .how-pic{position:relative;aspect-ratio:4/3;background:#EFEBE3;overflow:hidden}
     .how-pic img{width:100%;height:100%;object-fit:cover;display:block}
-    .how-slide h3{margin:20px 28px 8px;font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.25;text-align:center}
-    .how-slide p{margin:0 28px 28px;font-size:16px;line-height:1.65;color:var(--gray);text-align:center}
+    .how-slide h3{margin:16px 20px 8px;font-size:18px;font-weight:800;letter-spacing:-.03em;line-height:1.25;text-align:left}
+    .how-slide p{margin:0 20px 22px;font-size:15px;line-height:1.7;color:var(--gray);text-align:left}
     .col{max-width:1080px;margin:0 auto}
     .alt{background:linear-gradient(180deg,var(--g-pale) 0%,#fff 72%);padding:28px 6vw 40px}
     .alt .col{max-width:1080px}
@@ -379,8 +386,11 @@
       .section{padding:32px 0 40px}
       .s-title{font-size:clamp(24px,6.4vw,30px);line-height:1.18;margin-bottom:24px;padding:0 4px}
       .how-top{text-align:center}
+      .how-nav{display:none}
       .how-top .s-title{max-width:none;margin-bottom:20px}
-      .how-rail{max-width:none;gap:14px}
+      .how-slide h3,.how-slide p{text-align:center}
+      .how-rail{flex-direction:column;gap:14px;overflow:visible;scroll-snap-type:none;max-width:none;padding:0;margin:0}
+      .how-slide{flex:none;width:100%;max-width:none}
       .how-slide h3{margin:16px 18px 6px;font-size:18px}
       .how-slide p{margin:0 18px 20px;font-size:14px;line-height:1.55}
       .how-pic{aspect-ratio:4/3}
@@ -511,7 +521,12 @@
     .site-foot{padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))!important}
     html.is-phone .page{display:block!important;opacity:1!important;visibility:visible!important;max-height:none!important;aspect-ratio:auto!important;overflow:visible!important}
     html.is-phone .mid-cta .btn{width:100%!important;min-width:0!important}
-    html.is-phone .how-rail{max-width:none!important}
+    html.is-phone .how-nav{display:none!important}
+    html.is-phone .how-rail{flex-direction:column!important;gap:14px!important;overflow:visible!important;scroll-snap-type:none!important;max-width:none!important;padding:0!important;margin:0!important}
+    html.is-phone .how-slide{flex:none!important;width:100%!important;max-width:none!important}
+    html.is-phone .how-slide h3,html.is-phone .how-slide p{text-align:center!important}
+    html.is-phone .how-slide h3{margin:16px 18px 6px!important;font-size:18px!important}
+    html.is-phone .how-slide p{margin:0 18px 20px!important;font-size:14px!important;line-height:1.55!important}
     html.is-phone .price-grid{grid-template-columns:1fr!important}
     html.is-phone .price-card.is-hit{margin-top:0!important}
     html.is-phone .formula-grid{grid-template-columns:1fr!important}
@@ -826,8 +841,14 @@
   <section class="how section" id="how">
     <div class="container">
       <div class="how-top">
-        <div class="s-label">Внутри вас ждет:</div>
-        <h2 class="s-title">Как устроена <em>Школа здоровых&nbsp;отношений</em></h2>
+        <div>
+          <div class="s-label">Внутри вас ждет:</div>
+          <h2 class="s-title">Как устроена <em>Школа здоровых&nbsp;отношений</em></h2>
+        </div>
+        <div class="how-nav">
+          <button class="how-btn" type="button" data-how="-1" aria-label="Листать влево"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <button class="how-btn" type="button" data-how="1" aria-label="Листать вправо"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
       </div>
       <div class="how-rail" id="how-rail">
         <article class="how-slide">
@@ -1117,6 +1138,17 @@
       }
       document.querySelectorAll('a[href="#price"]').forEach(function (link) {
         link.addEventListener("click", scrollToPrice);
+      });
+
+      var rail = document.getElementById("how-rail");
+      document.querySelectorAll("[data-how]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          if (!rail) return;
+          var card = rail.querySelector(".how-slide");
+          if (!card) return;
+          var step = card.getBoundingClientRect().width + 16;
+          rail.scrollBy({ left: Number(btn.getAttribute("data-how")) * step, behavior: reduce ? "auto" : "smooth" });
+        });
       });
 
       document.querySelectorAll(".mod:not(.is-fixed) .mod-head").forEach(function (btn) {
