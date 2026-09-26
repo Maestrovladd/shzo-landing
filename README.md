@@ -1,27 +1,31 @@
-# Школа здоровых отношений
+# Ленды ШЗО
 
-Три страницы. Три задачи.
+## GetCourse — пакеты для техспеца
 
-## Анкета предзаписи
+| Что | Папка | Файл |
+|---|---|---|
+| Лист ожидания | `ГК_ЛИСТ_ОЖИДАНИЯ/` | `predzapis.html` |
+| Анкета предзаписи | `ГК_АНКЕТА_ПРЕДЗАПИСИ/` | `predzapis-efir.html` |
+| Продающая страница | `ГК_ПРОДАЖА/` | `prodazha.html` |
 
-[maestrovladd.github.io/shzo-landing/predzapis.html](https://maestrovladd.github.io/shzo-landing/predzapis.html)
+В каждой папке: `КАК_ВСТАВИТЬ.html` и короткий `README_ДЛЯ_ТЕХСПЕЦА.txt`.
 
-Три экрана. Форма только в попапе. Не касса Школы.
+## Живой сайт (GitHub Pages)
 
-Локально: `predzapis.html`
+Нужен для эталона в браузере. Не путать с выгрузкой в GetCourse.
 
-## Сайт продукта
+| Страница | Ссылка |
+|---|---|
+| Продающая | https://maestrovladd.github.io/shzo-landing/prodazha.html?r=70 |
+| Лист ожидания | https://maestrovladd.github.io/shzo-landing/predzapis.html |
+| Анкета предзаписи | https://maestrovladd.github.io/shzo-landing/predzapis-efir.html |
+| Сайт продукта | https://maestrovladd.github.io/shzo-landing/ |
+| Старый эфир | https://maestrovladd.github.io/shzo-landing/efir.html |
 
-[maestrovladd.github.io/shzo-landing](https://maestrovladd.github.io/shzo-landing/)
+Локально на корне: `prodazha.html`, `predzapis.html`, `predzapis-efir.html`, `index.html`, `efir.html`, `assets/`.
 
-12 недель. 16 900 / 26 900. Оплата: [psyfactum.com/school_hr](https://psyfactum.com/school_hr)
+Эксперименты стиля (не для GetCourse): `prodazha-kralow.html`, `prodazha-alifer.html`.
 
-Локально: `index.html`
+## `_служебное/`
 
-## Закрытый эфир
-
-[maestrovladd.github.io/shzo-landing/efir.html](https://maestrovladd.github.io/shzo-landing/efir.html)
-
-Регистрация на закрытый эфир для анкеты предзаписи. Не касса Школы.
-
-Локально: `efir.html`
+Черновики, дизайн, скрины проверок, старые копии. В GetCourse и на Pages не открывать.

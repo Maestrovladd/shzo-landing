@@ -1,0 +1,1240 @@
+<!-- shzo-build: 2026-09-26-r70 fragment-no-html-body css-phone-page-safe gc-shell fig-lock prodazha -->
+<!-- ФРАГМЕНТ для GetCourse: вставлять целиком, без html/body. Картинки с GitHub Pages. -->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="only light">
+  <script>
+    (function () {
+      try {
+        /* Не screen.height: у MacBook ~900 и ломает «телефон». Телефон = UA или узкое окно. */
+        var html = document.documentElement;
+        var ua = navigator.userAgent || "";
+        var iw = window.innerWidth || html.clientWidth || 9999;
+        var shortSide = Math.min(screen.width || 9999, screen.height || 9999);
+        var phoneUA = /iPhone|iPod|Android.+Mobile|Windows Phone|IEMobile|webOS|BlackBerry/i.test(ua);
+        var narrow = iw <= 768;
+        var tinyDevice = shortSide <= 520;
+        if (phoneUA || narrow || tinyDevice) html.classList.add("is-phone");
+        else html.classList.remove("is-phone");
+        window.addEventListener("resize", function () {
+          var w = window.innerWidth || html.clientWidth || 9999;
+          html.classList.toggle("is-phone", phoneUA || tinyDevice || w <= 768);
+        });
+      } catch (e) {}
+    })();
+  </script>
+  <title>Школа здоровых отношений</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:only light;
+      --g:#7A8C52;--g-dark:#5C6B3E;--g-light:#EFF2E8;--g-pale:#F5F7F1;
+      --black:#1A1A1A;--gray:#6B7180;--gray-light:#E5E7EB;--off-white:#F9F8F5;--line:#E4E8DC;
+      --r:20px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;color-scheme:only light;background:#fff}
+    body{font-family:Figtree,ui-sans-serif,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--black);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+    img{display:block;max-width:100%}
+    button{font-family:inherit;cursor:pointer;border:none;background:none}
+    .container{max-width:1280px;margin:0 auto;padding:0 48px}
+    .how-slide p{overflow-wrap:break-word}
+    .s-title,.how-slide h3{text-wrap:balance}
+    .how-slide p{text-wrap:pretty}
+    .section{padding:48px 0 64px}
+    .s-label{display:inline-flex;align-items:center;height:28px;padding:0 12px;border:1.5px solid var(--g);border-radius:50px;font-size:11px;font-weight:700;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:16px}
+    .how .s-label{height:44px;padding:0 18px;font-size:18px;font-weight:700;letter-spacing:-.02em;text-transform:none}
+    .s-title{font-size:clamp(28px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;line-height:1.12;text-align:center;margin:0 auto 36px}
+    .how{background:#fff;overflow:visible}
+    .how-top{position:relative;text-align:center;margin-bottom:28px}
+    .how-top .s-title{margin:0 auto 0;max-width:14em}
+    .how-top .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
+    .how-nav{display:none}
+    .how-rail{display:flex;flex-direction:column;gap:20px;margin:0 auto;max-width:720px;padding:0;overflow:visible}
+    .how-slide{flex:none;width:100%;background:var(--off-white);border-radius:var(--r);overflow:hidden;min-width:0}
+    .how-pic{position:relative;aspect-ratio:16/10;background:#EFEBE3;overflow:hidden}
+    .how-pic img{width:100%;height:100%;object-fit:cover;display:block}
+    .how-slide h3{margin:20px 28px 8px;font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.25;text-align:center}
+    .how-slide p{margin:0 28px 28px;font-size:16px;line-height:1.65;color:var(--gray);text-align:center}
+    .col{max-width:1080px;margin:0 auto}
+    .alt{background:linear-gradient(180deg,var(--g-pale) 0%,#fff 72%);padding:28px 6vw 40px}
+    .alt .col{max-width:1080px}
+    .alt h2{font-size:clamp(32px,3.6vw,46px);font-weight:800;letter-spacing:-.035em;line-height:1.25;text-align:center;margin:0 auto 28px}
+    .alt-lead{text-align:center;font-size:clamp(18px,2vw,22px);line-height:1.45;font-weight:600;color:var(--black);margin:0 auto 40px;max-width:34em}
+    .alt-lead mark{display:inline;background:var(--g);color:#fff;font-weight:700;padding:.12em .4em;border-radius:999px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+    .alt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0;align-items:stretch}
+    .alt-grid article{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 14px 32px -22px rgba(92,107,62,.45);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1)}
+    @media (hover:hover) and (pointer:fine){
+      .alt-grid article:hover{transform:translateY(-3px);box-shadow:0 20px 40px -20px rgba(92,107,62,.55)}
+      .alt-grid article.hot:hover{box-shadow:0 22px 42px -16px rgba(92,107,62,.75)}
+    }
+    .alt-face{height:168px;margin:0;background:#F6F1E8;overflow:hidden}
+    .alt-face img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+    .alt-grid p{margin:0;padding:14px 16px 16px;font-size:15px;line-height:1.4;font-weight:600;letter-spacing:-.02em}
+    .alt-grid article.hot{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 16px 36px -16px rgba(92,107,62,.7)}
+    .alt-grid article.hot .alt-face{background:#F4F6EF}
+    .alt-grid article.hot p{font-weight:800;color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;background:var(--g);color:#fff;border-radius:50px;font-size:16px;font-weight:700;letter-spacing:-.01em;text-decoration:none;transition:transform .18s cubic-bezier(.16,1,.3,1),background-color .18s cubic-bezier(.16,1,.3,1),box-shadow .18s cubic-bezier(.16,1,.3,1);box-shadow:0 8px 20px -12px rgba(92,107,62,.55);will-change:auto}
+    .btn:hover{background:var(--g-dark)}
+    .btn:active{transform:translateY(1px);box-shadow:0 4px 12px -10px rgba(92,107,62,.5)}
+    @media (hover:hover) and (pointer:fine){
+      .btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(92,107,62,.6)}
+      .btn:active{transform:translateY(0)}
+    }
+    .hero{position:relative;height:100svh;min-height:560px;display:grid;grid-template-columns:1fr 1fr}
+    .hero-left{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:32px 48px;min-width:0}
+    .hero-left::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,var(--g-light) 0%,transparent 70%);left:-90px;top:12%;pointer-events:none}
+    .hero-left > *{position:relative;z-index:1}
+    .hero-pill{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;height:44px;padding:0 18px;margin:0 0 18px;background:var(--g);color:#fff;border-radius:999px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .hero-pill i{width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0}
+    .hero h1{font-size:clamp(40px,4.6vw,64px);font-weight:800;line-height:1.12;letter-spacing:-.045em;margin:0 0 18px;padding:0;max-width:8em}
+    .hero h1 em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 62%,var(--g-light) 62%);padding:0 .06em .04em}
+    .hero-lead{font-size:clamp(18px,1.5vw,22px);color:#2C2C2C;line-height:1.35;margin:0 0 6px;max-width:none;font-weight:600;letter-spacing:-.02em}
+    .hero-offer{white-space:nowrap;font-size:1.12em;font-weight:800;font-style:italic;letter-spacing:-.03em;color:var(--g-dark)}
+    .hero-next{margin:0 0 28px;font-size:clamp(20px,1.7vw,26px);font-weight:700;letter-spacing:-.03em;line-height:1.2;color:#2C2C2C}
+    .hero-self{position:relative;display:inline-block;color:var(--g-dark);font-style:italic;font-weight:800;padding-bottom:7px}
+    .hero-self svg{position:absolute;left:-2px;right:-2px;bottom:0;width:calc(100% + 4px);height:8px;overflow:visible}
+    .hero .btn{min-width:280px;padding:0 56px}
+    .hero-pill,.hero h1,.hero-lead,.hero-next,.hero .btn,.hero-right{opacity:1;visibility:visible;transform:none}
+    .hero-right{position:relative;background:#BBC2CB;overflow:hidden;min-width:0}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%}
+    .hero-right::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;border:1px solid rgba(255,255,255,.45);right:-40px;top:36px;pointer-events:none}
+    .photo-cap{position:absolute;left:24px;bottom:24px;z-index:2;width:min(340px,calc(100% - 40px));padding:22px 22px 20px 24px;background:#fff;border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.18)}
+    .photo-i{position:absolute;top:-13px;left:-8px;width:32px;height:32px;border-radius:50%;background:var(--black);color:#fff;font-family:Georgia,Times,"Times New Roman",serif;font-style:italic;font-weight:700;font-size:17px;line-height:1;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+    .photo-cap strong{display:block;font-size:22px;font-weight:800;letter-spacing:-.035em;line-height:1.15}
+    .photo-cap ul{list-style:disc;margin:12px 0 0;padding-left:1.15em}
+    .photo-cap li{font-size:14px;line-height:1.45;color:#3A3A3A;font-weight:500}
+    .photo-cap li + li{margin-top:8px}
+    .formula{background:#fff;padding:48px 0 64px}
+    .formula-title{font-size:clamp(18px,1.85vw,25px);font-weight:700;letter-spacing:-.02em;line-height:1.35;max-width:100%;width:100%;margin:0 auto 36px;padding:0;box-sizing:border-box;text-align:center}
+    .formula-mark{color:var(--g-dark);box-shadow:inset 0 -0.28em 0 var(--g-light)}
+    .formula-grid{display:grid;grid-template-columns:minmax(240px,300px) minmax(0,1fr);gap:14px;align-items:stretch;width:100%;margin:0 auto}
+    .formula-me{background:#E4E8DC;border-radius:22px;padding:0 0 22px;display:flex;flex-direction:column;min-width:0;overflow:hidden}
+    .formula-face{width:100%;flex:none;height:340px;min-height:0;object-fit:cover;object-position:68% top;display:block;margin:0 0 12px;transform:none}
+    .formula-me h3{font-size:28px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:0 0 4px;padding:0 20px}
+    .formula-me .author-name{font-size:18px;font-weight:700;margin:0;padding:0 20px}
+    .formula-me .author-line{display:flex;gap:8px;align-items:flex-start;margin:8px 0 0;padding:0 20px;font-size:13px;line-height:1.35;font-weight:550}
+    .formula-me .author-line i{width:7px;height:7px;border-radius:50%;background:var(--g);flex:0 0 7px;margin-top:.4em}
+    .formula-facts{list-style:none;margin:6px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+    .formula-facts li{display:flex;gap:8px;align-items:flex-start;font-size:15px;line-height:1.4;font-weight:550}
+    .formula-facts i{width:7px;height:7px;border-radius:50%;background:var(--g);flex:0 0 7px;margin-top:.45em}
+    .formula-story{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px 26px 22px;box-shadow:0 18px 40px -28px rgba(92,107,62,.55);display:flex;flex-direction:column;justify-content:flex-start;gap:12px}
+    .formula-story p{font-size:16px;line-height:1.5;font-weight:500}
+    .formula-sum{margin:28px 0 0;font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:-.03em;line-height:1.35;max-width:22em}
+    .formula-cta{display:flex;justify-content:center;margin-top:28px}
+    .mid-cta{display:flex;justify-content:center;margin:36px 0 8px}
+    .mid-cta .btn{min-width:260px}
+    .learn{background:var(--g-pale);padding:48px 0 56px}
+    .learn-title{font-size:clamp(32px,3.6vw,44px);font-weight:800;letter-spacing:-.045em;line-height:1.05;margin:0 auto 36px;text-align:center}
+    .learn-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
+    .learn-stage{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:16px;align-items:stretch}
+    .learn-menu{display:flex;flex-direction:column;gap:4px}
+    .learn-menu button{text-align:left;font:inherit;font-size:16px;font-weight:700;letter-spacing:-.02em;color:#3d3d3d;background:transparent;border:0;border-radius:14px;padding:12px 16px;cursor:pointer;transition:background-color .18s cubic-bezier(.16,1,.3,1),color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}
+    .learn-menu button.is-on{background:var(--g-dark);color:#fff}
+    .learn-menu button:hover:not(.is-on){background:#fff}
+    .learn-panel{position:relative;border-radius:28px;min-height:560px;overflow:hidden;background:#C5CBB8}
+    .learn-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1)}
+    .learn-shade{display:none}
+    .learn-nav{position:absolute;top:18px;right:18px;z-index:2;display:flex;align-items:center;gap:8px}
+    .learn-nav button{width:46px;height:46px;border-radius:50%;background:#fff;color:#1A1A1A;display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.18);cursor:pointer;transition:transform .18s cubic-bezier(.16,1,.3,1),background-color .18s cubic-bezier(.16,1,.3,1)}
+    .learn-nav button:hover{background:var(--g-pale)}
+    @media (hover:hover) and (pointer:fine){
+      .learn-menu button:hover:not(.is-on){transform:translateX(3px)}
+      .learn-nav button:hover{transform:translateY(-1px)}
+    }
+    .learn-nav svg{width:16px;height:16px;stroke:currentColor;stroke-width:2.2;fill:none}
+    .learn-count{height:46px;padding:0 14px;border-radius:999px;background:#fff;display:inline-flex;align-items:center;font-size:14px;font-weight:800;letter-spacing:-.02em;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+    .learn-copy{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;color:#fff;background:rgba(92,107,62,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:18px;padding:14px 16px 16px}
+    .learn-copy small{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#E4E8DC;margin-bottom:6px}
+    .learn-copy p{font-size:clamp(16px,1.35vw,20px);font-weight:700;letter-spacing:-.02em;line-height:1.35;margin:0;color:#fff;max-width:36em}
+    @media (prefers-reduced-motion:no-preference){
+      .learn-copy p{animation:learn-rise .35s ease-out}
+      .learn-next{animation:learn-nudge 1.5s ease-in-out 3}
+    }
+    @keyframes learn-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    @keyframes learn-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+    .voices{background:#F3F1EB;padding:36px 0 28px;overflow:hidden}
+    .voices h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;letter-spacing:-.035em;line-height:1.15;text-align:center;margin:0 auto 40px;max-width:none;white-space:nowrap}
+    .voice-row{display:flex;gap:12px;width:max-content;margin-bottom:12px;animation:voices-move 42s linear infinite!important;animation-play-state:running!important;will-change:transform;transform:translate3d(0,0,0)}
+    .voice-row.back{animation-name:voices-move-back!important;animation-duration:48s!important}
+    .voice-card{width:360px;flex:0 0 360px;background:#3E4A2E;color:#fff;border-radius:22px;padding:16px 16px 18px;display:flex;gap:12px;align-items:flex-start}
+    .voice-ava{width:44px;height:44px;border-radius:50%;background:#E4E8DC;color:var(--g-dark);display:grid;place-items:center;font-weight:800;flex:0 0 44px}
+    .voice-card b{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
+    .voice-card p{font-size:15px;line-height:1.4;font-weight:500}
+    .voice-card em{font-style:normal;font-weight:800;color:#D5E2B8}
+    @keyframes voices-move{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+    @keyframes voices-move-back{from{transform:translate3d(-50%,0,0)}to{transform:translate3d(0,0,0)}}
+    @media(prefers-reduced-motion:reduce){
+      .voice-row{animation-duration:90s}
+      .voice-row.back{animation-duration:100s}
+    }
+    .prog{background:#F7F6F2;padding:48px 0 64px}
+    .prog .s-title{margin-bottom:32px}
+    .prog .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
+    .mod{padding:36px 0 28px;border-top:1px solid #DDD9D0}
+    .mod-toggle{position:relative;flex:0 0 36px;width:36px;height:36px;margin-top:2px;border-radius:50%;border:1.5px solid #C8C4BA;background:#fff;transition:border-color .18s cubic-bezier(.16,1,.3,1),background-color .18s cubic-bezier(.16,1,.3,1),transform .18s cubic-bezier(.16,1,.3,1)}
+    .mod-toggle::before,.mod-toggle::after{content:"";position:absolute;left:50%;top:50%;background:#1A1A1A;border-radius:1px;transform:translate(-50%,-50%);transition:transform .22s cubic-bezier(.16,1,.3,1)}
+    .mod-toggle::before{width:14px;height:1.6px}
+    .mod-toggle::after{width:1.6px;height:14px}
+    .mod.is-open .mod-toggle{border-color:var(--g);background:var(--g-pale)}
+    .mod.is-open .mod-toggle::before,.mod.is-open .mod-toggle::after{transform:translate(-50%,-50%) rotate(45deg)}
+    .mod:not(.is-open) .mod-body{display:none}
+    .mod.is-open .mod-body{margin-top:18px;animation:mod-rise .38s cubic-bezier(.16,1,.3,1)}
+    @keyframes mod-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    .mod-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;width:100%;margin:0;padding:0;border:0;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:color .18s cubic-bezier(.16,1,.3,1)}
+    .mod.is-fixed .mod-head{cursor:default}
+    .mod-head h3{font-size:clamp(16px,1.45vw,19px);font-weight:500;letter-spacing:-.02em;line-height:1.3;max-width:22em}
+    .mod-head h3 b{font-weight:800}
+    @media (hover:hover) and (pointer:fine){
+      .mod:not(.is-fixed) .mod-head:hover .mod-toggle{transform:scale(1.06)}
+    }
+    .mod-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.78fr);gap:28px 40px;align-items:start}
+    .mod-lessons{list-style:none;display:flex;flex-direction:column;gap:8px}
+    .mod-lessons li{position:relative;padding-left:16px;font-size:14px;line-height:1.4;font-weight:500}
+    .mod-lessons li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--black)}
+    .mod-result{background:var(--g-dark);color:#fff;border-radius:6px;padding:16px 18px 18px}
+    .mod-result strong{display:block;font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+    .mod-result p{font-size:14px;line-height:1.45;font-weight:500}
+    .reviews{background:#fff;padding:28px 0 32px}
+    .reviews h2{font-size:clamp(32px,4vw,48px);font-weight:800;letter-spacing:-.045em;line-height:1.1;text-align:center;margin:0 auto 36px;max-width:16em}
+    .review-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:920px;margin:0 auto}
+    .review-card{position:relative;border:0;padding:0;background:none;cursor:pointer;border-radius:22px;overflow:hidden;aspect-ratio:840/1371;display:block;width:100%;transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1)}
+    .review-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+    .review-play{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);display:grid;place-items:center;transition:transform .18s cubic-bezier(.16,1,.3,1),box-shadow .18s cubic-bezier(.16,1,.3,1)}
+    .review-play svg{width:22px;height:22px;margin-left:3px}
+    .review-card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    @media (hover:hover) and (pointer:fine){
+      .review-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -20px rgba(92,107,62,.45)}
+      .review-card:hover img{transform:scale(1.03)}
+      .review-card:hover .review-play{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 14px 28px rgba(0,0,0,.22)}
+    }
+    .author{background:#fff;padding:72px 0}
+    .author-grid{display:grid;grid-template-columns:minmax(280px,.9fr) 1.15fr;gap:48px;align-items:center}
+    .author-photo{background:#D5E0B4;border-radius:22px;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;min-height:460px}
+    .author-photo img{width:100%;height:520px;object-fit:contain;object-position:center bottom;display:block}
+    .author h2{font-size:clamp(36px,4vw,52px);font-weight:800;letter-spacing:-.045em;line-height:1.05;margin:0 0 8px}
+    .author-name{font-size:22px;font-weight:700;letter-spacing:-.02em;margin:0 0 22px}
+    .author-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+    .author-list li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.4;font-weight:550}
+    .author-list i{width:10px;height:10px;border-radius:50%;background:var(--g);flex:0 0 10px;margin-top:.45em}
+    .price{background:#F3F1EB;padding:28px 0 64px;scroll-margin-top:24px}
+    .price h2{font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.045em;line-height:1.12;text-align:center;margin:0 auto 28px;max-width:16em}
+    .price-banner{width:min(816px,100%);margin:0 auto 6px;background:var(--g-dark);color:#fff;text-align:center;border-radius:16px;padding:18px 28px;font-size:clamp(22px,2.2vw,30px);font-weight:700;font-style:italic;letter-spacing:-.02em;line-height:1.2}
+    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,400px));justify-content:center;gap:16px;align-items:stretch}
+    .price-card{position:relative;background:#F7F5F0;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;border:1px solid #E6E2D8;transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1),border-color .22s cubic-bezier(.16,1,.3,1)}
+    .price-card.is-hit{background:#E4E8DC;border-color:#C9D0B8;box-shadow:0 16px 36px -22px rgba(92,107,62,.5)}
+    @media (hover:hover) and (pointer:fine){
+      .price-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(92,107,62,.55);border-color:#D5DCC8}
+      .price-card.is-hit:hover{border-color:#B7C0A0;box-shadow:0 22px 40px -20px rgba(92,107,62,.58)}
+    }
+    .price-hit{position:absolute;z-index:2;top:5px;left:50%;transform:translateX(-50%);height:20px;padding:0 12px;border-radius:999px;background:var(--g-dark);color:#fff;display:flex;align-items:center;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+    .price-access{background:#8E9478;color:#fff;text-align:center;font-size:15px;font-weight:650;padding:12px 16px;border-radius:14px;margin:0 0 16px}
+    .price-body{padding:28px 28px 24px;display:flex;flex-direction:column;flex:1}
+    .price-lead{min-height:88px}
+    .price-body h3{font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.2;text-align:center;margin:0 0 6px}
+    .price-sub{text-align:center;font-size:15px;line-height:1.4;font-weight:500;color:#5C5C5C;margin:0 0 22px}
+    .price-list{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:12px}
+    .price-list li{font-size:16px;line-height:1.4;font-weight:650;padding-left:18px;position:relative}
+    .price-list li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--g-dark)}
+    .price-bonus{background:#E4E8DC;border-radius:14px;padding:12px 14px 14px;margin:0 0 20px;text-align:left}
+    .price-card.is-hit .price-bonus{background:#F7F5F0;border:1px solid #E6E2D8}
+    .price-bonus b{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px}
+    .price-bonus p{font-size:14px;line-height:1.4;font-weight:550}
+    .price-sum{text-align:center;margin-top:auto}
+    .price-old{font-size:28px;font-weight:650;color:#6E6E6E;text-decoration:line-through;text-decoration-thickness:2px;letter-spacing:-.03em}
+    .price-now{font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:4px 0 18px}
+    .price-pay,.price-parts{display:flex;align-items:center;justify-content:center;width:100%;height:56px;border-radius:999px;font-size:17px;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .18s cubic-bezier(.16,1,.3,1),background-color .18s cubic-bezier(.16,1,.3,1),box-shadow .18s cubic-bezier(.16,1,.3,1)}
+    .price-pay{background:#2A2A2A;color:#fff;margin-bottom:10px}
+    .price-parts{background:#C3C6B4;color:#1A1A1A}
+    @media (hover:hover) and (pointer:fine){
+      .price-pay:hover{transform:translateY(-2px);background:#111;box-shadow:0 12px 24px -12px rgba(0,0,0,.4)}
+      .price-parts:hover{transform:translateY(-2px);background:#B5B8A6}
+      .price-pay:active,.price-parts:active{transform:translateY(0)}
+    }
+    .live{background:var(--g-pale);padding:28px 0 64px}
+    .live-block{background:#fff;border-radius:24px;padding:40px 40px 32px}
+    .s-labels{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+    .s-labels .s-label{margin-bottom:0}
+    .upd{display:grid;grid-template-columns:1.05fr .95fr;column-gap:40px;align-items:stretch}
+    .upd-copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+    .upd-stage{height:0;min-height:100%;min-width:0}
+    .upd-aside{height:100%;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+    .upd-phone-slot{flex:1 1 0;min-height:0;min-width:0;display:flex;align-items:flex-start}
+    .upd-phone{width:min(248px,100%);height:auto;aspect-ratio:390/640;flex:0 0 auto;display:flex;flex-direction:column;position:relative;padding:1.7% 1.9% 2%;border-radius:13%/7.9%;background:linear-gradient(160deg,#f3e6cf 0%,#cbb58e 28%,#8a7354 58%,#2b241c 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 0 0 1.2px rgba(255,255,255,.22),0 18px 36px rgba(40,28,12,.22)}
+    .upd-phone:before,.upd-phone:after{content:"";position:absolute;background:#3a3228;border-radius:2px}
+    .upd-phone:before{left:-1.15%;top:16%;width:1.15%;height:8%;box-shadow:0 14px 0 0 #3a3228,0 26px 0 0 #3a3228}
+    .upd-phone:after{right:-1.15%;top:22%;width:1.15%;height:11%}
+    .upd-phone-glass{flex:1 1 auto;width:100%;min-height:0;height:auto;border-radius:11.2%/6.8%;overflow:hidden;position:relative;background:#e8f3dc;box-shadow:inset 0 0 0 1px #111;display:flex;flex-direction:column}
+    .upd-island{position:absolute;z-index:4;top:1.05%;left:50%;width:32%;height:3.35%;transform:translateX(-50%);border-radius:999px;background:#050505;box-shadow:0 0 0 2px #111, inset 0 1px 1px rgba(255,255,255,.1)}
+    .upd-island i{position:absolute;right:10%;top:50%;width:24%;aspect-ratio:1;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle at 35% 32%,#4a6a7c 0 18%,#1a303c 42%,#070b0e 100%);box-shadow:inset 0 0 0 .6px rgba(255,255,255,.18)}
+    .upd-ios{position:relative;z-index:3;flex:0 0 8.2%;display:flex;align-items:flex-end;justify-content:space-between;padding:0 5.6% 1.6% 6.4%;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;font-weight:600;font-size:11px;letter-spacing:-.03em;line-height:1}
+    .upd-ios-sys{display:flex;align-items:center;gap:3px;height:11px}
+    .upd-ios-sys svg{display:block;height:11px;width:auto;fill:#111}
+    .upd-phone-img{display:block;flex:1 1 0;min-height:0;width:100%;height:auto;object-fit:cover;object-position:top center}
+    .upd-home{position:absolute;z-index:3;left:50%;bottom:1.35%;width:30%;height:.7%;transform:translateX(-50%);border-radius:999px;background:#1a1a1a;opacity:.9}
+    .upd-what{margin:0;padding:20px 22px;background:var(--off-white);border-radius:18px}
+    .live .s-title{text-align:left;max-width:14em;margin:0 0 24px}
+    .live .s-title em{font-style:italic;font-weight:800;color:var(--g-dark);background:linear-gradient(180deg,transparent 64%,var(--g-light) 64%);padding:0 .04em}
+    .upd-lead{margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#2C2C2C;max-width:34em}
+    .upd-what p{margin:0;font-size:16px;line-height:1.65;color:#2C2C2C;font-weight:500}
+    .upd-what p + p{margin-top:12px}
+    .upd-what ul{margin:12px 0 0;padding:0;list-style:none}
+    .upd-what ul + p{margin-top:14px}
+    .upd-what li{position:relative;margin-top:8px;padding-left:1.15em;font-size:16px;line-height:1.5;color:#2C2C2C;font-weight:500}
+    .upd-what li:first-child{margin-top:4px}
+    .upd-what li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--g)}
+    .upd-note{margin:0;padding:14px 16px 14px 18px;background:var(--g-pale);border:1.5px solid var(--g);border-radius:16px;box-shadow:inset 4px 0 0 var(--g);width:100%;box-sizing:border-box}
+    .upd-note strong{display:block;font-size:15px;font-weight:800;letter-spacing:-.02em;color:var(--black)}
+    .upd-note span{display:block;margin-top:8px;font-size:13px;line-height:1.45;color:var(--g-dark);font-weight:600}
+    .help{background:#F3F1EB;padding:28px 0 72px}
+    .help-card{background:#fff;border-radius:28px;padding:40px 40px 48px;text-align:center;box-shadow:0 18px 40px -30px rgba(92,107,62,.45)}
+    .help-card h2{font-size:clamp(32px,4vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:0 auto 24px;max-width:12em}
+    .help-card p{font-size:17px;line-height:1.45;font-weight:500;margin:0 auto 24px;max-width:28em}
+    .help-card .btn{letter-spacing:.08em;text-transform:uppercase;font-size:14px}
+    .site-foot{background:#fff;padding:48px 0 40px;border-top:1px solid #E6E2D8}
+    .site-foot-grid{display:flex;justify-content:space-between;gap:32px;align-items:flex-start}
+    .site-foot-ip{font-size:13px;line-height:1.45;font-weight:500;color:#2b2b2b}
+    .site-foot-side{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+    .site-foot-soc{display:flex;gap:8px}
+    .site-foot-soc a{width:28px;height:28px;border-radius:50%;background:#2b2b2b;color:#fff;display:grid;place-items:center}
+    .site-foot-soc svg{width:14px;height:14px;fill:#fff}
+    .site-foot-links{display:flex;flex-direction:column;align-items:flex-end;gap:8px;max-width:320px}
+    .site-foot-links a{color:#2b2b2b;font-size:13px;line-height:1.35;font-weight:400;text-align:right;text-decoration:none}
+
+    /* Motion — GetCourse-safe: CSS + light IO, no libs. Hidden states only under html.has-motion */
+    .s-title em,.how-top .s-title em,.prog .s-title em,.learn-title em,.live .s-title em,.hero h1 em{
+      background-size:100% 36%;
+      background-repeat:no-repeat;
+      background-position:0 92%;
+    }
+    @media (prefers-reduced-motion:no-preference){
+      html.has-motion .s-title em,html.has-motion .how-top .s-title em,html.has-motion .prog .s-title em,html.has-motion .learn-title em,html.has-motion .live .s-title em,html.has-motion .hero h1 em{
+        animation:mark-glow 2.8s ease-in-out 1;
+      }
+      html.has-motion .price-banner{position:relative;overflow:hidden}
+      html.has-motion .price-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.18) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+      html.has-motion .price-banner.is-in::after{animation:sheen 1.1s cubic-bezier(.16,1,.3,1) .15s 1}
+      html.has-motion .price-hit{animation:hit-pulse 2.4s ease-in-out infinite}
+      html.has-motion .formula-me,html.has-motion .formula-story,html.has-motion .learn-stage,html.has-motion .how-slide,html.has-motion .price-card,html.has-motion .alt-grid article,html.has-motion .review-card,html.has-motion .help-card,html.has-motion .live-block,html.has-motion .upd-what,html.has-motion .upd-phone{opacity:0;transform:translateY(16px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+      html.has-motion .formula-me.is-in,html.has-motion .formula-story.is-in,html.has-motion .learn-stage.is-in,html.has-motion .how-slide.is-in,html.has-motion .price-card.is-in,html.has-motion .alt-grid article.is-in,html.has-motion .review-card.is-in,html.has-motion .help-card.is-in,html.has-motion .live-block.is-in,html.has-motion .upd-what.is-in,html.has-motion .upd-phone.is-in{opacity:1;transform:none}
+      html.has-motion .how-slide.is-in{transition-delay:calc(var(--d,0) * 60ms)}
+      html.has-motion .price-card.is-in{transition-delay:calc(var(--d,0) * 70ms)}
+      html.has-motion .alt-grid article.is-in{transition-delay:calc(var(--d,0) * 55ms)}
+      html.has-motion .review-card.is-in{transition-delay:calc(var(--d,0) * 70ms)}
+    }
+    @keyframes mark-glow{
+      0%,100%{filter:none}
+      55%{filter:drop-shadow(0 6px 10px rgba(122,140,82,.28))}
+    }
+    @keyframes sheen{to{transform:translateX(120%)}}
+    @keyframes hit-pulse{
+      0%,100%{box-shadow:0 0 0 0 rgba(92,107,62,.0)}
+      50%{box-shadow:0 0 0 6px rgba(92,107,62,.16)}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .btn,.price-pay,.price-parts,.how-btn,.learn-nav button,.learn-menu button,.price-card,.alt-grid article,.review-card,.review-card img,.review-play,.mod-toggle,.mod-toggle::before,.mod-toggle::after{transition:none!important}
+      .btn:hover,.price-pay:hover,.price-parts:hover,.price-card:hover,.alt-grid article:hover,.review-card:hover{transform:none!important}
+      .mod.is-open .mod-body,.learn-copy p,.learn-next,.price-hit,.s-title em,.how-top .s-title em,.prog .s-title em,.learn-title em,.live .s-title em,.hero h1 em{animation:none!important}
+      .price-banner::after{display:none}
+      .hero-pill,.hero h1,.hero-lead,.hero-next,.hero .btn,.hero-right,.formula-me,.formula-story,.learn-stage,.how-slide,.price-card,.alt-grid article,.review-card,.help-card,.live-block,.upd-what,.upd-phone{opacity:1!important;transform:none!important;transition:none!important}
+    }
+    @media(max-width:960px){
+      .hero{display:flex;flex-direction:column;height:auto;min-height:0}
+      .hero-left{order:1;padding:28px 24px 24px;justify-content:flex-start;align-items:center;text-align:center}
+      .hero-left::before{width:220px;height:220px;left:50%;top:-20px;transform:translateX(-50%)}
+      .hero-pill{margin:0 auto 14px}
+      .hero h1{font-size:clamp(32px,7.2vw,44px);margin:0 0 14px;max-width:12em;text-align:center}
+      .hero-lead{margin:0 0 4px;max-width:none;text-align:center}
+      .hero-offer{white-space:normal}
+      .hero-next{margin:0 0 22px;text-align:center}
+      .hero .btn{min-width:0;width:100%;max-width:420px;padding:0 28px;margin:0 auto}
+      .hero-right{order:2;height:auto;min-height:0;overflow:visible;background:#BBC2CB}
+      .hero-right::after{display:none}
+      .hero-img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:3/4;max-height:min(70vh,560px);object-fit:cover;object-position:center 12%}
+      .photo-cap{left:16px;right:16px;bottom:36px;width:auto;padding:14px 16px 14px 18px;border-radius:18px}
+      .photo-cap strong{font-size:17px}
+      .photo-cap li{font-size:13px;line-height:1.35}
+      .photo-i{width:26px;height:26px;font-size:14px;top:-10px;left:6px}
+      .price-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
+      .formula-grid{grid-template-columns:1fr}
+      .learn-stage{grid-template-columns:1fr}
+      .alt-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:768px){
+      .container{padding:0 20px}
+      .hero-left{padding:24px 20px 20px}
+      .hero-pill{height:auto;min-height:40px;padding:10px 14px;font-size:12px;letter-spacing:.05em;line-height:1.25;white-space:normal;text-align:center;max-width:100%;box-sizing:border-box}
+      .hero h1{font-size:clamp(30px,8.6vw,38px);line-height:1.15;margin:0 0 12px;max-width:none}
+      .hero-lead{font-size:16px;line-height:1.4;margin:0 0 4px}
+      .hero-next{font-size:clamp(17px,4.6vw,20px);margin:0 0 20px}
+      .hero .btn{width:100%;max-width:none;height:auto;min-height:52px;padding:14px 18px;line-height:1.25;white-space:normal}
+      .photo-cap{left:16px;right:16px;bottom:40px;padding:12px 14px 12px 16px}
+      .photo-cap strong{font-size:16px}
+      .photo-cap ul{margin:8px 0 0}
+      .photo-cap li{font-size:12px;line-height:1.35}
+      .photo-cap li + li{margin-top:5px}
+      .photo-i{width:24px;height:24px;font-size:13px;top:-10px;left:8px}
+      .section{padding:32px 0 40px}
+      .s-title{font-size:clamp(24px,6.4vw,30px);line-height:1.18;margin-bottom:24px;padding:0 4px}
+      .how-top{text-align:center}
+      .how-top .s-title{max-width:none;margin-bottom:20px}
+      .how-rail{max-width:none;gap:14px}
+      .how-slide h3{margin:16px 18px 6px;font-size:18px}
+      .how-slide p{margin:0 18px 20px;font-size:14px;line-height:1.55}
+      .how-pic{aspect-ratio:4/3}
+      .alt{padding:24px 20px 28px}
+      .alt h2{font-size:clamp(24px,6.5vw,30px);line-height:1.2;margin-bottom:16px}
+      .alt-lead{font-size:16px;margin:0 auto 24px;line-height:1.4;padding:0 4px}
+      .alt-grid{gap:10px}
+      .alt-grid article{border-radius:16px}
+      .alt-face{height:148px}
+      .alt-grid p{padding:14px 16px 16px;font-size:15px;text-align:center;line-height:1.4}
+      .formula{padding:28px 0 36px}
+      .formula-title{font-size:16px;line-height:1.4;margin-bottom:22px;padding:0;text-align:left;max-width:100%}
+      .formula-face{height:280px}
+      .formula-me h3{font-size:22px;padding:0 16px}
+      .formula-me .author-name{padding:0 16px;font-size:16px}
+      .formula-me .author-line{padding:0 16px;font-size:12px}
+      .formula-facts{grid-template-columns:1fr;gap:10px;padding-top:12px}
+      .formula-facts li{font-size:14px;line-height:1.4}
+      .formula-story{padding:16px 14px;border-radius:18px}
+      .formula-story p{font-size:14px;line-height:1.45}
+      .formula-cta{margin-top:22px}
+      .formula-cta .btn,.mid-cta .btn{width:100%;height:auto;min-height:52px;padding:14px 18px;white-space:normal;min-width:0}
+      .mid-cta{margin:28px 0 4px}
+      .learn{padding:28px 0 36px}
+      .learn-title{font-size:clamp(24px,6.8vw,32px);margin-bottom:20px;line-height:1.15}
+      .learn-panel{min-height:420px;border-radius:22px}
+      .learn-copy{left:12px;right:12px;bottom:12px;padding:12px 14px 14px;border-radius:14px}
+      .learn-copy p{font-size:15px;line-height:1.35}
+      .learn-menu{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+      .learn-menu button{white-space:nowrap;font-size:14px;padding:10px 12px}
+      .learn-nav{top:12px;right:12px;gap:6px}
+      .learn-nav button,.learn-count{width:40px;height:40px}
+      .learn-count{width:auto;padding:0 10px;font-size:12px}
+      .voices{padding:24px 0 16px}
+      .voices h2{font-size:clamp(16px,4.2vw,20px);padding:0 12px;margin-bottom:24px;white-space:normal;max-width:18em;line-height:1.25}
+      .voice-card{width:280px;flex-basis:280px;padding:14px;border-radius:18px}
+      .voice-card p{font-size:14px}
+      .prog{padding:28px 0 36px}
+      .prog .s-title{margin-bottom:20px}
+      .mod{padding:22px 0 18px}
+      .mod-head h3{font-size:15px;line-height:1.3;max-width:none}
+      .mod-toggle{width:32px;height:32px;flex-basis:32px}
+      .mod-body{grid-template-columns:1fr;gap:14px}
+      .mod-lessons li{font-size:13px;line-height:1.4}
+      .mod-result{padding:14px 14px 16px;border-radius:10px}
+      .mod-result strong{font-size:15px}
+      .mod-result p{font-size:13px;line-height:1.4}
+      .price{padding:20px 0 40px}
+      .price h2{font-size:clamp(22px,5.8vw,28px);line-height:1.2;margin:0 auto 18px;padding:0 8px;max-width:14em}
+      .price-banner{padding:14px 16px;font-size:clamp(18px,5vw,22px);border-radius:14px;margin:0 auto 10px;line-height:1.25}
+      .price-body{padding:22px 18px 20px}
+      .price-lead{min-height:0}
+      .price-body h3{font-size:22px;line-height:1.2}
+      .price-sub{font-size:14px;margin:0 0 16px}
+      .price-list{gap:10px;margin:0 0 14px}
+      .price-list li{font-size:15px;line-height:1.35}
+      .price-bonus{padding:12px;margin:0 0 14px}
+      .price-access{font-size:14px;padding:11px 12px;margin:0 0 14px}
+      .price-old{font-size:22px}
+      .price-now{font-size:34px;margin:4px 0 14px}
+      .price-pay,.price-parts{height:auto;min-height:52px;padding:14px 16px;font-size:16px;white-space:normal;text-align:center;line-height:1.25}
+      .price-hit{top:8px;height:18px;font-size:10px;padding:0 10px}
+      .live{padding:16px 0 36px}
+      .live-block{padding:22px 16px 18px;border-radius:20px}
+      .upd{display:flex;flex-direction:column;gap:18px}
+      .upd-copy,.upd-stage,.upd-aside{display:contents}
+      .upd-head{order:1}
+      .live .s-title{text-align:center;margin:0 auto 14px;font-size:clamp(24px,6.4vw,30px)}
+      .s-labels{justify-content:center;margin-bottom:12px}
+      .upd-phone-slot{order:2;flex:none;height:auto}
+      .upd-phone{height:auto;width:min(250px,72%);margin:0 auto;aspect-ratio:390/640;flex:none}
+      .upd-what{order:3;padding:14px 14px 16px;text-align:center;border-radius:16px}
+      .upd-note{order:4;width:100%;box-shadow:none;padding:12px 14px}
+      .upd-lead,.upd-what p{text-align:center}
+      .upd-lead{font-size:15px;line-height:1.45}
+      .upd-what p{font-size:15px;line-height:1.5}
+      .upd-what ul{display:block;width:max-content;max-width:100%;margin:10px auto 0;text-align:left}
+      .upd-what li{text-align:left;font-size:14px;line-height:1.4}
+      .reviews{padding:20px 0 20px}
+      .reviews h2{font-size:clamp(22px,6vw,28px);line-height:1.2;margin:0 auto 22px;padding:0 8px;max-width:14em}
+      .review-row{grid-template-columns:1fr;max-width:340px;gap:12px}
+      .help{padding:12px 0 36px}
+      .help-card{padding:24px 16px 28px;border-radius:20px}
+      .help-card h2{font-size:clamp(22px,6.2vw,28px);margin-bottom:14px;line-height:1.2}
+      .help-card p{font-size:15px;line-height:1.4;margin:0 auto 18px}
+      .help-card .btn{width:100%;height:auto;min-height:52px;padding:14px 16px;white-space:normal}
+      .site-foot{padding:32px 0 28px}
+      .site-foot-grid{flex-direction:column;align-items:center;text-align:center;gap:20px}
+      .site-foot-side,.site-foot-links{align-items:center}
+      .site-foot-links{max-width:100%}
+      .site-foot-links a{text-align:center;font-size:12px}
+    }
+    @media(max-width:380px){
+      .container{padding:0 16px}
+      .hero-left{padding:20px 16px 16px}
+      .hero h1{font-size:clamp(26px,8.2vw,32px)}
+      .hero-pill{font-size:11px;padding:8px 12px}
+      .price-body{padding:18px 14px 16px}
+      .price-now{font-size:30px}
+    }
+
+    /* GetCourse shell + Android dark theme */
+    html,body,.page{color-scheme:only light}
+    @media(prefers-color-scheme:dark){
+      html,body,.page{background:#fff!important;color:#1A1A1A!important;color-scheme:only light!important}
+    }
+    .lt-block-wrapper,
+    .lt-block.lt-raw-html .lt-block-wrapper,
+    .lite-page,
+    .gc-main-content,
+    .gc-main-content.front-page-content,
+    .standard-page-content{
+      padding-left:0!important;padding-right:0!important;margin:0!important;
+    }
+    .gc-main-content>.container{
+      width:auto!important;max-width:none!important;padding-left:0!important;padding-right:0!important;
+    }
+    .page{display:block!important;opacity:1!important;visibility:visible!important;max-height:none!important;overflow:visible!important;background:#fff}
+    .page p,.page h1,.page h2,.page h3,.page ul,.page li{max-width:none}
+    .page .container{padding-left:20px!important;padding-right:20px!important}
+    @media(min-width:769px){.page .container{padding-left:48px!important;padding-right:48px!important}}
+    @media(max-width:380px){.page .container{padding-left:16px!important;padding-right:16px!important}}
+    .hero h1,.s-title,.price h2,.voices h2,.learn-title,.formula-title,.btn,.price-pay,.price-parts{
+      font-family:Figtree,ui-sans-serif,system-ui,sans-serif!important
+    }
+    .hero h1{line-height:1.18!important;margin:0 0 18px!important}
+    .hero h1 em{line-height:inherit!important;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+    .site-foot{padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))!important}
+    html.is-phone .page{display:block!important;opacity:1!important;visibility:visible!important;max-height:none!important;aspect-ratio:auto!important;overflow:visible!important}
+    html.is-phone .mid-cta .btn{width:100%!important;min-width:0!important}
+    html.is-phone .how-rail{max-width:none!important}
+    html.is-phone .price-grid{grid-template-columns:1fr!important}
+    html.is-phone .price-card.is-hit{margin-top:0!important}
+    html.is-phone .formula-grid{grid-template-columns:1fr!important}
+    html.is-phone .learn-stage{grid-template-columns:1fr!important}
+    html.is-phone .upd{grid-template-columns:1fr!important}
+    html.is-phone .alt-grid{grid-template-columns:1fr!important}
+    html.is-phone .voices{overflow:hidden}
+
+    /* GetCourse shell: дублируем мобильный герой на html.is-phone, без скрытия всей страницы */
+    html.is-phone .hero{display:flex!important;flex-direction:column!important;height:auto!important;min-height:0!important}
+    html.is-phone .hero-left{order:1!important;padding:24px 20px 20px!important;justify-content:flex-start!important;align-items:center!important;text-align:center!important}
+    html.is-phone .hero-left::before{width:220px!important;height:220px!important;left:50%!important;top:-20px!important;transform:translateX(-50%)!important}
+    html.is-phone .hero-pill{margin-left:auto!important;margin-right:auto!important}
+    html.is-phone .hero h1{font-size:clamp(30px,8.6vw,38px)!important;margin:0 0 12px!important;max-width:none!important;text-align:center!important}
+    html.is-phone .hero-lead,html.is-phone .hero-next{text-align:center!important;max-width:none!important}
+    html.is-phone .hero-offer{white-space:normal!important}
+    html.is-phone .hero .btn{width:100%!important;max-width:none!important;min-width:0!important;height:auto!important;min-height:52px!important;padding:14px 18px!important;white-space:normal!important;margin:0!important}
+    html.is-phone .hero-right{order:2!important;height:auto!important;min-height:0!important;overflow:visible!important}
+    html.is-phone .hero-right::after{display:none!important}
+    html.is-phone .hero-img{position:relative!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:3/4!important;max-height:min(70vh,560px)!important;object-fit:cover!important;object-position:center 12%!important}
+    html.is-phone .photo-cap{left:16px!important;right:16px!important;bottom:40px!important;width:auto!important;padding:12px 14px 12px 16px!important;border-radius:18px!important}
+    html.is-phone .container{padding-left:20px!important;padding-right:20px!important}
+    html.is-phone .btn,html.is-phone .price-pay,html.is-phone .price-parts{white-space:normal!important;height:auto!important;min-height:52px!important;line-height:1.25!important;text-align:center!important}
+  </style>
+<div class="page">
+  <section class="hero" id="hero">
+    <div class="hero-left">
+      <div class="hero-pill"><i></i>12-недельная программа самопомощи</div>
+      <h1>Школа здоровых <em>отношений</em></h1>
+      <p class="hero-lead">Как построить <span class="hero-offer">счастливые отношения</span></p>
+      <p class="hero-next">с другими и <span class="hero-self">с собой<svg viewBox="0 0 120 10" preserveAspectRatio="none" aria-hidden="true"><path d="M1 6 C 10 1, 18 9, 28 5 S 46 1, 58 6 S 78 10, 92 4 S 110 1, 119 6" fill="none" stroke="#7A8C52" stroke-width="2.4" stroke-linecap="round"/></svg></span></p>
+      <a class="btn" href="#price">Занять место</a>
+    </div>
+    <div class="hero-right">
+      <img class="hero-img" src="https://maestrovladd.github.io/shzo-landing/assets/predzapis-hero.jpg" alt="Наталья Зайцева" width="1600" height="2100">
+      <div class="photo-cap">
+        <span class="photo-i" aria-hidden="true">i</span>
+        <strong>Наталья Зайцева</strong>
+        <ul>
+          <li>врач-психотерапевт, психиатр</li>
+          <li>20 лет опыта работы</li>
+          <li>когнитивно-поведенческий и диалектический поведенческий терапевт</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="formula" id="formula">
+    <div class="container">
+      <h2 class="formula-title"><span class="formula-mark">Я создала эту программу</span>, чтобы помочь людям перестать жить в конфликтах и напряжении, вернуть близость и уважение в отношения и научиться общаться без крика, давления и чувства вины.</h2>
+      <div class="formula-grid">
+        <article class="formula-me">
+          <img class="formula-face" src="https://maestrovladd.github.io/shzo-landing/assets/hero.png?v=hoop" alt="Наталья Зайцева" width="682" height="1024">
+          <h3>Автор курса</h3>
+          <p class="author-name">Наталья Зайцева</p>
+          <p class="author-line"><i></i><span>Врач-психотерапевт, психиатр с 19-летним опытом работы.</span></p>
+        </article>
+        <article class="formula-story">
+          <p>Двадцать лет назад я только начинала работать и была сосредоточена на методах и приёмах. Я много училась и вела огромное количество консультаций. Параллельно от меня уходили клиенты, личная жизнь не складывалась так, как мне хотелось, я теряла друзей, и вокруг было много конфликтов.</p>
+          <p>Я объясняла это себе двумя крайностями. То мне казалось, что со мной что-то не так, и я шла прорабатывать себя. То казалось, что это с другими что-то не так, потому что я-то работаю над собой, а они не хотят.</p>
+          <p>Никто тогда не объяснил мне, что дело не во мне и не в них. Дело было в неправильных представлениях о том, что такое здоровые отношения, и в том, что я не понимала, как их выстраивать.</p>
+          <ul class="formula-facts">
+            <li><i></i><span>Первые 9 лет работала в отделении неврозов Воронежской областной психиатрической больницы.</span></li>
+            <li><i></i><span>С 2019 года разрабатывает и проводит программы цифровой психотерапии.</span></li>
+            <li><i></i><span>Придерживается принципов доказательной медицины.</span></li>
+            <li><i></i><span>Работает в когнитивно-поведенческом направлении психотерапии. Использует КПТ, РЭПТ, DBT.</span></li>
+          </ul>
+        </article>
+      </div>
+      <div class="formula-cta">
+        <a class="btn" href="#programma">Смотреть программу</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="learn" id="learn">
+    <div class="container">
+      <h2 class="learn-title">Что изменится <em>после</em>&nbsp;Школы</h2>
+      <div class="learn-stage">
+        <div class="learn-menu" id="learn-menu">
+          <button type="button" class="is-on" data-i="0">Распознавать насилие</button>
+          <button type="button" data-i="1">Меньше конфликтов</button>
+          <button type="button" data-i="2">Доверие и уважение</button>
+          <button type="button" data-i="3">Не только дома</button>
+          <button type="button" data-i="4">Уверенность в себе</button>
+          <button type="button" data-i="5">Своё мнение и «нет»</button>
+          <button type="button" data-i="6">Защищать границы</button>
+          <button type="button" data-i="7">Нужные решения</button>
+          <button type="button" data-i="8">Токсичные отношения</button>
+        </div>
+        <div class="learn-panel">
+          <img id="learn-photo" src="https://maestrovladd.github.io/shzo-landing/assets/learn-1-nasilie.jpg?v=air" alt="Женщина за столом замечает жест, который выглядит как забота">
+          <div class="learn-shade" aria-hidden="true"></div>
+          <div class="learn-nav">
+            <button type="button" id="learn-prev" aria-label="Предыдущая перемена"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+            <span class="learn-count" id="learn-count">1 из 9</span>
+            <button type="button" class="learn-next" id="learn-next" aria-label="Следующая перемена"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <div class="learn-copy">
+            <small>После Школы</small>
+            <p id="learn-line">Научитесь распознавать насилие, включая его скрытые формы, завуалированные под заботу, и не поддаваться на манипуляции.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prog" id="programma">
+    <div class="container">
+      <h2 class="s-title">Содержание <em>программы</em> Школы</h2>
+      <article class="mod is-open is-fixed">
+        <div class="mod-head">
+          <h3><b>Модуль 1.</b> Анализ отношений в разных сферах — работа, учёба, любовные партнёры, родственники, друзья, люди в целом, отношения с самим собой</h3>
+        </div>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Отношения на работе</li>
+            <li>Отношения на учёбе</li>
+            <li>Отношения с любовными партнёрами</li>
+            <li>Отношения с родственниками</li>
+            <li>Отношения с друзьями</li>
+            <li>Отношения с другими людьми</li>
+            <li>Отношения с собой</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Сформируете структурированную и упорядоченную картину всех своих отношений, поймёте, насколько каждые из них вас удовлетворяют, и с кем действительно нужно работать над отношениями.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 2.</b> Анализ близких отношений</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Круги близких отношений</li>
+            <li>Проблемы близких отношений</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Трезво оцените степень близости и наличия проблем в конкретных связях «здесь-и-сейчас», без путаницы и самообмана, поймёте, на кого вы можете опираться, а на кого — нет.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 3.</b> Спектр отношений (здоровые — нездоровые — абьюзивные)</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Спектр отношений</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Поймёте, в какой части спектра находятся ваши отношения, что поможет видеть движение между зонами и вовремя корректировать формат взаимодействия.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 4.</b> Восемь видов насилия</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Физическое насилие</li>
+            <li>Сексуальное насилие</li>
+            <li>Репродуктивное принуждение</li>
+            <li>Финансовое насилие</li>
+            <li>Цифровое насилие</li>
+            <li>Преследование</li>
+            <li>Отсутствие заботы</li>
+            <li>Психологическое насилие</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Проверите свои представления о насилии и научитесь распознавать восемь его разных форм на уровне поведения, что будет особенно полезно людям, которые сталкивались с насилием и хотят его прекратить.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 5.</b> Абьюзивные отношения</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Две модели насилия</li>
+            <li>Абьюзивные отношения</li>
+            <li>Причины насилия</li>
+            <li>Последствия насилия</li>
+            <li>Травма свидетеля</li>
+            <li>Посттравматическое стрессовое расстройство</li>
+            <li>Жертвы абьюзивных отношений</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Поймёте, как раскручивается колесо насилия и к каким последствиям приводит длительное пребывание в жестоких отношениях даже в роли свидетеля.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 6.</b> Психологическое насилие</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Запугивание</li>
+            <li>Угрозы</li>
+            <li>Оскорбления и негативная оценка</li>
+            <li>Изоляция</li>
+            <li>Обвинение жертвы</li>
+            <li>Обесценивание и отрицание насилия</li>
+            <li>Молчание и разрывы отношений</li>
+            <li>Использование других людей</li>
+            <li>Использование привилегий</li>
+            <li>Эмоциональные спутники насилия</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Расширите своё поле зрения и научитесь замечать ключевые сигналы эмоционального насилия, что будет особенно полезно людям, которым кажется, что в отношениях что-то не так, но они никак не могут понять, что.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 7.</b> Ненасильственное общение</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Три цели взаимодействия</li>
+            <li>Приоритет целей</li>
+            <li>Как просить</li>
+            <li>Как высказывать своё мнение</li>
+            <li>Интенсивность, с которой нужно просить и высказывать мнение</li>
+            <li>Как отказывать</li>
+            <li>Интенсивность, с которой нужно отказывать</li>
+            <li>Как заботиться об отношениях</li>
+            <li>Как заботиться об самоуважении</li>
+            <li>Баланс приоритетов и целей</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Отработаете чёткие алгоритмы уважительного, но эффективного общения, которые можно применять в разных ситуациях и с партнёрами, и с детьми, и с родителями, и с коллегами, и даже с незнакомыми людьми.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 8.</b> Принципы и ценности здоровых отношений</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Общение</li>
+            <li>Уважение</li>
+            <li>Личностные особенности</li>
+            <li>Личные ценности</li>
+            <li>Честность</li>
+            <li>Ответственность за насилие</li>
+            <li>Признание ошибок</li>
+            <li>Доверие</li>
+            <li>Границы</li>
+            <li>Согласие</li>
+            <li>Равенство и партнёрство</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Получите ориентиры-маяки, которые помогут вам понимать, насколько сильно вы отдаляетесь от здоровой части спектра отношений, регулировать своё поведение и возвращаться в него обратно.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 9.</b> Завершение отношений</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Завершение отношений</li>
+            <li>Реакция на завершение отношений</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Будете точно понимать, когда отношения с другим человеком лучше завершить, научитесь готовиться к разрывам и подбирать нужные слова для озвучивания таких своих решений.</p>
+          </aside>
+        </div>
+      </article>
+      <article class="mod">
+        <button type="button" class="mod-head" aria-expanded="false">
+          <h3><b>Модуль 10.</b> Профилактика возврата старых проблем</h3>
+          <span class="mod-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="mod-body">
+          <ul class="mod-lessons">
+            <li>Срыв навыков</li>
+            <li>Здоровые отношения VS Идеальные отношения</li>
+          </ul>
+          <aside class="mod-result">
+            <strong>Результат:</strong>
+            <p>Научитесь замечать триггеры и соблазны, которые уводят вас из здоровой части спектра отношений, и составите план, который поможет вам возвращаться в него обратно.</p>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="how section" id="how">
+    <div class="container">
+      <div class="how-top">
+        <div class="s-label">Внутри вас ждет:</div>
+        <h2 class="s-title">Как устроена <em>Школа здоровых&nbsp;отношений</em></h2>
+      </div>
+      <div class="how-rail" id="how-rail">
+        <article class="how-slide">
+          <div class="how-pic"><img src="https://maestrovladd.github.io/shzo-landing/assets/how-lessons.jpg" alt="Уроки Школы на GetCourse" width="764" height="616"></div>
+          <h3>Уроки на&nbsp;GetCourse</h3>
+          <p>60 видеоуроков с&nbsp;научно обоснованной информацией продолжительностью до&nbsp;10–15&nbsp;минут</p>
+        </article>
+        <article class="how-slide">
+          <div class="how-pic"><img src="https://maestrovladd.github.io/shzo-landing/assets/how-sheets.jpg" alt="Рабочие листы для выполнения заданий" width="792" height="640"></div>
+          <h3>Рабочие листы для выполнения&nbsp;заданий</h3>
+          <p>12 обязательных и&nbsp;48 необязательных практических заданий с&nbsp;рабочими листами для их выполнения</p>
+        </article>
+        <article class="how-slide">
+          <div class="how-pic"><img src="https://maestrovladd.github.io/shzo-landing/assets/how-examples.jpg" alt="Примеры выполнения заданий" width="784" height="634"></div>
+          <h3>Примеры выполнения&nbsp;заданий</h3>
+          <p>60+ текстовых файлов с&nbsp;примерами выполнения заданий участниками предыдущих потоков</p>
+        </article>
+        <article class="how-slide">
+          <div class="how-pic"><img src="https://maestrovladd.github.io/shzo-landing/assets/how-review.jpg" alt="Проверка домашнего задания в чате" width="1376" height="1032"></div>
+          <h3>Проверка домашних&nbsp;заданий</h3>
+          <p>Только на&nbsp;тарифе с&nbsp;куратором: врачом-психотерапевтом или&nbsp;психологом</p>
+        </article>
+      </div>
+      <div class="mid-cta">
+        <a class="btn" href="#price">Занять место</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="voices" id="voices">
+    <h2>Что писали те, кто уже прошёл Школу</h2>
+    <div class="voice-row">
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Виола, 32 года</b><p><em>Мне больше не приходится обманывать себя.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">Н</span><div><b>Наташа, 35 лет</b><p>Я вижу, что делаю. <em>И могу это менять.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">О</span><div><b>Ольга, 30 лет</b><p><em>Жить на троечку очень даже хорошо.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">А</span><div><b>Анастасия, 35 лет</b><p><em>Научилась определять приоритеты и цели взаимодействия.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Валентина, 30 лет</b><p><em>Я наконец-то почувствовала, что такое любовь к себе.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Мой девиз после школы: <em>«выбери снова»</em>. Куда-то делась реакция «замри».</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Когда в конце я говорю «договорились?», <em>человек отвечает «договорились» и не обижается.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p><em>Сын в 10 раз меньше стал кричать.</em> Сам приходит обнять.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Виола, 32 года</b><p><em>Мне больше не приходится обманывать себя.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">Н</span><div><b>Наташа, 35 лет</b><p>Я вижу, что делаю. <em>И могу это менять.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">О</span><div><b>Ольга, 30 лет</b><p><em>Жить на троечку очень даже хорошо.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">А</span><div><b>Анастасия, 35 лет</b><p><em>Научилась определять приоритеты и цели взаимодействия.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Валентина, 30 лет</b><p><em>Я наконец-то почувствовала, что такое любовь к себе.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Мой девиз после школы: <em>«выбери снова»</em>. Куда-то делась реакция «замри».</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Когда в конце я говорю «договорились?», <em>человек отвечает «договорились» и не обижается.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p><em>Сын в 10 раз меньше стал кричать.</em> Сам приходит обнять.</p></div></article>
+    </div>
+    <div class="voice-row back">
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p><em>Знания плюс практика равно навык.</em> Пользуюсь до сих пор.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Без куратора, без своего разбора, только читала чат. <em>Нисколько не жалею.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p><em>Улучшились отношения с детьми,</em> появился партнёр, с которым применяю эти знания.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Весной едем в путешествие, которое он подарил со словами: <em>«хочу туда именно с тобой»</em>.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Дочь сказала: <em>«мы тоже сильно поменялись»</em>, с сыном совсем по-другому общаемся.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Он не пил, не курил, руку не поднимал. <em>После Школы открылись глаза.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">Н</span><div><b>Наташа, 35 лет</b><p>Я вижу, что делаю. <em>И могу это менять.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Виола, 32 года</b><p><em>Мне больше не приходится обманывать себя.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p><em>Знания плюс практика равно навык.</em> Пользуюсь до сих пор.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Без куратора, без своего разбора, только читала чат. <em>Нисколько не жалею.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p><em>Улучшились отношения с детьми,</em> появился партнёр, с которым применяю эти знания.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Весной едем в путешествие, которое он подарил со словами: <em>«хочу туда именно с тобой»</em>.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Дочь сказала: <em>«мы тоже сильно поменялись»</em>, с сыном совсем по-другому общаемся.</p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Выпускница</b><p>Он не пил, не курил, руку не поднимал. <em>После Школы открылись глаза.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">Н</span><div><b>Наташа, 35 лет</b><p>Я вижу, что делаю. <em>И могу это менять.</em></p></div></article>
+      <article class="voice-card"><span class="voice-ava">В</span><div><b>Виола, 32 года</b><p><em>Мне больше не приходится обманывать себя.</em></p></div></article>
+    </div>
+  </section>
+
+  <section class="price" id="price">
+    <div class="container">
+      <h2>Тарифы и цены на программу Школы здоровых отношений</h2>
+      <p class="price-banner">Для вас специальные условия</p>
+      <div class="price-grid">
+        <article class="price-card">
+          <div class="price-body">
+            <div class="price-lead">
+              <h3>Самостоятельный</h3>
+              <p class="price-sub">Без проверки заданий, без куратора</p>
+            </div>
+            <ul class="price-list">
+              <li>60 видеоуроков</li>
+              <li>12 обязательных заданий</li>
+              <li>48 вспомогательных заданий</li>
+              <li>60 примеров выполнения заданий участниками прошлых потоков</li>
+            </ul>
+            <div class="price-bonus">
+              <b>🎁 Бонус</b>
+              <p>Сборник всех предыдущих разборов потоков Школы здоровых отношений, с 2022 по 2026 год.</p>
+            </div>
+            <div class="price-access">Доступ сразу после оплаты</div>
+            <div class="price-sum">
+              <div class="price-old">19 990 ₽</div>
+              <div class="price-now">13 900 ₽</div>
+              <a class="price-pay" href="#">Оплатить</a>
+              <a class="price-parts" href="#">Рассрочка/Оплата частями</a>
+            </div>
+          </div>
+        </article>
+        <article class="price-card is-hit">
+          <div class="price-hit">Хит</div>
+          <div class="price-body">
+            <div class="price-lead">
+              <h3>С проверкой домашних заданий</h3>
+            </div>
+            <ul class="price-list">
+              <li>60 видеоуроков</li>
+              <li>12 обязательных заданий</li>
+              <li>48 вспомогательных заданий</li>
+              <li>60 примеров выполнения заданий участниками прошлых потоков</li>
+              <li>Домашние задания проверяет врач-психотерапевт или психолог</li>
+            </ul>
+            <div class="price-bonus">
+              <b>🎁 Бонус</b>
+              <p>Сборник всех предыдущих разборов потоков Школы здоровых отношений, с 2022 по 2026 год.</p>
+            </div>
+            <div class="price-access">Доступ сразу после оплаты</div>
+            <div class="price-sum">
+              <div class="price-old">39 900 ₽</div>
+              <div class="price-now">27 930 ₽</div>
+              <a class="price-pay" href="#">Оплатить</a>
+              <a class="price-parts" href="#">Рассрочка/Оплата частями</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="mid-cta">
+        <a class="btn" href="#price">Занять место</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="live" id="sbornik">
+    <div class="container">
+      <div class="live-block">
+        <div class="upd">
+          <div class="upd-copy">
+            <div class="upd-head">
+              <div class="s-labels">
+                <div class="s-label">Бонус</div>
+                <div class="s-label">Бесплатно</div>
+              </div>
+              <h2 class="s-title">Сборник <em>разборов</em></h2>
+              <p class="upd-lead">В период с 2022 по 2026 год мы провели 232 терапевтических разбора в Школе здоровых отношений.</p>
+            </div>
+            <div class="upd-what">
+              <p>В них принимали участие разные люди с разными проблемами:</p>
+              <ul>
+                <li>в отношениях с мужем или партнёром</li>
+                <li>в общении с детьми</li>
+                <li>с мамой и родными</li>
+                <li>на работе</li>
+                <li>в отношениях с собой</li>
+              </ul>
+              <p>Мы сохранили все эти разборы и собрали их в единый сборник. Там вы найдёте дополнительные примеры выполнения заданий и увидите, как реальные люди решали свои проблемы с помощью Школы здоровых отношений.</p>
+            </div>
+          </div>
+          <div class="upd-stage">
+            <div class="upd-aside">
+              <div class="upd-phone-slot">
+                <div class="upd-phone">
+                  <div class="upd-phone-glass">
+                    <div class="upd-island" aria-hidden="true"><i></i></div>
+                    <div class="upd-ios">
+                      <span>11:25</span>
+                      <span class="upd-ios-sys" aria-hidden="true">
+                        <svg viewBox="0 0 18 12" width="18" height="12"><rect x="1" y="7.2" width="2.2" height="4.2" rx=".4"/><rect x="5.2" y="5" width="2.2" height="6.4" rx=".4"/><rect x="9.4" y="2.6" width="2.2" height="8.8" rx=".4"/><rect x="13.6" y=".4" width="2.2" height="11" rx=".4"/></svg>
+                        <svg viewBox="0 0 16 12" width="16" height="12"><path d="M8 9.6a1.15 1.15 0 1 0 0 2.3 1.15 1.15 0 0 0 0-2.3Zm0-3.05c1.62 0 3.1.62 4.2 1.64l-1.12 1.14A4.35 4.35 0 0 0 8 8.05c-1.12 0-2.15.43-2.93 1.13L3.95 8.04A5.9 5.9 0 0 1 8 6.55Zm0-3.1c2.5 0 4.78.96 6.5 2.54L13.4 7.12A7.55 7.55 0 0 0 8 4.95c-2.05 0-3.92.8-5.32 2.1L1.55 5.9A9.9 9.9 0 0 1 8 3.45Z"/></svg>
+                        <svg viewBox="0 0 27 13" width="27" height="13"><rect x=".75" y="1.1" width="22.2" height="10.8" rx="2.4" fill="none" stroke="#111" stroke-width="1.5"/><rect x="23.3" y="4.2" width="2.1" height="4.6" rx=".7"/><rect x="2.55" y="2.9" width="16.4" height="7.2" rx="1.3"/></svg>
+                      </span>
+                    </div>
+                    <img class="upd-phone-img" src="https://maestrovladd.github.io/shzo-landing/assets/upd-chat-screen.png?v=39" alt="Разбор в чате Школы здоровых отношений" width="632" height="970">
+                    <span class="upd-home" aria-hidden="true"></span>
+                  </div>
+                </div>
+              </div>
+              <p class="upd-note"><strong>Вам больше не потребуется разгребать сотни новых сообщений в чате, чтобы найти нужный вам разбор.</strong><span>Все примеры будут у вас под рукой в едином сборнике, который останется у вас навсегда.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="school">
+    <div class="col">
+      <h2>Школа здоровых отношений&nbsp;—</h2>
+      <p class="alt-lead">это <mark>цифровая альтернатива</mark> индивидуальной<br>психотерапии и работы с семейным психологом</p>
+      <div class="alt-grid">
+        <article>
+          <div class="alt-face" aria-hidden="true">
+            <img src="https://maestrovladd.github.io/shzo-landing/assets/school-live-price.jpg?v=live" alt="" width="1280" height="720" loading="lazy">
+          </div>
+          <p>Дешевле в 5+ раз, чем полный курс индивидуальной терапии</p>
+        </article>
+        <article>
+          <div class="alt-face" aria-hidden="true">
+            <img src="https://maestrovladd.github.io/shzo-landing/assets/school-live-time.jpg?v=live" alt="" width="1280" height="720" loading="lazy">
+          </div>
+          <p>Доступно в любое время суток</p>
+        </article>
+        <article>
+          <div class="alt-face" aria-hidden="true">
+            <img src="https://maestrovladd.github.io/shzo-landing/assets/school-live-docs.jpg?v=live" alt="" width="1280" height="720" loading="lazy">
+          </div>
+          <p>Имеет научную базу, чёткую структуру и понятные цели</p>
+        </article>
+        <article class="hot">
+          <div class="alt-face" aria-hidden="true">
+            <img src="https://maestrovladd.github.io/shzo-landing/assets/school-live-one.jpg?v=live" alt="" width="1280" height="720" loading="lazy">
+          </div>
+          <p>Возможность пройти Школу с индивидуальным сопровождением врача-психотерапевта или психолога</p>
+        </article>
+        <article>
+          <div class="alt-face" aria-hidden="true">
+            <img src="https://maestrovladd.github.io/shzo-landing/assets/school-live-web.jpg?v=live" alt="" width="1280" height="720" loading="lazy">
+          </div>
+          <p>Развивает навыки, которые работают везде, а не только в каких-то одних отношениях или одной сфере</p>
+        </article>
+        <article>
+          <div class="alt-face" aria-hidden="true">
+            <img src="https://maestrovladd.github.io/shzo-landing/assets/school-live-people.jpg?v=live" alt="" width="1280" height="720" loading="lazy">
+          </div>
+          <p>Вы можете изменить отношения сразу с несколькими людьми из разных сфер вашей жизни</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <h2>Посмотрите, каких результатов добились мои ученики</h2>
+      <div class="review-row">
+        <button class="review-card" type="button" data-vk="https://vk.com/video_ext.php?oid=-232519761&amp;id=456239017&amp;hash=a4afee252a8124e3&amp;hd=2&amp;autoplay=1" aria-label="Отзыв Виолы, 32 года">
+          <img src="https://maestrovladd.github.io/shzo-landing/assets/review-1.jpg" alt="Виола, 32 года" width="840" height="1371">
+          <span class="review-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l12-6.5-12-6.5z" fill="#1A1A1A"/></svg></span>
+        </button>
+        <button class="review-card" type="button" data-vk="https://vk.com/video_ext.php?oid=-232519761&amp;id=456239018&amp;hash=a54deba73ad00c03&amp;hd=2&amp;autoplay=1" aria-label="Отзыв Наташи, 35 лет">
+          <img src="https://maestrovladd.github.io/shzo-landing/assets/review-2.jpg" alt="Наташа, 35 лет" width="843" height="1371">
+          <span class="review-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l12-6.5-12-6.5z" fill="#1A1A1A"/></svg></span>
+        </button>
+        <button class="review-card" type="button" data-vk="https://vk.com/video_ext.php?oid=-232519761&amp;id=456239019&amp;hash=525f26c95b77498a&amp;hd=2&amp;autoplay=1" aria-label="Отзыв Юли, 36 лет">
+          <img src="https://maestrovladd.github.io/shzo-landing/assets/review-3.jpg" alt="Юля, 36 лет" width="843" height="1365">
+          <span class="review-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l12-6.5-12-6.5z" fill="#1A1A1A"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="help" id="help">
+    <div class="container">
+      <div class="help-card">
+        <h2>Возникли проблемы с оплатой?</h2>
+        <p>Напишите Ксении. Она помогает с оплатой и с тем, что не открывается на платформе.</p>
+        <a class="btn" href="mailto:psyfactum@mail.ru">Поддержка</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-foot">
+    <div class="container site-foot-grid">
+      <p class="site-foot-ip">ИП Зайцева Наталья Леонидовна<br>ИНН: 366227331702<br>ОГРНИП: 310366827100181</p>
+      <div class="site-foot-side">
+        <div class="site-foot-soc">
+          <a href="https://t.me/psy_factum" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.5 4.5 2.8 11.2c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.7.1.9.8.9.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8l3.2-15c.3-1.2-.4-1.7-1.4-1.4zM8.7 14.2l8.8-5.5c.4-.3.8-.1.5.2l-7.5 6.8-.3 3.2-1.5-4.7z"/></svg></a>
+          <a href="https://vk.com/psyfactum" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24"><path d="M4 7.5h2.3c.1 3.4 1.6 5.1 2.8 5.6V7.5H11.4v3.2c1.2-.1 2.4-1.6 2.8-3.2h2.2c-.3 1.9-1.6 3.4-2.5 4 1 .5 2.4 1.8 3 4h-2.4c-.4-1.4-1.5-2.5-2.9-2.6v2.6H9.1V13c-1.3-.3-2.9-2.1-3-5.5H4z"/></svg></a>
+        </div>
+        <nav class="site-foot-links" aria-label="Документы">
+          <a href="https://psyfactum.online/confidentiality" target="_blank" rel="noopener">Политика конфиденциальности</a>
+          <a href="https://psyfactum.online/oferta_relationship">Оферта</a>
+          <a href="https://psyfactum.online/consent_mailing">Согласие на получение информационной и рекламной рассылки</a>
+          <a href="https://psyfactum.online/consent_personal">Согласие на обработку персональных данных</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <script>
+    (function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce) document.documentElement.classList.add("has-motion");
+
+      function scrollToPrice(e) {
+        var target = document.getElementById("price");
+        if (!target) return;
+        if (e) e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 16;
+        window.scrollTo({ top: top, behavior: reduce ? "auto" : "smooth" });
+        try { history.replaceState(null, "", "#price"); } catch (err) {}
+      }
+      document.querySelectorAll('a[href="#price"]').forEach(function (link) {
+        link.addEventListener("click", scrollToPrice);
+      });
+
+      document.querySelectorAll(".mod:not(.is-fixed) .mod-head").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var mod = btn.closest(".mod");
+          var open = mod.classList.toggle("is-open");
+          btn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      });
+      document.querySelectorAll(".review-card").forEach(function (card) {
+        card.addEventListener("click", function () {
+          if (card.querySelector("iframe")) return;
+          var frame = document.createElement("iframe");
+          frame.src = card.getAttribute("data-vk");
+          frame.setAttribute("allow", "autoplay; encrypted-media; fullscreen; picture-in-picture");
+          frame.setAttribute("allowfullscreen", "");
+          frame.title = card.getAttribute("aria-label") || "Видеоотзыв";
+          card.appendChild(frame);
+        });
+      });
+
+      if (!reduce && "IntersectionObserver" in window) {
+        var watch = [
+          ".formula-me", ".formula-story", ".learn-stage", ".how-slide",
+          ".price-card", ".price-banner", ".alt-grid article", ".review-card",
+          ".help-card", ".live-block", ".upd-what", ".upd-phone",
+          ".voices h2", ".prog .s-title", ".learn-title", ".reviews h2", ".price h2", ".alt h2"
+        ].join(",");
+        var nodes = document.querySelectorAll(watch);
+        nodes.forEach(function (el, i) {
+          if (el.classList.contains("how-slide") || el.classList.contains("price-card") || el.classList.contains("review-card") || (el.parentElement && el.parentElement.classList.contains("alt-grid"))) {
+            var kids = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : i;
+            el.style.setProperty("--d", String(Math.max(0, kids)));
+          }
+        });
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+        nodes.forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll(".formula-me,.formula-story,.learn-stage,.how-slide,.price-card,.price-banner,.alt-grid article,.review-card,.help-card,.live-block,.upd-what,.upd-phone").forEach(function (el) {
+          el.classList.add("is-in");
+        });
+      }
+
+      var learnLines = [
+        "Научитесь распознавать насилие, включая его скрытые формы, завуалированные под заботу, и не поддаваться на манипуляции.",
+        "Уменьшите количество конфликтов.",
+        "Вернёте доверие и уважение в близкие отношения.",
+        "Улучшите отношения с людьми не только дома, но и за его пределами.",
+        "Почувствуете уверенность в себе и своих коммуникативных способностях.",
+        "Сможете открыто озвучивать своё мнение и говорить «нет» без стыда и сожаления.",
+        "Поймёте, где проходят ваши границы, и научитесь их защищать.",
+        "Перестанете сомневаться в себе и примете все нужные решения.",
+        "Вычеркнете из своей жизни людей, которые тянут вас ко дну, и научитесь завершать токсичные отношения."
+      ];
+      var learnPhotos = [
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-1-nasilie.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-2-konflikty.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-3-doverie.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-4-ne-doma.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-5-razgovor.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-6-net.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-7-granicy.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-8-resheniya.jpg?v=air",
+        "https://maestrovladd.github.io/shzo-landing/assets/learn-9-zavershenie.jpg?v=air"
+      ];
+      var learnAlts = [
+        "Женщина за столом замечает жест, который выглядит как забота",
+        "Двое спокойно разговаривают за кухонным столом",
+        "Двое сидят рядом и смотрят друг на друга без напряжения",
+        "Разговор с коллегой у окна, не дома",
+        "Женщина спокойно говорит, и её слушают",
+        "Женщина спокойно говорит «нет»",
+        "Женщина стоит в дверях своей комнаты",
+        "Женщина за столом, решение уже принято",
+        "Женщина уходит от закрытой двери к свету"
+      ];
+      var learnLine = document.getElementById("learn-line");
+      var learnPhoto = document.getElementById("learn-photo");
+      var learnCount = document.getElementById("learn-count");
+      var learnButtons = document.querySelectorAll("#learn-menu button");
+      var learnNow = 0;
+      function showLearn(i) {
+        i = (Number(i) + learnLines.length) % learnLines.length;
+        learnNow = i;
+        learnButtons.forEach(function (b) { b.classList.toggle("is-on", b.getAttribute("data-i") === String(i)); });
+        learnLine.textContent = learnLines[i];
+        if (!reduce) {
+          learnPhoto.style.opacity = "0";
+          learnPhoto.style.transform = "scale(1.03)";
+        }
+        learnPhoto.src = learnPhotos[i];
+        learnPhoto.alt = learnAlts[i];
+        learnCount.textContent = (i + 1) + " из 9";
+        if (!reduce) {
+          learnLine.style.animation = "none";
+          void learnLine.offsetWidth;
+          learnLine.style.animation = "";
+          requestAnimationFrame(function () {
+            learnPhoto.style.opacity = "1";
+            learnPhoto.style.transform = "none";
+          });
+        }
+      }
+      learnButtons.forEach(function (b) {
+        b.addEventListener("mouseenter", function () { showLearn(b.getAttribute("data-i")); });
+        b.addEventListener("focus", function () { showLearn(b.getAttribute("data-i")); });
+        b.addEventListener("click", function () { showLearn(b.getAttribute("data-i")); });
+      });
+      document.getElementById("learn-prev").addEventListener("click", function () { showLearn(learnNow - 1); });
+      document.getElementById("learn-next").addEventListener("click", function () { showLearn(learnNow + 1); });
+    })();
+  </script>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Инструкция — продающая страница GetCourse</title>
+  <style>
+    body{font:17px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#1A1A1A;max-width:720px;margin:32px auto;padding:0 20px 80px}
+    h1{font-size:26px;line-height:1.2;margin:0 0 12px}
+    h2{font-size:18px;margin:32px 0 10px}
+    p,li{margin:0 0 10px}
+    ol,ul{padding-left:22px}
+    code{font-size:14px;background:#F5F7F1;padding:.1em .35em;border-radius:4px}
+    .box{background:#F5F7F1;padding:16px 18px;border-radius:14px;margin:16px 0}
+    .warn{background:#F8F1EE;padding:16px 18px;border-radius:14px;margin:16px 0}
+    a{color:#5C6B3E}
+  </style>
+</head>
+<body>
+  <h1>Инструкция: залить продающую страницу в GetCourse</h1>
+  <p><b>Дата пакета:</b> 26 сентября 2026. Версия <code>2026-09-26-r70</code>.</p>
+
+  <div class="box">
+    <p><b>Что отдаём</b></p>
+    <ul>
+      <li><code>prodazha.html</code> — готовый фрагмент. Его и вставляете.</li>
+      <li>Этот файл с шагами.</li>
+      <li><code>README_ДЛЯ_ТЕХСПЕЦА.txt</code> — короткая шпаргалка.</li>
+    </ul>
+  </div>
+
+  <p><b>Эталон вида:</b><br>
+  <a href="https://maestrovladd.github.io/shzo-landing/prodazha.html?r=70">maestrovladd.github.io/shzo-landing/prodazha.html?r=70</a></p>
+
+  <div class="warn">
+    <p><b>Критично для iPhone.</b> Вставляйте файл как есть: это уже <b>фрагмент</b> без &lt;html&gt; и &lt;body&gt;. Полный документ внутрь блока GetCourse = белый экран через секунду.</p>
+    <p>После заливки в коде должен быть маркер: <code>fragment-no-html-body</code> и <code>shzo-build: 2026-09-26-r70</code>.</p>
+  </div>
+
+  <h2>1. Вставить HTML</h2>
+  <ol>
+    <li>Выключите шапку сайта, меню курса, чат поддержки и «powered by GetCourse».</li>
+    <li>Поле «CSS страницы» очистите полностью.</li>
+    <li>Сотрите старый HTML целиком.</li>
+    <li>Вставьте <b>prodazha.html</b> от первой строки до последней. Не вырезайте скрипт <code>is-phone</code> и Figtree.</li>
+    <li>Сохраните. Правки «одной строкой» в редакторе не делать.</li>
+  </ol>
+
+  <h2>2. Картинки</h2>
+  <p>Сейчас все картинки открываются с GitHub Pages (<code>maestrovladd.github.io/shzo-landing/assets/…</code>). Если после заливки какая-то пустая — загрузите файл в GetCourse и замените адрес в HTML.</p>
+
+  <h2>3. Как смотреть</h2>
+  <p>Только живая ссылка в инкогнито. Не редактор. Сверьте с эталоном на GitHub.</p>
+
+  <h2>4. Прогон</h2>
+  <ul>
+    <li>Компьютер ≥1100: герой текст слева / фото справа, не столбик.</li>
+    <li>MacBook 1440×900 в широком окне — это десктоп, не телефон.</li>
+    <li>Телефон 375/390: столбик, кнопки на ширину, тарифы столбиком.</li>
+    <li>«Занять место» скроллит к тарифам.</li>
+    <li>Android Chrome: светлая страница, Figtree, не Open Sans.</li>
+    <li>iPhone Safari: 2 минуты без белого экрана.</li>
+  </ul>
+
+  <div class="box">
+    <p><b>Не повторять старые ошибки</b></p>
+    <ul>
+      <li>Не определять телефон по <code>screen.height ≤ 900</code>.</li>
+      <li>Не вставлять полный HTML с doctype в блок GetCourse.</li>
+      <li>Не класть второй CSS в поле страницы.</li>
+      <li>Не ставить <code>fetch</code> + <code>document.write</code> автообновление.</li>
+      <li>Не селектор вида <code>.page.is-phone,html.is-phone .foo{display:none}</code> — прячет всю страницу.</li>
+    </ul>
+  </div>
+</body>
+</html>
