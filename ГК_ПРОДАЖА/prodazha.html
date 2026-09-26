@@ -1,6 +1,6 @@
-<!-- shzo-build: 2026-09-26-r73 fragment-no-html-body css-phone-page-safe gc-shell fig-lock prodazha -->
+<!-- shzo-build: 2026-09-26-r74 fragment-no-html-body css-phone-page-safe gc-shell fig-lock prodazha -->
 <!-- ФРАГМЕНТ для GetCourse: вставлять целиком, без html/body. Картинки с GitHub Pages. -->
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="only light">
   <script>
@@ -227,7 +227,7 @@
     .author-list li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.4;font-weight:550}
     .author-list i{width:10px;height:10px;border-radius:50%;background:var(--g);flex:0 0 10px;margin-top:.45em}
     .price{background:#F3F1EB;padding:28px 0 64px;scroll-margin-top:24px}
-    .price h2{font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.045em;line-height:1.12;text-align:center;margin:0 auto 28px;max-width:16em}
+    .price h2{font-size:clamp(24px,2.8vw,36px);font-weight:800;letter-spacing:-.045em;line-height:1.2;text-align:center;margin:0 auto 28px;max-width:20em}
     .price-banner{width:min(816px,100%);margin:0 auto 6px;background:var(--g-dark);color:#fff;text-align:center;border-radius:16px;padding:18px 28px;font-size:clamp(22px,2.2vw,30px);font-weight:700;font-style:italic;letter-spacing:-.02em;line-height:1.2}
     .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,400px));justify-content:center;gap:16px;align-items:stretch}
     .price-card{position:relative;background:#F7F5F0;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;border:1px solid #E6E2D8;transition:transform .22s cubic-bezier(.16,1,.3,1),box-shadow .22s cubic-bezier(.16,1,.3,1),border-color .22s cubic-bezier(.16,1,.3,1)}
@@ -403,6 +403,8 @@
       .alt-grid p{padding:14px 16px 16px;font-size:15px;text-align:center;line-height:1.4}
       .formula{padding:28px 0 36px}
       .formula-title{font-size:16px;line-height:1.4;margin-bottom:22px;padding:0;text-align:center;max-width:100%}
+      .formula-story{order:1}
+      .formula-me{order:2}
       .formula-face{height:280px}
       .formula-me h3{font-size:22px;padding:0 16px}
       .formula-me .author-name{padding:0 16px;font-size:16px}
@@ -439,7 +441,7 @@
       .mod-result strong{font-size:15px}
       .mod-result p{font-size:13px;line-height:1.4}
       .price{padding:20px 0 40px}
-      .price h2{font-size:clamp(22px,5.8vw,28px);line-height:1.2;margin:0 auto 18px;padding:0 8px;max-width:14em}
+      .price h2{font-size:clamp(20px,5.2vw,26px);line-height:1.25;margin:0 auto 18px;padding:0 8px;max-width:16em}
       .price-banner{padding:14px 16px;font-size:clamp(18px,5vw,22px);border-radius:14px;margin:0 auto 10px;line-height:1.25}
       .price-body{padding:22px 18px 20px}
       .price-lead{min-height:0}
@@ -530,6 +532,8 @@
     html.is-phone .price-grid{grid-template-columns:1fr!important}
     html.is-phone .price-card.is-hit{margin-top:0!important}
     html.is-phone .formula-grid{grid-template-columns:1fr!important}
+    html.is-phone .formula-story{order:1!important}
+    html.is-phone .formula-me{order:2!important}
     html.is-phone .formula-title{text-align:center!important;font-size:16px!important;line-height:1.4!important}
     html.is-phone .voices h2{font-size:clamp(22px,5.8vw,28px)!important;max-width:14em!important;line-height:1.2!important;text-align:center!important;padding:0 16px!important;white-space:normal!important}
     html.is-phone .learn-stage{grid-template-columns:1fr!important}
@@ -553,7 +557,8 @@
     html.is-phone .container{padding-left:20px!important;padding-right:20px!important}
     html.is-phone .btn,html.is-phone .price-pay,html.is-phone .price-parts{white-space:normal!important;height:auto!important;min-height:52px!important;line-height:1.25!important;text-align:center!important}
   </style>
-<div class="page">
+
+  <div class="page">
   <section class="hero" id="hero">
     <div class="hero-left">
       <div class="hero-pill"><i></i>12-недельная программа самопомощи</div>
@@ -922,7 +927,7 @@
 
   <section class="price" id="price">
     <div class="container">
-      <h2>Тарифы и цены на программу Школы здоровых отношений</h2>
+      <h2>Тарифы и цены на программу<br>Школы здоровых&nbsp;отношений</h2>
       <p class="price-banner">Для вас специальные условия</p>
       <div class="price-grid">
         <article class="price-card">
@@ -1212,15 +1217,15 @@
         "Вычеркнете из своей жизни людей, которые тянут вас ко дну, и научитесь завершать токсичные отношения."
       ];
       var learnPhotos = [
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-1-nasilie.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-2-konflikty.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-3-doverie.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-4-ne-doma.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-5-razgovor.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-6-net.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-7-granicy.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-8-resheniya.jpg?v=air",
-        "https://maestrovladd.github.io/shzo-landing/assets/learn-9-zavershenie.jpg?v=air"
+        "assets/learn-1-nasilie.jpg?v=air",
+        "assets/learn-2-konflikty.jpg?v=air",
+        "assets/learn-3-doverie.jpg?v=air",
+        "assets/learn-4-ne-doma.jpg?v=air",
+        "assets/learn-5-razgovor.jpg?v=air",
+        "assets/learn-6-net.jpg?v=air",
+        "assets/learn-7-granicy.jpg?v=air",
+        "assets/learn-8-resheniya.jpg?v=air",
+        "assets/learn-9-zavershenie.jpg?v=air"
       ];
       var learnAlts = [
         "Женщина за столом замечает жест, который выглядит как забота",
