@@ -359,6 +359,35 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 @media(max-width:430px){
  .closing-portrait-framed{height:365px!important;margin-top:20px!important}
 }
+
+/* Webinar headline and offer — approved November 4 wording. */
+.hero h1.hero-title-updated{
+  font:400 clamp(42px,4.1vw,58px)/1.12 var(--display);
+  letter-spacing:-.058em;
+  max-width:100%;
+  margin:0 0 27px;
+  text-wrap:balance;
+}
+.hero h1.hero-title-updated .headline-green{
+  display:block;
+  color:#7b946a;
+  white-space:normal;
+}
+.hero .hero-offer{
+  font:400 clamp(20px,1.95vw,26px)/1.45 var(--display);
+  letter-spacing:-.035em;
+  max-width:560px;
+}
+@media(max-width:900px){
+  .hero h1.hero-title-updated{font-size:clamp(36px,4.7vw,49px)}
+}
+@media(max-width:720px){
+  .hero h1.hero-title-updated{font-size:clamp(42px,8vw,56px)}
+  .hero .hero-offer{font-size:clamp(21px,5vw,26px)}
+}
+@media(max-width:430px){
+  .hero h1.hero-title-updated{font-size:clamp(37px,9vw,44px)}
+}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -366,8 +395,8 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <section class="hero" id="hero" aria-labelledby="hero-title"><div class="wrap hero-grid">
 <div class="hero-copy">
 <div class="hero-meta"><p class="hero-date"><span class="date-mark" aria-hidden="true"></span>10 ноября · 11:00</p><p class="eyebrow">Бесплатный вебинар проводит врач-психотерапевт с 20-летним опытом работы</p></div>
-<h1 id="hero-title"><span class="headline-line"><span class="headline-pro">ПРО</span> <span class="headline-green">ЗДОРОВЫЕ</span></span><span class="headline-line">ОТНОШЕНИЯ</span></h1>
-<p class="hero-offer">Как строить отношения, в которых и вам хорошо, <span class="wavy">и с вами хорошо</span>.</p>
+<h1 id="hero-title" class="hero-title-updated">Как построить<br>и сохранить<br><span class="headline-green">счастливые отношения</span></h1>
+<p class="hero-offer">Для тех, кто свободен и тех, кто уже в отношениях</p>
 <div class="hero-cta"><a class="cta" href="#registration">Зарегистрироваться бесплатно <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
 </div>
 <div class="hero-photo"><img src="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/natasha-hero.png" alt="Наталья Зайцева, врач-психотерапевт, психиатр" width="960" height="1136">
