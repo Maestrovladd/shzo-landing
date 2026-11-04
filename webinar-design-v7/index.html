@@ -287,7 +287,48 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
  opacity:1!important;filter:none!important;transform:none!important;
  clip-path:none!important;border:0!important;box-shadow:none!important
 }
-</style></head><body>
+
+/* Final registration portrait — identical card language to the approved hero. */
+.closing-portrait-framed{
+  height:510px!important;
+  margin:0 0 45px!important;
+  border:1px solid #dce5d8!important;
+  border-radius:22px!important;
+  background:linear-gradient(150deg,#edf1e9 0%,#e1ebdf 100%)!important;
+  box-shadow:0 12px 30px rgba(48,72,46,.07)!important;
+  overflow:hidden!important;
+  position:relative;
+}
+.closing-portrait-framed .portrait-cutout-img{object-fit:contain!important;object-position:center bottom!important}
+.closing-portrait-framed .closing-bio{
+  position:absolute!important;z-index:5!important;
+  left:19px!important;right:19px!important;bottom:19px!important;
+  margin:0!important;padding:19px 20px 18px!important;
+  border:1px solid rgba(255,255,255,.85)!important;
+  border-radius:15px!important;background:rgba(255,255,255,.97)!important;
+  box-shadow:0 8px 24px rgba(28,48,28,.11)!important;
+  color:#263125!important;
+}
+.closing-portrait-framed .closing-bio strong{
+  font:400 20px/1.2 var(--display)!important;
+  letter-spacing:-.04em!important;margin-bottom:13px!important;
+}
+.closing-portrait-framed .closing-bio .hero-credentials{gap:9px!important}
+.closing-portrait-framed .closing-bio .hero-credentials li{
+  font:400 11.5px/1.46 var(--text)!important;letter-spacing:-.012em!important;
+}
+.closing-portrait-framed .closing-bio .bio-info{
+  top:-13px!important;left:-13px!important;width:33px!important;height:33px!important;
+}
+@media(max-width:720px){
+  .closing-portrait-framed{height:490px!important;margin-bottom:33px!important}
+}
+@media(max-width:430px){
+  .closing-portrait-framed{height:460px!important;margin-bottom:30px!important}
+  .closing-portrait-framed .closing-bio{left:14px!important;right:14px!important;bottom:14px!important;padding:17px 15px 15px!important}
+  .closing-portrait-framed .closing-bio strong{font-size:18px!important}
+  .closing-portrait-framed .closing-bio .hero-credentials li{font-size:10.5px!important}
+}</style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
 <main id="top">
@@ -349,8 +390,14 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <p class="close-lead">Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
 
 <a class="cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
-<figure class="closing-portrait closing-portrait-clean">
+<figure class="closing-portrait closing-portrait-clean closing-portrait-framed">
 <img class="portrait-cutout-img" src="natalia-final-transparent.png" width="1293" height="1195" alt="Наталья Зайцева" loading="lazy" decoding="async">
+<figcaption class="hero-bio closing-bio"><span class="bio-info" aria-hidden="true">i</span>
+<strong>Наталья Зайцева</strong>
+<ul class="hero-credentials">
+<li>Врач-психотерапевт, психиатр</li>
+<li>Когнитивно-поведенческий и диалектический поведенческий терапевт</li>
+</ul></figcaption>
 </figure>
 </div></div>
 <footer class="footer"><div class="wrap footer-layout">
