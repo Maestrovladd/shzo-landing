@@ -276,6 +276,17 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 .closing-portrait-rect::before{display:none!important}
 .closing-portrait-rect .natasha-full-cutout{display:block;position:relative;z-index:3;width:100%;height:100%;max-width:none;object-fit:contain;overflow:visible}
 @media(max-width:720px){.expert-photo img{transform:translateY(8px) scale(1.04)}.closing-portrait-rect .natasha-full-cutout{height:100%}}
+
+/* V7 final photo: static transparent PNG (no filters, circles or clipping masks) */
+.closing-portrait-clean{background:#e8eee5!important;position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;border:0;box-shadow:none}
+.closing-portrait-clean:before,.closing-portrait-clean:after{display:none!important}
+.closing-portrait-clean .portrait-cutout-img{
+ display:block!important;position:relative!important;z-index:2!important;
+ width:100%!important;height:100%!important;max-width:100%!important;
+ object-fit:contain!important;object-position:center bottom!important;
+ opacity:1!important;filter:none!important;transform:none!important;
+ clip-path:none!important;border:0!important;box-shadow:none!important
+}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -338,13 +349,9 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <p class="close-lead">Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
 
 <a class="cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
-<figure class="closing-portrait closing-portrait-cutout closing-portrait-rect">
-<svg class="natasha-full-cutout" viewBox="0 0 341 512" role="img" aria-label="Наталья Зайцева — оригинальный портрет с удалённым серо-синим фоном" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-<defs><filter id="nat-bluekey" color-interpolation-filters="sRGB" x="-1%" y="-1%" width="102%" height="102%">
-<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  18 0 -18 0 1.3" />
-</filter></defs>
-<image width="341" height="512" href="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/hero.png" filter="url(#nat-bluekey)"/>
-</svg></figure>
+<figure class="closing-portrait closing-portrait-clean">
+<img class="portrait-cutout-img" src="natalia-final-transparent.png" width="1293" height="1195" alt="Наталья Зайцева" loading="lazy" decoding="async">
+</figure>
 </div></div>
 <footer class="footer"><div class="wrap footer-layout">
 <div class="footer-legal">ИП Зайцева Наталья Леонидовна<br>ИНН: 366227331702<br>ОГРНИП: 310366827100181</div>
