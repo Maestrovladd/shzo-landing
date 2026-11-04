@@ -199,8 +199,8 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 .v7-program-cta svg{width:17px;height:17px;flex:none}
 .closing-portrait{background:#dce6d8}
 .closing-portrait:before{background:linear-gradient(145deg,#e7eee2 0%,#cfdfcb 100%)}
-.closing-portrait img{height:96%;width:auto;max-width:90%;object-fit:contain;object-position:bottom center;z-index:1;transition:opacity .18s ease;opacity:0}
-.closing-portrait.ready img{opacity:1}
+.closing-portrait img{height:96%;width:auto;max-width:90%;object-fit:contain;object-position:bottom center;z-index:1;transition:opacity .18s ease;opacity:1}
+.closing-portrait img{opacity:1}
 @media(max-width:1160px){
 .hero-photo img{height:91%;left:55%}
 .v7-program-grid{gap:16px}
@@ -317,7 +317,7 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <p class="close-lead">Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
 
 <a class="cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
-<figure class="closing-portrait"><img id="finalNatalia" crossorigin="anonymous" src="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/hero.png" loading="lazy" alt="Наталья Зайцева, портрет без студийного фона" width="341" height="512"></figure>
+<figure class="closing-portrait"><img id="finalNatalia" src="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/natasha-hero.png" loading="lazy" alt="Наталья Зайцева, портрет без студийного фона" width="341" height="512"></figure>
 </div></div>
 <footer class="footer"><div class="wrap footer-layout">
 <div class="footer-legal">ИП Зайцева Наталья Леонидовна<br>ИНН: 366227331702<br>ОГРНИП: 310366827100181</div>
@@ -332,41 +332,4 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 </div></div></div></footer>
 </section></main>
 
-<script>
-(function(){
-  var image=document.getElementById('finalNatalia'); if(!image)return;
-  var holder=image.parentElement;
-  var done=false;
-  function show(){holder.classList.add('ready');}
-  function removeBlue(){
-    if(done)return; done=true;
-    try{
-      var w=image.naturalWidth,h=image.naturalHeight;
-      if(!w||!h){show();return;}
-      var canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
-      var ctx=canvas.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);
-      var img=ctx.getImageData(0,0,w,h),d=img.data,n=w*h;
-      var seen=new Uint8Array(n),q=new Int32Array(n),head=0,tail=0;
-      function likelyBackground(k){
-        var j=k*4,r=d[j],g=d[j+1],b=d[j+2];
-        return b>115&&r>78&&g>90&&(b-r)>10&&(b-g)>5;
-      }
-      function mark(k){if(seen[k]||!likelyBackground(k))return;seen[k]=1;q[tail++]=k;}
-      for(var x=0;x<w;x++){mark(x);mark((h-1)*w+x);}
-      for(var y=0;y<h;y++){mark(y*w);mark(y*w+w-1);}
-      while(head<tail){
-        var p=q[head++],xx=p%w,yy=(p-xx)/w;
-        if(xx>0)mark(p-1);if(xx<w-1)mark(p+1);if(yy>0)mark(p-w);if(yy<h-1)mark(p+w);
-      }
-      if(tail<100||tail>n*.9){show();return;}
-      for(var i=0;i<n;i++){if(seen[i])d[i*4+3]=0;}
-      ctx.putImageData(img,0,0);
-      image.onload=null; image.onerror=null;
-      image.removeAttribute('crossorigin');
-      image.src=canvas.toDataURL('image/png');show();
-    }catch(e){show();}
-  }
-  if(image.complete&&image.naturalWidth)removeBlue();
-  else {image.addEventListener('load',removeBlue,{once:true});image.addEventListener('error',show,{once:true});}
-})();
-</script></body></html>
+</body></html>
