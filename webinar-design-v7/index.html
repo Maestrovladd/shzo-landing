@@ -328,7 +328,38 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
   .closing-portrait-framed .closing-bio{left:14px!important;right:14px!important;bottom:14px!important;padding:17px 15px 15px!important}
   .closing-portrait-framed .closing-bio strong{font-size:18px!important}
   .closing-portrait-framed .closing-bio .hero-credentials li{font-size:10.5px!important}
-}</style></head><body>
+}
+/* Final-section alignment: photo frame ends exactly at registration button. */
+.closing{padding-bottom:60px!important}
+.close-grid{align-items:end!important}
+.close-copy{padding-bottom:0!important;align-self:end!important}
+.closing-portrait-framed{
+  height:475px!important;
+  margin:0!important;
+  align-self:end!important;
+  border-radius:22px!important;
+}
+.closing-portrait-framed .portrait-cutout-img{
+  width:100%!important;height:100%!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  transform:none!important;
+}
+@media(max-width:720px){
+ .closing{padding-bottom:38px!important}
+ .close-grid{align-items:start!important}
+ .close-copy{padding:0!important}
+ .closing-portrait-framed{
+  height:410px!important;
+  margin:22px 0 0!important;
+  align-self:auto!important;
+  width:100%;
+ }
+}
+@media(max-width:430px){
+ .closing-portrait-framed{height:365px!important;margin-top:20px!important}
+}
+</style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
 <main id="top">
@@ -392,12 +423,6 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <a class="cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
 <figure class="closing-portrait closing-portrait-clean closing-portrait-framed">
 <img class="portrait-cutout-img" src="natalia-final-transparent.png" width="1293" height="1195" alt="Наталья Зайцева" loading="lazy" decoding="async">
-<figcaption class="hero-bio closing-bio"><span class="bio-info" aria-hidden="true">i</span>
-<strong>Наталья Зайцева</strong>
-<ul class="hero-credentials">
-<li>Врач-психотерапевт, психиатр</li>
-<li>Когнитивно-поведенческий и диалектический поведенческий терапевт</li>
-</ul></figcaption>
 </figure>
 </div></div>
 <footer class="footer"><div class="wrap footer-layout">
