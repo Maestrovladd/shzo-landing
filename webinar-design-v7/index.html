@@ -734,6 +734,42 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
  max-width:none!important;
  filter:none!important;opacity:1!important;
 }
+
+/* Final portrait: actual approved color photo on a solid olive background.
+   Original transparent PNG; no SVG chroma key, grayscale, or generated face. */
+.finale-feature .finale-panel .finale-image-photo{
+  background:#e6ece2!important;
+  border:0!important;
+  position:relative;
+  isolation:isolate;
+}
+.finale-feature .finale-panel .finale-image-photo img{
+  position:absolute!important;
+  display:block!important;
+  width:auto!important;
+  height:120%!important;
+  max-width:none!important;
+  left:50%!important;
+  bottom:-15%!important;
+  transform:translateX(-50%)!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  opacity:1!important;
+  filter:none!important;
+  mix-blend-mode:normal!important;
+}
+@media(max-width:720px){
+  .finale-feature .finale-panel .finale-image-photo img{
+    height:132%!important;
+    bottom:-23%!important;
+  }
+}
+@media(max-width:430px){
+  .finale-feature .finale-panel .finale-image-photo img{
+    height:136%!important;
+    bottom:-26%!important;
+  }
+}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -801,16 +837,8 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <li class="orientation-item"><h3>Доверие после кризиса</h3><p>Как восстановить утраченное доверие</p></li></ol>
 </div>
 <div class="finale-panel">
-<figure class="finale-image finale-image-olive">
-<svg class="finale-image-filter" viewBox="0 0 341 512" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Наталья Зайцева, цветной портрет на светло-оливковом фоне" xmlns="http://www.w3.org/2000/svg">
-<defs>
-<filter id="nat-final-color-key" x="-3%" y="-3%" width="106%" height="106%" color-interpolation-filters="sRGB">
-<feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  4.4 -0.6 -5.6 0 1.35" />
-</filter>
-</defs>
-<rect width="341" height="512" fill="#e8eee5"/>
-<image width="341" height="512" href="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/hero.png" filter="url(#nat-final-color-key)" />
-</svg>
+<figure class="finale-image finale-image-olive finale-image-photo">
+<img src="../assets/natasha-hero.png" alt="Наталья Зайцева — цветной портрет на светло-оливковом фоне" width="960" height="1136" loading="lazy" decoding="async">
 </figure>
 <div class="finale-heading"><h2 id="ending-title">После регистрации вы попадёте в <em>закрытый Telegram-канал</em></h2></div>
 <div class="finale-action"><p>Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
