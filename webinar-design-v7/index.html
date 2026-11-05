@@ -547,6 +547,124 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 @media(max-width:1000px){.ending{padding:91px 0 97px}.ending .ending-layout{width:calc(100% - 72px);column-gap:46px;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}.ending .ending-heading h2{font-size:clamp(39px,4.5vw,52px)}.ending .ending-action p{font-size:16px}}
 @media(max-width:720px){.ending{padding:72px 0 78px}.ending .ending-layout{width:calc(100% - 38px);grid-template-columns:1fr;gap:27px;padding-top:33px}.ending .ending-heading h2{font-size:clamp(39px,8vw,55px);max-width:640px}.ending .ending-heading em{margin-top:7px}.ending .ending-action{max-width:620px}.ending .ending-action p{font-size:16px;margin-bottom:27px;max-width:570px}.ending .ending-cta{min-width:285px}}
 @media(max-width:430px){.ending{padding:61px 0 68px}.ending .ending-layout{width:calc(100% - 32px)}.ending .ending-heading h2{font-size:clamp(35px,9.1vw,42px)}.ending .ending-action p{font-size:15px}.ending .ending-cta{width:100%;min-width:0}}
+
+/* Final art direction: portrait / statement / action on one dark olive editorial plane. */
+.finale-feature{
+  background:#fbfaf6;
+  padding:85px 0 95px;
+}
+.finale-feature>.wrap{
+  width:min(1320px,calc(100% - 80px));
+  margin-inline:auto;
+}
+.finale-panel{
+  display:grid;
+  grid-template-columns:minmax(0,255px) minmax(0,1.15fr) minmax(0,.74fr);
+  align-items:center;
+  gap:clamp(25px,3vw,45px);
+  padding:30px;
+  border:1px solid rgba(188,213,174,.38);
+  border-radius:31px;
+  background:linear-gradient(117deg,#425644 0%,#304332 45%,#24372b 100%);
+  color:#f8faf4;
+  box-shadow:0 12px 30px rgba(44,63,43,.065);
+  min-height:395px;
+  overflow:hidden;
+}
+.finale-image{
+  height:330px;
+  width:100%;
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  border-radius:17px;
+  background:#445044;
+  align-self:center;
+}
+.finale-image img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 24%;
+  filter:grayscale(1) contrast(1.07);
+}
+.finale-heading{align-self:center;min-width:0}
+.finale-heading h2{
+  font:400 clamp(35px,3.22vw,49px)/1.18 var(--display);
+  letter-spacing:-.061em;
+  text-wrap:balance;
+  margin:0;
+  color:#f9faf4;
+}
+.finale-heading em{
+  display:block;
+  margin-top:12px;
+  font-style:normal;
+  color:#c5dcae;
+}
+.finale-action{
+  align-self:center;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:25px;
+}
+.finale-action p{
+  margin:0;
+  color:#e1eadc;
+  font:400 16px/1.66 var(--text);
+  letter-spacing:-.021em;
+}
+.finale-button{
+  width:100%;
+  min-height:59px;
+  border-radius:10px;
+  padding:15px 19px;
+  background:#c7deab;
+  border:1px solid #c7deab;
+  color:#233927;
+  font:600 14px/1.2 var(--text);
+  text-decoration:none;
+  display:inline-flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  transition:background .2s ease,transform .2s ease;
+}
+.finale-button svg{width:19px;height:19px;flex:0 0 19px}
+.finale-button:hover{background:#deefc9;transform:translateY(-2px)}
+.finale-button:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:1120px){
+  .finale-feature>.wrap{width:calc(100% - 64px)}
+  .finale-panel{grid-template-columns:minmax(0,207px) minmax(0,1fr);gap:27px;padding:26px}
+  .finale-image{height:295px;grid-row:1/3}
+  .finale-heading h2{font-size:clamp(34px,4.1vw,46px)}
+  .finale-action{grid-column:2;gap:16px}
+  .finale-action p{font-size:15px}
+  .finale-button{max-width:340px;min-height:54px}
+}
+@media(max-width:720px){
+  .finale-feature{padding:67px 0 75px}
+  .finale-feature>.wrap{width:calc(100% - 38px)}
+  .finale-panel{grid-template-columns:1fr;gap:26px;padding:24px 23px 28px;border-radius:23px}
+  .finale-image{grid-row:auto;max-width:100%;height:215px;width:100%;border-radius:14px}
+  .finale-image img{object-position:center 28%}
+  .finale-heading h2{font-size:clamp(37px,7.2vw,50px)}
+  .finale-heading em{margin-top:6px}
+  .finale-action{grid-column:auto;gap:21px;max-width:100%}
+  .finale-action p{font-size:15px;line-height:1.62}
+  .finale-button{max-width:100%;min-height:58px;width:100%}
+}
+@media(max-width:430px){
+  .finale-feature{padding:54px 0 62px}
+  .finale-feature>.wrap{width:calc(100% - 32px)}
+  .finale-panel{padding:18px 18px 24px;gap:22px;border-radius:19px}
+  .finale-image{height:190px;border-radius:12px}
+  .finale-heading h2{font-size:clamp(32px,8.1vw,39px)}
+}
+@media(prefers-reduced-motion:reduce){.finale-button{transition:none}}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -604,13 +722,16 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <div class="preclose-card"><h2 class="preclose-title" id="preclose-title">Приходите на вебинар,<br><strong>чтобы разобраться:</strong></h2><ol class="pre-points"><li><span>01</span>Как сохранить отношения и сделать их более здоровыми</li><li><span>02</span>Когда отношения лучше завершить и как правильно расставаться</li></ol></div>
 <figure class="preclose-photo"><img src="embrace-highres.webp" alt="Мужчина нежно целует женщину в лоб, она улыбается, чувствуя поддержку" loading="lazy" decoding="async" width="1152" height="768"></figure>
 </div></div>
-<div class="ending" aria-labelledby="ending-title">
-<div class="wrap ending-layout">
-<div class="ending-heading"><h2 id="ending-title">После регистрации<br>вы попадёте в <em>закрытый Telegram-канал</em></h2></div>
-<div class="ending-action">
-<p>Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
-<a class="cta ending-cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
-</div></div></div>
+<div class="finale-feature" aria-labelledby="ending-title">
+<div class="wrap">
+<div class="finale-panel">
+<figure class="finale-image"><img src="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/hero.png" width="341" height="512" alt="Наталья Зайцева, портрет" loading="lazy" decoding="async"></figure>
+<div class="finale-heading"><h2 id="ending-title">После регистрации вы попадёте в <em>закрытый Telegram-канал</em></h2></div>
+<div class="finale-action"><p>Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
+<a class="finale-button" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
+</div>
+</div>
+</div>
 <footer class="footer"><div class="wrap footer-layout">
 <div class="footer-legal">ИП Зайцева Наталья Леонидовна<br>ИНН: 366227331702<br>ОГРНИП: 310366827100181</div>
 <div class="footer-right"><div class="social-links">
