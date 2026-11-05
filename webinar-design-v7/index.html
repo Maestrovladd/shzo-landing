@@ -770,6 +770,27 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
     bottom:-26%!important;
   }
 }
+
+/* Final section only: a different genuine color portrait; use its actual alpha channel. */
+.finale-feature .finale-panel .finale-image-alt{background:#e6ece2!important;border:0!important;overflow:hidden!important}
+.finale-feature .finale-panel .finale-image-alt img{
+ position:absolute!important;
+ inset:0!important;
+ display:block!important;
+ width:100%!important;
+ height:100%!important;
+ max-width:100%!important;
+ transform:none!important;
+ object-fit:cover!important;
+ object-position:center 35%!important;
+ opacity:1!important;
+ filter:none!important;
+ clip-path:none!important;
+ mix-blend-mode:normal!important;
+}
+@media(max-width:720px){
+ .finale-feature .finale-panel .finale-image-alt img{object-position:center 29%!important}
+}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -837,8 +858,8 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <li class="orientation-item"><h3>Доверие после кризиса</h3><p>Как восстановить утраченное доверие</p></li></ol>
 </div>
 <div class="finale-panel">
-<figure class="finale-image finale-image-olive finale-image-photo">
-<img src="../assets/natasha-hero.png" alt="Наталья Зайцева — цветной портрет на светло-оливковом фоне" width="960" height="1136" loading="lazy" decoding="async">
+<figure class="finale-image finale-image-olive finale-image-photo finale-image-alt">
+<img src="natalia-final-transparent.png" alt="Наталья Зайцева — цветной портрет на светло-оливковом фоне" width="1293" height="1195" loading="lazy" decoding="async">
 </figure>
 <div class="finale-heading"><h2 id="ending-title">После регистрации вы попадёте в <em>закрытый Telegram-канал</em></h2></div>
 <div class="finale-action"><p>Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
