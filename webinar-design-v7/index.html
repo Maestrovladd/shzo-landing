@@ -530,6 +530,23 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
   .closing-centered .close-copy .section-title{font-size:clamp(33px,8.4vw,41px)}
 }
 @media(prefers-reduced-motion:reduce){.v7-agenda .v7-program-cta{transition:none}}
+
+/* Minimal editorial closing for the existing milk-and-sage art direction */
+.ending{background:#f1f4ed;border-top:1px solid #d8e1d3;padding:104px 0 111px}
+.ending .ending-layout{width:min(1240px,calc(100% - 96px));display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);column-gap:clamp(55px,8vw,133px);align-items:center;position:relative;padding-top:43px}
+.ending .ending-layout:before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:#cbd8c7}
+.ending .ending-layout:after{content:'';position:absolute;top:-1px;left:0;width:92px;height:2px;background:#6a8664}
+.ending .ending-heading{min-width:0}
+.ending .ending-heading h2{font:400 clamp(43px,4.5vw,62px)/1.13 var(--display);letter-spacing:-.059em;color:#263327;max-width:750px;margin:0;text-wrap:balance}
+.ending .ending-heading em{font-style:normal;color:#718b64;display:block;margin-top:10px}
+.ending .ending-action{min-width:0;max-width:440px;display:flex;flex-direction:column;align-items:flex-start}
+.ending .ending-action p{font:400 18px/1.72 var(--text);letter-spacing:-.025em;color:#536552;max-width:420px;margin:0 0 29px}
+.ending .ending-cta{display:inline-flex;width:auto;min-width:310px;min-height:62px;justify-content:space-between;align-items:center;gap:30px;padding:19px 23px;font:500 16px/1.2 var(--text);background:#347b48;border:1px solid #347b48;border-radius:11px;color:#fff;box-shadow:none}
+.ending .ending-cta:hover{background:#28683b}
+.ending .ending-cta svg{width:19px;height:19px;flex:0 0 auto}
+@media(max-width:1000px){.ending{padding:91px 0 97px}.ending .ending-layout{width:calc(100% - 72px);column-gap:46px;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}.ending .ending-heading h2{font-size:clamp(39px,4.5vw,52px)}.ending .ending-action p{font-size:16px}}
+@media(max-width:720px){.ending{padding:72px 0 78px}.ending .ending-layout{width:calc(100% - 38px);grid-template-columns:1fr;gap:27px;padding-top:33px}.ending .ending-heading h2{font-size:clamp(39px,8vw,55px);max-width:640px}.ending .ending-heading em{margin-top:7px}.ending .ending-action{max-width:620px}.ending .ending-action p{font-size:16px;margin-bottom:27px;max-width:570px}.ending .ending-cta{min-width:285px}}
+@media(max-width:430px){.ending{padding:61px 0 68px}.ending .ending-layout{width:calc(100% - 32px)}.ending .ending-heading h2{font-size:clamp(35px,9.1vw,42px)}.ending .ending-action p{font-size:15px}.ending .ending-cta{width:100%;min-width:0}}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -587,14 +604,13 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 <div class="preclose-card"><h2 class="preclose-title" id="preclose-title">Приходите на вебинар,<br><strong>чтобы разобраться:</strong></h2><ol class="pre-points"><li><span>01</span>Как сохранить отношения и сделать их более здоровыми</li><li><span>02</span>Когда отношения лучше завершить и как правильно расставаться</li></ol></div>
 <figure class="preclose-photo"><img src="embrace-highres.webp" alt="Мужчина нежно целует женщину в лоб, она улыбается, чувствуя поддержку" loading="lazy" decoding="async" width="1152" height="768"></figure>
 </div></div>
-<div class="closing closing-centered"><div class="wrap">
-<div class="closing-panel">
-<div class="closing-mark" aria-hidden="true"><span></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21 3-7.2 18-3.4-7.4L3 10.2 21 3Z"/><path d="m10.4 13.6 4.3-4.3"/></svg><span></span></div>
-<div class="close-copy"><h2 class="section-title">После регистрации вы попадёте в <em>закрытый Telegram-канал</em></h2>
-<p class="close-lead">Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
-<a class="cta closing-cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a></div>
-</div>
-</div></div>
+<div class="ending" aria-labelledby="ending-title">
+<div class="wrap ending-layout">
+<div class="ending-heading"><h2 id="ending-title">После регистрации<br>вы попадёте в <em>закрытый Telegram-канал</em></h2></div>
+<div class="ending-action">
+<p>Там получите ссылку на эфир и эксклюзивные подкасты от Натальи Зайцевой.</p>
+<a class="cta ending-cta" href="https://nataliya-healthy-relationships.formalcod2.chatgpt.site/" target="_blank" rel="noopener">Зарегистрироваться <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+</div></div></div>
 <footer class="footer"><div class="wrap footer-layout">
 <div class="footer-legal">ИП Зайцева Наталья Леонидовна<br>ИНН: 366227331702<br>ОГРНИП: 310366827100181</div>
 <div class="footer-right"><div class="social-links">
