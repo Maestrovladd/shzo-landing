@@ -587,7 +587,7 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
   height:100%;
   object-fit:cover;
   object-position:center 24%;
-  filter:grayscale(1) contrast(1.07);
+  filter:grayscale(1) sepia(.22) saturate(.72) brightness(1.07) contrast(1.04);
 }
 .finale-heading{align-self:center;min-width:0}
 .finale-heading h2{
@@ -719,6 +719,10 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
   }
   .finale-feature .orientation-item p{font-size:13px;max-width:540px}
 }
+
+/* Remove cold blue color cast from the final portrait; warm-neutral monochrome. */
+.finale-feature .finale-panel .finale-image img{filter:grayscale(1) sepia(.22) saturate(.72) brightness(1.07) contrast(1.04)!important}
+.finale-feature .finale-panel .finale-image{background:#39483c}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
