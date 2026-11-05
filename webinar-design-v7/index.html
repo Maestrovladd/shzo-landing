@@ -665,6 +665,60 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
   .finale-heading h2{font-size:clamp(32px,8.1vw,39px)}
 }
 @media(prefers-reduced-motion:reduce){.finale-button{transition:none}}
+
+/* Editorial path: five webinar themes, grounded in the six approved program points. */
+.finale-feature .orientation-flow{margin:0 0 70px;padding:0 1px}
+.finale-feature .orientation-grid{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:26px;position:relative;list-style:none;margin:0;padding:0;
+}
+.finale-feature .orientation-grid:before{
+  content:'';position:absolute;top:9px;left:9px;right:9px;height:1px;
+  background:linear-gradient(90deg,#b9c9b2 0%,#809b76 50%,#b9c9b2 100%);
+}
+.finale-feature .orientation-item{
+  position:relative;min-width:0;padding:37px 0 0;
+}
+.finale-feature .orientation-item:before{
+  content:'';position:absolute;z-index:2;top:0;left:0;
+  width:17px;height:17px;border-radius:50%;
+  background:#fbfaf6;border:2px solid #7f9a71;
+  box-sizing:border-box;box-shadow:0 0 0 6px #fbfaf6;
+}
+.finale-feature .orientation-item h3{
+  font:400 clamp(17px,1.38vw,21px)/1.25 var(--display);
+  letter-spacing:-.042em;color:#2c3a2b;margin:0 0 11px;
+}
+.finale-feature .orientation-item p{
+  font:400 12.5px/1.6 var(--text);
+  letter-spacing:-.008em;color:#70806d;margin:0;
+  max-width:212px;
+}
+@media(max-width:970px) and (min-width:721px){
+  .finale-feature .orientation-flow{margin-bottom:55px}
+  .finale-feature .orientation-grid{gap:16px}
+  .finale-feature .orientation-item h3{font-size:17px}
+  .finale-feature .orientation-item p{font-size:12px}
+}
+@media(max-width:720px){
+  .finale-feature .orientation-flow{margin:0 0 37px}
+  .finale-feature .orientation-grid{
+    display:grid;grid-template-columns:1fr;gap:0;padding-left:34px;
+  }
+  .finale-feature .orientation-grid:before{
+    top:8px;bottom:12px;left:8px;right:auto;
+    width:1px;height:auto;background:#a5b99c;
+  }
+  .finale-feature .orientation-item{padding:0 0 24px;min-height:65px}
+  .finale-feature .orientation-item:last-child{padding-bottom:0}
+  .finale-feature .orientation-item:before{
+    left:-34px;top:3px;width:17px;height:17px;
+  }
+  .finale-feature .orientation-item h3{
+    font-size:20px;margin-bottom:6px;
+  }
+  .finale-feature .orientation-item p{font-size:13px;max-width:540px}
+}
 </style></head><body>
 <a class="skip" href="#top">К содержанию</a>
 
@@ -724,6 +778,13 @@ img,svg{display:block;max-width:100%}p,h1,h2,h3,figure,ul,ol{margin:0;padding:0}
 </div></div>
 <div class="finale-feature" aria-labelledby="ending-title">
 <div class="wrap">
+<div class="orientation-flow" aria-label="Пять ключевых вопросов вебинара">
+<ol class="orientation-grid"><li class="orientation-item"><h3>Красные флаги</h3><p>Что важно замечать в отношениях</p></li>
+<li class="orientation-item"><h3>Семейная терапия</h3><p>Когда она не подходит</p></li>
+<li class="orientation-item"><h3>Решение об отношениях</h3><p>Когда их лучше завершить</p></li>
+<li class="orientation-item"><h3>Расставание или сохранение</h3><p>Как расстаться или сделать отношения здоровее</p></li>
+<li class="orientation-item"><h3>Доверие после кризиса</h3><p>Как восстановить утраченное доверие</p></li></ol>
+</div>
 <div class="finale-panel">
 <figure class="finale-image"><img src="https://raw.githubusercontent.com/Maestrovladd/shzo-landing/main/assets/hero.png" width="341" height="512" alt="Наталья Зайцева, портрет" loading="lazy" decoding="async"></figure>
 <div class="finale-heading"><h2 id="ending-title">После регистрации вы попадёте в <em>закрытый Telegram-канал</em></h2></div>
